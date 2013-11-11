@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  youtube_id: MyString
+  vimeo_id: MyString
+  job_ad_url: MyString
+  job_title: MyString
+  company: MyString
+  language: MyString
+  title: MyString
+  summary: MyText
+
+two:
+  youtube_id: MyString
+  vimeo_id: MyString
+  job_ad_url: MyString
+  job_title: MyString
+  company: MyString
+  language: MyString
+  title: MyString
+  summary: MyText
