@@ -14,6 +14,9 @@
 # Ignore bundler config
 /.bundle
 
+# Ignore notes
+/notes
+
 # Ignore the default SQLite database.
 /db/*.sqlite3
 

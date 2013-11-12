@@ -1,6 +1,10 @@
 ActiveAdmin.register Video do
-
+  belongs_to :user
+  
   form do |f|
+    f.inputs 'User' do
+      f.input :user
+    end
     f.inputs 'Video' do
       f.input :youtube_id, label: "YouTube ID", hint: "e.g. xxx"
       f.input :vimeo_id, label: "Vimeo ID", hint: "e.g. xxx"

@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 
-  def index
+  layout "static"
 
-  end
+  def index; end
 
 end
