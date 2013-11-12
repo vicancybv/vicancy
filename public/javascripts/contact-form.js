@@ -38,11 +38,11 @@ $(document).ready(function() {
 		
 		//start the ajax
 		$.ajax({
-			//this is the php file that processes the data and send mail
-			url: "process.php",	
+			//this is the file that processes the data and send mail
+			url: "/contact",	
 			
 			//GET method is used
-			type: "GET",
+			type: "POST",
 
 			//pass the data			
 			data: data,		
