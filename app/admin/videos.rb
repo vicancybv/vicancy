@@ -1,6 +1,5 @@
 ActiveAdmin.register Video do
-  belongs_to :user
-  
+
   form do |f|
     f.inputs 'User' do
       f.input :user

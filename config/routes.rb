@@ -1,5 +1,10 @@
 Vicancy::Application.routes.draw do
 
+  Vicancy::STATIC_PAGE_SLUGS = %w(
+    privacypolicy
+    gebruikersvoorwaarden
+  )
+
   resources :users, only: [:show]
 
   # You can have the root of your site routed with "root"
@@ -8,6 +13,11 @@ Vicancy::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
+  Vicancy::STATIC_PAGE_SLUGS.each do |slug|
+    match slug => "static_pages##{slug}"
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

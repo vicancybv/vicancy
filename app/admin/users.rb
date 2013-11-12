@@ -7,7 +7,7 @@ ActiveAdmin.register User do
     end
     f.inputs 'Videos' do
       f.has_many :videos, :heading => 'Videos' do |video|
-        #video.input :youtube_id
+        
       end
     end
     f.actions

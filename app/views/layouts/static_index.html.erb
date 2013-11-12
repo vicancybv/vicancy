@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
@@ -25,9 +24,32 @@
   ================================================== -->
     <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/stylesheets/base.css">
+  <link rel="stylesheet" href="/stylesheets/skeleton.css">
+  <link rel="stylesheet" href="/stylesheets/flexslider.css">
+  <link rel="stylesheet" href="/stylesheets/prettyPhoto.css">
+  <link rel="stylesheet" href="/stylesheets/jquery.textshadow.css">
+  <link rel="stylesheet" href="/stylesheets/layout.css">
+  <link rel="stylesheet" href="/stylesheets/pieters_file.css">
+        
+    <style>
+    #headerplaceholder {
+      text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5); /* offset-x offset-y blur-radius color */
+    }
+    #headerplaceholder  .ui-text-shadow-copy {
+      color: #000; /* color, rgba and hsla not supported */
+      filter:
+        progid:DXImageTransform.Microsoft.Alpha(opacity=80) /* alpha * 100 */
+        progid:DXImageTransform.Microsoft.Blur(makeShadow=false,pixelRadius=5); /* blur-radius, in pixels without unit */
+      left: 0px; /* offset-x - blur-radius */
+      top: 0px; /* offset-y - blur-radius */
+    }
+  </style>
 
-    <link href="/stylesheets/static.css" rel='stylesheet' type='text/css'
-  
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
   <!-- Favicons
   ================================================== -->
   <link rel="shortcut icon" href="/images/favicon.ico">
