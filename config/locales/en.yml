@@ -15,3 +15,7 @@ en:
     Job title: "Job title"
     Job ad URL: "Job ad URL"
     Company: "Company"
+  sharing:
+    twitter: "%{company} is looking for a %{job_title}. Check the video job-ad: %{video_url}. More information: %{job_ad_url}"
+    facebook: "%{company} is looking for a %{job_title}. Check the video job-ad and click on the following link for more information: %{job_ad_url}"
+    linkedin: "%{job_ad_url} -- %{company} is looking for a %{job_title}. Check the video job-ad and click on following link: %{job_ad_url}"

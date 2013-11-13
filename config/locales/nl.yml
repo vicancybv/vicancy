@@ -1,4 +1,7 @@
 nl:
+  sharing:
+    twitter: "%{company} is op zoek naar een %{job_title}. Interesse? Bekijk de videovacature: %{video_url} en klik op de link na het filmpje: %{job_ad_url}"
+    linkedin: "%{job_ad_url} -- %{company} is op zoek naar een %{job_title}. Bekijk de vacature en klik op de volgende link: %{job_ad_url}"
   admin:
     optional: "onverplicht"
     eg: "bijv."

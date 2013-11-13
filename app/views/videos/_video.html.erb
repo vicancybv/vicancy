@@ -2,7 +2,7 @@
   <div class="panel-heading" data-toggle="collapse" data-parent="#video-list" href="#video_<%= video.id %>_body">	  
   	<div class="row">
 	  	<div class="col-xs-8">
-	  		<h2 class="panel-title"><%= video_title(video) %></h2>
+	  		<h2 class="panel-title"><%= video_title(video).gsub(' - ', ' &ndash; ').html_safe %></h2>
 	  	</div>
 	  	<div class="col-xs-4">
 	  		<div class="date pull-right">
