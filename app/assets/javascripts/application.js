@@ -48,4 +48,10 @@ $(document).ready(function() {
             title: null
           }
     });
+  $('.btn-share').click(function(e) {
+    e.preventDefault();
+    width = $(this).data('window-width') || 640;
+    height = $(this).data('window-height') || 320;
+    window.open($(this).attr('href'), 'facebook_share', 'height=' + height + ', width=' + width + ', toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no, top=200, left=200');
+  });
 });
