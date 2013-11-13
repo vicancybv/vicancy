@@ -54,4 +54,10 @@ $(document).ready(function() {
     height = $(this).data('window-height') || 320;
     window.open($(this).attr('href'), 'facebook_share', 'height=' + height + ', width=' + width + ', toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no, top=200, left=200');
   });
+  $('.btn-embed').fancybox({
+    helpers: { title: null },
+    width: 500,
+    height: 200,
+    autoSize: false
+  });
 });

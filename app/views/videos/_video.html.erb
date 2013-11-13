@@ -25,7 +25,12 @@
 		 	<a class="btn btn-default btn-linkedin btn-share" title="Share on LinkedIn" data-window-width="600" data-window-height="480" href="<%= linkedin_share_link(video) %>"><i class="fa fa-linkedin"></i></a>
 		 	<a class="btn btn-default btn-twitter btn-share" title="Share on Twitter" data-window-height="260" href="<%= twitter_share_link(video) %>"><i class="fa fa-twitter"></i></a>
 		 	<a class="btn btn-default btn-facebook btn-share" title="Share on Facebook" href="<%= facebook_share_link(video) %>"><i class="fa fa-facebook"></i></a>
-		 	<button class="btn btn-default btn-embed" title="Show embed code"><i class="fa fa-code"></i> Embed</button>
+		 	<button data-fancybox-href="#video_<%= video.id %>_embed_code" class="btn btn-default btn-embed" title="Show embed code"><i class="fa fa-code"></i> Embed</button>
+		 </div>
+
+		 <div class="embed-code" id="video_<%= video.id %>_embed_code">
+			 	<h3>Embed code</h3>
+			 	<textarea class="form-control" rows=6><%= embed_code(video) %></textarea>
 		 </div>
 		</div>
 	  </div>

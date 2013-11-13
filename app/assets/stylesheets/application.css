@@ -104,3 +104,6 @@ h1 { margin-bottom: 1em;}
 }
 .btn-embed {   outline:0px !important;
   -webkit-appearance:none; }
+
+  .embed-code { display: none;}
+  .embed-code textarea { width: 100%; font-family: 'Courier New', Courier; border-radius: 5px;}
