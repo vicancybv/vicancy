@@ -1,8 +1,9 @@
 module VideosHelper
 
-  def video_title(video)
+  def video_title(video, url_encode = false)
     return video.title unless video.title.blank?
-    "#{video.company}#{" - " unless video.company.blank? || video.job_title.blank?}#{video.job_title}".html_safe
+    title = "#{video.company}#{" - " unless video.company.blank? || video.job_title.blank?}#{video.job_title}"
+    url_encode ? url_encode(title).html_safe : title.html_safe
   end
 
   def facebook_share_link(video)
@@ -15,7 +16,7 @@ module VideosHelper
   end
 
   def linkedin_share_link(video)
-    "http://www.linkedin.com/shareArticle?mini=true&url=#{u video.youtube_url}&title=#{u video_title(video)}&summary=#{u(!video.summary.blank? ? video.summary : I18n.t(:'sharing.linkedin', locale: video.language, company: video.company, job_title: video.job_title, job_ad_url: video.job_ad_url, video_url: video.video_url))}"
+    "http://www.linkedin.com/shareArticle?mini=true&url=#{u video.youtube_url}&title=#{video_title(video, true)}&summary=#{u(!video.summary.blank? ? video.summary : I18n.t(:'sharing.linkedin', locale: video.language, company: video.company, job_title: video.job_title, job_ad_url: video.job_ad_url, video_url: video.video_url))}"
   end
 
   def embed_code(video)
