@@ -9,8 +9,14 @@ class AdminMailer < ActionMailer::Base
     mail(to: "toby@toby.org.uk", subject: 'New enquiry', from: "#{name} <#{email}>")
   end
 
-  def delete_video_email(video_id, user_ip)
-    @video = Video.find(video_id)
+  def edit_video_email(video, user_ip)
+    @video = video
+    @user_ip = user_ip
+    mail(to: "toby@toby.org.uk", subject: 'New enquiry', from: "Vicancy <toby@toby.org.uk>")
+  end
+
+  def delete_video_email(video, user_ip)
+    @video = video
     @user_ip = user_ip
     mail(to: "toby@toby.org.uk", subject: 'New enquiry', from: "Vicancy <toby@toby.org.uk>")
   end

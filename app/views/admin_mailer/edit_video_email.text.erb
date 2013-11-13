@@ -1,0 +1,7 @@
+A request to make edits to video #<%= @video.id %> (<%= video_title(@video) %>) has been received from IP <%= @user_ip %>.
+
+EDITS
+-----
+<%= @video.edits %>
+
+Go to this video in the admin dashboard: <%= admin_video_url(@video) %>

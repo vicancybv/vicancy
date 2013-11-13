@@ -4,10 +4,11 @@ Vicancy::Application.routes.draw do
     privacypolicy
     gebruikersvoorwaarden
     formulier
+    support
   )
 
   resources :users, only: [:show]
-  resources :videos, only: [:destroy]
+  resources :videos, only: [:destroy, :edit, :update]
   match 'contact' => 'contact#submit_message', via: :post
 
   # You can have the root of your site routed with "root"
@@ -20,6 +21,7 @@ Vicancy::Application.routes.draw do
   Vicancy::STATIC_PAGE_SLUGS.each do |slug|
     match slug => "static_pages##{slug}"
   end
+  match 'en' => "static_pages#en"
 
 
   # The priority is based upon order of creation:

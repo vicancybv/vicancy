@@ -16,7 +16,7 @@
 	  	<div class="row">
 	  	<div class="control-buttons col-sm-12 col-md-6">
 		  	<button class="btn btn-default preview-video" href="<%= video.embed_url %>?autoplay=1" data-fancybox-type="iframe"<%= 'disabled="disabled"' if video.embed_url.blank? %>><i class="fa fa-play"></i> Preview</button>
-		  	<button class="btn btn-default edit-video" href="https://tobymarsden.wufoo.com/forms/zsz21ev1rupvpk/" data-fancybox-type="iframe"><i class="fa fa-edit"></i> Edit</button>
+		  	<edit class="btn btn-default edit-video" href="<%= edit_video_path(video) %>" data-fancybox-type="ajax"><i class="fa fa-edit"></i> Edit</edit>
 		  	 
 		  	<%= link_to '<i class=\'fa fa-trash-o\'></i> <span>Delete</span>'.html_safe, video_path(video), method: :delete, confirm: 'Are you sure you want to ask for this video to be deleted?', class: 'btn btn-default delete-video', 'data-message' => 'Are you sure you want to ask for this video to be deleted?', 'data-severity' => 'danger', :remote => true %>	
 		 </div>

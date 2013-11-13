@@ -107,3 +107,8 @@ h1 { margin-bottom: 1em;}
 
   .embed-code { display: none;}
   .embed-code textarea { width: 100%; font-family: 'Courier New', Courier; border-radius: 5px;}
+
+
+  #video_edits { height: 20em; margin-bottom: 10px; width: 30em; max-width: 100%;}
+
+  .fancybox-inner h3 { margin-top: 0; margin-bottom: 0.75em;}

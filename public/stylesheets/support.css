@@ -1,0 +1,82 @@
+body {
+    background-image: url("/images/price-bg.jpg");
+    color: white;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* #Typography
+================================================== */
+h1, h2, h3 {
+	font-family: 'Oswald', sans-serif;
+}
+h1 {
+	color: #fff;
+	font-size: 120px;
+	font-weight: 700;
+	text-transform: uppercase;
+	position: relative;
+	z-index: 150;
+	margin-bottom: 70px;
+}
+h1.small {
+	font-size: 90px;
+	margin-bottom: 40px;
+}
+h2 {
+	font-size: 60px;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-align: center;
+	margin-top: 90px;
+	margin-bottom: 80px;
+	color: #fff;
+}
+span.lines {
+	border-top: 1px solid #aeaeae;
+	border-bottom: 1px solid #aeaeae;
+}
+h3 {
+	font-size: 30px;
+	text-transform: uppercase;
+	font-weight: 600;
+	color: #fff;
+}
+h4 {
+color: #FFFFFF;
+    font-family: 'Source Sans Pro',sans-serif;
+    font-size: 46px;
+    font-weight: 600;
+    line-height: 45px;
+    text-transform: uppercase;
+}
+h5 {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 24px;
+	font-weight: 600;
+	text-transform: uppercase;
+	color: #fff;
+}
+p {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 23px;
+	color: #f9f9f9;
+}
+
+.accordion-group {
+    margin-bottom: 20px;
+}
+
+.accordion-group a {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 23px;
+    color: #FF4F00;
+}
+
+.hero-unit {
+    background-color: #888;
+    color: #333;
+}

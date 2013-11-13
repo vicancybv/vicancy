@@ -19,9 +19,14 @@
 jQuery(function() {
   $("a[rel~=popover], .has-popover").popover();
   $("a[rel~=tooltip], .has-tooltip").tooltip();
+  $('.delete-video').bind('ajax:beforeSend', function() {
+    $(this).children('i')
+      .removeClass('fa-trash-o')
+      .addClass('fa-spinner fa-spin fa-lg');
+  });
   $('.delete-video').bind('ajax:success', function() {
     $(this).children('i')
-    		.removeClass('fa-trash-o')
+    		.removeClass('fa-trash-o fa-spinner fa-spin fa-lg')
     		.addClass('fa-check');
    	$(this).children('span')
     		.html('Requested');
@@ -39,7 +44,7 @@ $(document).ready(function() {
           title: null
         }
   });
-  $('.edit-video, .new-video').fancybox({
+  $('.new-video').fancybox({
       padding: 0,
       width: '90%',
       height: '100%',
@@ -48,6 +53,14 @@ $(document).ready(function() {
             title: null
           }
     });
+  $('.edit-video').fancybox({
+      autoSize: true,
+      maxWidth: 600,
+      helpers : {
+            title: null
+          }
+    });
+
   $('.btn-share').click(function(e) {
     e.preventDefault();
     width = $(this).data('window-width') || 640;
