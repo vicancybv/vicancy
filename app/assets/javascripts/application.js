@@ -41,10 +41,9 @@ $(document).ready(function() {
   });
   $('.edit-video, .new-video').fancybox({
       padding: 0,
-      fitToView: true,
-      autoWidth: true,
-      autoHeight: true,
+      fitToView: false,
       width: '90%',
+      height: '90%',
       helpers : {
             title: null
           }
