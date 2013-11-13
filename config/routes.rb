@@ -3,6 +3,7 @@ Vicancy::Application.routes.draw do
   Vicancy::STATIC_PAGE_SLUGS = %w(
     privacypolicy
     gebruikersvoorwaarden
+    formulier
   )
 
   resources :users, only: [:show]
