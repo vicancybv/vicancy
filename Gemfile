@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby "1.9.3"
+ruby '1.9.3'
 
 gem 'rails', '3.2.15'
 
@@ -8,7 +8,8 @@ gem 'rails', '3.2.15'
 
 gem 'pg'
 gem 'activeadmin'
-gem 'twitter-bootstrap-rails'
+gem 'less-rails-bootstrap'
+gem 'font-awesome-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -17,7 +18,7 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+  gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end

@@ -1,1 +1,30 @@
-video
+<div class="video panel panel-default">
+  <div class="panel-heading" data-toggle="collapse" href="#video_<%= video.id %>_body">	  
+  	<div class="row">
+	  	<div class="col-xs-8">
+	  		<h2 class="panel-title"><%= video_title(video) %></h2>
+	  	</div>
+	  	<div class="col-xs-4">
+	  		<div class="date pull-right">
+	  			<%= I18n.l video.created_at.to_date, format: :video %>
+	  		</div>
+	  	</div>
+  	</div>
+  </div>
+  <div class="panel-collapse collapse" id="video_<%= video.id %>_body">
+	  <div class="panel-body">
+	  	<div class="control-buttons pull-left">
+		  	<button class="btn btn-default preview-video"><i class="fa fa-play"></i> Preview</button>
+		  	<button class="btn btn-default edit-video"><i class="fa fa-edit"></i> Edit</button>
+		  	<button class="btn btn-default delete-video"><i class="fa fa-trash-o"></i> Delete</button>  	
+		 </div>
+		 <div class="sharing-buttons pull-right">
+		 	<strong>Share</strong>&nbsp;&nbsp;
+		 	<button class="btn btn-default btn-linkedin" title="Share on LinkedIn"><i class="fa fa-linkedin"></i></button>
+		 	<button class="btn btn-default btn-twitter" title="Share on Twitter"><i class="fa fa-twitter"></i></button>
+		 	<button class="btn btn-default btn-facebook" title="Share on Facebook"><i class="fa fa-facebook"></i></button>
+		 	<button class="btn btn-default" title="Show embed code"><i class="fa fa-code"></i>Embed</button>
+		 </div>
+	  </div>
+	</div>
+</div>

@@ -2,4 +2,16 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  admin:
+    optional: "optional"
+    eg: "e.g."
+    User: "User"
+    Video: "Video"
+    Caption: "Caption"
+    Job: "Job"
+    Language: "Language"
+    Title: "Title"
+    Summary: "Summary"
+    Job title: "Job title"
+    Job ad URL: "Job ad URL"
+    Company: "Company"
