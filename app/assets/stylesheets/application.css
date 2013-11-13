@@ -11,6 +11,7 @@
  *= require twitter/bootstrap
  *= require twitter/bootstrap-theme
  *= require font-awesome
+ *= require jquery.fancybox
  *= require_self
  *= require_tree .
  */
@@ -19,3 +20,10 @@
 .video .panel-heading { cursor: pointer;}
 
 h1 { margin-bottom: 1em;}
+
+@media all and (max-width: 991px) {
+	.sharing-buttons { margin-top: 10px;}
+}
+@media all and (min-width: 992px) {
+	.sharing-buttons { text-align: right;}
+}

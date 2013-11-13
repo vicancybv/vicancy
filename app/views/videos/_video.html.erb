@@ -1,5 +1,5 @@
 <div class="video panel panel-default">
-  <div class="panel-heading" data-toggle="collapse" href="#video_<%= video.id %>_body">	  
+  <div class="panel-heading" data-toggle="collapse" data-parent="#video-list" href="#video_<%= video.id %>_body">	  
   	<div class="row">
 	  	<div class="col-xs-8">
 	  		<h2 class="panel-title"><%= video_title(video) %></h2>
@@ -11,20 +11,23 @@
 	  	</div>
   	</div>
   </div>
-  <div class="panel-collapse collapse" id="video_<%= video.id %>_body">
+  <div class="panel-collapse collapse<%= " in" if video_counter == 0 %>" id="video_<%= video.id %>_body">
 	  <div class="panel-body">
-	  	<div class="control-buttons pull-left">
-		  	<button class="btn btn-default preview-video"><i class="fa fa-play"></i> Preview</button>
-		  	<button class="btn btn-default edit-video"><i class="fa fa-edit"></i> Edit</button>
-		  	<button class="btn btn-default delete-video"><i class="fa fa-trash-o"></i> Delete</button>  	
+	  	<div class="row">
+	  	<div class="control-buttons col-sm-12 col-md-6">
+		  	<button class="btn btn-default preview-video" href="<%= video.embed_url %>?autoplay=1" data-fancybox-type="iframe"<%= 'disabled="disabled"' if video.embed_url.blank? %>><i class="fa fa-play"></i> Preview</button>
+		  	<button class="btn btn-default edit-video" href="https://tobymarsden.wufoo.com/forms/zsz21ev1rupvpk/" data-fancybox-type="iframe"><i class="fa fa-edit"></i> Edit</button>
+		  	 
+		  	<%= link_to '<i class=\'fa fa-trash-o\'></i> <span>Delete</span>'.html_safe, video_path(video), method: :delete, confirm: 'Are you sure you want to ask for this video to be deleted?', class: 'btn btn-default delete-video', 'data-message' => 'Are you sure you want to ask for this video to be deleted?', 'data-severity' => 'danger', :remote => true %>	
 		 </div>
-		 <div class="sharing-buttons pull-right">
-		 	<strong>Share</strong>&nbsp;&nbsp;
+		 <div class="sharing-buttons col-sm-12 col-md-6">
+		 	<strong>Share:</strong>&nbsp;&nbsp;
 		 	<button class="btn btn-default btn-linkedin" title="Share on LinkedIn"><i class="fa fa-linkedin"></i></button>
 		 	<button class="btn btn-default btn-twitter" title="Share on Twitter"><i class="fa fa-twitter"></i></button>
 		 	<button class="btn btn-default btn-facebook" title="Share on Facebook"><i class="fa fa-facebook"></i></button>
 		 	<button class="btn btn-default" title="Show embed code"><i class="fa fa-code"></i>Embed</button>
 		 </div>
+		</div>
 	  </div>
 	</div>
 </div>

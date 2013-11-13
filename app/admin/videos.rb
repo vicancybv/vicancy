@@ -5,8 +5,8 @@ ActiveAdmin.register Video do
       f.input :user
     end
     f.inputs I18n.t('admin.Video') do
-      f.input :youtube_id, label: "YouTube ID", hint: "#{I18n.t('admin.eg')} xxx"
-      f.input :vimeo_id, label: "Vimeo ID", hint: "#{I18n.t('admin.eg')} xxx"
+      f.input :youtube_id, label: "YouTube ID", hint: "#{I18n.t('admin.eg')} n3UkHTcbwb4"
+      f.input :vimeo_id, label: "Vimeo ID", hint: "#{I18n.t('admin.eg')} 77573345"
     end
     f.inputs I18n.t('admin.Caption') do
       f.input :language,  
