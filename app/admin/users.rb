@@ -8,6 +8,12 @@ ActiveAdmin.register User do
     f.inputs 'User' do
       f.input :name, label: "Reseller name"
       f.input :slug, label: "Address", hint: "e.g. aw6g39vk. Created automatically if left blank."
+      f.input :language,  
+              as: :select,      
+              collection: { 
+                "English" => "en", 
+                "Dutch" => "nl"
+              }
     end
     f.actions
   end
@@ -16,6 +22,7 @@ ActiveAdmin.register User do
     attributes_table do
       row :id
       row :name
+      row :language
     end
 
     panel "Videos" do

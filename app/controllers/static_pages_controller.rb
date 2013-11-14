@@ -1,5 +1,7 @@
 class StaticPagesController < ApplicationController
 
+  caches_action [:index, :en]
+
   layout "static"
 
   def index

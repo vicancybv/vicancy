@@ -19,6 +19,12 @@
 
 .video .panel-heading { cursor: pointer;}
 
+.img-responsive-full { width: 100%;}
+
+.video.panel .video-thumbnail { padding-left: 10px;}
+
+.edit-video { margin-bottom: 5px;}
+
 h1 { margin-bottom: 1em;}
 
 @media all and (max-width: 991px) {
@@ -111,4 +117,4 @@ h1 { margin-bottom: 1em;}
 
   #video_edits { height: 20em; margin-bottom: 10px; width: 30em; max-width: 100%;}
 
-  .fancybox-inner h3 { margin-top: 0; margin-bottom: 0.75em;}
+  .fancybox-inner h3 { margin-top: 0; margin-bottom: 0.5em;}

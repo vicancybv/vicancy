@@ -2,6 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  Live Vicancies: "Live Vacancies"
+  Nieuwe Vicancy: "New vacancy"
   admin:
     optional: "optional"
     eg: "e.g."
@@ -19,3 +21,6 @@ en:
     twitter: "%{company} is looking for a %{job_title}. Check the video job-ad: %{video_url}. More information: %{job_ad_url}"
     facebook: "%{company} is looking for a %{job_title}. Check the video job-ad and click on the following link for more information: %{job_ad_url}"
     linkedin: "%{job_ad_url} -- %{company} is looking for a %{job_title}. Check the video job-ad and click on following link: %{job_ad_url}"
+  date:
+    formats:
+      video: ! "%e %b '%y"

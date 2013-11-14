@@ -1,4 +1,6 @@
 nl:
+  Live Vicancies: "Live Vicancies"
+  Nieuwe Vicancy: "Nieuwe Vicancy"
   sharing:
     twitter: "%{company} is op zoek naar een %{job_title}. Interesse? Bekijk de videovacature: %{video_url} en klik: %{job_ad_url}"
     linkedin: "%{job_ad_url} -- %{company} is op zoek naar een %{job_title}. Bekijk de vacature en klik op de volgende link: %{job_ad_url}"

@@ -70,7 +70,7 @@ $(document).ready(function() {
   $('.btn-embed').fancybox({
     helpers: { title: null },
     width: 500,
-    height: 200,
+    height: 240,
     autoSize: false
   });
 });
