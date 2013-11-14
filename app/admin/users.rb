@@ -1,7 +1,7 @@
 ActiveAdmin.register User do
 
   action_item only: :show do |user|
-    link_to('Nieuwe Video', new_admin_video_url('video[user_id]' => params[:id]))
+    link_to('New Video for this User', new_admin_video_url('video[user_id]' => params[:id]))
   end
 
   form do |f|
