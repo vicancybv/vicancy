@@ -27,7 +27,7 @@ h2 {
 	font-weight: 700;
 	text-transform: uppercase;
 	text-align: center;
-	margin-top: 90px;
+	margin-top: 60px;
 	margin-bottom: 80px;
 	color: #fff;
 }
@@ -74,24 +74,24 @@ li {
 /*    #Inhoud
 ===========================================*/
 .formulier {
-    width: 39%;
+    width: 49%;
     float: left;
     margin-right: 1%;
-    margin-left: 10%;
+    margin-left: 5%;
 }
 img.screenshot {
     width: 39%;
     float: right;
     margin: 1%;
-    margin-right: 10%;
+    margin-right: 5%;
 }
 nav li {
     display: inline-block;
     text-decoration: none;
 }
 #inleiding {
-    width: 70%;
-    margin-left: 10%;
+    width: 75%;
+    margin-left: 5%;
     margin-right: 20%;
 }
 #callToAction {
