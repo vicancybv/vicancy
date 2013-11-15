@@ -25,6 +25,16 @@
     try { z7p7p9 = new WufooForm();z7p7p9.initialize(options);z7p7p9.display(); } catch (e) {}};
     var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
     })(document, 'script');</script>
+    <!-- listen for message from onLoad callback of parent Fancybox, and tell the Wufoo form embed script to resize itself  -->
+    <script type="text/javascript">
+        addEventListener("message", receiveMessage, false);
+        function receiveMessage(message) {
+            if(message.data == "resizeWufooForm") {
+                var wufooForm = document.getElementById('wufooFormz7p7p9');
+                wufooForm.contentWindow.postMessage("resize", "http://vicancy.wufoo.com");
+            }
+        }
+    </script>
     
     <!-- Nog een actie invoegen dat 'submit' autodirect naar een volgende pagina o.i.d. -->
 </div> <!-- Wufoo form ends -->

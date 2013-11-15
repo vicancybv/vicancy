@@ -16,7 +16,6 @@
  *= require_tree .
  */
 
-
 .video .panel-heading { cursor: pointer;}
 
 .img-responsive-full { width: 100%;}
@@ -108,13 +107,12 @@ h1 { margin-bottom: 1em;}
 	outline:0px !important;
 	-webkit-appearance:none;
 }
-.btn-embed {   outline:0px !important;
-  -webkit-appearance:none; }
 
-  .embed-code { display: none;}
-  .embed-code textarea { width: 100%; font-family: 'Courier New', Courier; border-radius: 5px;}
+.btn-embed {   outline:0px !important; -webkit-appearance:none; }
 
+.embed-code { display: none;}
+.embed-code textarea { width: 100%; font-family: 'Courier New', Courier; border-radius: 5px;}
 
-  #video_edits { height: 20em; margin-bottom: 10px; width: 30em; max-width: 100%;}
+#video_edits { height: 20em; margin-bottom: 10px; width: 30em; max-width: 100%;}
 
-  .fancybox-inner h3 { margin-top: 0; margin-bottom: 0.5em;}
+.fancybox-inner h3 { margin-top: 0; margin-bottom: 0.5em;}

@@ -49,9 +49,10 @@ $(document).ready(function() {
       width: '90%',
       height: '100%',
       autoSize: false,
-      helpers : {
-            title: null
-          }
+      helpers : { title: null },
+      onUpdate: function() {
+        this.content[0].contentWindow.postMessage("resizeWufooForm", "*");
+      }
     });
   $('.edit-video').fancybox({
       autoSize: true,
@@ -91,5 +92,6 @@ $(document).ready(function() {
 
     $this.mouseup(mouseUpHandler);
   });
+
 
 });
