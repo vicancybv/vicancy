@@ -28,14 +28,18 @@
     background: #e8e8e8;
     border: 0; 
 }
+
 #naarDeVicancyBouwer p {
     text-align: center;
     margin-top: 10px;
+    color: #fff;
     text-decoration: none;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 14px;
-    color: #fff;
     text-transform: uppercase;
+}
+#naarDeVicancyBouwer:hover p {
+    color: #3a3a3a;
 }
 
 h4 {

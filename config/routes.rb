@@ -22,6 +22,8 @@ Vicancy::Application.routes.draw do
     match slug => "static_pages##{slug}"
   end
   match 'en' => "static_pages#en"
+  match 'en-edited' => "static_pages#en_edited"
+
 
 
   # The priority is based upon order of creation:
