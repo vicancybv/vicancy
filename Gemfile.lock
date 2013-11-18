@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/anjlab/bootstrap-rails.git
+  revision: 271f73becbb2aea9c1b771e09419b9bc0287fe55
+  specs:
+    anjlab-bootstrap-rails (3.0.2.0)
+      railties (>= 3.0)
+      sass (>= 3.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -56,7 +64,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    commonjs (0.2.7)
     dalli (2.6.4)
     devise (3.2.0)
       bcrypt-ruby (~> 3.0)
@@ -88,14 +95,6 @@ GEM
     kaminari (0.14.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    less (2.4.0)
-      commonjs (~> 0.2.7)
-    less-rails (2.4.2)
-      actionpack (>= 3.1)
-      less (~> 2.4.0)
-    less-rails-bootstrap (3.0.5)
-      less-rails (~> 2.4.2)
-    libv8 (3.16.14.3)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -142,7 +141,6 @@ GEM
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
-    ref (1.0.5)
     responders (1.0.0)
       railties (>= 3.2, < 5)
     rspec-core (2.14.7)
@@ -166,9 +164,6 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    therubyracer (0.12.0)
-      libv8 (~> 3.16.14.0)
-      ref
     thor (0.18.1)
     thread_safe (0.1.3)
       atomic
@@ -188,16 +183,15 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  anjlab-bootstrap-rails!
   coffee-rails (~> 3.2.1)
   dalli
   font-awesome-rails
   jquery-rails (~> 2.3.0)
-  less-rails-bootstrap
   memcachier
   pg
   rails (= 3.2.15)
   rails_12factor
   rspec-rails (~> 2.0)
   sass-rails (~> 3.2.3)
-  therubyracer
   uglifier (>= 1.0.3)

@@ -8,7 +8,8 @@ gem 'rails', '3.2.15'
 
 gem 'pg'
 gem 'activeadmin'
-gem 'less-rails-bootstrap'
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+                              :github => 'anjlab/bootstrap-rails'
 gem 'font-awesome-rails'
 
 # For Heroku
@@ -21,10 +22,6 @@ gem 'memcachier', group: :production
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
 end
 
