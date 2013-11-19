@@ -6,16 +6,23 @@ gem 'rails', '3.2.15'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
 gem 'activeadmin'
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                               :github => 'anjlab/bootstrap-rails'
 gem 'font-awesome-rails'
 
-# For Heroku
-gem 'rails_12factor', group: :production
-gem 'dalli', group: :production
-gem 'memcachier', group: :production
+group :development, :test do
+  gem 'sqlite3'
+  gem 'rspec-rails', '~> 2.0'
+end
+
+group :production do
+	gem 'pg'
+  # For Heroku
+	gem 'rails_12factor'
+	gem 'dalli'
+	gem 'memcachier'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -42,7 +49,3 @@ gem 'jquery-rails', '~> 2.3.0'
 
 # To use debugger
 # gem 'debugger'
-
-group :development, :test do
-  gem 'rspec-rails', '~> 2.0'
-end
