@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require twitter/bootstrap/collapse
 //= require twitter/bootstrap/transition
+//= require twitter/bootstrap/modal
 //= require jquery.fancybox
 //= require_tree .
 
