@@ -5,14 +5,8 @@
 @import font-awesome
 @import jquery.fancybox
 
-.video .panel-heading
-  cursor: pointer
-
 .img-responsive-full
   width: 100%
-
-.video.panel .video-thumbnail
-  padding-left: 10px
 
 .edit-video
   margin-bottom: 5px
@@ -213,7 +207,7 @@ p
     text-decoration: none
 
 .preheader
-  background-image: url(../images/header.jpg)
+  background-image: url(/images/header.jpg)
   background-position: 50% 312%
   background-size: 1460px
   background-attachment: fixed
@@ -238,24 +232,31 @@ p
 .footer
   height: 200px
   background-color: #ddd
-  background-image: url(../images/bg-dark.jpg)
+  background-image: url(/images/bg-dark.jpg)
 
 .vicancy
-  height: 45px
   margin-bottom: 15px
-  border: 0px solid #999
-  border-radius: 8px
-  background-color: #e0e0e0
-  background-image: -webkit-linear-gradient(#dddddd, #e8e8e8)
-  background-image: -o-linear-gradient(#dddddd, #e8e8e8)
-  background-image: linear-gradient(#dddddd, #e8e8e8)
-  box-shadow: #999 0px 0px 4px 0px inset
-  &.faq
-    margin-top: 20px
+  .top
+    height: 45px
+    border: 0px solid #999
+    border-radius: 8px
+    background-color: #e0e0e0
     background-image: -webkit-linear-gradient(#dddddd, #e8e8e8)
     background-image: -o-linear-gradient(#dddddd, #e8e8e8)
     background-image: linear-gradient(#dddddd, #e8e8e8)
     box-shadow: #999 0px 0px 4px 0px inset
+    cursor: pointer
+  .actions
+    height: auto
+    border-bottom-left-radius: 8px
+    border-bottom-right-radius: 8px
+    background-color: #666
+    box-shadow: #515151 0px 8px 10px 0px inset
+    margin-top: -3px
+    &.faq
+      height: auto
+      min-height: 200px
+      box-shadow: #515151 0px 8px 10px 0px inset
 
 .maincontainer
   margin-top: 0px
@@ -268,19 +269,7 @@ p
   margin-right: 0px
   margin-left: 10px
   padding-right: 10px
-  border-right: 1px solid #999
-
-.vicancy-action
-  height: auto
-  min-height: 0px
-  border-bottom-left-radius: 8px
-  border-bottom-right-radius: 8px
-  background-color: #666
-  box-shadow: #515151 0px 8px 10px 0px inset
-  &.faq
-    height: auto
-    min-height: 200px
-    box-shadow: #515151 0px 8px 10px 0px inset
+  border-right: 1px solid #999  
 
 .logo
   margin-top: 70px
@@ -341,6 +330,7 @@ p
   border-radius: 3px
   background-image: none
   box-shadow: #999 0px 0px 3px 0px
+  width: 230px
 
 .faq
   color: white
@@ -424,3 +414,26 @@ p
 @media (max-width: 767px)
   .newboxbottom
     box-shadow: #999 0px 0px 4px 0px inset
+
+.contact
+  height: 45px
+  border: 0px solid #999
+  border-radius: 8px
+  background-color: #e0e0e0
+  background-image: -webkit-linear-gradient(#dddddd, #e8e8e8)
+  background-image: -o-linear-gradient(#dddddd, #e8e8e8)
+  background-image: linear-gradient(#dddddd, #e8e8e8)
+  box-shadow: #999 0px 0px 4px 0px inset
+  &.faq
+    margin-top: 20px
+    background-image: -webkit-linear-gradient(#dddddd, #e8e8e8)
+    background-image: -o-linear-gradient(#dddddd, #e8e8e8)
+    background-image: linear-gradient(#dddddd, #e8e8e8)
+    box-shadow: #999 0px 0px 4px 0px inset
+  .bottom
+    height: auto
+    min-height: 200px
+    border-bottom-left-radius: 8px
+    border-bottom-right-radius: 8px
+    background-color: #666
+    box-shadow: #515151 0px 8px 10px 0px inset
