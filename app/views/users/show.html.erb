@@ -1,3 +1,5 @@
+<!-- Old Style
+
 <div class="container">
 
 	<div class="row">
@@ -13,9 +15,68 @@
 		</div>
 
 		<div class="col-sm-4 col-lg-offset-1 col-md-3 col-lg-2" id="sidebar">
-			<button class="btn btn-default btn-lg new-video" href="/formulier" data-fancybox-type="iframe"><i class="fa fa-plus"></i> Nieuwe Vicancy</button>
+			<button class="btn btn-default btn-lg new-video" href="/formulier" data-fancybox-type="iframe"><i class="fa fa-plu
+				s"></i> Nieuwe Vicancy</button>
 		</div>
 
 	</div>
 
+</div> / End Old Style-->
+
+<div class="main">
+  <div class="w-container maincontainer">
+    <div class="w-row">
+      <div class="w-col w-col-8 maincolumn">
+        <h2><%= I18n.t(:'Live Vicancies') %></h2>
+        
+        <%= render @user.videos %>
+
+        <!-- Vicancies
+        <div class="w-clearfix vicancy">
+          <img class="vicancylogo" src="images/logo_vicancy_transparent_notext.png" height="35" alt="logo_vicancy_transparent_notext.png">
+          <h4>Sales Manager - ING</h4>
+          <h5>19-1-2013</h5>
+        </div>
+        <div class="w-clearfix vicancy">
+          <img class="vicancylogo" src="images/logo_vicancy_transparent_notext.png" height="35" alt="logo_vicancy_transparent_notext.png">
+          <h4>Directeur - Eindbaas BV io</h4>
+          <h5>19-1-2013</h5>
+          <div class="vicancy-action">
+            <div class="w-row actioncontainer">
+              <div class="w-col w-col-5 previewrow">
+                <img class="videothumbnail" src="images/thumbnail_vicancy_example.jpg" width="230" alt="thumbnail_vicancy_example.jpg">
+                <img class="play-icon-overlay" src="images/video_play_icon_transparent.png" width="150" alt="video_play_icon_transparent.png">
+              </div>
+              <div class="w-col w-col-7 w-clearfix actionrow">
+                <h5 class="action-text">Edit</h5>
+                <h5 class="action-text">Delete</h5>
+                <h5 class="action-text">Share:</h5>
+                <h5 class="action-text">Tw</h5>
+                <h5 class="action-text">Fb</h5>
+                <h5 class="action-text">Li</h5>
+                <h5 class="action-text">&lt;/&gt;</h5>
+                <div class="tooltip">
+                  <p class="tooltip-text">Deel je Vicancy® op Facebook</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+      </div> <!-- / End Main Column-->
+
+      <!-- Column 2 (sidebar) -->
+      <div class="w-col w-col-4">
+        <div class="createnewbox">
+          <div class="newboxtop">
+            <h4 class="newboxtop">Vicancy aanmaken</h4>
+          </div>
+          <div class="newboxbottom">
+            <a class="button primary new-video" href="/formulier" data-fancybox-type="iframe">+ Nieuwe Vicancy</a>
+            <p class="instructions">Klik hier om een nieuwe Vicancy® te laten maken.</p>
+          </div>
+        </div>
+      </div>  <!-- / End Column 2 --> 
+    </div>
+  </div>
 </div>
