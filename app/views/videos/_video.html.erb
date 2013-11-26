@@ -26,22 +26,34 @@
 	      </div>
 	      <div class="w-col w-col-7 w-clearfix actionrow">
 	        
+	        <!-- Edit -->
 	        <a class="edit-video" href="<%= edit_video_path(video) %>" data-fancybox-type="ajax"><h5 class="action-text"><i class="fa fa-edit"></i> Edit</h5></a>
 	        
+	        <!-- Delete -->
 	        <%= link_to '<h5 class="action-text"><i class=\'fa fa-trash-o\'></i> Delete</h5>'.html_safe, video_path(video), method: :delete, confirm: 'Are you sure you want to ask for this video to be deleted?', class: '', 'data-message' => 'Are you sure you want to ask for this video to be deleted?', 'data-severity' => 'danger', :remote => true %>	
 	        
 	        <h5 class="action-text"> Share:</h5>
 	        
-	        <a title="Share on Twitter" data-window-height="260" href="<%= twitter_share_link(video) %>"><h5 class="action-text"><i class="fa fa-twitter btn-share twitter"></i></h5></a>
+	        <!-- Twitter -->
+	        <a  class="btn-twitter btn-share"title="Share on Twitter" data-window-height="260" href="<%= twitter_share_link(video) %>"><h5 class="action-text"><i class="fa fa-twitter share twitter"></i></h5></a>
 	        
-	        <a title="Share on Facebook" href="<%= facebook_share_link(video) %>"><h5 class="action-text"><i class="fa fa-facebook-square btn-share facebook"></i></h5></a>
+	        <!-- Facebook -->
+	        <a  class="btn-facebook btn-share"title="Share on Facebook" href="<%= facebook_share_link(video) %>"><h5 class="action-text"><i class="fa fa-facebook-square share facebook"></i></h5></a>
 	        
-	        <a title="Share on LinkedIn" data-window-width="600" data-window-height="480" href="<%= linkedin_share_link(video) %>"><h5 class="action-text"><i class="fa fa-linkedin-square btn-share linkedin"></i></h5></a>
+	        <!-- LinkedIn-->
+	        <a class="btn-linkedin btn-share" title="Share on LinkedIn" data-window-width="600" data-window-height="480" href="<%= linkedin_share_link(video) %>"><h5 class="action-text"><i class="fa fa-linkedin-square share linkedin"></i></h5></a>
 	        
-	        <a data-fancybox-href="#video_<%= video.id %>_embed_code" title="Show embed code"><h5 class="action-text"><i class="fa fa-code btn-share embed"></i></h5></a>
-	        
-	        <div class="tooltip">
-	          <p class="tooltip-text">Deel je Vicancy® op Facebook</p>
+	        <!-- Embed-->
+	        <a class="btn-embed" data-fancybox-href="#video_<%= video.id %>_embed_code" title="Show embed code"><h5 class="action-text"><i class="fa fa-code share embed"></i></h5></a>
+        		<div class="embed-code" id="video_<%= video.id %>_embed_code">
+		 					<h3>Embed code</h3>
+		 					<textarea class="form-control" rows=4><%= embed_code(video) %></textarea><br />
+			 				<h3>Link</h3>
+			 				<textarea class="form-control" rows=1><%= video.video_url %></textarea>
+	 					</div>
+
+	        <div class="actiontip">
+	          <p class="action-text">Deel je Vicancy® op Facebook</p>
 	        </div>
 	      </div>
 	    </div>

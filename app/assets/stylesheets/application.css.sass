@@ -22,20 +22,22 @@ h1
   .sharing-buttons
     text-align: right
 
-.btn-share
-  font-size: 1.3em
-  &.linkedin
-    &:hover
-      color: #007bb6
-  &.facebook
-    &:hover
-      color: #3B5998
-  &.twitter
-    &:hover
-      color: #1fa1cc
-  &.embed
-    &:hover
-      color: #fff
+.share
+  .action-text & // parent is .action-text
+    font-size: 1.3em
+    &.linkedin
+      &:hover
+        color: #007bb6
+    &.facebook
+      &:hover
+        color: #3B5998
+    &.twitter
+      &:hover
+        color: #1fa1cc
+    &.embed
+      cursor: pointer
+      &:hover
+        color: #fff
 
 .embed-code
   display: none
@@ -317,8 +319,8 @@ p
   margin-bottom: 0px
   margin-left: 0px
   padding-top: 10px
-  padding-right: 0px
-  padding-left: 15px
+  padding-right: 7px
+  padding-left: 7px
   float: left
   color: #ddd
   font-size: 16px
@@ -326,17 +328,17 @@ p
     &:hover
       color: #fff
 
-.tooltip
+.actiontip
   height: 60px
   margin-top: 53px
-  margin-right: 15px
-  margin-left: 15px
+  margin-right: 7px
+  margin-left: 7px
   padding-top: 0px
   padding-left: 0px
   border: 1px dashed #999
   color: #333
 
-.tooltip-text
+.actiontip-text
   padding-top: 20px
   color: #999
   font-style: italic
