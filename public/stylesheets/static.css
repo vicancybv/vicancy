@@ -74,13 +74,13 @@ li {
 /*    #Inhoud
 ===========================================*/
 .formulier {
-    width: 49%;
+    width: 40%;
     float: left;
     margin-right: 1%;
     margin-left: 5%;
 }
 img.screenshot {
-    width: 39%;
+    width: 48%;
     float: right;
     margin: 1%;
     margin-right: 5%;
@@ -104,18 +104,18 @@ nav li {
 /*    #plaatsing screenshots
 =========================================*/
 #screenshot1 {
-    margin-top: 100px;
+    margin-top: 500px;
 }
 #screenshot2 {
-    margin-top: 150px;
+    margin-top: 400px;
 }
 #screenshot3 {
-    margin-top: 45px;
+    margin-top: 180px;
 }
 #screenshot4 {
-    margin-top: 100px;
+    margin-top: 300px;
 }
 #screenshot5 {
-    margin-top: 100px;
+    margin-top: 450px;
     margin-bottom: 10px;
 }
