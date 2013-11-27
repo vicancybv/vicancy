@@ -30,7 +30,7 @@
 	        <a class="edit-video" href="<%= edit_video_path(video) %>" data-fancybox-type="ajax"><h5 class="action-text"><i class="fa fa-edit"></i> Edit</h5></a>
 	        
 	        <!-- Delete -->
-	        <%= link_to '<h5 class="action-text"><i class=\'fa fa-trash-o\'></i> Delete</h5>'.html_safe, video_path(video), method: :delete, confirm: 'Are you sure you want to ask for this video to be deleted?', class: '', 'data-message' => 'Are you sure you want to ask for this video to be deleted?', 'data-severity' => 'danger', :remote => true %>	
+	        <%= link_to '<h5 class="action-text"><i class=\'fa fa-trash-o\'></i> Delete</h5>'.html_safe, video_path(video), method: :delete, confirm: 'Are you sure you want to ask for this video to be deleted?', class: 'delete-video', 'data-message' => 'Are you sure you want to ask for this video to be deleted?', 'data-severity' => 'danger', :remote => true %>	
 	        
 	        <h5 class="action-text"> Share:</h5>
 	        
@@ -52,8 +52,29 @@
 			 				<textarea class="form-control" rows=1><%= video.video_url %></textarea>
 	 					</div>
 
-	        <div class="actiontip">
-	          <p class="action-text">Deel je Vicancy® op Facebook</p>
+	 				<!-- tooltips -->
+	        <div class="actiontip" id="actiontip-edit">
+	          <p class="action-text">Klik 'edit' om een revisie aan te vragen - bijvoorbeeld als er ergens een foutje zit in de Vicancy&reg;</p>
+	        </div>
+
+	        <div class="actiontip" id="actiontip-delete">
+	          <p class="action-text">Haal deze Vicancy&reg; offline (verwijderen)</p>
+	        </div>
+
+	        <div class="actiontip" id="actiontip-twitter">
+	          <p class="action-text">Deel je Vicancy&reg; op Twitter</p>
+	        </div>
+
+	        <div class="actiontip" id="actiontip-facebook">
+	          <p class="action-text">Deel je Vicancy&reg; op Facebook</p>
+	        </div>
+
+	        <div class="actiontip" id="actiontip-linkedin">
+	          <p class="action-text">Deel je Vicancy&reg; op LinkedIn</p>
+	        </div>
+
+	        <div class="actiontip" id="actiontip-embed">
+	          <p class="action-text">Embed-code en link van deze Vicancy&reg;</p>
 	        </div>
 	      </div>
 	    </div>

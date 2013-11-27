@@ -129,6 +129,17 @@ p
   font-size: 13px
   font-weight: 400
 
+a 
+  color: inherit
+  &:hover
+    color: inherit
+
+#ContactModal
+  .modal-header
+    background-color: #e0e0e0
+    border-top-left-radius: 6px
+    border-top-right-radius: 6px
+
 .modal-body
   p
     font-size: 1.1em
@@ -333,6 +344,8 @@ p
   a &   // 'if the parent is a link...' 
     &:hover
       color: #fff
+  .actiontip &
+    font-size: 0.9em
 
 .actiontip
   height: 60px
@@ -343,6 +356,7 @@ p
   padding-left: 0px
   border: 1px dashed #999
   color: #333
+  text-align: center
 
 .actiontip-text
   padding-top: 20px
