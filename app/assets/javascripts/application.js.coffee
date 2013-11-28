@@ -4,7 +4,9 @@
 #= require twitter/bootstrap/transition
 #= require twitter/bootstrap/modal
 #= require jquery.fancybox
+#= require jquery.sticky
 #= require_tree .
+
 
 
 jQuery ->
@@ -75,39 +77,43 @@ $(document).ready ->
     ), 1
     $this.mouseup mouseUpHandler
 
+  # Actiontips javascript
   $("#actiontip-edit").hide()
   $(".edit-video").hover (->
-    $("#actiontip-edit").show "fast" # You can chose, slow,fast or type milliseconds
+    $("#actiontip-edit").show(0)
   ), ->
-    $("#actiontip-edit").hide "fast"
+    $("#actiontip-edit").hide(0)
 
   $("#actiontip-delete").hide()
   $(".delete-video").hover (->
-    $("#actiontip-delete").show "fast" # You can chose, slow,fast or type milliseconds
+    $("#actiontip-delete").show(0)
   ), ->
-    $("#actiontip-delete").hide "fast"
+    $("#actiontip-delete").hide(0)
 
   $("#actiontip-twitter").hide()
   $(".btn-twitter").hover (->
-    $("#actiontip-twitter").show "fast" # You can chose, slow,fast or type milliseconds
+    $("#actiontip-twitter").show(0)
   ), ->
-    $("#actiontip-twitter").hide "fast"
+    $("#actiontip-twitter").hide(0)
 
   $("#actiontip-facebook").hide()
   $(".btn-facebook").hover (->
-    $("#actiontip-facebook").show "fast" # You can chose, slow,fast or type milliseconds
+    $("#actiontip-facebook").show(0)
   ), ->
-    $("#actiontip-facebook").hide "fast"
+    $("#actiontip-facebook").hide(0)
 
   $("#actiontip-linkedin").hide()
   $(".btn-linkedin").hover (->
-    $("#actiontip-linkedin").show "fast" # You can chose, slow,fast or type milliseconds
+    $("#actiontip-linkedin").show(0)
   ), ->
-    $("#actiontip-linkedin").hide "fast"
+    $("#actiontip-linkedin").hide(0)
 
   $("#actiontip-embed").hide()
   $(".btn-embed").hover (->
-    $("#actiontip-embed").show "fast" # You can chose, slow,fast or type milliseconds
+    $("#actiontip-embed").show(0)
   ), ->
-    $("#actiontip-embed").hide "fast"
+    $("#actiontip-embed").hide(0)
+
+  # Sticky Navigation with jquery.sticky.js
+  $(".navigation").sticky topSpacing: 0
 
