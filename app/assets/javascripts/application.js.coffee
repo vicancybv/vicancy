@@ -78,41 +78,41 @@ $(document).ready ->
     $this.mouseup mouseUpHandler
 
   # Actiontips javascript
-  $("#actiontip-edit").hide()
+  $(".actiontip-edit").hide()
   $(".edit-video").hover (->
-    $("#actiontip-edit").show(0)
+    $(".actiontip-edit").show(0)
   ), ->
-    $("#actiontip-edit").hide(0)
+    $(".actiontip-edit").hide(0)
 
-  $("#actiontip-delete").hide()
+  $(".actiontip-delete").hide()
   $(".delete-video").hover (->
-    $("#actiontip-delete").show(0)
+    $(".actiontip-delete").show(0)
   ), ->
-    $("#actiontip-delete").hide(0)
+    $(".actiontip-delete").hide(0)
 
-  $("#actiontip-twitter").hide()
+  $(".actiontip-twitter").hide()
   $(".btn-twitter").hover (->
-    $("#actiontip-twitter").show(0)
+    $(".actiontip-twitter").show(0)
   ), ->
-    $("#actiontip-twitter").hide(0)
+    $(".actiontip-twitter").hide(0)
 
-  $("#actiontip-facebook").hide()
+  $(".actiontip-facebook").hide()
   $(".btn-facebook").hover (->
-    $("#actiontip-facebook").show(0)
+    $(".actiontip-facebook").show(0)
   ), ->
-    $("#actiontip-facebook").hide(0)
+    $(".actiontip-facebook").hide(0)
 
-  $("#actiontip-linkedin").hide()
+  $(".actiontip-linkedin").hide()
   $(".btn-linkedin").hover (->
-    $("#actiontip-linkedin").show(0)
+    $(".actiontip-linkedin").show(0)
   ), ->
-    $("#actiontip-linkedin").hide(0)
+    $(".actiontip-linkedin").hide(0)
 
-  $("#actiontip-embed").hide()
+  $(".actiontip-embed").hide()
   $(".btn-embed").hover (->
-    $("#actiontip-embed").show(0)
+    $(".actiontip-embed").show(0)
   ), ->
-    $("#actiontip-embed").hide(0)
+    $(".actiontip-embed").hide(0)
 
   # Sticky Navigation with jquery.sticky.js
   $(".navigation").sticky topSpacing: 0
