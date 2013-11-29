@@ -112,14 +112,13 @@ nav li {
     text-align: center;
     height: auto;
     width: 100%;
-    background-color: #FF5000;
+    background-color: #E33D31;
     margin-bottom: 50px;
 }
 
 .logo {
     width: auto;
-    height: 30px;
-    margin: 5px;
+    height: 40px;
 }
 
 /*    #plaatsing screenshots
