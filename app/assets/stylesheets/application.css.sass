@@ -198,17 +198,36 @@ a
 
 .footer
   min-height: 200px
-  background-color: #ddd
+  width: 100%
+  background-color: #999
   background-image: url(/images/bg-dark.jpg)
-  .w-col // inside a column
-    color: #eee
-    padding: 25px
-  p
+  text-align: center
+  padding: 50px
+  .footer-text
+    color: #999
     padding: 0px
-    color: inherit
-    margin-top: 10px
-  h4
-    padding: 0px
+    max-width: 600px
+    margin: auto
+    &:hover
+      color: #eee
+  .copyright
+    border-top: 1px solid #858585
+    margin-top: 75px
+    p
+      color: #858585
+      font-size: 14px
+
+.footer-links
+  color: #999
+  margin-top: 20px
+  li
+    display: inline
+    padding: 0 2px
+    a
+      text-decoration: none
+    &:hover
+      color: #ff4f00
+      cursor: pointer
 
 .vicancy
   margin-bottom: 15px
