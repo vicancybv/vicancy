@@ -10,7 +10,7 @@
 	<% end %>
 <% end %>
 
-<div class="video vicancy">
+<div class="video vicancy panel">
 	<div class="w-clearfix top" data-toggle="collapse" data-parent="#video-list" href="#video_<%= video.id %>_body">
 	  <img class="vicancylogo" src="/images/logo_vicancy_transparent_notext.png" height="35" alt="logo_vicancy_transparent_notext.png">
 	  <h4><%= video_title(video).gsub(' - ', ' &ndash; ').html_safe %></h4>
@@ -30,7 +30,30 @@
 	        <a class="edit-video" href="<%= edit_video_path(video) %>" data-fancybox-type="ajax"><h5 class="action-text"><i class="fa fa-edit"></i> Edit</h5></a>
 	        
 	        <!-- Delete -->
-	        <%= link_to '<h5 class="action-text"><i class=\'fa fa-trash-o\'></i> Delete</h5>'.html_safe, video_path(video), method: :delete, confirm: 'Are you sure you want to ask for this video to be deleted?', class: 'delete-video', 'data-message' => 'Are you sure you want to ask for this video to be deleted?', 'data-severity' => 'danger', :remote => true %>	
+	        <a data-toggle="modal" href="#" data-target="#video_<%= video.id %>_delete_modal" class="delete-video"><h5 class="action-text"><i class='fa fa-trash-o'></i> Delete</h5></a>
+	        <div id="video_<%= video.id %>_delete_modal" class="delete-modal modal fade">
+	          <div class="modal-dialog">
+	            <div class="modal-content">
+	              <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	                <h4 class="modal-title">Delete video</h4>
+	              </div>
+	              <div class="modal-body delete-request">
+	                Are you sure you want to ask for this video to be deleted?
+	              </div>
+	              <div class="modal-body delete-success">
+	                Your deletion request has been received.
+	              </div>	              
+	              <div class="modal-footer delete-request">
+	                <a href="#" class="button cancel" data-dismiss="modal">Cancel</a>
+	                <%= link_to '<i class=\'fa fa-trash-o\'></i> Delete'.html_safe, video_path(video), method: :delete, class: "button primary delete-video-btn", :remote => true %>
+	              </div>
+		          <div class="modal-footer delete-success">
+		            <a href="#" class="button cancel" data-dismiss="modal">OK</a>
+		          </div>
+	            </div><!-- /.modal-content -->
+	          </div><!-- /.modal-dialog -->
+	        </div><!-- /.modal -->
 	        
 	        <h5 class="action-text"> Share:</h5>
 	        

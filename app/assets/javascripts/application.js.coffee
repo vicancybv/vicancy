@@ -12,12 +12,13 @@
 jQuery ->
   $("a[rel~=popover], .has-popover").popover()
   $("a[rel~=tooltip], .has-tooltip").tooltip()
-  $(".delete-video").bind "ajax:beforeSend", ->
+  $(".delete-video-btn").bind "ajax:beforeSend", ->
     $(this).children("i").removeClass("fa-trash-o").addClass "fa-spinner fa-spin fa-lg"
 
-  $(".delete-video").bind "ajax:success", ->
-    $(this).children("i").removeClass("fa-trash-o fa-spinner fa-spin fa-lg").addClass "fa-check"
-    $(this).children("span").html "Requested"
+  $(".delete-video-btn").bind "ajax:success", ->
+    $(this).children("i").removeClass("fa-spinner fa-spin fa-lg").addClass "fa-trash-o"
+    $(this).closest(".delete-modal").find(".delete-request").hide()
+    $(this).closest(".delete-modal").find(".delete-success").show()
 
 
 $(document).ready ->
@@ -80,37 +81,37 @@ $(document).ready ->
   # Actiontips javascript
   $(".actiontip-edit").hide()
   $(".edit-video").hover (->
-    $(".actiontip-edit").show(0)
+    $(this).closest(".video").find(".actiontip-edit").show(0)
   ), ->
     $(".actiontip-edit").hide(0)
 
   $(".actiontip-delete").hide()
   $(".delete-video").hover (->
-    $(".actiontip-delete").show(0)
+    $(this).closest(".video").find(".actiontip-delete").show(0)
   ), ->
     $(".actiontip-delete").hide(0)
 
   $(".actiontip-twitter").hide()
   $(".btn-twitter").hover (->
-    $(".actiontip-twitter").show(0)
+    $(this).closest(".video").find(".actiontip-twitter").show(0)
   ), ->
     $(".actiontip-twitter").hide(0)
 
   $(".actiontip-facebook").hide()
   $(".btn-facebook").hover (->
-    $(".actiontip-facebook").show(0)
+    $(this).closest(".video").find(".actiontip-facebook").show(0)
   ), ->
     $(".actiontip-facebook").hide(0)
 
   $(".actiontip-linkedin").hide()
   $(".btn-linkedin").hover (->
-    $(".actiontip-linkedin").show(0)
+    $(this).closest(".video").find(".actiontip-linkedin").show(0)
   ), ->
     $(".actiontip-linkedin").hide(0)
 
   $(".actiontip-embed").hide()
   $(".btn-embed").hover (->
-    $(".actiontip-embed").show(0)
+    $(this).closest(".video").find(".actiontip-embed").show(0)
   ), ->
     $(".actiontip-embed").hide(0)
 
