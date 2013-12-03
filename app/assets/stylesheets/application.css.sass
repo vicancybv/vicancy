@@ -299,8 +299,10 @@ a
   padding-right: 30px
   float: right
 
-.createnewbox
-  margin-top: 75px
+.whitebox
+  &:first-child
+    margin-top: 75px
+  margin-top: 20px
   padding-top: 0px
   border: 0px solid #999
   border-radius: 8px
@@ -310,7 +312,7 @@ a
     margin-top: 20px
     box-shadow: #999 0px 0px 4px 0px inset
 
-.newboxtop
+.whiteboxtop
   height: 45px
   padding-top: 5px
   padding-left: 15px
@@ -319,14 +321,14 @@ a
   &.faq
     color: #111
 
-.newboxbottom
+.whiteboxbottom
   position: static
   height: auto
   min-height: 100px
   margin-right: 0px
   margin-bottom: 0px
   margin-left: 0px
-  padding-top: 20px
+  padding-top: 0px
   padding-bottom: 20px
   border-bottom-left-radius: 8px
   border-bottom-right-radius: 8px
@@ -439,7 +441,7 @@ a
     border-left-width: 1px
 
 @media (max-width: 767px)
-  .newboxbottom
+  .whiteboxbottom
     box-shadow: #999 0px 0px 4px 0px inset
 
 .contact

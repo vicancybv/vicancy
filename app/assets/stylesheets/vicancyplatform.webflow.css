@@ -174,7 +174,7 @@ p {
   padding-right: 30px;
   float: right;
 }
-.createnewbox {
+.whitebox {
   margin-top: 75px;
   padding-top: 0px;
   border: 0px solid #999;
@@ -182,21 +182,21 @@ p {
   background-color: #e0e0e0;
   box-shadow: #999 0px 0px 4px 0px inset;
 }
-.createnewbox.faq {
+.whitebox.faq {
   margin-top: 20px;
   box-shadow: #999 0px 0px 4px 0px inset;
 }
-.newboxtop {
+.whiteboxtop {
   height: 45px;
   padding-top: 5px;
   padding-left: 15px;
   border-bottom: 0px solid #999;
   box-shadow: none;
 }
-.newboxtop.faq {
+.whiteboxtop.faq {
   color: #111;
 }
-.newboxbottom {
+.whiteboxbottom {
   position: static;
   height: auto;
   min-height: 100px;
@@ -311,7 +311,7 @@ p {
   border-left-width: 1px;
 }
 @media (max-width: 767px) {
-  .newboxbottom {
+  .whiteboxbottom {
     box-shadow: #999 0px 0px 4px 0px inset;
   }
 }
