@@ -1,8 +1,9 @@
 <h3>Edit video &lsquo;<%= video_title(@video) %>&rsquo;</h3>
 <%= form_for @video, remote: true do |f| %>
 <%= f.text_area :edits, class: "form-control", placeholder: "Please explain the changes you require..." %>
-<%= f.submit "Send edits", class: "btn btn-primary" %> &nbsp;<i class="fa fa-spinner fa-spin fa-lg" style="display: none;"></i>
+<%= f.submit "Send edits", class: "button primary" %> &nbsp;<i class="fa fa-spinner fa-spin fa-lg" style="display: none;"></i>
 <% end %>
+
 <script type="text/javascript">
 <!--
 $('form.edit_video').bind('ajax:success', function() {

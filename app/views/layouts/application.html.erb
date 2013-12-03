@@ -49,25 +49,7 @@
 
 	<%= yield %>
 
-	<div class="footer">
-    <div class="w-container">
-      <p class="footer-text">Vicancy&reg; is een innovatief en jong bedrijf in de recruitment sector. Aan het roer staan de twee jonge ondernemers Loet Rammelsberg en Pieter Moorman. Samen met kundige programmeurs en designers staan ze klaar om uw vacature een boost te geven.</p>
-      <ul class="footer-links">
-        <li><a data-toggle="modal" data-target="#ContactModal">Contact</a></li>
-        <li class="muted">&middot;</li>
-        <li><a href="/support" target="_blank">Support</a></li>
-        <li class="muted">&middot;</li>
-        <li><a href="#">Partners</a></li>
-        <li class="muted">&middot;</li>
-        <li><a href="/gebruikersvoorwaarden" target="_blank">Gebruikersvoorwaarden</a></li>
-        <li class="muted">&middot;</li>
-        <li><a href="/privacypolicy" target="_blank">Privacy Policy</a></li>
-      </ul>
-      <div class="copyright">
-        <p>&copy; <%= Date.today.year %> Vicancy - Qurriculum B.V. io | IBAN: NL44-INGB-0006144178 | KvK: 55179908</p>
-      </div>
-    </div>
-  </div>
+  <%= render "layouts/footer" %>
 
 
 <!-- Modal201 -->
