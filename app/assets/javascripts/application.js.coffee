@@ -3,6 +3,8 @@
 #= require twitter/bootstrap/collapse
 #= require twitter/bootstrap/transition
 #= require twitter/bootstrap/modal
+#= require twitter/bootstrap/tooltip
+#= require twitter/bootstrap/popover
 #= require jquery.fancybox
 #= require jquery.sticky
 #= require_tree .

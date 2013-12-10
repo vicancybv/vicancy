@@ -12,11 +12,17 @@
       <img class="logo" src="/images/logo_vicancy_whiteinside.png" height="150" alt="logo_vicancy_whiteinside.png">
     </div>
   </div>
-  <div class="navigation"></div>
+  <div class="navigation">
+    <div class="w-container">
+      <a class="new-video" href="/"><h3 class="navbutton navbuttonfirst">Vicancy.com</h3></a>
+      <!-- <a href="#" data-toggle="popover" title data-content="Type uw unieke adres in de browser om naar uw videomanager te gaan. Bijvoorbeeld: vicancy.com/users/dnq29t7" data-original-title="Uw Videomanager"><h3 class="navbutton">Videomanager</h3></a> -->
+      <a ><h3 class="navbutton navbutton" data-toggle="modal" data-target="#ContactModal">Contact</h3></a>
+    </div>
+  </div>
 </div>
 <div class="main">
   <div class="w-container maincontainer">
-    <h2>Frequently Asked Questions</h2>
+    <h2>Support</h2>
     <div class="w-row">
       <div class="w-col w-col-8">
         <div class="whitebox faq">
@@ -25,20 +31,21 @@
           </div>
           <div class="whiteboxbottom">
             <h4 class="faq-question" data-toggle="modal" data-target="#Modal101">1.1  Integreer (<strong>embed</strong>) de videovacature in een website</h4>
-            <h4 class="faq-question" data-toggle="modal" data-target="#Modal102">1.2  videovacatures in direct <strong>mailing </strong>inzetten</h4>
+            <h4 class="faq-question" data-toggle="modal" data-target="#Modal102">1.2  Videovacatures in direct <strong>mailing </strong>inzetten</h4>
             <h4 class="faq-question" data-toggle="modal" data-target="#Modal103">1.3  Delen op <strong>Facebook</strong>, <strong>Twitter </strong>en <strong>LinkedIn</strong></h4>
             <h4 class="faq-question" data-toggle="modal" data-target="#Modal104">1.4  <strong>Offline </strong>- videovacatures gebruiken op beurzen en workshops</h4>
           </div>
         </div>
         <div class="whitebox faq">
           <div class="whiteboxtop">
-            <h4 class="whiteboxtop faq">2. Aanmaken &amp; Aanpassingen van Vicancy®</h4>
+            <h4 class="whiteboxtop faq">2. Aanmaken &amp; Aanpassingen van uw videovacature</h4>
           </div>
           <div class="whiteboxbottom">
             <h4 class="faq-question" data-toggle="modal" data-target="#Modal201">2.1  Hoe maak ik een videovacature aan?</h4>
             <h4 class="faq-question" data-toggle="modal" data-target="#Modal202">2.2  <strong>Afbeeldingen </strong>gebruiken in uw videovacature</h4>
             <h4 class="faq-question" data-toggle="modal" data-target="#Modal203">2.3  Aanpassingen doorvoeren nadat de videovacature is opgeleverd</h4>
-            <h4 class="faq-question" data-toggle="modal" data-target="#Modal204">2.4  Uw eigen Vicancy® <strong>template</strong> (customization)</h4>
+            <h4 class="faq-question" data-toggle="modal" data-target="#Modal204">2.4  Videovacatures <strong>verwijderen</strong></h4>
+            <h4 class="faq-question" data-toggle="modal" data-target="#Modal205">2.5  Uw eigen Vicancy&reg; <strong>template</strong> (customization)</h4>
           </div>
         </div>
         <div class="whitebox faq">
@@ -48,8 +55,8 @@
           <div class="whiteboxbottom">
             <h4 class="faq-question" data-toggle="modal" data-target="#Modal301">3.1  <strong>Levertijd </strong> en oplevering van onze videovacatures</h4>
             <h4 class="faq-question" data-toggle="modal" data-target="#Modal302">3.2  Alles over uw <strong>Videomanager</strong></h4>
-            <h4 class="faq-question" data-toggle="modal" data-target="#Modal303">3.3  <strong>Hosting </strong>- waar wordt mijn Vicancy® gehost?</h4>
-            <h4 class="faq-question" data-toggle="modal" data-target="#Modal304">3.4  videovacatures en <strong>SEO </strong>(search engine optimization)</h4>
+            <h4 class="faq-question" data-toggle="modal" data-target="#Modal303">3.3  <strong>Hosting </strong>- waar wordt mijn videovacature gehost?</h4>
+            <h4 class="faq-question" data-toggle="modal" data-target="#Modal304">3.4  Videovacatures en <strong>SEO </strong>(search engine optimization)</h4>
             <!-- <h4 class="faq-question" data-toggle="modal" data-target="#Modal305">3.5  Hoeveel vicancies kunnen per dag geproduceerd worden?</h4>
             <h4 class="faq-question" data-toggle="modal" data-target="#Modal306">3.6  Vicancy® en <strong>SEO </strong>(search engine optimization)</h4> -->
           </div>
@@ -99,6 +106,7 @@
 <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
 <script type="text/javascript" src="js/webflow.js"></script>
 
+<%= render 'layouts/contactmodal' %>
 <%= render "static_pages/faq/faq101" %>
 <%= render "static_pages/faq/faq102" %>
 <%= render "static_pages/faq/faq103" %>
@@ -107,6 +115,7 @@
 <%= render "static_pages/faq/faq202" %>
 <%= render "static_pages/faq/faq203" %>
 <%= render "static_pages/faq/faq204" %>
+<%= render "static_pages/faq/faq205" %>
 <%= render "static_pages/faq/faq301" %>
 <%= render "static_pages/faq/faq302" %>
 <%= render "static_pages/faq/faq303" %>
