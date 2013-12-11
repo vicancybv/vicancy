@@ -5,7 +5,7 @@ Vicancy::Application.routes.draw do
     gebruikersvoorwaarden
     formulier
     support
-    compeo
+    bedrijfsanimaties
   )
 
   resources :users, only: [:show]
