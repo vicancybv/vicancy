@@ -2,7 +2,8 @@
   <div class="w-container maincontainer">
     <div class="w-row">
       <div class="w-col w-col-8 maincolumn" id="video-list">
-        <h2><%= I18n.t(:'Live Vicancies') %></h2>
+        <!-- <h2><%= I18n.t(:'Live Vicancies') %></h2> -->
+        <h2>Mijn videovacatures</h2>
         <%= render @user.videos %>
 
       </div>
@@ -19,11 +20,11 @@
         </div>
         <div class="whitebox">
           <div class="whiteboxtop">
-            <h4 class="whiteboxtop">Vicancy aanmaken</h4>
+            <h4 class="whiteboxtop">Videovacature aanmaken</h4>
           </div>
           <div class="whiteboxbottom" style="padding-top:20px;">
-            <a class="button primary new-video" style="margin-top:10px;" href="/formulier" data-fancybox-type="iframe">+ Nieuwe Vicancy</a>
-            <p class="instructions">Klik hier om een nieuwe videovacature te laten maken.</p>
+            <a class="button primary new-video" style="margin-top:10px;" href="/formulier" data-fancybox-type="iframe">+ Nieuwe Videovacature</a>
+            <p class="instructions">Klik hier om een nieuwe videovacature aan te maken.</p>
           </div>
         </div>
       </div>
