@@ -1,0 +1,50 @@
+/* 
+    Document   : pieters_file
+    Created on : 10-mrt-2013, 14:34:23
+    Author     : bcc
+    Description:
+    Purpose    : Zorgen dat de button naar de Vicancy bouwer er goed uit ziet 
+*/
+#naarDeVicancyBouwer {
+    text-align: center;
+    background: #FF4F00;
+    border: 0;
+    color: #fff;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 0 auto;
+    line-height: 0;
+    padding: 3px 4px 0 4px;
+    font-family: 'Source Sans Pro', sans-serif; 
+    width: 420px;
+    height: 48px;
+}
+#naarDeVicancyBouwer:hover {
+    color: #3a3a3a;
+    background: #e8e8e8;
+    border: 0; 
+}
+
+#naarDeVicancyBouwer p {
+    text-align: center;
+    margin-top: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+#naarDeVicancyBouwer:hover p {
+    color: #3a3a3a;
+}
+
+h4 {
+    line-height: 1.2em;
+}
+form {
+    margin-bottom: 200px;
+}
