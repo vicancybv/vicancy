@@ -10,12 +10,12 @@
   ================================================== -->
   <meta charset="utf-8">
   <title><%= "#{@page_title} - " unless @page_title.blank? %>Vicancy®</title>
-        <link rel="image_src" href="https://secure-b.vimeocdn.com/ps/540/210/5402108_300.jpg" />
-        <meta name="google-site-verification" content="KwNMVaymQ2zFueq8nLGSLVem_N2o2caSgVmJzLtw9bw" />
-        <meta name="keywords" content="Vicancy, video vacature, videovacature, social media recruitment, LinkedIn" />
+  <link rel="image_src" href="https://secure-b.vimeocdn.com/ps/540/210/5402108_300.jpg" />
+  <meta name="google-site-verification" content="KwNMVaymQ2zFueq8nLGSLVem_N2o2caSgVmJzLtw9bw" />
+  <meta name="keywords" content="Vicancy, video vacature, videovacature, social media recruitment, LinkedIn" />
   <meta name="description" content="Vicancy® is voor recruitment bedrijven die met geanimeerde videovacatures actief willen inzetten op werving via sociale media kanalen.">
   <meta name="author" content="Vicancy">
-        <meta name="google-site-verification: google9ef9b70d15c502ca.html">
+  <meta name="google-site-verification: google9ef9b70d15c502ca.html">
 
   <!-- Mobile Specific Metas
   ================================================== -->
@@ -23,10 +23,10 @@
 
   <!-- CSS
   ================================================== -->
-    <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
 
-    <%= yield :head %>
+  <%= yield :head %>
   
   <!-- Favicons
   ================================================== -->
@@ -36,7 +36,6 @@
   <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
 
   <script type="text/javascript">
-
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-36087356-1']);
   _gaq.push(['_trackPageview']);
@@ -46,18 +45,15 @@
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
+  </script>
 
-</script>
-
-        <!-- Social media thumbnail 
-        ============================================================-->
-        <link rel="image_src" href="/images/vicancyLogoForNow250x250.jpg" />
+  <!-- Social media thumbnail 
+  ============================================================-->
+  <link rel="image_src" href="/images/vicancyLogoForNow250x250.jpg" />
         
 </head>
 <body>
-
-  <!-- Primary Page Layout
-  ================================================== -->        
+      
         
 <script type="text/javascript">
 
@@ -72,23 +68,8 @@
   })();
 
 </script>
-
-<!--  MouseStats:Begin  -->
-<script type="text/javascript">(function () {
-if(document.getElementById('MouseStatsTrackingScript') == undefined) {
-    var mousestats_script = document.createElement('script');
-    mousestats_script.type = 'text/javascript';
-    mousestats_script.id = 'MouseStatsTrackingScript';
-    mousestats_script.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www2') + '.mousestats.com/js/4/8/4835202121365978778.js?' + (new Date().getTime());
-    mousestats_script.async = true;
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(mousestats_script);
-} })();
-</script>
-<!--  MouseStats:End  -->
   
   <%= yield %>
 
-<!-- End Document
-================================================== -->
 </body>
 </html>
