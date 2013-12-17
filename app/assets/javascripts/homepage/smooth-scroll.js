@@ -6,8 +6,11 @@ $(document).ready(function() {
  //function that returns element's y position
     
     $("a[href*=#]").on('click', function(e) {
-      var scrollTarget = $(this.hash).offset().top;
-      if(scrollTarget) 
+      var scrollTargetElement = $(this.hash).offset();
+      if(scrollTargetElement) {
+        var scrollTarget = scrollTargetElement.top;
+      }
+      if(scrollTargetElement && scrollTarget) 
           e.preventDefault();
         if(parseInt(scrollTarget) !== parseInt($(window).scrollTop())) {
           var nav2 = $("nav");

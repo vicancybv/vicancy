@@ -1,6 +1,6 @@
 class AdminMailer < ActionMailer::Base
 
-  RECIPIENT = "loet@vicancy.com"
+  RECIPIENT = "toby@toby.org.uk"
 
   helper :videos
 
@@ -21,6 +21,11 @@ class AdminMailer < ActionMailer::Base
     @video = video
     @user_ip = user_ip
     mail(to: RECIPIENT, subject: '[Vicancy] Delete video request', from: "Vicancy <info@vicancy.com>")
+  end
+
+  def video_request_email(video_request)
+    @video_request = video_request
+    mail(to: RECIPIENT, subject: '[Vicancy] New video request', from: "Vicancy <info@vicancy.com>")
   end
 
 end

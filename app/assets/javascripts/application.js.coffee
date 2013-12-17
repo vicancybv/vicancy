@@ -22,6 +22,21 @@ jQuery ->
     $(this).closest(".delete-modal").find(".delete-request").hide()
     $(this).closest(".delete-modal").find(".delete-success").show()
 
+  $("form.new_video_request").bind "ajax:beforeSend", ->
+    $(this).attr('disabled', true)
+
+  $("form.new_video_request").bind "ajax:success", ->
+    $(this).attr('disabled', false)
+    $(this).closest(".new-video-modal").find(".new-request").hide()
+    $(this).closest(".new-video-modal").find(".new-success").show()
+
+  $('.new-video-btn').click (e) ->
+    $('#video_request_link').val('')
+    $('#video_request_comment').val('')
+    $(".new-video-modal").find(".new-success").hide()
+    $(".new-video-modal").find(".new-request").show()
+
+
 
 $(document).ready ->
   $(".preview-video").fancybox
@@ -50,6 +65,11 @@ $(document).ready ->
     maxWidth: 600
     helpers:
       title: null
+
+  $('.customize').popover()
+
+  $(".customize").click (e) -> 
+    e.preventDefault()
 
   $(".btn-share").click (e) ->
     e.preventDefault()

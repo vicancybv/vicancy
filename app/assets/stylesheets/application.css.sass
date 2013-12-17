@@ -11,7 +11,7 @@
 .edit-video
   margin-bottom: 5px
 
-.delete-modal
+.delete-modal, .new-video-modal
   display: none
   .modal-footer
     padding: 0 20px 0 0
@@ -26,7 +26,18 @@
       padding-left: 0
   .modal-body
     font-size: 16px
-  .delete-success
+    p
+      padding: 0
+      margin-bottom: 10px
+    .options
+      text-align: right
+      a
+        color: #ed4b00
+        text-decoration: none
+        margin-right: 10px
+        &:hover
+          text-decoration: underline
+  .delete-success, .new-success
     display: none
 
 h1
@@ -185,6 +196,7 @@ a
   padding-right: 25px
   padding-left: 25px
   border-radius: 3px
+  border: 0
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
   font-size: 15px
   line-height: 24px

@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :videos, :dependent => :destroy
+  has_many :video_requests ,:dependent => :destroy
   accepts_nested_attributes_for :videos, :allow_destroy => true
   attr_accessible :name, :slug, :language
   after_validation :generate_slug, on: :create

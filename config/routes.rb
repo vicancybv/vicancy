@@ -1,5 +1,8 @@
 Vicancy::Application.routes.draw do
 
+  resources :video_requests
+
+
   Vicancy::STATIC_PAGE_SLUGS = %w(
     privacypolicy
     gebruikersvoorwaarden

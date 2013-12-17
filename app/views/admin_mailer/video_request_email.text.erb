@@ -1,0 +1,9 @@
+A request to make a new video has been received from user '<%= @video_request.user.try(:name) %>' (IP <%= @video_request.user_ip %>).
+
+LINK: <%= @video_request.link %>
+
+COMMENTS
+--------
+<%= @video_request.comment %>
+
+Go to this user in the admin dashboard: <%= admin_user_url(@video_request.user) %>

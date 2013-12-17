@@ -23,9 +23,47 @@
             <h4 class="whiteboxtop">Videovacature aanmaken</h4>
           </div>
           <div class="whiteboxbottom" style="padding-top:20px;">
-            <a class="button primary new-video" style="margin-top:10px;" href="/formulier" data-fancybox-type="iframe">+ Nieuwe Videovacature</a>
+            <a class="button primary new-video-btn" href="#" style="margin-top:10px;" data-toggle="modal" data-target="#new_video_modal">+ Nieuwe Videovacature</a>
             <p class="instructions">Klik hier om een nieuwe videovacature aan te maken.</p>
           </div>
+          <div id="new_video_modal" class="modal fade new-video-modal">
+            <div class="modal-dialog">
+              <%= form_for @new_video, remote: true, role: "form" do |f| %>
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title">+ Nieuwe Vicancy</h4>
+                </div>
+                <div class="modal-body new-request">
+                  <p>Geef hieronder de link naar de vacature op.</p>
+                  <p>Wij interpreteren de vacature, en produceren uw video binnen 24 uur.</p>
+                    <%= f.hidden_field :user_id %>
+                    <div class="form-group">
+                      <%= f.text_field :link, class: "form-control", placeholder: "Vacature link" %>
+                    </div>
+                    <div class="form-group">
+                      <%= f.text_area :comment, class: "form-control", placeholder: "Bericht (optioneel)", rows: 3 %>
+                    </div>
+                    <div class="form-group options">
+                      <a href="#">+ Bestanden</a>
+                      <a href="#" title="Wilt u de videovacature in een andere stijl?" data-content="Voeg dan hierboven bij 'comments' een link toe naar de website. Wij extraheren daaruit de huisstijl, en zorgen voor een passend resultaat." data-placement="left" class="customize">Customize</a>
+                      <a href="/formulier" class="new-video" data-fancybox-type="iframe">Advanced</a>
+                    </div>
+                </div>
+                <div class="modal-body new-success">
+                  Bedankt, wij interpreteren de vacature, en produceren uw video binnen 24 uur.
+                </div>                
+                <div class="modal-footer new-request">
+                  <a href="#" class="button cancel" data-dismiss="modal">Cancel</a>
+                  <%= f.submit "Save", class: "button primary" %>
+                </div>
+              <div class="modal-footer new-success">
+                <a href="#" class="button cancel" data-dismiss="modal">OK</a>
+              </div>
+              </div><!-- /.modal-content -->
+              <% end %>
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
         </div>
       </div>
     </div>
