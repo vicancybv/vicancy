@@ -1,6 +1,6 @@
 class AdminMailer < ActionMailer::Base
 
-  RECIPIENT = "toby@toby.org.uk"
+  RECIPIENT = "loet@vicancy.com"
 
   helper :videos
 

@@ -9,6 +9,8 @@ active_admin.css: active_admin-f6eab3903eabe26e294bb5e070593cb6.css
 active_admin/index.css: active_admin-f6eab3903eabe26e294bb5e070593cb6.css
 application.css: application-6ca8b82b9b6e96228208a9fb4735c6b2.css
 application/index.css: application-6ca8b82b9b6e96228208a9fb4735c6b2.css
+static_index.css: static_index-cd41a72d333aa93bf2fbb5aa3035734c.css
+static_index/index.css: static_index-cd41a72d333aa93bf2fbb5aa3035734c.css
 FontAwesome.otf: FontAwesome-1b753859c011e89c9cc8e29a6ee33956.otf
 FontAwesome/index.otf: FontAwesome-1b753859c011e89c9cc8e29a6ee33956.otf
 fontawesome-webfont.eot: fontawesome-webfont-e742c0f297e307a74bdf4ca3c19073a2.eot
