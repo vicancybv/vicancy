@@ -5,7 +5,7 @@ class VideoRequestsController < ApplicationController
     @video_request.user_ip = request.remote_ip
     @video_request.save
     AdminMailer.video_request_email(@video_request).deliver
-    render nothing:true
+    redirect_to user_path(@video_request.user.slug, :video_request => "success")
   end
 
 end

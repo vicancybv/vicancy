@@ -10,6 +10,8 @@ gem 'activeadmin'
 gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                               :github => 'anjlab/bootstrap-rails'
 gem 'font-awesome-rails'
+gem 'paperclip'
+gem 'aws-sdk', '~> 1.5.7'
 
 group :development, :test do
   gem 'sqlite3'

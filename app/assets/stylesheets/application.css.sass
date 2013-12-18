@@ -5,6 +5,9 @@
 @import font-awesome
 @import jquery.fancybox
 
+.remove-button
+  color: #ff4f00
+
 .img-responsive-full
   width: 100%
 
@@ -37,8 +40,12 @@
         margin-right: 10px
         &:hover
           text-decoration: underline
-  .delete-success, .new-success
+  .delete-success
     display: none
+  input[type=file]
+    position: absolute
+    top: -3000px
+
 
 h1
   margin-bottom: 1em

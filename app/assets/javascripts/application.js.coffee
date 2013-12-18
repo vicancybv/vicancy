@@ -7,11 +7,19 @@
 #= require twitter/bootstrap/popover
 #= require jquery.fancybox
 #= require jquery.sticky
+#= require jquery.multifile
+#= require purl.js
 #= require_tree .
 
 
 
 jQuery ->
+
+  $('.add-attachment').click (e) ->
+    e.preventDefault()
+    $('.MultiFile-wrap').children('input[type=file]').first().click()
+
+
   $("a[rel~=popover], .has-popover").popover()
   $("a[rel~=tooltip], .has-tooltip").tooltip()
   $(".delete-video-btn").bind "ajax:beforeSend", ->
@@ -35,8 +43,6 @@ jQuery ->
     $('#video_request_comment').val('')
     $(".new-video-modal").find(".new-success").hide()
     $(".new-video-modal").find(".new-request").show()
-
-
 
 $(document).ready ->
   $(".preview-video").fancybox
@@ -66,10 +72,10 @@ $(document).ready ->
     helpers:
       title: null
 
-  $('.customize').popover()
+  if $.url().param('video_request') == "success"
+    $('#new_video_success_modal').modal('show')
 
-  $(".customize").click (e) -> 
-    e.preventDefault()
+  $('#file_upload_field').MultiFile({ STRING: { remove: '<i class=\'fa fa-times-circle remove-button\'></i>' } });
 
   $(".btn-share").click (e) ->
     e.preventDefault()
