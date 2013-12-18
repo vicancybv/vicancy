@@ -68,10 +68,10 @@ $(document).ready ->
     $('#new_video_success_modal').modal('show')
 
   $('form#new_video_request').submit ->
-    if $('#video_request_link').val() == ""
-      alert('Please enter a link')
-      return false
-    else
+    #if $('#video_request_link').val() == ""
+    #  alert('Please enter a link')
+    #  return false
+    #else
       $('#new_video_request_save_btn').attr('disabled', true)
       $('#new_video_request_save_btn').val('Please wait...')
 
