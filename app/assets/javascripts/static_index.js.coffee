@@ -6,4 +6,3 @@
 #= require homepage/jquery.prettyPhoto
 #= require homepage/modernizr.custom.74295
 #= require homepage/contact-form
-
