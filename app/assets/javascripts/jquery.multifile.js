@@ -292,7 +292,7 @@
          r = $('<div class="MultiFile-label"></div>'),
          v = String(slave.value || ''/*.attr('value)*/),
          a = $('<span class="MultiFile-title" title="'+MultiFile.STRING.selected.replace('$file', v)+'">'+MultiFile.STRING.file.replace('$file', v.match(/[^\/\\]+$/gi)[0])+'</span>'),
-         b = $('<a class="MultiFile-remove" href="#'+MultiFile.wrapID+'">'+MultiFile.STRING.remove+'</a>');
+         b = $('<a class="MultiFile-remove" href="#'+MultiFile.wrapID+'"><i class=\'fa fa-times-circle remove-button\'></i></a>');
         
         // Insert label
         MultiFile.list.append(

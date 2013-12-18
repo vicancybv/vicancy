@@ -17,7 +17,7 @@ jQuery ->
 
   $('.add-attachment').click (e) ->
     e.preventDefault()
-    $('.MultiFile-wrap').children('input[type=file]').first().click()
+    $('.MultiFile-wrap').children('input[type=file]').last().click()
 
 
   $("a[rel~=popover], .has-popover").popover()
@@ -29,14 +29,6 @@ jQuery ->
     $(this).children("i").removeClass("fa-spinner fa-spin fa-lg").addClass "fa-trash-o"
     $(this).closest(".delete-modal").find(".delete-request").hide()
     $(this).closest(".delete-modal").find(".delete-success").show()
-
-  $("form.new_video_request").bind "ajax:beforeSend", ->
-    $(this).attr('disabled', true)
-
-  $("form.new_video_request").bind "ajax:success", ->
-    $(this).attr('disabled', false)
-    $(this).closest(".new-video-modal").find(".new-request").hide()
-    $(this).closest(".new-video-modal").find(".new-success").show()
 
   $('.new-video-btn').click (e) ->
     $('#video_request_link').val('')
@@ -75,7 +67,14 @@ $(document).ready ->
   if $.url().param('video_request') == "success"
     $('#new_video_success_modal').modal('show')
 
-  $('#file_upload_field').MultiFile({ STRING: { remove: '<i class=\'fa fa-times-circle remove-button\'></i>' } });
+  $('form#new_video_request').submit ->
+    if $('#video_request_link').val() == ""
+      alert('Please enter a link')
+      return false
+    else
+      $('#new_video_request_save_btn').attr('disabled', true)
+      $('#new_video_request_save_btn').val('Please wait...')
+
 
   $(".btn-share").click (e) ->
     e.preventDefault()
