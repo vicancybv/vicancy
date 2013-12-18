@@ -1,6 +1,7 @@
 Vicancy::Application.routes.draw do
 
-  resources :video_requests
+  resources :video_requests, only: [:create]
+  resources :attachments, only: [:show]
 
 
   Vicancy::STATIC_PAGE_SLUGS = %w(

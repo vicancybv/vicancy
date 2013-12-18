@@ -23,6 +23,9 @@ ActiveAdmin.register User do
       row :id
       row :name
       row :language
+      row :url do |user|
+        link_to user_url(user.slug), user_url(user.slug)
+      end
     end
 
     panel "Videos" do
@@ -33,6 +36,20 @@ ActiveAdmin.register User do
         column :company
         column :job_title
         column :created_at
+      end
+
+    end
+
+    panel "Video requests" do
+      table_for user.video_requests do
+        column "ID" do |video_request| 
+          link_to video_request.id, admin_video_request_url(video_request)
+        end
+        column :link
+        column :comment
+        column :files do |video_request|
+          video_request.attachments.count
+        end
       end
 
     end

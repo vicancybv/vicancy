@@ -16,6 +16,14 @@
                       <table class="twelve columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: left; width: 580px; margin: 0 auto; padding: 0;"><tr style="vertical-align: top; text-align: left; padding: 0;" align="left"><td class="panel" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; background: #ECF8FF; padding: 10px 20px; border: 1px solid #b9e5ff;" align="left" bgcolor="#ECF8FF" valign="top">
                             Link: <a href="<%= @video_request.link %>"><%= @video_request.link %></a><br />
                             <pre style="font-family: Arial, Helvetica, sans-serif;"><%= @video_request.comment %></pre>
+                            <% unless @video_request.attachments.blank? %>
+                              <p>Files</p>
+                              <ul>
+                                <% @video_request.attachments.each do |attachment| %>
+                                <li><%= link_to attachment.file_file_name, attachment_url(attachment) %></li>
+                                <% end %>
+                              </ul>
+                            <% end %>
                           </td>
                           <td class="expander" style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: left; visibility: hidden; width: 0px; padding: 0;" align="left" valign="top"></td>
                         </tr></table></td>

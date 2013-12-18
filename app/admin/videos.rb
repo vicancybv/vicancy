@@ -25,5 +25,13 @@ ActiveAdmin.register Video do
     end
     f.actions
   end
+
+  index do
+    column :user
+    column :job_title
+    column :company
+    column :created_at
+
+  end
   
 end
