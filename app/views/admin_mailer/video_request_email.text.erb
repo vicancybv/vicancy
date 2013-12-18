@@ -6,4 +6,12 @@ COMMENTS
 --------
 <%= @video_request.comment %>
 
-Go to this user in the admin dashboard: <%= admin_user_url(@video_request.user) %>
+<% unless @video_request.attachments.blank? %>
+FILES
+-----
+<% @video_request.attachments.each do |attachment| %>
+<%= attachment.file_file_name %>: attachment_url(attachment)
+<% end %>
+<% end %>
+
+Go to this request in the admin dashboard: <%= admin_video_request_url(@video_request) %>
