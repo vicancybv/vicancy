@@ -24,7 +24,10 @@ ActiveAdmin.register VideoRequest do
     panel "Files" do
       table_for video_request.attachments do
         column "Filename" do |attachment| 
-          link_to attachment.file_file_name, attachment.file.expiring_url
+          link_to attachment.file_file_name, attachment.file.expiring_url(1.week)
+        end
+        column do |attachment| 
+          link_to "Download", download_attachment_url(attachment)
         end
       end
 

@@ -1,7 +1,11 @@
 Vicancy::Application.routes.draw do
 
   resources :video_requests, only: [:create]
-  resources :attachments, only: [:show]
+  resources :attachments, only: [:show] do
+    member do
+      get 'download'
+    end
+  end
 
 
   Vicancy::STATIC_PAGE_SLUGS = %w(
