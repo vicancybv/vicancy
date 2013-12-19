@@ -27,11 +27,12 @@ ActiveAdmin.register Video do
   end
 
   index do
+    selectable_column
     column :user
     column :job_title
     column :company
     column :created_at
-
+    actions    
   end
-  
+
 end
