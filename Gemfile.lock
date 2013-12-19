@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/anjlab/bootstrap-rails.git
-  revision: 271f73becbb2aea9c1b771e09419b9bc0287fe55
+  revision: 461121444e24cdf78357418bfca9f2b8a9a1c518
   specs:
-    anjlab-bootstrap-rails (3.0.2.0)
+    anjlab-bootstrap-rails (3.0.3.0)
       railties (>= 3.0)
       sass (>= 3.2)
 
@@ -22,18 +22,17 @@ GEM
       rack-cache (~> 1.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.2.1)
-    activeadmin (0.6.0)
-      arbre (>= 1.0.1)
-      bourbon (>= 1.0.0)
-      devise (>= 1.1.2)
-      fastercsv
-      formtastic (>= 2.0.0)
-      inherited_resources (>= 1.3.1)
-      jquery-rails (>= 1.0.0)
-      kaminari (>= 0.13.0)
-      meta_search (>= 0.9.2)
-      rails (>= 3.0.0)
-      sass (>= 3.1.0)
+    activeadmin (0.6.2)
+      arbre (~> 1.0)
+      bourbon (>= 1.0.0, < 4)
+      devise (>= 1.5.4, < 4)
+      formtastic (~> 2.0)
+      inherited_resources (~> 1.3)
+      jquery-rails (>= 1.0.0, < 3)
+      kaminari (~> 0.13)
+      meta_search (~> 1.0)
+      rails (>= 3.0.0, < 4)
+      sass (~> 3.1)
     activemodel (3.2.15)
       activesupport (= 3.2.15)
       builder (~> 3.0.0)
@@ -50,7 +49,7 @@ GEM
       multi_json (~> 1.0)
     arbre (1.0.1)
       activesupport (>= 3.0.0)
-    arel (3.0.2)
+    arel (3.0.3)
     atomic (1.1.14)
     aws-sdk (1.5.8)
       httparty (~> 0.7)
@@ -58,7 +57,6 @@ GEM
       nokogiri (>= 1.4.4)
       uuidtools (~> 2.1)
     bcrypt-ruby (3.1.2)
-    bcrypt-ruby (3.1.2-x86-mingw32)
     bourbon (3.1.8)
       sass (>= 3.2.0)
       thor
@@ -75,7 +73,7 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     dalli (2.6.4)
-    devise (3.2.0)
+    devise (3.2.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -84,7 +82,6 @@ GEM
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.0.2)
-    fastercsv (1.5.5)
     font-awesome-rails (4.0.3.0)
       railties (>= 3.2, < 5.0)
     formtastic (2.2.1)
@@ -96,7 +93,7 @@ GEM
     httparty (0.12.0)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
-    i18n (0.6.5)
+    i18n (0.6.9)
     inherited_resources (1.4.1)
       has_scope (~> 0.6.0.rc)
       responders (~> 1.0.0.rc)
@@ -105,7 +102,7 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.8.1)
-    kaminari (0.14.1)
+    kaminari (0.15.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     mail (2.5.4)
@@ -117,22 +114,19 @@ GEM
       activerecord (~> 3.1)
       activesupport (~> 3.1)
       polyamorous (~> 0.5.0)
-    mime-types (1.25)
+    mime-types (1.25.1)
     mini_portile (0.5.2)
     multi_json (1.8.2)
     multi_xml (0.5.5)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
-    nokogiri (1.6.1-x86-mingw32)
-      mini_portile (~> 0.5.0)
-    orm_adapter (0.4.0)
+    orm_adapter (0.5.0)
     paperclip (3.5.2)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.3)
       mime-types
-    pg (0.17.0)
-    pg (0.17.0-x86-mingw32)
+    pg (0.17.1)
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
@@ -190,7 +184,6 @@ GEM
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
     sqlite3 (1.3.8)
-    sqlite3 (1.3.8-x86-mingw32)
     thor (0.18.1)
     thread_safe (0.1.3)
       atomic
@@ -199,7 +192,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.38)
-    uglifier (2.3.1)
+    uglifier (2.3.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     uuidtools (2.1.4)
@@ -208,7 +201,6 @@ GEM
 
 PLATFORMS
   ruby
-  x86-mingw32
 
 DEPENDENCIES
   activeadmin
