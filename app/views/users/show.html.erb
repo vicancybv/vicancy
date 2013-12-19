@@ -32,21 +32,22 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  <h4 class="modal-title">+ Nieuwe Vicancy</h4>
+                  <h4 class="modal-title">+ Nieuwe videovacature</h4>
                 </div>
-                <div class="modal-body new-request">
-                  <p>Geef hieronder de link naar de vacature op.</p>
-                  <p>Wij interpreteren de vacature, en produceren uw video binnen 24 uur.</p>
+                <div class="modal-body new-request" style="margin-left:20px; margin-right:20px;">
+                  <p style="font-size:0.9em;">Nieuwe videovacature aanmaken?<br>
+                    Plak hieronder de link naar uw vacature, voeg eventueel een opmerkingen toe voor onze animator en druk op verzenden.</p> 
+                  <p style="font-size:0.9em;">Heeft u eigen afbeeldingen bij de hand, of wilt u de videovacature liever helemaal zelf opbouwen? Druk dan op `+ bestanden` of `Advanced`.  </p>
                     <%= f.hidden_field :user_id %>
                     <div class="form-group">
-                      <%= f.text_field :link, class: "form-control", placeholder: "Vacature link" %>
+                      <%= f.text_field :link, class: "form-control", placeholder: "Link naar Vacature" %>
                     </div>
                     <div class="form-group">
-                      <%= f.text_area :comment, class: "form-control", placeholder: "Bericht (optioneel)", rows: 3 %>
+                      <%= f.text_area :comment, class: "form-control", placeholder: "Opmerkingen (optioneel)", rows: 3 %>
                     </div>
                     <div class="form-group options">
                       <a href="#" class="add-attachment">+ Bestanden</a>
-                      <a href="#" title="Wilt u de videovacature in een andere stijl?" data-content="Voeg dan hierboven bij 'comments' een link toe naar de website. Wij extraheren daaruit de huisstijl, en zorgen voor een passend resultaat." data-placement="left" class="customize">Customize</a>
+                      <a href="#" title="Uw videovacature op maat" data-content="Wilt u de videovacature in dezelfde stijl als uw website laten maken? Voeg dan hierboven een link naar uw homepage toe. Dan zorgen wij voor de rest." data-placement="bottom" class="customize">Customize</a>
                       <a href="/formulier" class="new-video" data-fancybox-type="iframe">Advanced</a>
                     </div>
                     <div id="file-uploads">
@@ -58,7 +59,7 @@
                 </div>                
                 <div class="modal-footer new-request">
                   <a href="#" class="button cancel" data-dismiss="modal">Cancel</a>
-                  <%= f.submit "Save", class: "button primary", id: "new_video_request_save_btn" %>
+                  <%= f.submit "Verstuur", class: "button primary", id: "new_video_request_save_btn" %>
                 </div>
               <div class="modal-footer new-success">
                 <a href="#" class="button cancel" data-dismiss="modal">OK</a>
