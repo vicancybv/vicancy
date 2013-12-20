@@ -20,5 +20,16 @@ ActiveAdmin.register VideoEdit do
       row :edits
     end
   end
+
+  index do
+    selectable_column
+    column :id
+    column "Video" do |video_edit| 
+      link_to video_edit.video.id, admin_video_url(video_edit.video)
+    end
+    column :edits
+    column :created_at
+    actions    
+  end
   
 end

@@ -10,7 +10,7 @@ class VideoEditsController < ApplicationController
   def create
     @video = Video.find(params[:video_id])
     raise ActiveRecord::RecordNotFound unless @video
-    @video_edit = @video.video_edits.create(params[:video_edit])
+    @video_edit = @video.video_edits.create(params[:video_edit].merge(user_ip: request.remote_ip))
     AdminMailer.edit_video_email(@video_edit, request.ip).deliver
     render nothing: true
   end
