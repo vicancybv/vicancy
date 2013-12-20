@@ -1,7 +1,7 @@
-A request to make edits to video #<%= @video.id %> (<%= video_title(@video) %>) has been received from IP <%= @user_ip %>.
+A request to make edits to video #<%= @video_edit.video.id %> (<%= video_title(@video_edit.video) %>) has been received from IP <%= @user_ip %>.
 
 EDITS
 -----
-<%= @video.edits %>
+<%= @video_edit.edits %>
 
-Go to this video in the admin dashboard: <%= admin_video_url(@video) %>
+Go to this video in the admin dashboard: <%= admin_video_url(@video_edit.video) %>

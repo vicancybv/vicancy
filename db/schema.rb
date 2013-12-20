@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131218095017) do
+ActiveRecord::Schema.define(:version => 20131220172132) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -65,6 +65,16 @@ ActiveRecord::Schema.define(:version => 20131218095017) do
     t.datetime "updated_at", :null => false
     t.string   "language"
   end
+
+  create_table "video_edits", :force => true do |t|
+    t.text     "edits"
+    t.integer  "video_id"
+    t.string   "user_ip"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "video_edits", ["video_id"], :name => "index_video_edits_on_video_id"
 
   create_table "video_requests", :force => true do |t|
     t.integer  "user_id"

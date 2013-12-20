@@ -1,15 +1,15 @@
 <h3>Edit video &lsquo;<%= video_title(@video) %>&rsquo;</h3>
-<%= form_for @video, remote: true do |f| %>
+<%= form_for [@video, @video_edit], remote: true do |f| %>
 <%= f.text_area :edits, class: "form-control", placeholder: "Wat wilt u aanpassen in deze videovacature?" %>
 <%= f.submit "Verzend aanpassingen", class: "button primary" %> &nbsp;<i class="fa fa-spinner fa-spin fa-lg" style="display: none;"></i>
 <% end %>
 
 <script type="text/javascript">
 <!--
-$('form.edit_video').bind('ajax:success', function() {
+$('form.new_video_edit').bind('ajax:success', function() {
   $(this).html("<h4><i class='fa fa-check'></i>Bedankt, we hebben uw aanpassingen ontvangen</h4>");
 });
-$('form.edit_video').submit(function(e) {
+$('form.new_video_edit').submit(function(e) {
 	$('form.edit_video .fa-spinner').show();
 });
 -->

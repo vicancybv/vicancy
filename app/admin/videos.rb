@@ -24,6 +24,20 @@ ActiveAdmin.register Video do
       f.input :job_ad_url
     end
     f.actions
+
+
+  end
+
+  show do |video|
+    panel "Video edits" do
+      table_for video.video_edits do
+        column "ID" do |video_edit| 
+          link_to video_edit.id, admin_video_edit_url(video_edit)
+        end
+        column :edits
+      end
+
+    end
   end
 
   index do

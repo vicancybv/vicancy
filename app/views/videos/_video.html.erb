@@ -27,7 +27,7 @@
 	      <div class="w-col w-col-7 w-clearfix actionrow">
 	        
 	        <!-- Edit -->
-	        <a class="edit-video" href="<%= edit_video_path(video) %>" data-fancybox-type="ajax"><h5 class="action-text"><i class="fa fa-edit"></i> Edit</h5></a>
+	        <a class="edit-video" href="<%= new_video_video_edit_path(video) %>" data-fancybox-type="ajax"><h5 class="action-text"><i class="fa fa-edit"></i> Edit</h5></a>
 	        
 	        <!-- Delete -->
 	        <a data-toggle="modal" href="#" data-target="#video_<%= video.id %>_delete_modal" class="delete-video"><h5 class="action-text"><i class='fa fa-trash-o'></i> Delete</h5></a>

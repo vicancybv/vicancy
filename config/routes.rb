@@ -17,7 +17,9 @@ Vicancy::Application.routes.draw do
   )
 
   resources :users, only: [:show]
-  resources :videos, only: [:destroy, :edit, :update]
+  resources :videos, only: [:destroy] do
+    resources :video_edits, only: [:new, :create]
+  end
   match 'contact' => 'contact#submit_message', via: :post
 
   # You can have the root of your site routed with "root"

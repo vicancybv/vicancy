@@ -11,8 +11,8 @@ class AdminMailer < ActionMailer::Base
     mail(to: RECIPIENT, subject: '[Vicancy] New enquiry', from: "#{name} <#{email}>")
   end
 
-  def edit_video_email(video, user_ip)
-    @video = video
+  def edit_video_email(video_edit, user_ip)
+    @video_edit = video_edit
     @user_ip = user_ip
     mail(to: RECIPIENT, subject: '[Vicancy] Video edits request', from: "Vicancy <info@vicancy.com>")
   end
