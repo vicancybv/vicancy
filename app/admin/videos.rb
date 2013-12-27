@@ -29,6 +29,16 @@ ActiveAdmin.register Video do
   end
 
   show do |video|
+
+    attributes_table do
+      row "User" do |video|
+        link_to video.user.name, admin_user_url(video.user)
+      end
+      row :job_title
+      row :company
+    end
+
+
     panel "Video edits" do
       table_for video.video_edits do
         column "ID" do |video_edit| 

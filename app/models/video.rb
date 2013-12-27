@@ -36,4 +36,8 @@ class Video < ActiveRecord::Base
     "http://www.youtube.com/embed/#{youtube_id}"
   end
 
+  def name
+    "#{job_title} &ndash; #{company}".html_safe
+  end
+
 end
