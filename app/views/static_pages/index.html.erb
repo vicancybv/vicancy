@@ -321,6 +321,12 @@ s
 
 	<!-- JS
 	================================================== -->
+
+	<!-- Pure Chat widget -->
+	<script type='text/javascript'>(function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://www.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({ c: '9352f259-e47b-4d1e-ba74-2cc381b5a9a2', f: true }); done = true; } }; })();</script>
+	<!-- // end Pure Chat widget -->
+
+
 	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 	<%= javascript_include_tag "static_index" %>
 
