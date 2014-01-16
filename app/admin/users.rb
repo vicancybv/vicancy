@@ -40,7 +40,7 @@ ActiveAdmin.register User do
           links = ''.html_safe
           links << link_to(I18n.t('active_admin.view'), admin_video_path(video), :class => "member_link view_link")
           links << link_to(I18n.t('active_admin.edit'), edit_admin_video_path(video), :class => "member_link edit_link")
-          links << link_to(I18n.t('active_admin.delete'), video_path(video), :method => :delete, :data => {:confirm => I18n.t('active_admin.delete_confirmation')}, :class => "member_link delete_link")
+          links << link_to(I18n.t('active_admin.delete'), admin_video_path(video), :method => :delete, :data => {:confirm => I18n.t('active_admin.delete_confirmation')}, :class => "member_link delete_link")
           links
         end
       end
