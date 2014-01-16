@@ -1,6 +1,6 @@
 class Video < ActiveRecord::Base
   belongs_to  :user
-  has_many  :video_edits
+  has_many  :video_edits, dependent: :destroy
   attr_accessible :company, :job_ad_url, :job_title, :language, :summary, :title, :vimeo_id, :youtube_id, :user_id
   attr_accessor :edits
   validates :language, presence: true

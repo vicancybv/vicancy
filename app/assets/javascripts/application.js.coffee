@@ -8,8 +8,9 @@
 #= require jquery.fancybox
 #= require jquery.sticky
 #= require jquery.multifile
-#= require purl.js
-#= require_tree .
+#= require purl
+#= require hide_popovers
+#= require static_index
 
 
 
