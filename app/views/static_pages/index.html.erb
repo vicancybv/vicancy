@@ -3,6 +3,13 @@
 		<div class="bg1"></div>
 		
 		<div class="title">
+			<p>
+		    <% if mobile_device? %>
+		      <%= link_to "Full Site", :mobile => 0 %>
+		    <% else %>
+		      <%= link_to "Mobile Site", :mobile => 1 %>
+		    <% end %>
+		  </p>
 		
 			<div id="headerplaceholder" style="width:950px;margin:0 auto;text-shadow:1px 1px 10px #000;position:relative;">
 				<h1 style="text-align:left;font-size:24px;text-indent:-9999px!important;">Vicancy videovactures</h1>
@@ -293,23 +300,15 @@ s
           <p style="text-align:center;"class="white"><a href="/gebruikersvoorwaarden" class="light" target="_blank">Gebruikersvoorwaarden</a> & <a href="/privacypolicy" class="light" target="_blank">Privacy policy</a> 
 		</div>
 			
-
-	
 				<br style="clear:both;" />
 
 			</div> <!-- end team -->
-
-			
-
-	
-
-
 			
 			<div class="clear"></div>
 			
 			<div class="sixteen columns">
 				<div class="copyright">
-					<p>Meer informatie? Raadpleeg <a href="/support" target="_blank" style="color:#FF4F00;">Support</a>, of download de <a href="#" style="color:#FF4F00;" target="_blank">Press Kit</a>.<br>
+					<p>Meer informatie? Raadpleeg <a href="/support" target="_blank" style="color:#FF4F00;">Support</a>, of download de <a href="https://s3-eu-west-1.amazonaws.com/vicancy/Press.zip" style="color:#FF4F00;">Press Kit</a>.<br>
 						&copy; <%= Date.today.year %> Vicancy - Qurriculum B.V. io | IBAN: NL44-INGB-0006144178 | KvK: 55179908</p>
 				</div>
 			</div>
