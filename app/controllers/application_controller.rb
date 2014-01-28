@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
 	  if session[:mobile_param]
 	    session[:mobile_param] == "1"
 	  else
-	    request.user_agent =~ /Mobile|webOS/
+	    request.user_agent =~ /Mobile|iP(hone|od|ad)|Android|BlackBerry|IEMobile|Kindle|NetFront|Silk-Accelerated|(hpw|web)OS|Fennec|Minimo|Opera M(obi|ini)|Blazer|Dolfin|Dolphin|Skyfire|webOS|Zune/
 	  end
 	end
 	helper_method :mobile_device?
