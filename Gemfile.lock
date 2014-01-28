@@ -58,6 +58,11 @@ GEM
       uuidtools (~> 2.1)
     bcrypt-ruby (3.1.2)
     bcrypt-ruby (3.1.2-x86-mingw32)
+    better_errors (1.1.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bourbon (3.1.8)
       sass (>= 3.2.0)
       thor
@@ -66,6 +71,7 @@ GEM
       activesupport (>= 3.0)
     cocaine (0.5.3)
       climate_control (>= 0.0.3, < 1.0)
+    coderay (1.1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -74,6 +80,7 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     dalli (2.6.4)
+    debug_inspector (0.0.2)
     devise (3.2.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -212,6 +219,8 @@ DEPENDENCIES
   activeadmin
   anjlab-bootstrap-rails!
   aws-sdk (~> 1.5.7)
+  better_errors
+  binding_of_caller
   coffee-rails (~> 3.2.1)
   dalli
   font-awesome-rails

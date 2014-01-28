@@ -16,6 +16,8 @@ gem 'aws-sdk', '~> 1.5.7'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 2.0'
+  gem "binding_of_caller"
+  gem 'better_errors'
 end
 
 group :production do

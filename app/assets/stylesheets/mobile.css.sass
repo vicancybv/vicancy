@@ -1,0 +1,278 @@
+@import normalize
+@import webflow_new
+
+body
+  font-family: Arial, Helvetica, sans-serif
+  color: #333
+  font-size: 14px
+  line-height: 20px
+
+h1
+  margin: 84px 0px 10px
+  color: #343434
+  font-size: 38px
+  line-height: 44px
+  font-weight: 700
+  text-align: center
+
+h2
+  display: block
+  margin: 10px auto
+  padding: 5px 0px
+  border-bottom-width: 1px
+  color: #434343
+  font-size: 45px
+  line-height: 60px
+  font-weight: 700
+  text-align: center
+  text-transform: uppercase
+  span
+    border-bottom: 1px solid #aeaeae
+    border-top: 1px solid #aeaeae
+
+h3
+  margin: 10px 0px
+  font-size: 24px
+  line-height: 30px
+  font-weight: 700
+
+h4
+  margin: 10px 0px
+  font-size: 18px
+  line-height: 24px
+  font-weight: 700
+
+h5
+  margin: 10px 0px
+  font-size: 14px
+  line-height: 20px
+  font-weight: 700
+
+h6
+  margin: 10px 0px
+  font-size: 12px
+  line-height: 18px
+  font-weight: 700
+
+p
+  display: block
+  margin: 20px auto
+  padding-right: 0px
+  padding-left: 0px
+  font-family: 'PT Sans', sans-serif
+  color: #3d3d3d
+  font-size: 16px
+  line-height: 24px
+  text-align: left
+
+.button
+  display: inline-block
+  width: 100%
+  height: 50px
+  padding: 4px 15px
+  background-color: #ff4f00
+  color: white
+  font-size: 20px
+  font-weight: 400
+  text-align: center
+  text-decoration: none
+  &:hover
+    background-color: #aaa
+
+.intro
+  height: auto
+  border-bottom: 11px solid rgba(51, 51, 51, 0.85)
+  background-image: url('https://s3-eu-west-1.amazonaws.com/vicancy/mobile/headercompressed.jpg')
+  background-size: cover
+  background-attachment: fixed
+
+.sixcolumns
+  display: block
+  margin-right: auto
+  margin-left: auto
+
+.partnerlogos
+  display: block
+  margin-top: 50px
+  margin-right: auto
+  margin-left: auto
+
+.mainsection
+  padding-top: 50px
+  padding-bottom: 50px
+  &.dark
+    padding-bottom: 50px
+    background-image: url('../images/bg-dark.jpg')
+    &.aboutus
+      padding-bottom: 10px
+  &.grey
+    background-color: #efefef
+    box-shadow: rgba(219, 213, 213, 0.49) 0px 1px 10px 0px inset
+  &.white
+    box-shadow: rgba(217, 212, 212, 0.49) 0px 1px 10px 0px inset
+
+.deliveryimage
+  display: block
+  margin-right: auto
+  margin-left: auto
+
+.footer
+  margin-top: 40px
+  margin-bottom: 0px
+  padding-top: 20px
+  border-top: 1px solid #585858
+  color: #585858
+
+.center
+  display: block
+  margin-top: 20px
+  margin-right: auto
+  margin-left: auto
+  border-top-width: 1.5px
+  font-size: 16px
+  text-align: center
+  letter-spacing: 0.1px
+  list-style-type: square
+  &.whitetext
+    color: white
+
+.highlight
+  background-color: #ff4f00
+  color: #333
+
+.navbar
+  position: fixed
+  width: 100%
+  height: 40px
+  background-color: rgba(51, 51, 51, 0.9)
+  box-shadow: #111111 0px -5px 26px -5px inset
+
+.navlink
+  height: 40px
+  color: white
+  line-height: 5px
+  text-transform: uppercase
+
+.check
+  margin-top: 50px
+  padding-top: 0px
+  float: left
+
+.portrait
+  width: 200px
+  margin-right: 10px
+  margin-left: 10px
+  padding-left: 0px
+  border-style: solid
+  border-width: 2px
+  border-color: rgba(168, 163, 163, 0.8)
+  border-radius: 100px
+
+.portraits
+  display: block
+  margin-right: auto
+  margin-left: auto
+  text-align: center
+
+.vimeoplayer
+  display: block
+  width: 650px
+  height: 365px
+  margin-right: auto
+  margin-left: auto
+
+.benefits
+  max-width: 400px
+  padding-right: 20px
+  padding-left: 30px
+
+.whitetext
+  color: white
+
+.slider
+  max-height: 180px
+
+.sliderimage
+  width: 100%
+  height: 100%
+
+a
+  color: #ff4f00
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+  .footer &
+    color: inherit
+    &:hover
+      color: #ff4f00
+
+@media (max-width: 991px)
+  h1
+    font-size: 30px
+    line-height: 35px
+  h2
+    font-size: 34px
+  p
+    padding-right: 0px
+    padding-left: 15px
+    float: none
+  .center
+    padding-left: 0px
+  .menu-icon
+    padding-top: 0px
+    padding-bottom: 0px
+    color: #ff4f00
+    font-size: 40px
+    line-height: 40px
+  .benefits
+    max-width: 304px
+    margin-right: 0px
+    margin-left: 0px
+    padding-right: 0px
+    padding-left: 15px
+    float: left
+
+@media (max-width: 767px)
+  h1
+    margin-right: 80px
+    margin-left: 80px
+  p
+    margin-right: 40px
+    margin-left: 0px
+    padding-right: 20px
+    padding-left: 40px
+  .check
+    margin-left: 40px
+  .vimeoplayer
+    width: 80%
+    height: 257px
+  .benefits
+    max-width: 400px
+    margin-right: 40px
+
+@media (max-width: 479px)
+  h1
+    margin-right: 0px
+    margin-left: 0px
+    color: white
+    text-shadow: black 1px 1px 6px
+  h2
+    font-size: 30px
+  p
+    margin-right: 0px
+    padding-right: 0px
+    padding-left: 10px
+  .menu-icon
+    padding-top: 8px
+    line-height: 5px
+  .check
+    margin-left: 0px
+  .portrait
+    width: 130px
+  .vimeoplayer
+    width: 100%
+    height: 181px
+  .benefits
+    max-width: 210px
+    margin-right: 0px
+    padding-left: 10px

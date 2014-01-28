@@ -1,9 +1,202 @@
-Dit is de mobiele site...
-
-<p>
-  <% if mobile_device? %>
-    <%= link_to "Full Site", :mobile => 0 %>
-  <% else %>
-    <%= link_to "Mobile Site", :mobile => 1 %>
-  <% end %>
-</p>
+<!DOCTYPE html>
+<html data-wf-site="52e14bfc0c52bd8b4700001f">
+<head>
+  <meta charset="utf-8">
+  <title>Vicancy&reg;</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag "mobile", :media => "all" %>
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ["PT Sans:400,700"]
+      }
+    });
+  </script>
+  <script>
+    if (/mobile/i.test(navigator.userAgent)) document.documentElement.className += ' w-mobile';
+  </script>
+  <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+</head>
+<body>
+  <div class="w-nav navbar" data-collapse="medium" data-animation="default" data-duration="400" data-contain="1">
+    <div class="w-container">
+      <a class="w-nav-brand" href="#">
+        <img src="https://s3-eu-west-1.amazonaws.com/vicancy/mobile/Vicancy_logo_orange.png" style="height:30px; margin-top:5px;" alt="vicancy logo">
+      </a>
+      <nav class="w-nav-menu" role="navigation">
+        <a class="w-nav-link navlink" href="#intro">Vicancy</a>
+        <a class="w-nav-link navlink" href="#waarom">Waarom?</a>
+        <a class="w-nav-link navlink" href="#hoewerkthet">Hoe werkt het?</a>
+        <a class="w-nav-link navlink" href="#pricing">Pricing</a>
+        <a class="w-nav-link highlight navlink" href="#formulier">Gratis Demo</a>
+        <a class="w-nav-link navlink" href="#about">Over Ons</a>
+      </nav>
+      <div class="w-nav-button menu-icon">
+        <div class="w-icon-nav-menu menu-icon"></div>
+      </div>
+    </div>
+  </div>
+  <div class="intro" id="intro">
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-3"></div>
+        <div class="w-col w-col-6">
+          <h1>De video advertentie voor uw vacature</h1>
+        </div>
+        <div class="w-col w-col-3"></div>
+      </div>
+      <div class="w-embed w-iframe vimeoplayer">
+        <iframe src="https://player.vimeo.com/video/84119396?title=0&amp;byline=0&amp;portrait=0&amp;color=ed151d" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" style="width:100%; height:100%;"></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="mainsection" id="waarom">
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-3"></div>
+        <div class="w-col w-col-6">
+          <h2><span>Waarom Vicancy?</span></h2>
+        </div>
+        <div class="w-col w-col-3"></div>
+      </div>
+      <div class="w-row">
+        <div class="w-col w-col-6 w-clearfix">
+          <img class="check" src="/images/checklist.png" alt="checklist-icon.png">
+          <p class="benefits"><strong>Social Media Recruitment</strong>
+            <br>Videovacatures verhogen de zichtbaarheid en bereik van vacatures op online wervingskanalen als LinkedIn en Twitter.</p>
+          <img class="check" src="/images/checklist.png"
+          alt="checklist-icon.png">
+          <p class="benefits"><strong>Video Animaties</strong>
+            <br>Videovacatures op basis van animatie zijn sneller op te leveren (24 uur) en veel voordeliger dan wanneer er een camera en geluidsman aan te pas moet komen.</p>
+        </div>
+        <div class="w-col w-col-6 w-clearfix">
+          <img class="check" src="/images/checklist.png" alt="checklist-icon.png">
+          <p class="benefits"><strong>Employer Branding</strong>
+            <br>Videovacatures blijven beter hangen dan vacatureteksten, en geven potentiele kandidaten alvast een kijkje in de keuken van hun toekomstige werkgever.</p>
+        </div>
+      </div>
+      <div class="w-slider slider" data-animation="slide" data-duration="500" data-infinite="1" data-delay="2000" data-autoplay="1">
+        <div class="w-slider-mask slider">
+          <div class="w-slide slider">
+            <img class="sliderimage" src="https://s3-eu-west-1.amazonaws.com/vicancy/mobile/sliderone.png" alt="Onze partners">
+          </div>
+          <div class="w-slide">
+            <img class="sliderimage" src="https://s3-eu-west-1.amazonaws.com/vicancy/mobile/slidertwo.png" alt="Onze partners">
+          </div>
+          <div class="w-slide">
+            <img class="sliderimage" src="https://s3-eu-west-1.amazonaws.com/vicancy/mobile/sliderthree.png" alt="Onze partners">
+          </div>
+        </div>
+        <div class="w-slider-arrow-left"></div>
+        <div class="w-slider-arrow-right"></div>
+      </div>
+      <a class="w-inline-block center" href="#hoewerkthet">
+        <img class="center" src="/images/down.png" alt="Volgende">
+      </a>
+    </div>
+  </div>
+  <div class="mainsection grey" id="hoewerkthet">
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-3"></div>
+        <div class="w-col w-col-6 sixcolumns">
+          <h2><span>Hoe werkt het?</span></h2>
+          <p class="center">Het aanmaken van een videovacature gaat snel en gemakkelijk.&nbsp;
+            <br>Een&nbsp;klant stuurt ons de link van de vacature.&nbsp;Vervolgens animeren&nbsp;wij de videovacature en leveren deze maximaal 24 uur later in bijpassende huisstijl op via onze videomanager.</p>
+        </div>
+        <div class="w-col w-col-3"></div>
+      </div>
+      <img class="deliveryimage" src="images/schema.png" alt="52e245121071e4c24d000a0b_schema.png">
+      <div class="w-row">
+        <div class="w-col w-col-3"></div>
+        <div class="w-col w-col-6">
+          <p class="center">
+            <br><strong>Voordelen</strong>
+            <br>Onze videovacatures zijn direct af te spelen binnen LinkedIn, Facebook en Twitter en daarnaast gemakkelijk te embedden in vacaturesites via bestaande CMS systemen.</p>
+        </div>
+        <div class="w-col w-col-3"></div>
+      </div>
+      <a class="w-inline-block center" href="#pricing">
+        <img class="center" src="/images/down.png" alt="Volgende">
+      </a>
+    </div>
+  </div>
+  <div class="mainsection white" id="pricing">
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-3"></div>
+        <div class="w-col w-col-6">
+          <h2><span>Pricing</span></h2>
+        </div>
+        <div class="w-col w-col-3"></div>
+      </div>
+      <div class="w-row">
+        <div class="w-col w-col-6">
+          <p><strong>Pricing</strong>
+            <br>Wij houden niet van complexe verdienmodellen en kleine lettertjes onderaan de pagina. Bij ons daarom een vaste prijs per vacature (€99,-), oplevering binnen 1 werkdag en de best mogelijke service voor iedereen.</p>
+        </div>
+        <div class="w-col w-col-6">
+          <p><strong>Reseller worden?<br></strong>Wilt u reseller van ons product worden? Informeer dan <a href="mailto:loet@vicancy.com" target="_blank">hier</a> naar de mogelijkheden en vraag vandaag nog een gratis demo aan.</p>
+        </div>
+      </div>
+      <a class="w-inline-block center" href="#formulier">
+        <img class="center" src="/images/down.png" alt="Volgende">
+      </a>
+    </div>
+  </div>
+  <div class="mainsection dark" id="formulier">
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-3"></div>
+        <div class="w-col w-col-6">
+          <h2 class="whitetext"><span>Gratis Demo</span></h2>
+          <p class="center whitetext">Vraag hier vrijblijvend een demo aan</p>
+          <div class="w-form">
+            <form method="post" action="/contact">
+              <label for="name">Vacature</label>
+              <input class="w-input" type="text" placeholder="Link naar uw vacature" name="name" id="namefield"></input>
+              <label for="email">Email</label>
+              <input class="w-input" type="email" placeholder="Email" name="email" id="email" required="required"></input>
+              <label>Bericht</label>
+              <textarea class="w-input" placeholder="Wilt u nog een bericht meesturen?" name="comment" class="text" id="textcommentfield"name="bericht" data-name="bericht"></textarea>
+              <input class="w-button button" type="submit" id="submit" value="Verzenden" data-wait="Bericht wordt verzonden..." wait="Bericht wordt verzonden..."></input>
+            </form>
+            <div class="w-form-done">
+              <p>Bedankt. We hebben uw vacature ontvangen. Binnen 24 uur komen we bij u terug met het resultaat.</p>
+            </div>
+            <div class="w-form-fail">
+              <p>Oeps! Er is iets fout gegaan...</p>
+            </div>
+          </div>
+        </div>
+        <div class="w-col w-col-3"></div>
+      </div>
+    </div>
+  </div>
+  <div class="mainsection dark aboutus" id="about">
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-3"></div>
+        <div class="w-col w-col-6">
+          <h2 class="whitetext"><span>Over ons</span></h2>
+          <div class="portraits">
+            <img class="portrait" src="https://s3-eu-west-1.amazonaws.com/vicancy/pieter_profile_squared.jpg" width="200" alt="profiel pieter">
+            <img class="portrait" src="https://s3-eu-west-1.amazonaws.com/vicancy/loet_profile_squared.jpg" width="200" alt="profiel loet">
+          </div>
+          <p class="center whitetext">Vicancy is een innovatief en jong bedrijf in de recruitment sector. Aan het roer staan de twee jonge ondernemers Loet Rammelsberg en Pieter Moorman. Samen met kundige programmeurs en designers staan ze klaar om uw vacature een boost te geven.</p>
+          <p
+          class="center whitetext">Vragen? Mail <a href="mailto:loet@vicancy.com" target="_blank">loet@vicancy.com</a> of bel naar +31630697034</p>
+            <p class="footer center">
+              <a href="mailto:loet@vicancy.com" target="_blank">Contact</a> &middot; 
+              <a href="http://nl.linkedin.com/company/vicancy">LinkedIn</a> &middot; 
+              <a href="#">Blog</a> &middot; 
+              <a href="">Jobs</a></p>
+        </div>
+        <div class="w-col w-col-3"></div>
+      </div>
+    </div>
+  </div>
+  <%= javascript_include_tag "mobile_index" %>
+</body>
+</html>
