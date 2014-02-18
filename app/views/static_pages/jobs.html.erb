@@ -1,0 +1,110 @@
+<% content_for :head do %>
+  <title>Werken bij Vicancy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag  "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+<% end %>
+
+<div class="preheader">
+  <div class="masthead">
+    <div class="w-container">
+      <h1>Werken bij Vicancy</h1>
+      <img class="logo" src="/images/logo_vicancy_whiteinside.png" height="150" alt="logo_vicancy_whiteinside.png">
+    </div>
+  </div>
+  <div class="navigation">
+    <div class="w-container">
+      <a class="new-video" href="/"><h3 class="navbutton navbuttonfirst" target="_blank">Vicancy.com</h3></a>
+      <a ><h3 class="navbutton navbutton" data-toggle="modal" data-target="#ContactModal">Contact</h3></a>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="w-container maincontainer">
+    <div class="w-row">
+      <div class="w-col w-col-12 maincolumn" id="video-list">
+        
+        <!-- vacature begin -->
+        <div class="video vicancy panel">
+          <div class="w-clearfix top" data-toggle="collapse" data-parent="#video-list" href="#vacature1_body">
+            <img class="vicancylogo" src="/images/logo_vicancy_transparent_notext.png" height="35" alt="logo_vicancy_transparent_notext.png">
+            <h4>Intern Marketing & Communicatie</h4>
+            <h5>Per Direct!</h5>
+          </div>
+          <div class="panel-collapse actions collapse in" id="vacature1_body">
+            <div class="w-row actioncontainer">
+              <div class="w-col w-col-5 previewrow">
+                <iframe src="//player.vimeo.com/video/86840214?title=0&amp;byline=0&amp;portrait=0&amp;color=241d8f" width="700" height="393" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>     
+              </div>
+              <div class="w-col w-col-12 w-clearfix actionrow">
+                <iframe src="https://docs.google.com/document/d/1u44mhmtisEk3K1HBWDTHWQHsUFE6wle4nZwsHtgvD24/pub?embedded=true" style="width:100%; height:500px;"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- vacature eind -->
+
+        <!-- vacature begin -->
+        <div class="video vicancy panel">
+          <div class="w-clearfix top" data-toggle="modal" data-target="#ModalVacature1">
+            <img class="vicancylogo" src="/images/logo_vicancy_transparent_notext.png" height="35" alt="logo_vicancy_transparent_notext.png">
+            <h4>Intern Design</h4>
+            <h5>Per Direct!</h5>
+          </div>
+        </div>
+        <!-- vacature eind -->
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "layouts/footer" %>
+
+<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+<script type="text/javascript" src="js/webflow.js"></script>
+
+<div class="modal fade" id="ContactModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Contact</h4>
+      </div>
+      <div class="modal-body">
+        <img src="https://s3-eu-west-1.amazonaws.com/vicancy/IMG_9431.JPG" alt="foto Loet" style="width:auto; height: 150px; border-radius: 4px; margin-left:25px;">
+        <p>
+          Enthousiast geworden om ons team te komen versterken? 
+          <br>Of heb je nog een laatste prangende vraag?
+          <br>
+          <br>Neem dan snel contact met ons op!
+          <br>
+          <br>Mail: loet@vicancy.com
+          <br>Tel: 06 - 306 970 34</p><a class="button primary" href="mailto:loet@vicancy.com">Email Loet</a>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Modal vacature 1 -->
+<div class="modal fade" id="ModalVacature1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Design Intern -- Stage</h4>
+      </div>
+      <div class="modal-body faq-body">
+        <iframe src="//player.vimeo.com/video/86840214?title=0&amp;byline=0&amp;portrait=0&amp;color=241d8f" width="700" height="393" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe src="https://docs.google.com/document/d/1u44mhmtisEk3K1HBWDTHWQHsUFE6wle4nZwsHtgvD24/pub?embedded=true" style="width:100%; height:500px;"></iframe>
+      </div>
+      <%= render 'static_pages/faq/faq_modal_footer' %>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- End Modal vacature 1 -->

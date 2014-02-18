@@ -14,6 +14,7 @@ Vicancy::Application.routes.draw do
     formulier
     support
     bedrijfsanimaties
+    jobs
   )
 
   resources :users, only: [:show]
