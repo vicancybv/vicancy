@@ -15,6 +15,7 @@ Vicancy::Application.routes.draw do
     support
     bedrijfsanimaties
     jobs
+    jobsform
   )
 
   resources :users, only: [:show]

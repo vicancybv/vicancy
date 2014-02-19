@@ -1,0 +1,70 @@
+<% content_for :head do %>
+  <title>Werken bij Vicancy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= stylesheet_link_tag  "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+<% end %>
+
+<div class="preheader">
+  <div class="masthead">
+    <div class="w-container">
+      <h1>Join our team</h1>
+      <img class="logo" src="/images/logo_vicancy_whiteinside.png" height="150" alt="logo_vicancy_whiteinside.png">
+    </div>
+  </div>
+  <div class="navigation">
+    <div class="w-container">
+      <a class="new-video" href="/"><h3 class="navbutton navbuttonfirst" target="_blank">Vicancy.com</h3></a>
+      <a ><h3 class="navbutton navbutton" data-toggle="modal" data-target="#ContactModal">Contact</h3></a>
+      <a class="new-video" href="/jobs"><h3 class="navbutton">Werken bij</h3></a>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="w-container maincontainer">
+    <h2>Sollicitatie formulier</h2>
+    <div class="w-row">
+      <div class="w-col w-col-8">
+        <div class="whitebox faq whiteboxbottom">
+          <div class="compeoformulier">  <!-- Wufoo form starts -->
+            <div id="wufoo-mcddkyj0nfyq6j">
+              Fill out my <a href="https://vicancy.wufoo.com/forms/mcddkyj0nfyq6j">online form</a>.
+            </div>
+            <script type="text/javascript">var mcddkyj0nfyq6j;(function(d, t) {
+            var s = d.createElement(t), options = {
+              'userName':'vicancy', 
+              'formHash':'mcddkyj0nfyq6j', 
+              'autoResize':true,
+              'height':'836',
+              'async':true,
+              'host':'wufoo.com',
+              'header':'hide', 
+              'ssl':true};
+            s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+            s.onload = s.onreadystatechange = function() {
+            var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+            try { mcddkyj0nfyq6j = new WufooForm();mcddkyj0nfyq6j.initialize(options);mcddkyj0nfyq6j.display(); } catch (e) {}};
+            var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+            })(document, 'script');</script>
+          </div> <!-- Wufoo form ends --> 
+        </div>
+      </div>
+      <div class="w-col w-col-4">
+        <div class="contact faq">
+          <img class="vicancylogo" src="/images/Vicancy_Loet_icon.png" height="35" alt="Vicancy Logo">
+          <h4 class="whiteboxtop faq">Contact</h4>
+          <div class="bottom faq">
+            <p class="faq">Heb je nog een vraag?
+              <br>
+              <br>Neem dan contact met ons op met <strong>Loet Rammelsberg</strong>
+              <br>
+              <br>Mail: loet@vicancy.com
+              <br>Tel: 06 - 306 970 34</p><a class="button primary" href="mailto:loet@vicancy.com">Email Loet</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render "layouts/footer" %>
