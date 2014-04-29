@@ -4,3 +4,4 @@
 User-Agent: *
 Disallow: /users/
 Disallow: /admin/
+Sitemap: http://app.wistia.com/sitemaps/40829.xml
