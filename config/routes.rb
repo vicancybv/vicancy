@@ -7,7 +7,6 @@ Vicancy::Application.routes.draw do
     end
   end
 
-
   Vicancy::STATIC_PAGE_SLUGS = %w(
     privacypolicy
     gebruikersvoorwaarden
@@ -16,12 +15,13 @@ Vicancy::Application.routes.draw do
     bedrijfsanimaties
     jobs
     jobsform
-  )
+  ) unless defined?(Vicancy::STATIC_PAGE_SLUGS)
 
   resources :users, only: [:show]
   resources :videos, only: [:destroy] do
     resources :video_edits, only: [:new, :create]
   end
+  match 'oauth2callback' => 'oauth2callback#index'
   match 'contact' => 'contact#submit_message', via: :post
 
   # You can have the root of your site routed with "root"

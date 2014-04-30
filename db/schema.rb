@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131220172132) do
+ActiveRecord::Schema.define(:version => 20140430125640) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -57,6 +57,25 @@ ActiveRecord::Schema.define(:version => 20131220172132) do
   end
 
   add_index "attachments", ["video_request_id"], :name => "index_attachments_on_video_request_id"
+
+  create_table "google_sessions", :force => true do |t|
+    t.string   "access_token"
+    t.datetime "expires_at"
+    t.string   "refresh_token"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  create_table "uploaded_videos", :force => true do |t|
+    t.string   "provider"
+    t.integer  "video_id"
+    t.string   "aasm_state"
+    t.string   "provider_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "uploaded_videos", ["video_id"], :name => "index_uploaded_videos_on_video_id"
 
   create_table "users", :force => true do |t|
     t.string   "name"

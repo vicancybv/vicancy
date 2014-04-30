@@ -1,10 +1,12 @@
 class Video < ActiveRecord::Base
+
   belongs_to  :user
   has_many  :video_edits, dependent: :destroy
   attr_accessible :company, :job_ad_url, :job_title, :language, :summary, :title, :vimeo_id, :youtube_id, :user_id
   attr_accessor :edits
   validates :language, presence: true
   default_scope { order("created_at DESC") }
+  has_many :uploaded_videos
 
   def video_url
     return vimeo_url unless vimeo_id.blank?
@@ -38,6 +40,22 @@ class Video < ActiveRecord::Base
 
   def name
     "#{job_title} &ndash; #{company}".html_safe
+  end
+
+  def self.create_from_card(card)
+    
+  end
+
+  def provider_title
+    name
+  end
+
+  def provider_description
+    summary
+  end
+
+  def tags_array
+    []
   end
 
 end
