@@ -18,7 +18,7 @@ module TrelloBoard
     parsed[:unparseable] = []
     card.desc.split("\n").each do |line|
       result = Hash[line.scan(/^(?!http)(.+)\s*:\s*(.+)$/i)]
-      result.empty? ? parsed[:unparseable] << line : parsed.merge!(Hash[result.map{|k,v| [k.downcase.to_sym, v]}])
+      result.empty? ? parsed[:unparseable] << line : parsed.merge!(Hash[result.map{|k,v| [k.underscore.to_sym, v]}])
     end
     parsed
   end
@@ -27,7 +27,7 @@ module TrelloBoard
     parsed_description = parse_card_description(card)
     updated_desc = parsed_description.except(:unparseable).merge(updates)
     updated_desc.delete_if{|k,v| v.blank?}
-    updated_desc = updated_desc.map{|k,v| "#{k.to_s.titlecase}: #{v}"}
+    updated_desc = updated_desc.map{|k,v| "#{k.to_s.titleize}: #{v}"}
     card.desc = parsed_description[:unparseable].concat(updated_desc).join("\n")
   end
 

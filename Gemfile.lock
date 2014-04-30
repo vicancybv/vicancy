@@ -141,6 +141,7 @@ GEM
     kaminari (0.15.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    kgio (2.9.2)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -204,6 +205,7 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
+    raindrops (0.13.0)
     rake (10.1.1)
     rdoc (3.12.2)
       json (~> 1.4)
@@ -262,6 +264,10 @@ GEM
     uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unicorn (4.8.2)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
     uuidtools (2.1.4)
     warden (1.2.3)
       rack (>= 1.0)
@@ -301,6 +307,7 @@ DEPENDENCIES
   sidekiq
   sqlite3
   uglifier (>= 1.0.3)
+  unicorn
   whenever
   wistia-uploader
   youtube_it!

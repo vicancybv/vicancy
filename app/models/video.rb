@@ -1,4 +1,5 @@
 class Video < ActiveRecord::Base
+  include TrelloBoard
 
   belongs_to  :user
   has_many  :video_edits, dependent: :destroy
@@ -43,7 +44,20 @@ class Video < ActiveRecord::Base
   end
 
   def self.create_from_card(card)
-    
+    card_params = parse_card_description(card)
+    video = Video.find_by :id, id if card_params[:id]
+    video ||= Video.new
+    video.update_from_card(card)
+    video.save
+  end
+
+  def update_from_card(card)
+    video.title = card_params[:title]
+    video.summary = card_params[:summary]
+    video.tags = card_params[:tags]
+    video.job_title = card_params[:job_title]
+    video.job_ad_url = card_params[:url]
+    video.language = card_params[:language].try(:downcase) == "en" ? "en" : "nl"
   end
 
   def provider_title
