@@ -32,7 +32,8 @@ module TrelloBoard
   end
 
   def extract_video_attachment_url(card)
-    card.attachments.select{|a| a.name.split(".").last == "mp4"}.first.try(:url)
+    url = card.attachments.select{|a| a.name.split(".").last == "mp4"}.first.try(:url)
+    url.gsub('www.dropbox.com', 'dl.dropboxusercontent.com')
   end
 
 
