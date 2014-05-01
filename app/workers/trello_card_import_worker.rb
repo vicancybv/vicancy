@@ -9,7 +9,7 @@ class TrelloCardImportWorker
       card = Trello::Card.find(card_id)
       raise TrelloCardNotFound unless card
       move_to_list!(card, "processing")    
-      video = already_imported?(card) 
+      video = already_imported_video(card) 
       unless video
         Video.create_from_card(card) 
         update_card_description(card, id: video.id)
@@ -33,10 +33,10 @@ class TrelloCardImportWorker
     card.save
   end
 
-  def already_imported?(card)
+  def already_imported_video(card)
     id = parse_card_description(card)[:id]
-    return false if id.blank?
-    Video.find(id)
+    return nil if id.blank?
+    Video.find(id) rescue nil
   end
 
 end
