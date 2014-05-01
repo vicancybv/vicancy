@@ -11,7 +11,7 @@ class TrelloCardImportWorker
       move_to_list!(card, "processing")    
       video = already_imported_video(card) 
       unless video
-        Video.create_from_card(card) 
+        video = Video.create_from_card(card) 
         update_card_description(card, id: video.id)
         card.save
       end
