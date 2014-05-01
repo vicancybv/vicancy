@@ -17,8 +17,8 @@ gem 'oauth2'
 gem 'youtube_it', :github => 'tobymarsden/youtube_it'
 gem 'wistia-uploader'
 gem 'wistia-api'
-gem 'whenever'
 gem 'unicorn'
+gem 'sidekiq-scheduler', '~> 1'
 
 group :development, :test do
   gem 'sqlite3'
