@@ -16,6 +16,7 @@ gem 'ruby-trello'
 gem 'oauth2'
 gem 'youtube_it', :github => 'tobymarsden/youtube_it'
 gem 'wistia-uploader'
+gem 'wistia-api'
 gem 'whenever'
 gem 'unicorn'
 

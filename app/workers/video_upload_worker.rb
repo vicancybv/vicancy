@@ -16,18 +16,25 @@ class VideoUploadWorker
       client_secret: ENV['GOOGLE_CLIENT_SECRET'], 
       dev_key: ENV['GOOGLE_DEV_KEY']
     )
-    client.video_upload(open(url), 
+    response = client.video_upload(open(url), 
       title: video.provider_title,
       description: video.provider_description, 
       keywords: video.tags_array,
       list: "denied")
+    Rails.logger.info response
   end
 
   def wistia_upload(uploaded_video, url)
     thread = WistiaUploader.upload_media(ENV['WISTIA_API_PASSWORD'], ENV['WISTIA_PROJECT_ID'], url)
+    # Wait for thread to complete
+    thread.join
     response = JSON.parse(thread[:body])
-    if thread[:upload_status] == :success
-      uploaded.video.update_attribute(:provider_id, response["id"])
+    if thread[:upload_status] == :success && wistia_id = response["id"]
+      uploaded_video.update_attribute(:provider_id, wistia_id)
+      media = Wistia::Media.find(wistia_id)
+      media.name = uploaded_video.video.provider_title
+      media.description = uploaded_video.video.provider_description
+      media.save
     else
       uploaded_video.error!
     end

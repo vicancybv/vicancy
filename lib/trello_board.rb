@@ -1,4 +1,5 @@
 module TrelloBoard
+
   def list_by_name(name)
     board = Trello::Board.find(ENV['TRELLO_BOARD_ID'])
     board.lists.select{|list| list.name.downcase == name.downcase}.first
@@ -17,8 +18,8 @@ module TrelloBoard
     parsed = {}
     parsed[:unparseable] = []
     card.desc.split("\n").each do |line|
-      result = Hash[line.scan(/^(?!http)(.+)\s*:\s*(.+)$/i)]
-      result.empty? ? parsed[:unparseable] << line : parsed.merge!(Hash[result.map{|k,v| [k.underscore.to_sym, v]}])
+      result = Hash[line.scan(/^(?!http)([^:]+)\s*:\s*(.+)$/i)]
+      result.empty? ? parsed[:unparseable] << line : parsed.merge!(Hash[result.map{|k,v| [k.parameterize.underscore.to_sym, v]}])
     end
     parsed
   end
@@ -35,6 +36,5 @@ module TrelloBoard
     url = card.attachments.select{|a| a.name.split(".").last == "mp4"}.first.try(:url)
     url.try(:gsub, 'www.dropbox.com', 'dl.dropboxusercontent.com')
   end
-
 
 end

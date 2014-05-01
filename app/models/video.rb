@@ -1,5 +1,5 @@
 class Video < ActiveRecord::Base
-  include TrelloBoard
+  extend TrelloBoard
 
   belongs_to  :user
   has_many  :video_edits, dependent: :destroy
@@ -44,32 +44,38 @@ class Video < ActiveRecord::Base
   end
 
   def self.create_from_card(card)
-    card_params = parse_card_description(card)
+    card_params = Video.parse_card_description(card)
     video = Video.find_by :id, id if card_params[:id]
     video ||= Video.new
-    video.update_from_card(card)
+    video.update_from_card(card_params)
     video.save
+    video
   end
 
-  def update_from_card(card)
-    video.title = card_params[:title]
-    video.summary = card_params[:summary]
-    video.tags = card_params[:tags]
-    video.job_title = card_params[:job_title]
-    video.job_ad_url = card_params[:url]
-    video.language = card_params[:language].try(:downcase) == "en" ? "en" : "nl"
+  def update_from_card(card_params)
+    self.title = card_params[:title]
+    self.summary = card_params[:summary]
+    self.tags = card_params[:tags]
+    self.job_title = card_params[:job_title]
+    self.company = card_params[:company]
+    self.place = card_params[:place]
+    self.job_ad_url = card_params[:url]
+    self.language = card_params[:language].try(:downcase) == "en" ? "en" : "nl"
   end
 
   def provider_title
-    name
+    return title unless title.blank?
+    "#{job_title} - #{company}"
   end
 
   def provider_description
-    summary
+    return summary unless summary.blank?
+    i18n_key = place.blank? ? 'description_without_place' : 'description_with_place'
+    I18n.t(:"providers.#{i18n_key}", locale: language, company: company, job_title: job_title, job_ad_url: job_ad_url, place: place)
   end
 
   def tags_array
-    []
+    tags.split(",").map{|t| t.strip}
   end
 
 end
