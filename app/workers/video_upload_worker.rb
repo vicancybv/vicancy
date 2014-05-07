@@ -21,7 +21,7 @@ class VideoUploadWorker
       description: video.provider_description, 
       keywords: video.tags_array,
       list: "denied")
-    Rails.logger.info response
+    uploaded_video.update_attribute(:provider_id, response.id)
   end
 
   def wistia_upload(uploaded_video, url)

@@ -25,7 +25,7 @@ class ProviderScannerWorker
       client_secret: ENV['GOOGLE_CLIENT_SECRET'], 
       dev_key: ENV['GOOGLE_DEV_KEY']
     )
-    video = client.video_by("FQK1URcxmb4")
+    video = client.video_by(id)
     return :error if video.nil?
     #processing, restricted, deleted, rejected and failed
     case video.state
