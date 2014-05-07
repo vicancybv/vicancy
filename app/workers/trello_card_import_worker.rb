@@ -17,7 +17,7 @@ class TrelloCardImportWorker
       end
       video_url = extract_video_attachment_url(card)
       UPLOAD_PROVIDERS.each do |provider|
-        uploaded_video = video.uploaded_videos.find_or_create_by(provider: provider)
+        uploaded_video = video.uploaded_videos.find_by_provider(provider) || video.uploaded_videos.create(provider: provider)
         VideoUploadWorker.perform_async(uploaded_video.id, video_url)
       end
     rescue Exception => e
