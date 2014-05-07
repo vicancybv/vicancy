@@ -15,7 +15,7 @@ class UploadedVideo < ActiveRecord::Base
     end
 
     event :uploaded do
-      transitions from: [:processing], to: :uploaded
+      transitions from: [:error, :processing], to: :uploaded
     end
   end
 

@@ -1,4 +1,4 @@
-class ProviderScannerWorker
+class NewProviderScannerWorker
   include Sidekiq::Worker
   include TrelloBoard
 
