@@ -28,11 +28,9 @@ class ProviderScannerWorker
     video = client.video_by(id)
     return :error if video.nil?
     #processing, restricted, deleted, rejected and failed
-    case video.state
-      when :processing then :processing
-      when nil then :uploaded
-      else :error
-    end
+    return :uploaded if video.state.nil?
+    return :processing if video.state[:name] == "processing"
+    return :error
   end
 
   # Return :error, :processing or :uploaded

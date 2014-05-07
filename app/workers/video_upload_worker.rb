@@ -21,7 +21,7 @@ class VideoUploadWorker
       description: video.provider_description, 
       keywords: video.tags_array,
       list: "denied")
-    uploaded_video.update_attribute(:provider_id, response.id)
+    uploaded_video.update_attribute(:provider_id, response.unique_id)
   end
 
   def wistia_upload(uploaded_video, url)
