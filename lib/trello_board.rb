@@ -37,4 +37,11 @@ module TrelloBoard
     url.try(:gsub, 'www.dropbox.com', 'dl.dropboxusercontent.com')
   end
 
+  # Will not move lists, but still save, if list doesn't exist
+  def move_to_list!(card, list_name)
+    list_id = list_by_name(list_name).try(:id)
+    card.list_id = list_id if list_id
+    card.save
+  end
+
 end

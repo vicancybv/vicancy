@@ -1,4 +1,5 @@
 class Video < ActiveRecord::Base
+  include AASM
   extend TrelloBoard
 
   belongs_to  :user
@@ -8,6 +9,20 @@ class Video < ActiveRecord::Base
   validates :language, presence: true
   default_scope { order("created_at DESC") }
   has_many :uploaded_videos
+
+  aasm do
+    state :processing, initial: true
+    state :uploaded
+    state :error
+
+    event :error do
+      transitions from: [:processing], to: :error
+    end
+
+    event :uploaded do
+      transitions from: [:processing], to: :uploaded
+    end
+  end
 
   def video_url
     return vimeo_url unless vimeo_id.blank?
