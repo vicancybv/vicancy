@@ -7,8 +7,11 @@ class VideoUploadWorker
     begin
       send("#{uploaded_video.provider}_upload", uploaded_video, video_url)
     rescue Exception => e
-      update_card_description(card, error: e)
-      move_card_for_video_to_list(uploaded_video.video, "error")
+      card = processing_card_for_video_id(uploaded_video.video.id)
+      if card
+        update_card_description(card, error: e)
+        move_to_list!(card, "error")
+      end
     end
   end
 
