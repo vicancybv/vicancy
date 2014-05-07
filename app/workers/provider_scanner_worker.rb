@@ -52,7 +52,7 @@ class ProviderScannerWorker
   end
 
   def processing_card_for_video_id(id)
-    processing_cards.select{|card| parse_card_description(card)[:id] == id.to_s}
+    processing_cards.select{|card| parse_card_description(card)[:id] == id.to_s}.first
   end
 
   def move_card_for_video_to_list(video_id, list_name)
