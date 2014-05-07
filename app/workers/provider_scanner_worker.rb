@@ -1,4 +1,4 @@
-class NewProviderScannerWorker
+class ProviderScannerWorker
   include Sidekiq::Worker
   include TrelloBoard
 
@@ -41,9 +41,9 @@ class NewProviderScannerWorker
     return :error if video.nil?
     # queued, processing, ready, and failed
     case video.status
-      when :queued, :processing then :processing
-      when :ready then :uploaded
-      when :failed then :error
+      when "queued", "processing" then :processing
+      when "ready" then :uploaded
+      else :error
     end
   end
 
