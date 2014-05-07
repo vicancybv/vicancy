@@ -8,7 +8,7 @@ class ProviderScannerWorker
       uploaded_video.update_attribute(:aasm_state, state.to_s) if uploaded_video.aasm_state != state.to_s 
     end
     Video.where(aasm_state: 'processing').each do |video|
-      video.error! if video.uploaded_videos.select{|uv| uv.aasm_state == 'error'}
+      video.error! if video.uploaded_videos.any?{|uv| uv.aasm_state == 'error'}
       video.uploaded! if video.uploaded_videos.all?{|uv| uv.aasm_state == 'uploaded'}
       case video.aasm_state
         when "error" then move_card_for_video_to_list(video.id, "Error")
