@@ -4,7 +4,12 @@ class VideoUploadWorker
 
   def perform(uploaded_video_id, video_url)
     uploaded_video = UploadedVideo.find(uploaded_video_id)
-    send("#{uploaded_video.provider}_upload", uploaded_video, video_url)
+    begin
+      send("#{uploaded_video.provider}_upload", uploaded_video, video_url)
+    rescue Exception => e
+      update_card_description(card, error: e)
+      move_card_for_video_to_list(uploaded_video.video, "error")
+    end
   end
 
   def youtube_upload(uploaded_video, url)

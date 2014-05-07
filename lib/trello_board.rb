@@ -44,4 +44,17 @@ module TrelloBoard
     card.save
   end
 
+  def processing_cards
+    list_by_name("Processing").cards
+  end
+
+  def processing_card_for_video_id(id)
+    processing_cards.select{|card| parse_card_description(card)[:id] == id.to_s}.first
+  end
+
+  def move_card_for_video_to_list(video_id, list_name)
+    card = processing_card_for_video_id(video_id)
+    move_to_list!(card, list_name) unless card.nil?
+  end
+
 end
