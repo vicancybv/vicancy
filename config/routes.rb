@@ -16,6 +16,7 @@ Vicancy::Application.routes.draw do
     bedrijfsanimaties
     jobs
     jobsform
+    bali
   )
 
   resources :users, only: [:show]
