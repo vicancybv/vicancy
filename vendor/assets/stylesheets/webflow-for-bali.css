@@ -1,0 +1,1180 @@
+body {
+  margin-top: 1px;
+  margin-bottom: 19px;
+  background-image: url('http://s3-eu-west-1.amazonaws.com/vicancy/gray_jean.png');
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  color: #333;
+  font-size: 12px;
+  line-height: 24px;
+}
+h1 {
+  position: relative;
+  top: -12px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 0;
+  display: block;
+  overflow-x: visible;
+  overflow-y: visible;
+  margin: -72px auto 0px;
+  padding: 0px 0px 2px;
+  float: none;
+  clear: none;
+  background-color: rgba(0, 0, 0, 0.49);
+  font-family:'PT Serif', serif;
+  color: white;
+  font-size: 32px;
+  line-height: 44px;
+  font-weight: 700;
+  text-align: center;
+}
+h2 {
+  position: relative;
+  left: 425px;
+  top: -335px;
+  right: 133px;
+  display: inline-block;
+  margin: 268px 16px 10px -229px;
+  padding: 9px 14px 9px 20px;
+  background-color: rgba(0, 0, 0, 0.49);
+  font-family:'PT Serif', serif;
+  color: white;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+}
+h3 {
+  margin: 150px 0px 29px;
+  padding-bottom: 0px;
+  font-family:'PT Serif', serif;
+  font-size: 48px;
+  line-height: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+h4 {
+  display: block;
+  margin-right: auto;
+  margin-bottom: 6px;
+  margin-left: auto;
+  padding-right: 1px;
+  padding-left: 0px;
+  float: none;
+  clear: none;
+  border-width: 1px;
+  border-color: black;
+  box-shadow: none;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+  text-align: left;
+  text-shadow: none;
+}
+h5 {
+  margin-right: 0px;
+  margin-left: 0px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+}
+h6 {
+  margin: 10px 0px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+}
+p {
+  margin-top: 0px;
+  margin-bottom: 15px;
+  padding-top: 0px;
+  font-family:'PT Serif', serif;
+  color: #756666;
+  font-size: 14px;
+  line-height: 20px;
+  text-shadow: none;
+}
+p:hover {
+  color: black;
+}
+.button {
+  position: static;
+  top: 0px;
+  right: 3px;
+  bottom: 0px;
+  display: inline-block;
+  margin: 8px 302px 13px 174px;
+  padding: 0px 70px 0px 69px;
+  float: none;
+  border-radius: 5px;
+  background-color: black;
+  background-image: none;
+  -webkit-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
+  color: white;
+  text-align: right;
+  text-decoration: none;
+}
+.button:hover {
+  background-color: #008cff;
+}
+.button.w--current {
+  position: relative;
+  top: 247px;
+  right: 0px;
+  display: inline-block;
+  margin-top: -44px;
+  margin-bottom: 6px;
+  margin-left: 407px;
+  padding-bottom: 12px;
+  text-align: center;
+}
+.button.button-new {
+  margin-top: 12px;
+  margin-right: 23px;
+  margin-left: 0px;
+  padding-left: 28px;
+}
+.button.read-more {
+  margin-bottom: 19px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 61px;
+}
+.button.apply-now {
+  margin-top: 17px;
+  margin-left: 342px;
+  padding-left: 21px;
+  text-align: left;
+}
+.button.apply-now:focus {
+  display: inline;
+  float: left;
+  clear: none;
+  font-family:'Changa One', Impact, sans-serif;
+  font-size: 11px;
+  line-height: 18px;
+  text-align: left;
+}
+.section {
+  margin-top: 20px;
+  margin-right: -4px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.section.header {
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+  margin-top: 5px;
+  margin-bottom: -8px;
+  padding-top: 1px;
+  padding-bottom: 0px;
+}
+.section.header.footer-vicancy {
+  margin-bottom: 48px;
+  padding-bottom: 1px;
+}
+.section.grey {
+  padding-top: 106px;
+  padding-bottom: 0px;
+  background-color: #f2f2f2;
+}
+.nav-link {
+  margin-right: 5px;
+  margin-left: 5px;
+  padding: 10px 14px;
+  border-radius: 5px;
+  -webkit-transition: background-color 500ms ease;
+  -o-transition: background-color 500ms ease;
+  transition: background-color 500ms ease;
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: none;
+}
+.nav-link:hover {
+  background-color: #969696;
+  -webkit-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+.nav-link.sign-up {
+  background-color: #008cff;
+  -webkit-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+.nav-link.sign-up:hover {
+  background-color: #0076d6;
+}
+.company-title {
+  margin-top: 0px;
+  margin-bottom: 316px;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  text-transform: none;
+}
+.nav-bar {
+  padding-right: 0px;
+  padding-left: 0px;
+  text-align: right;
+}
+.hero-bg {
+  width: auto;
+  height: 435px;
+  margin-top: 50px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.78);
+  background-image: url('http://s3-eu-west-1.amazonaws.com/vicancy/bali-canggu-mahatma-house-2.jpg');
+  background-position: 0% 65%;
+  background-repeat: repeat;
+  box-shadow: #333 0px 0px 6px 0px;
+}
+.subtitle {
+  margin-bottom: 18px;
+  -webkit-transform: none;
+  -ms-transform: none;
+  -o-transform: none;
+  transform: none;
+  color: rgba(0, 0, 0, 0.56);
+  font-size: 16px;
+  font-weight: 700;
+}
+.section-description {
+  font-size: 14px;
+}
+.snippet {
+  display: block;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  color: black;
+  text-decoration: none;
+}
+.right-col {
+  padding-top: 13px;
+  text-align: right;
+}
+.more-link {
+  padding: 6px 8px;
+  border: 2px solid #c2c2c2;
+  border-radius: 5px;
+  -webkit-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
+  color: #9c9c9c;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.more-link:hover {
+  border: 1px solid #008cff;
+  background-color: #008cff;
+  -webkit-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
+  color: white;
+}
+.snippet-text-section {
+  margin-top: 20px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding: 0px 13px 8px 12px;
+  background-color: transparent;
+}
+.snippet-text-section:hover {
+  background-image: none;
+  background-position: 0% 0%;
+  background-size: auto;
+  background-repeat: repeat;
+  background-attachment: scroll;
+}
+.snippet-text-section.blocks {
+  margin-top: 14px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 2px;
+  box-shadow: none;
+  text-shadow: none;
+}
+.snippet-text-section.blocks.length {
+  padding-bottom: 5px;
+  box-shadow: #777 1px 1px 3px 0px;
+  text-shadow: none;
+}
+.snippet-text-section.blocks.origin {
+  padding-bottom: 3px;
+  box-shadow: none;
+  text-shadow: none;
+}
+.snippet-text-section.blocks.date {
+  padding-bottom: 3px;
+  box-shadow: none;
+  text-shadow: none;
+}
+.snippet-text-section.about-vicancy-text {
+  margin-top: -2px;
+  margin-bottom: 24px;
+  padding-top: 7px;
+  padding-bottom: 2px;
+  font-size: 17px;
+  line-height: 27px;
+  text-align: center;
+}
+.snippet-text-section.about-vicancy-text.how {
+  margin-top: 30px;
+  margin-bottom: 7px;
+  padding-top: 18px;
+  padding-bottom: 16px;
+  border-radius: 3px;
+  box-shadow: none;
+  text-shadow: none;
+}
+.snippet-text-section.about-vicancy-text.first-block {
+  margin-top: 12px;
+  margin-bottom: 17px;
+  padding-top: 15px;
+  padding-bottom: 12px;
+  font-family:'PT Serif', serif;
+  text-shadow: none;
+}
+.snippet-text-section.about-vicancy-text.first-block:hover {
+  color: black;
+}
+.snippet-text-section.blocks-values {
+  margin-top: 0px;
+  line-height: 20px;
+  text-align: left;
+}
+.snippet-text-section.blocks-values.what-we-stand-for {
+  margin-bottom: -50px;
+  padding-top: 17px;
+  box-shadow: none;
+  text-shadow: none;
+}
+.snippet-text-section.greyblock {
+  margin-top: 14px;
+  border-radius: 3px;
+  background-color: #efefef;
+  background-image: url('http://s3-eu-west-1.amazonaws.com/vicancy/light_alu.png');
+  box-shadow: #777 1px 1px 3px 0px;
+  text-shadow: none;
+}
+.snippet-text-section.move-on-hover:hover {
+  background-image: url('http://s3-eu-west-1.amazonaws.com/vicancy/light_alu.png'), none;
+  background-position: 0% 0%, 0% 0%;
+  background-repeat: repeat, repeat;
+  background-attachment: scroll, scroll;
+}
+.snippet-title {
+  margin-bottom: 7px;
+  box-shadow: none;
+  font-family:'PT Serif', serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  text-shadow: none;
+}
+.snippet-title.first-page {
+  box-shadow: none;
+  text-align: center;
+  text-shadow: none;
+}
+.snippet-text {
+  padding-right: 0px;
+  padding-left: 5px;
+  font-family:'PT Serif', serif;
+  color: #737373;
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 400;
+  text-align: left;
+  list-style-type: square;
+}
+.snippet-row {
+  margin-top: 27px;
+  margin-bottom: 27px;
+}
+.button-column {
+  padding-top: 32px;
+  text-align: center;
+}
+.company-column {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.img-example {
+  margin-top: 69px;
+  margin-bottom: -34px;
+  margin-left: 35px;
+  padding-top: 0px;
+  padding-bottom: 30px;
+  padding-left: 0px;
+}
+.footer-link {
+  position: relative;
+  left: 265px;
+  top: 13px;
+  right: 0px;
+  bottom: 0px;
+  margin-right: 9px;
+  margin-left: 9px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-left: 58px;
+  color: white;
+  font-size: 14px;
+  text-align: left;
+  text-decoration: underline;
+}
+.footer-nav-bar {
+  text-align: right;
+}
+.footer-text {
+  margin-top: 23px;
+  color: white;
+  font-size: 14px;
+}
+.content-bg {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.content-bg.two {
+  margin-bottom: 14px;
+  padding-top: 43px;
+  padding-bottom: 27px;
+}
+.example-image {
+  width: 100%;
+}
+.subtitle-joke {
+  display: block;
+  width: 900px;
+  height: 464px;
+  margin: 44px auto 1px -17px;
+  padding-bottom: 0px;
+}
+.link-vicancy {
+  position: static;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: block;
+  margin-top: -53px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 0px;
+  float: none;
+  font-family:'PT Serif', serif;
+  color: black;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+}
+.link-vicancy.w--current {
+  width: 219px;
+  height: 105px;
+  margin-right: 14px;
+  margin-left: 10px;
+  padding-right: 32px;
+  background-image: none;
+  background-position: 0% 0%;
+  background-size: auto;
+  background-repeat: repeat;
+  background-attachment: scroll;
+}
+.form {
+  margin-top: 0px;
+}
+.form-1 {
+  display: block;
+  margin-right: 225px;
+  margin-bottom: 73px;
+  margin-left: 225px;
+}
+.button-submit {
+  margin-left: 418px;
+  padding-right: 58px;
+  padding-left: 42px;
+}
+.how-does-it-work-colm {
+  left: -6px;
+  text-align: left;
+}
+.pictures-developers {
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+}
+.image-developer {
+  margin-top: 17px;
+  margin-bottom: 1px;
+  margin-left: 0px;
+  padding: 0px;
+  background-image: url('http://s3-eu-west-1.amazonaws.com/vicancy/example-bg.png');
+  background-size: 125px;
+}
+.heading-vic {
+  position: relative;
+  left: 0px;
+  top: 348px;
+  right: 0px;
+  bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: -1px;
+  padding-bottom: 0px;
+}
+.joke {
+  position: relative;
+  left: 0px;
+  top: -6px;
+  right: 0px;
+  bottom: 0px;
+  display: block;
+  margin-top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family:'PT Serif', serif;
+  color: white;
+  font-size: 19px;
+  font-weight: 400;
+  text-align: center;
+}
+.logo-vicancy {
+  width: 166px;
+  height: 113px;
+  margin-top: 46px;
+  padding-top: 0px;
+  padding-right: 25px;
+  padding-bottom: 11px;
+}
+.apply-now-button {
+  float: right;
+  background-color: transparent;
+  text-align: right;
+}
+.container-backgarden {
+  height: 250px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  padding-top: 106px;
+  padding-bottom: 0px;
+  border: 0px solid black;
+  background-image: url('http://s3-eu-west-1.amazonaws.com/vicancy/BulletTrain-eXpress-in-the-Fields-of-Bali.jpg');
+  background-position: 50% -21px;
+  background-size: cover;
+  background-attachment: scroll;
+  box-shadow: #333 0px 0px 6px 0px;
+}
+.container-backgarden.vicancy {
+  background-image: url('http://s3-eu-west-1.amazonaws.com/vicancy/macro%203.JPG');
+  background-position: 50% -140px;
+}
+.not-a-holiday {
+  height: 300px;
+  margin-top: 11px;
+  margin-bottom: 4px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border: 4px solid black;
+  background-image: url('http://s3-eu-west-1.amazonaws.com/vicancy/software%20developer.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+.not-a-holiday.team {
+  display: block;
+  height: 250px;
+  margin-right: auto;
+  margin-bottom: 6px;
+  margin-left: auto;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-width: 0px;
+  background-image: url('http://s3-eu-west-1.amazonaws.com/vicancy/1074654_662569870439281_1299498168_o.jpg');
+  background-position: 50% 51%;
+  background-attachment: scroll;
+  box-shadow: #333 0px 0px 6px 0px;
+}
+.not-a-holiday.team.balidd {
+  height: 300px;
+  padding-bottom: 1px;
+  background-image: url('http://s3-eu-west-1.amazonaws.com/vicancy/Cascading-Rice-Field-Terraces-Munduk-Bali-Indonesia.jpg');
+}
+.summary {
+  margin-bottom: 2px;
+}
+.holiday {
+  left: 41px;
+  top: -34px;
+  bottom: -3px;
+  margin-top: 251px;
+}
+.holiday.team {
+  left: 20px;
+  margin-top: 256px;
+}
+.bar-top {
+  display: inline-block;
+  margin: 28px 38px 9px -6px;
+  float: right;
+  clear: none;
+  font-family:'PT Serif', serif;
+  color: white;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 700;
+  text-align: right;
+  text-decoration: none;
+}
+.second-page {
+  margin-bottom: 41px;
+}
+.how-does-it-work {
+  font-family:'PT Serif', serif;
+}
+.date-of-departure {
+  margin-top: -20px;
+  text-shadow: none;
+}
+.blocks {
+  margin-top: -1px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  box-shadow: none;
+  text-shadow: none;
+}
+.about-vicancy {
+  margin-top: 277px;
+}
+.container-about-vicancy {
+  margin-top: -2px;
+}
+.about-vicancy-paragraph {
+  display: inline-block;
+  background-color: white;
+  font-size: 17px;
+}
+.blocks-headings-values {
+  margin-bottom: 14px;
+  text-align: center;
+}
+.links {
+  color: black;
+}
+.row-coloms {
+  margin-top: 26px;
+  margin-bottom: 55px;
+}
+.form-vicancy {
+  padding-right: 100px;
+  padding-bottom: 46px;
+  padding-left: 100px;
+}
+.footer-logo {
+  position: relative;
+  left: 328px;
+  top: -1px;
+  right: 0px;
+  bottom: 0px;
+}
+.drop-down {
+  margin-bottom: 35px;
+  font-family:'PT Serif', serif;
+  font-size: 14px;
+}
+.submit-button {
+  margin-left: 271px;
+  padding-right: 87px;
+  padding-left: 87px;
+  border-radius: 5px;
+  background-color: #8f8888;
+  box-shadow: black 1px 1px 3px 0px;
+  font-family:'PT Serif', serif;
+  font-size: 15px;
+}
+.submit-button:hover {
+  background-color: #080707;
+}
+.field-label {
+  font-family:'PT Serif', serif;
+  font-size: 14px;
+}
+.text-field-form {
+  font-family:'PT Serif', serif;
+  font-size: 14px;
+}
+.contact {
+  margin-bottom: 35px;
+}
+.what-do-we-stand-for {
+  margin-bottom: 0px;
+}
+.what-do-we-stand-for.over-vicancy {
+  margin-bottom: -32px;
+  padding-bottom: 0px;
+}
+.what-do-we-stand-for-heading {
+  margin-top: 115px;
+  margin-bottom: 39px;
+}
+.back-end-developer {
+  width: 300px;
+  margin-right: 14px;
+  padding-right: 0px;
+}
+.block-job-description {
+  width: 300px;
+}
+.back-end-developer-text {
+  margin-top: 0px;
+  margin-bottom: 1px;
+  margin-left: 19px;
+  padding: 14px 26px 30px;
+  font-size: 15px;
+  line-height: 24px;
+}
+.job-headings {
+  margin-top: 10px;
+  margin-bottom: 21px;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: underline;
+}
+.text-job-description-buttons {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  color: black;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+}
+.front-end-developer-text {
+  margin-top: 9px;
+  padding: 22px 21px 23px;
+  border-radius: 0px;
+}
+.online-video-marketeer {
+  margin-top: 10px;
+  margin-bottom: 1px;
+  padding: 22px 22px 21px 19px;
+  border-radius: 0px;
+  text-align: left;
+}
+.back-end {
+  padding-top: 9px;
+  padding-bottom: 9px;
+  background-color: #f2f2f2;
+  color: black;
+  text-align: center;
+}
+.front-end-button {
+  color: black;
+  text-align: center;
+}
+.growth-engineer-button {
+  color: black;
+  text-align: center;
+}
+.back-end-snippet-text-selection {
+  display: inline-block;
+  margin-top: 41px;
+  padding-top: 19px;
+  padding-right: 201px;
+  padding-bottom: 17px;
+  border: 2px solid black;
+  border-radius: 0px;
+  background-color: #f2f2f2;
+  color: black;
+  text-align: center;
+}
+.front-end-snippet-text-selection {
+  margin-top: 0px;
+  padding-top: 17px;
+  padding-bottom: 21px;
+  border: 2px solid black;
+  background-color: #f2f2f2;
+}
+.growth-snippet-text-selection {
+  margin-top: 0px;
+  padding-top: 17px;
+  padding-bottom: 21px;
+  border: 2px solid black;
+  background-color: #f2f2f2;
+}
+.row-how-does-it-worl {
+  margin-bottom: 9px;
+}
+.click-below {
+  margin-top: 33px;
+  font-size: 18px;
+  text-align: center;
+}
+.how-does-it-work-picture {
+  height: 316px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  border: 0px solid black;
+  background-image: url('http://s3-eu-west-1.amazonaws.com/vicancy/software%20developer.jpg');
+  background-position: 0% 46%;
+  background-size: cover;
+  background-attachment: scroll;
+  box-shadow: #333 0px 0px 6px 0px;
+}
+.text-blocks {
+  padding-top: 19px;
+  padding-right: 0px;
+  padding-bottom: 19px;
+  border: 3px solid black;
+  background-color: #f2f2f2;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: underline;
+}
+.text-blocks.back-end-developerss {
+  margin-right: -286px;
+  padding-right: 0px;
+}
+.row-job-description {
+  margin-top: 31px;
+}
+.text-block-developer {
+  margin-top: -14px;
+  padding-top: 9px;
+  padding-bottom: 7px;
+  border: 3px solid black;
+  border-radius: 20px;
+  background-color: #f2f2f2;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+.text-block-developer:hover {
+  background-color: #8f8888;
+}
+.text-block-front {
+  display: block;
+  width: 300px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 7px;
+  padding-bottom: 8px;
+  border: 3px solid black;
+  border-radius: 20px;
+  background-color: #f2f2f2;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+.text-block-front:hover {
+  background-color: #8f8888;
+}
+.text-block-growth-engineer {
+  display: block;
+  width: 300px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 10px;
+  padding-bottom: 6px;
+  border: 3px solid black;
+  border-radius: 19px;
+  background-color: #f2f2f2;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+}
+.text-block-growth-engineer:hover {
+  background-color: #8f8888;
+}
+.colum-3-working-hours {
+  margin-top: 0px;
+  padding-top: 0px;
+}
+.video {
+  bottom: -2px;
+}
+.video-fron-end-developer {
+  top: -9px;
+  margin-bottom: 21px;
+  padding-right: 0px;
+}
+.video-back-end-developer {
+  margin-bottom: 18px;
+}
+.video-growth-engineer {
+  margin-bottom: 13px;
+}
+.video-example-ad {
+  display: block;
+  margin-top: 60px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.vicancy-example-ad {
+  margin-top: 60px;
+}
+html.w-mod-js *[data-ix="back-end-developer"] {
+  display: none;
+}
+html.w-mod-js *[data-ix="front-end-developer"] {
+  display: none;
+}
+html.w-mod-js *[data-ix="growth-engineer"] {
+  display: none;
+}
+html.w-mod-js.w-mod-no-ios *[data-ix="popup"] {
+  opacity: 0;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  transform: scale(0.8);
+}
+html.w-mod-js.w-mod-no-ios *[data-ix="slideinleft"] {
+  opacity: 0;
+  -webkit-transform: translate(-100px, 0px);
+  -ms-transform: translate(-100px, 0px);
+  -o-transform: translate(-100px, 0px);
+  transform: translate(-100px, 0px);
+}
+html.w-mod-js.w-mod-no-ios *[data-ix="slideinright"] {
+  opacity: 0;
+  -webkit-transform: translate(100px, 0px);
+  -ms-transform: translate(100px, 0px);
+  -o-transform: translate(100px, 0px);
+  transform: translate(100px, 0px);
+}
+html.w-mod-js.w-mod-no-ios *[data-ix="slideinup"] {
+  opacity: 0;
+  -webkit-transform: translate(0px, 100px);
+  -ms-transform: translate(0px, 100px);
+  -o-transform: translate(0px, 100px);
+  transform: translate(0px, 100px);
+}
+@media (max-width: 991px) {
+  h1 {
+    margin-top: -109px;
+    padding-left: 0px;
+  }
+  .button {
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+  }
+  .subtitle {
+    -webkit-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+  }
+  .snippet {
+    -webkit-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+  }
+  .container-backgarden {
+    background-position: 0% -270%;
+  }
+  .date-of-departure {
+    text-shadow: none;
+  }
+}
+@media (max-width: 767px) {
+  h1 {
+    margin-top: -103px;
+  }
+  h2 {
+    margin-top: 107px;
+  }
+  h3 {
+    font-size: 33px;
+    line-height: 31px;
+  }
+  .button {
+    margin-bottom: 33px;
+    padding: 29px 30px;
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  .section.header {
+    background-color: #333;
+  }
+  .nav-link {
+    background-color: #6b6b6b;
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+  }
+  .nav-link:hover {
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+  }
+  .company-title {
+    margin-bottom: 33px;
+  }
+  .nav-bar {
+    text-align: center;
+  }
+  .hero-bg {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .snippet {
+    margin-bottom: 19px;
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+  }
+  .right-col {
+    margin-top: -42px;
+  }
+  .snippet-text-section {
+    margin-top: 13px;
+  }
+  .snippet-text-section.blocks {
+    margin-top: 32px;
+    margin-left: 5px;
+    padding-top: 0px;
+    padding-left: 14px;
+    box-shadow: none;
+    text-shadow: none;
+  }
+  .snippet-text-section.blocks.length {
+    margin-top: 19px;
+    box-shadow: none;
+    text-shadow: none;
+  }
+  .snippet-title {
+    box-shadow: none;
+    text-shadow: none;
+  }
+  .button-column {
+    padding-top: 61px;
+  }
+  .company-column {
+    background-color: white;
+    text-align: center;
+  }
+  .footer-nav-bar {
+    text-align: center;
+  }
+  .left-footer-col {
+    margin-bottom: 13px;
+    text-align: center;
+  }
+  .content-bg {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .date-of-departure {
+    text-shadow: none;
+  }
+  .blocks {
+    box-shadow: none;
+    text-shadow: none;
+  }
+  .submit-button {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .text-block-developer {
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+  }
+  .text-block-front {
+    margin-bottom: 25px;
+  }
+  .text-block-growth-engineer {
+    padding-top: 6px;
+    padding-bottom: 2px;
+  }
+}
+@media (max-width: 479px) {
+  h1 {
+    margin-top: -142px;
+    font-size: 21px;
+  }
+  h3 {
+    font-size: 27px;
+  }
+  .button {
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+  }
+  .section.header {
+    padding-right: 16px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    background-color: white;
+  }
+  .nav-link {
+    display: block;
+    margin-bottom: 19px;
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+  }
+  .hero-bg {
+    background-position: 22% -239px;
+    background-size: 600px 821px;
+    background-attachment: scroll;
+  }
+  .section-description {
+    width: 50%;
+  }
+  .snippet {
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+  }
+  .snippet-text-section.blocks.length {
+    margin-bottom: 20px;
+    box-shadow: none;
+    text-shadow: none;
+  }
+  .content-bg {
+    min-height: 330px;
+  }
+  .date-of-departure {
+    text-shadow: none;
+  }
+  .form-vicancy {
+    display: block;
+    margin-right: -70px;
+    margin-left: -62px;
+  }
+  .submit-button {
+    margin-left: 4px;
+    padding-left: 85px;
+  }
+  .text-block-developer {
+    margin-bottom: 23px;
+    padding-bottom: 19px;
+  }
+  .text-block-front {
+    margin-bottom: 31px;
+  }
+  .text-block-growth-engineer {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+}
