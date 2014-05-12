@@ -51,6 +51,8 @@ Vicancy::Application.configure do
   config.assets.precompile += %w( static_index.js )
   config.assets.precompile += %w( mobile.css )
   config.assets.precompile += %w( mobile_index.js )
+  config.assets.precompile += %w( bali.css )
+  config.assets.precompile += %w( bali.js )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
