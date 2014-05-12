@@ -2,9 +2,7 @@
   <title>Vicancy moves to Bali</title>
   <meta name="description" content="Vicancy is going &quot;remote&quot; and moves its product development team to Bali. Are you a passionate software developer and do you like nice weather? Join us!">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" type="text/css" href="../assets/normalize.css">
-  <link rel="stylesheet" type="text/css" href="../assets/webflow-new-bali.css">
-  <link rel="stylesheet" type="text/css" href="../assets/webflow-for-bali.css">
+  <%= stylesheet_link_tag  "bali", :media => "all" %>
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
   <script>
     WebFont.load({
@@ -14,6 +12,7 @@
     });
   </script>
   <script type="text/javascript" src="js/modernizr.js"></script>
+  <%= javascript_include_tag "bali" %>
   <link rel="shortcut icon" type="image/x-icon" href="https://daks2k3a4ib2z.cloudfront.net/533b169a1d4ceb2363000078/534ea78b68e25e8c6d00057a_Logo2.png">
   <link rel="apple-touch-icon" href="https://daks2k3a4ib2z.cloudfront.net/533b169a1d4ceb2363000078/534ea78b68e25e8c6d00057a_Logo2.png">
   <script type="text/javascript">
