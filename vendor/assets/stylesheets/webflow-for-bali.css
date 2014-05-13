@@ -226,7 +226,7 @@ p:hover {
 .hero-bg {
   width: auto;
   height: 435px;
-  margin-top: 50px;
+  margin-top: 0px;
   margin-bottom: 0px;
   margin-left: 0px;
   padding-top: 0px;
@@ -477,7 +477,7 @@ p:hover {
   color: black;
   font-size: 18px;
   font-weight: 400;
-  text-align: center;
+  text-align: left;
   text-decoration: none;
 }
 .link-vicancy.w--current {
