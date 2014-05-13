@@ -1,6 +1,7 @@
 class VideoUploadWorker
   include Sidekiq::Worker
   include TrelloBoard
+  include GoogleClient
 
   def perform(uploaded_video_id, video_url)
     uploaded_video = UploadedVideo.find(uploaded_video_id)
@@ -18,12 +19,7 @@ class VideoUploadWorker
   def youtube_upload(uploaded_video, url)
     video = uploaded_video.video
     # TODO: raise if no current access_token
-    client = YouTubeIt::OAuth2Client.new(
-      client_access_token: GoogleSession.current_access_token, 
-      client_id: ENV['GOOGLE_CLIENT_ID'], 
-      client_secret: ENV['GOOGLE_CLIENT_SECRET'], 
-      dev_key: ENV['GOOGLE_DEV_KEY']
-    )
+    client = new_google_client
     response = client.video_upload(open(url), 
       title: video.provider_title,
       description: video.provider_description, 

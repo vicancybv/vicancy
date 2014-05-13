@@ -57,4 +57,10 @@ module TrelloBoard
     move_to_list!(card, list_name) unless card.nil?
   end
 
+  def already_imported_video(card)
+    id = parse_card_description(card)[:id]
+    return nil if id.blank?
+    Video.find(id) rescue nil
+  end
+
 end

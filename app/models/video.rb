@@ -62,12 +62,17 @@ class Video < ActiveRecord::Base
     card_params = Video.parse_card_description(card)
     video = Video.find_by :id, id if card_params[:id]
     video ||= Video.new
-    video.update_from_card(card_params)
+    video.update_from_card_params(card_params)
     video.save
     video
   end
 
-  def update_from_card(card_params)
+  def update_from_card(card)
+    card_params = Video.parse_card_description(card)
+    update_from_card_params(card_params)
+  end
+
+  def update_from_card_params(card_params)
     self.title = card_params[:title]
     self.summary = card_params[:summary]
     self.tags = card_params[:tags]
