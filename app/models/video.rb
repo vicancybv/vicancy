@@ -69,6 +69,7 @@ class Video < ActiveRecord::Base
 
   def update_from_card(card)
     card_params = Video.parse_card_description(card)
+    Rails.logger.info card_params.inspect
     update_from_card_params(card_params)
   end
 
