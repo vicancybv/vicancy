@@ -11,11 +11,11 @@ class VideoUpdateWorker
       video = already_imported_video(card) 
       raise VideoNotFound unless video
       video.update_from_card(card)
-      Rails.logger.info video.inspect
       video.save
       video.uploaded_videos.each do |uploaded_video|
         send("#{uploaded_video.provider}_update", uploaded_video)
       end
+      move_to_list!(card, "processed")
     rescue Exception => e
       update_card_description(card, error: e)
       move_to_list!(card, "error")
@@ -30,7 +30,6 @@ class VideoUpdateWorker
       description: video.provider_description, 
       keywords: video.tags_array,
       list: "denied")
-    Rails.logger.info response
   end
 
   def wistia_update(uploaded_video)
@@ -39,7 +38,6 @@ class VideoUpdateWorker
     media.name = uploaded_video.video.provider_title
     media.description = uploaded_video.video.provider_description
     response = media.save
-    Rails.logger.info response
   end
 
 
