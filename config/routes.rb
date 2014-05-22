@@ -24,6 +24,8 @@ Vicancy::Application.routes.draw do
   match 'oauth2callback' => 'oauth2callback#index'
   match 'contact' => 'contact#submit_message', via: :post
 
+  resources :vimeo_imports, only: [:new, :create]
+
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   root :to => 'static_pages#index'
