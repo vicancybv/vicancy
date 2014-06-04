@@ -2,7 +2,7 @@ class TrelloCardImportWorker
   include Sidekiq::Worker
   include TrelloBoard
 
-  UPLOAD_PROVIDERS = [:youtube, :wistia]
+  UPLOAD_PROVIDERS = [:youtube, :wistia, :vimeo]
 
   def perform(card_id)
     begin
