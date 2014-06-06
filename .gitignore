@@ -11,6 +11,9 @@
 # Ignore db config
 /config/database.yml
 
+# Ignore env variables
+/config/application.yml
+
 # Ignore bundler config
 /.bundle
 

@@ -21,6 +21,9 @@ en:
     twitter: "%{company} is looking for a %{job_title}. Check the video job-ad: %{video_url}. More information: %{job_ad_url}"
     facebook: "%{company} is looking for a %{job_title}. Check the video job-ad and click on the following link for more information: %{job_ad_url}"
     linkedin: "%{job_ad_url} -- %{company} is looking for a %{job_title}. Check the video job-ad and click on following link: %{job_ad_url}"
+  providers:
+    description_with_place: "%{company} is looking for a %{job_title} in %{place}. Click on the link for more information: %{job_ad_url}"
+    description_without_place: "%{company} is looking for a %{job_title}. Click on the link for more information: %{job_ad_url}"
   date:
     formats:
       video: ! "%e %b '%y"

@@ -1,4 +1,9 @@
 ActiveAdmin.register AdminUser do     
+
+  action_item only:[:index] do
+    link_to "Setup Google OAuth2", google_oauth2_url
+  end
+
   index do                            
     column :email                     
     column :current_sign_in_at        
