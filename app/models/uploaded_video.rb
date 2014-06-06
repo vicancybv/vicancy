@@ -2,7 +2,7 @@ class UploadedVideo < ActiveRecord::Base
   include AASM
 
   belongs_to :video
-  attr_accessible :aasm_state, :provider, :provider_id
+  attr_accessible :aasm_state, :provider, :provider_id, :video_id
   validates :video_id, :provider, presence: true
 
   aasm do

@@ -4,7 +4,7 @@ class Video < ActiveRecord::Base
 
   belongs_to  :user
   has_many  :video_edits, dependent: :destroy
-  attr_accessible :company, :job_ad_url, :job_title, :language, :summary, :title, :vimeo_id, :youtube_id, :user_id
+  attr_accessible :company, :job_ad_url, :job_title, :language, :summary, :title, :user_id
   attr_accessor :edits
   validates :language, presence: true
   default_scope { order("created_at DESC") }
@@ -22,6 +22,18 @@ class Video < ActiveRecord::Base
     event :uploaded do
       transitions from: [:processing], to: :uploaded
     end
+  end
+
+  def vimeo_id
+    provider_id(:vimeo)
+  end
+
+  def youtube_id
+    provider_id(:youtube)
+  end
+
+  def provider_id(provider)
+    self.uploaded_videos.select{|u| u.provider == provider.to_s}.first.try(:provider_id)
   end
 
   def video_url
