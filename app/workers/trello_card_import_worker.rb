@@ -15,11 +15,13 @@ class TrelloCardImportWorker
         update_card_description(card, id: video.id)
         card.save
       end
+      video.update_attribute(:aasm_state, "processing")
       video_url = extract_video_attachment_url(card)
       UPLOAD_PROVIDERS.each do |provider|
         card_provider = parse_card_description(card)[provider].try(:downcase)
         unless card_provider == "false" || card_provider == "no"
           uploaded_video = video.uploaded_videos.find_by_provider(provider) || video.uploaded_videos.create(provider: provider)
+          uploaded_video.update_attribute(:aasm_state, "processing")
           VideoUploadWorker.perform_async(uploaded_video.id, video_url)
         end
       end
