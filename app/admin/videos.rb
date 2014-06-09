@@ -37,7 +37,7 @@ ActiveAdmin.register Video do
       end
       row :job_title
       row :company
-      row "Status", :aasm_state
+      row :aasm_state
     end
 
 
@@ -69,7 +69,7 @@ ActiveAdmin.register Video do
     column :user
     column :job_title
     column :company
-    column "Status", :aasm_state
+    column :aasm_state
     column :created_at
     actions    
   end
