@@ -46,13 +46,13 @@ class VideoUploadWorker
 
   def vimeo_upload(uploaded_video, url)
     video = uploaded_video.video
-    url = "http://trello-attachments.s3.amazonaws.com/532ffa69f653d97c21879d1d/53622e5ba683db2e29abcbe3/9644c0158297f99e997af539c8dedd7b/Promo_405p.mp4"
     upload_api = Vimeo::Advanced::Upload.new(ENV['VIMEO_CONSUMER_KEY'], ENV['VIMEO_CONSUMER_SECRET'], :token => ENV['VIMEO_USER_TOKEN'], :secret => ENV['VIMEO_USER_SECRET'])
     video_api = Vimeo::Advanced::Video.new(ENV['VIMEO_CONSUMER_KEY'], ENV['VIMEO_CONSUMER_SECRET'], :token => ENV['VIMEO_USER_TOKEN'], :secret => ENV['VIMEO_USER_SECRET'])
-    vimeo_id = upload_api.upload(open(url))
+    response = upload_api.upload(open(url))
+    vimeo_id = response["ticket"]["video_id"] rescue nil
     if vimeo_id
       uploaded_video.update_attribute(:provider_id, vimeo_id)
-      video_api.add_tags(vimeo_id, video.tags_array)
+      video_api.add_tags(vimeo_id, video.tags)
       video_api.set_title(vimeo_id, video.provider_title)
       video_api.set_description(vimeo_id, video.provider_description)
     else
