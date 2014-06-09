@@ -49,8 +49,9 @@ class ProviderScannerWorker
     video_api = Vimeo::Advanced::Video.new(ENV['VIMEO_CONSUMER_KEY'], ENV['VIMEO_CONSUMER_SECRET'], :token => ENV['VIMEO_USER_TOKEN'], :secret => ENV['VIMEO_USER_SECRET'])
     info = video_api.get_info(id)
     case info["stat"]
-    when "ok" then :uploaded
-    else :error
+      when "ok" then :uploaded
+      else :error
+    end
   end
 
 end
