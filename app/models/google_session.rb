@@ -4,7 +4,7 @@ class GoogleSession < ActiveRecord::Base
   validates :access_token, :expires_at, :refresh_token, presence: true
 
   def self.find
-    @@session ||= self.first
+    self.first
   end
 
   def self.current_access_token
