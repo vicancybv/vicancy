@@ -5,6 +5,9 @@ ActiveAdmin.register Video do
   end
 
   form do |f|
+    f.input :aasm_state,
+            as: :select,      
+            collection: ["processing", "uploaded", "error"]
     f.inputs I18n.t('admin.User') do
       f.input :user
     end
