@@ -41,6 +41,7 @@ class VideoUpdateWorker
   end
 
   def vimeo_update(uploaded_video)
+    video = uploaded_video.video
     vimeo_id = uploaded_video.provider_id
     video_api = Vimeo::Advanced::Video.new(ENV['VIMEO_CONSUMER_KEY'], ENV['VIMEO_CONSUMER_SECRET'], :token => ENV['VIMEO_USER_TOKEN'], :secret => ENV['VIMEO_USER_SECRET'])
     video_api.add_tags(vimeo_id, video.tags)
