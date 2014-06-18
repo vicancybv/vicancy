@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
 
-  caches_action [:index, :en]
+  caches_action [:index, :pricing, :product, :team, :videoconsultancy]
 
   layout "static"
 
@@ -8,10 +8,19 @@ class StaticPagesController < ApplicationController
     render layout: "static_index"
   end
 
-  def en
+  def pricing
     render layout: "static_index"
   end
-  def en_edited
+
+  def product
+    render layout: "static_index"
+  end
+
+  def team
+    render layout: "static_index"
+  end
+
+  def videoconsultancy
     render layout: "static_index"
   end
 

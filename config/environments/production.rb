@@ -54,6 +54,7 @@ Vicancy::Application.configure do
   config.assets.precompile += %w( bali.css )
   config.assets.precompile += %w( modernizr.js )
   config.assets.precompile += %w( webflow-new.js )
+  config.assets.precompile += %w( webflow-static.js )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false

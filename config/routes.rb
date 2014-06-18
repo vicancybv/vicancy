@@ -9,14 +9,18 @@ Vicancy::Application.routes.draw do
 
 
   Vicancy::STATIC_PAGE_SLUGS = %w(
-    privacypolicy
-    gebruikersvoorwaarden
-    formulier
-    support
+    bali
     bedrijfsanimaties
+    formulier
+    gebruikersvoorwaarden
     jobs
     jobsform
-    bali
+    pricing
+    privacypolicy
+    product
+    support
+    team
+    videoconsultancy
   )
 
   resources :users, only: [:show]
