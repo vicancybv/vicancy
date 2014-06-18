@@ -1,78 +1,152 @@
-<% content_for :head do %>
+
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title><%= "#{@page_title} - " unless @page_title.blank? %>Vicancy®</title>
+  <link rel="image_src" href="https://secure-b.vimeocdn.com/ps/540/210/5402108_300.jpg" />
+  <meta name="google-site-verification" content="KwNMVaymQ2zFueq8nLGSLVem_N2o2caSgVmJzLtw9bw" />
+  <meta name="keywords" content="Vicancy, video vacature, videovacature, social media recruitment, LinkedIn" />
+  <meta name="description" content="Vicancy® is voor recruitment bedrijven die met geanimeerde videovacatures actief willen inzetten op werving via social media kanalen.">
+  <meta name="author" content="Vicancy">
+  <meta name="google-site-verification: google9ef9b70d15c502ca.html">
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- CSS
+  ================================================== -->
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+
   <title>Aanmaken -- Vicancy&reg;</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag  "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-<% end %>
+  
+  <!-- Favicons
+  ================================================== -->
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
 
-<div class="preheader">
-  <div class="masthead">
-    <div class="w-container">
-      <h1>+ Nieuwe videovacature</h1>
-      <img class="logo" src="/images/logo_vicancy_whiteinside.png" height="150" alt="logo_vicancy_whiteinside.png">
-    </div>
-  </div>
-  <div class="navigation">
-    <div class="w-container">
-      <a class="new-video" href="/"><h3 class="navbutton navbuttonfirst" target="_blank">Vicancy.com</h3></a>
-      <a ><h3 class="navbutton navbutton" data-toggle="modal" data-target="#ContactModal">Contact</h3></a>
-      <a class="new-video" href="/formulier"><h3 class="navbutton" target="_blank">Formulier hernieuwen</h3></a>
-    </div>
-  </div>
-</div>
-<div class="main">
-  <div class="w-container maincontainer">
-    <h2>Formulier</h2>
-    <div class="w-row">
-      <div class="w-col w-col-8">
-        <div class="whitebox faq whiteboxbottom">
-          <div class="compeoformulier">  <!-- Wufoo form starts -->
-            <div id="wufoo-m1trmvx80y126kr">
-              Fill out my <a href="https://vicancy.wufoo.com/forms/m1trmvx80y126kr">online form</a>.
-            </div>
-            <script type="text/javascript">var m1trmvx80y126kr;(function(d, t) {
-            var s = d.createElement(t), options = {
-              'userName':'vicancy', 
-              'formHash':'m1trmvx80y126kr', 
-              'autoResize':true,
-              'async':true,
-              'header':'hide'};
-            s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
-            s.onload = s.onreadystatechange = function() {
-            var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
-            try { m1trmvx80y126kr = new WufooForm();m1trmvx80y126kr.initialize(options);m1trmvx80y126kr.display(); } catch (e) {}};
-            var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
-            })(document, 'script');</script>
-            <!-- listen for message from onLoad callback of parent Fancybox, and tell the Wufoo form embed script to resize itself  -->
-            <script type="text/javascript">
-                addEventListener("message", receiveMessage, false);
-                function receiveMessage(message) {
-                    if(message.data == "resizeWufooForm") {
-                        var wufooForm = document.getElementById('wufooFormm1trmvx80y126kr');
-                        wufooForm.contentWindow.postMessage("resize", "http://vicancy.wufoo.com");
-                    }
-                }
-            </script>
-          </div> <!-- Wufoo form ends --> 
-        </div>
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36087356-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script>
+
+  <!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+mixpanel.init("93bd7a62384204b11d23a083b5a86681");</script><!-- end Mixpanel -->
+
+  <!-- Social media thumbnail 
+  ============================================================-->
+  <link rel="image_src" href="/images/vicancyLogoForNow250x250.jpg" />
+        
+</head>
+<body>
+      
+          
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-38359879-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+    
+    <div class="preheader">
+    <div class="masthead">
+      <div class="w-container">
+        <h1>+ Nieuwe videovacature</h1>
+        <img class="logo" src="/images/logo_vicancy_whiteinside.png" height="150" alt="logo_vicancy_whiteinside.png">
       </div>
-      <div class="w-col w-col-4">
-        <div class="contact faq">
-          <img class="vicancylogo" src="/images/Vicancy_Loet_icon.png" height="35" alt="Vicancy Logo">
-          <h4 class="whiteboxtop faq">Contact</h4>
-          <div class="bottom faq">
-            <p class="faq">Heeft u een vraag, of wilt u direct persoonlijke ondersteuning?
-              <br>
-              <br>Neem dan contact op met ons.
-              <br>Uw contactpersoon is <strong>Loet Rammelsberg</strong>
-              <br>
-              <br>Mail: loet@vicancy.com
-              <br>Tel: 06 - 306 970 34</p><a class="button primary" href="mailto:loet@vicancy.com">Email Loet</a>
+    </div>
+    <div class="navigation">
+      <div class="w-container">
+        <a class="new-video" href="/"><h3 class="navbutton navbuttonfirst" target="_blank">Vicancy.com</h3></a>
+        <a ><h3 class="navbutton navbutton" data-toggle="modal" data-target="#ContactModal">Contact</h3></a>
+        <a class="new-video" href="/formulier"><h3 class="navbutton" target="_blank">Formulier hernieuwen</h3></a>
+      </div>
+    </div>
+  </div>
+  <div class="main">
+    <div class="w-container maincontainer">
+      <h2>Formulier</h2>
+      <div class="w-row">
+        <div class="w-col w-col-8">
+          <div class="whitebox faq whiteboxbottom">
+            <div class="compeoformulier">  <!-- Wufoo form starts -->
+              <div id="wufoo-m1trmvx80y126kr">
+                Fill out my <a href="https://vicancy.wufoo.com/forms/m1trmvx80y126kr">online form</a>.
+              </div>
+              <script type="text/javascript">var m1trmvx80y126kr;(function(d, t) {
+              var s = d.createElement(t), options = {
+                'userName':'vicancy', 
+                'formHash':'m1trmvx80y126kr', 
+                'autoResize':true,
+                'async':true,
+                'header':'hide'};
+              s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'wufoo.com/scripts/embed/form.js';
+              s.onload = s.onreadystatechange = function() {
+              var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+              try { m1trmvx80y126kr = new WufooForm();m1trmvx80y126kr.initialize(options);m1trmvx80y126kr.display(); } catch (e) {}};
+              var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+              })(document, 'script');</script>
+              <!-- listen for message from onLoad callback of parent Fancybox, and tell the Wufoo form embed script to resize itself  -->
+              <script type="text/javascript">
+                  addEventListener("message", receiveMessage, false);
+                  function receiveMessage(message) {
+                      if(message.data == "resizeWufooForm") {
+                          var wufooForm = document.getElementById('wufooFormm1trmvx80y126kr');
+                          wufooForm.contentWindow.postMessage("resize", "http://vicancy.wufoo.com");
+                      }
+                  }
+              </script>
+            </div> <!-- Wufoo form ends --> 
+          </div>
+        </div>
+        <div class="w-col w-col-4">
+          <div class="contact faq">
+            <img class="vicancylogo" src="/images/Vicancy_Loet_icon.png" height="35" alt="Vicancy Logo">
+            <h4 class="whiteboxtop faq">Contact</h4>
+            <div class="bottom faq">
+              <p class="faq">Heeft u een vraag, of wilt u direct persoonlijke ondersteuning?
+                <br>
+                <br>Neem dan contact op met ons.
+                <br>Uw contactpersoon is <strong>Loet Rammelsberg</strong>
+                <br>
+                <br>Mail: loet@vicancy.com
+                <br>Tel: 06 - 306 970 34</p><a class="button primary" href="mailto:loet@vicancy.com">Email Loet</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<%= render "layouts/footer" %>
+  <%= render "layouts/footer" %>
+
+</body>
+</html>
