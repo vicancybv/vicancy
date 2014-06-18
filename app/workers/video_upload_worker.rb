@@ -29,7 +29,7 @@ class VideoUploadWorker
   end
 
   def wistia_upload(uploaded_video, url)
-    thread = WistiaUploader.upload_media(ENV['WISTIA_API_PASSWORD'], ENV['WISTIA_PROJECT_ID'], url)
+    thread = WistiaUploader.upload_media(ENV['WISTIA_API_PASSWORD'], ENV['WISTIA_PROJECT_ID'], open(url))
     # Wait for thread to complete
     thread.join
     response = JSON.parse(thread[:body])
