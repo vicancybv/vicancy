@@ -7,7 +7,6 @@ Vicancy::Application.routes.draw do
     end
   end
 
-
   Vicancy::STATIC_PAGE_SLUGS = %w(
     bali
     bedrijfsanimaties
@@ -21,13 +20,16 @@ Vicancy::Application.routes.draw do
     support
     team
     videoconsultancy
-  )
+    ) unless defined?(Vicancy::STATIC_PAGE_SLUGS)
 
   resources :users, only: [:show]
   resources :videos, only: [:destroy] do
     resources :video_edits, only: [:new, :create]
   end
+  match 'oauth2callback' => 'oauth2callback#index'
   match 'contact' => 'contact#submit_message', via: :post
+
+  resources :vimeo_imports, only: [:new, :create]
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.

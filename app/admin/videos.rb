@@ -1,12 +1,17 @@
 ActiveAdmin.register Video do
 
+  action_item only: [:show, :edit] do |video|
+    link_to('New Uploaded Video for this Video', new_admin_uploaded_video_url('uploaded_video[video_id]' => params[:id]))
+  end
+
   form do |f|
+    f.inputs 'Video' do
+      f.input :aasm_state,
+              as: :select,      
+              collection: ["processing", "uploaded", "error"]
+    end
     f.inputs I18n.t('admin.User') do
       f.input :user
-    end
-    f.inputs I18n.t('admin.Video') do
-      f.input :youtube_id, label: "YouTube ID", hint: "#{I18n.t('admin.eg')} n3UkHTcbwb4"
-      f.input :vimeo_id, label: "Vimeo ID", hint: "#{I18n.t('admin.eg')} 77573345"
     end
     f.inputs I18n.t('admin.Caption') do
       f.input :language,  
@@ -26,6 +31,7 @@ ActiveAdmin.register Video do
     f.actions
 
 
+
   end
 
   show do |video|
@@ -36,6 +42,7 @@ ActiveAdmin.register Video do
       end
       row :job_title
       row :company
+      row :aasm_state
     end
 
 
@@ -48,6 +55,18 @@ ActiveAdmin.register Video do
       end
 
     end
+
+    panel "Uploaded videos" do
+      table_for video.uploaded_videos do
+        column "ID" do |uploaded_video| 
+          link_to uploaded_video.id, admin_uploaded_video_url(uploaded_video)
+        end
+        column :provider
+        column "Provider ID", :provider_id
+        column "Status", :aasm_state
+      end
+    end
+
   end
 
   index do
@@ -55,6 +74,7 @@ ActiveAdmin.register Video do
     column :user
     column :job_title
     column :company
+    column :aasm_state
     column :created_at
     actions    
   end

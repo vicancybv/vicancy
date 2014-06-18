@@ -1,0 +1,6 @@
+scan_trello_board:
+  every: "30s"
+  class: TrelloScannerWorker
+scan_providers:
+  every: "30s"
+  class: ProviderScannerWorker

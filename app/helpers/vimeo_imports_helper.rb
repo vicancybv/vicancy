@@ -1,0 +1,2 @@
+module VimeoImportsHelper
+end
