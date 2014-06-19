@@ -51,7 +51,7 @@ Vicancy::Application.configure do
   config.assets.precompile += %w( static_index.js )
   config.assets.precompile += %w( mobile.css )
   config.assets.precompile += %w( mobile_index.js )
-  config.assets.precompile += %w( bali.css )
+  config.assets.precompile += %w( baliness.css )
   config.assets.precompile += %w( modernizr.js )
   config.assets.precompile += %w( webflow-new.js )
   config.assets.precompile += %w( webflow-static.js )
