@@ -1,0 +1,1216 @@
+body {
+  height: 250px;
+  margin-top: 1px;
+  margin-bottom: 18px;
+  margin-left: 44px;
+  padding-left: 0px;
+  background-image: url('../images/gray_jean.png');
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  color: #333;
+  font-size: 12px;
+  line-height: 24px;
+}
+h1 {
+  position: relative;
+  top: -12px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 0;
+  display: block;
+  overflow-x: visible;
+  overflow-y: visible;
+  margin: 1px auto 0px;
+  padding: 0px 0px 2px;
+  float: none;
+  clear: none;
+  background-color: transparent;
+  font-family:'PT Serif', serif;
+  color: black;
+  font-size: 45px;
+  line-height: 44px;
+  font-weight: 700;
+  text-align: center;
+}
+h2 {
+  position: relative;
+  left: 425px;
+  top: -335px;
+  right: 133px;
+  display: inline-block;
+  margin: 268px 16px 10px -229px;
+  padding: 9px 14px 9px 20px;
+  background-color: rgba(0, 0, 0, 0.49);
+  font-family:'PT Serif', serif;
+  color: white;
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 700;
+}
+h3 {
+  margin: 83px 0px 1px;
+  padding-bottom: 0px;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  font-size: 48px;
+  line-height: 82px;
+  font-weight: 700;
+  text-align: center;
+}
+h4 {
+  display: block;
+  margin-right: auto;
+  margin-bottom: 28px;
+  margin-left: auto;
+  padding-right: 1px;
+  padding-left: 0px;
+  float: none;
+  clear: none;
+  border-width: 1px;
+  border-color: black;
+  box-shadow: none;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  font-size: 28px;
+  line-height: 16px;
+  font-weight: 700;
+  text-align: left;
+  text-shadow: none;
+}
+h5 {
+  margin-right: 0px;
+  margin-bottom: 38px;
+  margin-left: 0px;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  font-size: 17px;
+  line-height: 20px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+h6 {
+  margin: 10px 0px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 700;
+}
+p {
+  margin-top: 17px;
+  margin-bottom: 27px;
+  margin-left: 0px;
+  padding: 0px;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  color: #756666;
+  font-size: 17px;
+  line-height: 28px;
+  font-weight: 400;
+  text-align: justify;
+  text-shadow: none;
+}
+p:hover {
+  color: black;
+  text-shadow: none;
+}
+.button {
+  position: static;
+  top: 0px;
+  right: 3px;
+  bottom: 0px;
+  display: block;
+  width: 226px;
+  height: 50px;
+  margin: 8px auto 41px;
+  padding: 11px 3px 0px 0px;
+  float: none;
+  border-radius: 5px;
+  background-color: #93a7bc;
+  background-image: none;
+  -webkit-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  color: black;
+  font-size: 17px;
+  text-align: center;
+  text-decoration: none;
+}
+.button:hover {
+  background-color: #87c2c0;
+}
+.button.w--current {
+  position: relative;
+  top: 247px;
+  right: 0px;
+  display: inline-block;
+  margin-top: -44px;
+  margin-bottom: 6px;
+  margin-left: 407px;
+  padding-bottom: 12px;
+  text-align: center;
+}
+.button.form {
+  margin-top: 28px;
+  margin-right: -52px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-left: 67px;
+  text-align: left;
+  text-shadow: none;
+}
+.button.homepage {
+  margin: 50px auto 0px;
+  padding-top: 0px;
+  background-color: #87c2c0;
+  font-size: 17px;
+  line-height: 50px;
+  text-shadow: none;
+}
+.button.homepage:hover {
+  background-color: #93a7bc;
+}
+.section {
+  display: block;
+  margin: 0px auto 0px -55px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.section.temass {
+  margin-top: 44px;
+  margin-bottom: 2px;
+  padding-bottom: 28px;
+  background-color: rgba(48, 77, 132, 0.27);
+}
+.section.services {
+  margin-top: 2px;
+  background-color: rgba(135, 194, 192, 0.45);
+}
+.section.contact-form {
+  margin-top: 186px;
+  margin-bottom: 107px;
+}
+.nav-bar-header {
+  display: inline-block;
+  margin-top: 9px;
+  margin-right: 44px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  text-decoration: none;
+}
+.nav-bar-header.company {
+  color: white;
+  text-shadow: rgba(255, 255, 255, 0.2) 0px 0px 50px;
+}
+.login-account-colum {
+  display: inline-block;
+  margin-top: 10px;
+}
+.sub-nav-bar {
+  display: inline-block;
+  margin-top: 32px;
+  margin-right: 67px;
+  margin-left: -1px;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  color: black;
+  font-size: 17px;
+  font-weight: 400;
+  text-decoration: none;
+}
+.sub-nav-bar.features {
+  font-style: normal;
+  font-weight: 700;
+  text-decoration: underline;
+}
+.sub-nav-bar.features.pagessaa {
+  text-decoration: none;
+}
+.sub-nav-bar.features.fsgbd {
+  text-decoration: none;
+}
+.sub-nav-bar.consultancy {
+  text-decoration: underline;
+}
+.sub-nav-bar.cdfg {
+  text-decoration: underline;
+}
+.logo-footer-vicancy {
+  margin-top: 6px;
+  margin-left: 24px;
+}
+.footer-colums {
+  margin-top: 28px;
+}
+.header {
+  margin-top: -1px;
+  margin-bottom: 0px;
+  margin-left: -49px;
+  padding-top: 0px;
+  padding-bottom: 8px;
+  background-color: #93a7bc;
+}
+.footer-subchapters {
+  display: inline-block;
+  margin-bottom: 1px;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  color: black;
+  font-size: 15px;
+  line-height: 25px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.footer-chapters {
+  display: inline;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  color: rgba(0, 0, 0, 0.47);
+  font-weight: 700;
+  text-decoration: none;
+}
+.request-demo {
+  margin-top: 14px;
+  margin-bottom: 38px;
+  margin-left: 2px;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  font-size: 26px;
+  font-weight: 800;
+  text-align: left;
+  text-shadow: none;
+}
+.request-demo.main-page {
+  margin-bottom: 8px;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  color: black;
+  font-size: 27px;
+  line-height: 29px;
+  font-style: normal;
+  font-weight: 800;
+  text-align: center;
+  text-shadow: none;
+}
+.formulier {
+  display: block;
+  margin-top: 55px;
+  margin-right: 0px;
+  margin-left: 91px;
+  padding-right: 84px;
+  padding-bottom: 80px;
+  padding-left: 0px;
+  font-size: 12px;
+  text-shadow: none;
+}
+.sublabel-form {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  color: rgba(0, 0, 0, 0.68);
+  font-size: 17px;
+  text-align: left;
+}
+.sublabel-form.main-page {
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow: none;
+}
+.contact {
+  display: inline-block;
+  padding-left: 1px;
+}
+.coloum-blog {
+  padding-right: 30px;
+  padding-left: 9px;
+}
+.header-main-page {
+  margin-top: 82px;
+  margin-bottom: 5px;
+  margin-left: -2px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  font-size: 72px;
+  text-shadow: none;
+}
+.subheader-main-page {
+  display: inline-block;
+  margin: -5px -1px 305px 183px;
+  padding-top: 0px;
+  padding-bottom: 1px;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  color: rgba(0, 0, 0, 0.56);
+  font-size: 27px;
+  font-weight: 700;
+  text-align: left;
+}
+.subheader-main-page.yessss {
+  margin-top: -2px;
+  margin-bottom: 140px;
+  margin-left: 174px;
+  font-size: 25px;
+  text-shadow: none;
+}
+.subheader-main-page.blablba {
+  display: block;
+  margin: 0px auto 100px;
+  padding-bottom: 0px;
+  font-size: 26px;
+  text-align: center;
+  text-decoration: none;
+}
+.heading {
+  margin-top: 99px;
+  margin-bottom: 336px;
+}
+.heading.main-page {
+  margin-bottom: 0px;
+  text-shadow: none;
+}
+.subtitles {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  color: black;
+  font-size: 28px;
+  text-align: left;
+}
+.subtitles.pricing {
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  font-size: 21px;
+  line-height: 30px;
+  font-weight: 400;
+  text-shadow: none;
+}
+.testimonial {
+  margin-top: 0px;
+  margin-bottom: 39px;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  color: #93a7bc;
+  font-size: 27px;
+  line-height: 37px;
+  font-style: normal;
+  font-weight: 800;
+  text-align: center;
+}
+.testimonial:hover {
+  color: #87c2c0;
+}
+.coloum-why {
+  position: relative;
+  left: 13px;
+  top: 0px;
+  right: 22px;
+  display: inline-block;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  margin-top: 0px;
+  padding: 0px 20px;
+  background-color: transparent;
+  box-shadow: none;
+}
+.coloum-why:hover {
+  border: 0px dotted #a198cf;
+  background-color: transparent;
+  box-shadow: none;
+}
+.button-tekst {
+  display: block;
+  margin-top: -11px;
+  margin-right: -66px;
+  margin-left: -53px;
+  padding-top: 13px;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  color: black;
+  font-size: 20px;
+  line-height: 27px;
+  font-weight: 700;
+  text-shadow: none;
+}
+.row-why {
+  width: 961px;
+  margin: 18px 0px 100px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  float: none;
+}
+.nav-bar-second {
+  margin-bottom: 1px;
+  margin-left: -52px;
+  padding-top: 0px;
+  padding-bottom: 2px;
+  background-color: #ffe4b1;
+  box-shadow: #9e8b68 1px 1px 3px 0px;
+}
+.form-tekst {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  font-size: 16px;
+  text-shadow: none;
+}
+.form-tekst.tjakka {
+  margin-top: 34px;
+  margin-bottom: 20px;
+  margin-left: -1px;
+  text-shadow: none;
+}
+.form-edit {
+  margin-bottom: 3px;
+  padding-right: 0px;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  font-size: 14px;
+  text-shadow: none;
+}
+.team-tekst {
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  font-size: 17px;
+  text-align: center;
+}
+.team-tekst.services {
+  margin-top: 39px;
+  margin-left: 0px;
+  padding-top: 1px;
+  font-size: 28px;
+}
+.pictures-team {
+  display: block;
+  width: 220px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+.pictures-team.jim {
+  width: 223px;
+}
+.pictures-team.icon {
+  width: 200px;
+  height: 165px;
+}
+.team {
+  margin-top: 26px;
+  text-align: left;
+}
+.team.about-usdd {
+  margin-top: -12px;
+}
+.why {
+  margin-bottom: 0px;
+}
+.consultancy-intro {
+  margin-top: 104px;
+  margin-bottom: 135px;
+  text-shadow: none;
+}
+.consultancy-services {
+  margin-top: 46px;
+  margin-bottom: 132px;
+}
+.consultancy-headers {
+  margin-top: 7px;
+  margin-left: 0px;
+  padding-left: 0px;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  font-size: 45px;
+  text-align: left;
+  text-shadow: none;
+}
+.consultancy-headers.services {
+  margin-top: 67px;
+  margin-left: 0px;
+  text-shadow: none;
+}
+.consultancy-headerss {
+  margin-top: -7px;
+  margin-bottom: -111px;
+}
+.header-page {
+  margin-bottom: -24px;
+}
+.header-page.main-page {
+  margin-top: 80px;
+  margin-bottom: 0px;
+  text-shadow: none;
+}
+.location-vicancy {
+  margin-top: 23px;
+}
+.title-team {
+  display: block;
+  margin-top: 16px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: Exo, sans-serif;
+  color: black;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+.about-us {
+  margin-top: 74px;
+}
+.about-us-tekst {
+  margin-top: 18px;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  font-size: 17px;
+  line-height: 30px;
+  text-align: justify;
+}
+.logo-companies {
+  position: static;
+  left: 0px;
+  bottom: 0px;
+  display: block;
+  margin-top: 1px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 0px;
+  text-align: center;
+}
+.logo-companies.sogeti {
+  margin-top: 34px;
+}
+.logo-companies.sandd {
+  margin-top: 26px;
+}
+.logo-companies.trifinance {
+  margin-top: 17px;
+}
+.logo-companies._24-people {
+  margin-top: 24px;
+  margin-left: 22px;
+  padding-right: 0px;
+}
+.logo-companies.its {
+  margin-top: 12px;
+}
+.logo-companies.zorgwerk {
+  margin-top: 24px;
+}
+.logo-companies.msd {
+  margin-top: 22px;
+  margin-left: -6px;
+}
+.logo-companies.bcfjobs {
+  margin-top: 35px;
+  margin-left: 15px;
+}
+.logo-companies.xerox {
+  margin-top: 24px;
+  margin-left: 25px;
+}
+.logo-companies.sca {
+  margin-top: 8px;
+}
+.logo-companies.yc {
+  margin-top: 9px;
+}
+.logo-companies.hp {
+  margin-top: 12px;
+}
+.logo-row {
+  position: static;
+  top: 10px;
+  display: block;
+  margin-right: auto;
+  margin-bottom: 1px;
+  margin-left: -50px;
+  padding-bottom: 4px;
+  background-color: white;
+}
+.form {
+  margin-top: 54px;
+  margin-right: 180px;
+  margin-left: 180px;
+}
+.why-dd {
+  margin-bottom: 0px;
+}
+.jobs-link {
+  color: black;
+  text-shadow: none;
+}
+.mapss {
+  bottom: 8px;
+  height: 200px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.footer {
+  margin-bottom: 1px;
+  padding-bottom: 0px;
+}
+.pricing-header {
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  font-size: 17px;
+  text-shadow: none;
+}
+.tab-pricing {
+  left: 1px;
+  margin-top: 74px;
+  margin-bottom: 1px;
+  padding-bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.09);
+  text-shadow: none;
+}
+.single-crdits {
+  margin-bottom: 3px;
+  padding-bottom: 0px;
+  text-shadow: none;
+}
+.tab-single-credits.w--current {
+  text-shadow: none;
+}
+.tab-single-credits.w--current:hover {
+  text-shadow: none;
+}
+.pricing-testimonial {
+  margin-bottom: 18px;
+  padding-right: 83px;
+  padding-left: 49px;
+  text-shadow: none;
+}
+.name-testimonial-sandd {
+  margin-top: 8px;
+  margin-left: -5px;
+  padding-left: 0px;
+  font-family:'Open Sans', sans-serif;
+  color: black;
+  font-size: 17px;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+}
+.tab-pricing-ss {
+  margin-bottom: 54px;
+  text-align: center;
+  text-shadow: none;
+}
+.pricing {
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  text-shadow: none;
+}
+.gg {
+  margin-top: 80px;
+  margin-bottom: 0px;
+  margin-left: 66px;
+  padding-top: 0px;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  font-size: 61px;
+  text-shadow: none;
+}
+.days-online {
+  display: block;
+  margin: -62px auto 50px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  font-size: 19px;
+  text-align: center;
+  text-shadow: none;
+}
+.subscription {
+  position: relative;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: block;
+  margin: 0px auto;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  color: #756666;
+  font-size: 17px;
+  font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: none;
+}
+.picture-boosters {
+  width: 407px;
+  margin-top: 118px;
+  margin-left: 5px;
+}
+.picture-boosters.youtube {
+  width: 400px;
+  height: 230px;
+  margin-top: 17px;
+  margin-bottom: 0px;
+  margin-left: 53px;
+  padding-top: 21px;
+  padding-bottom: 0px;
+  padding-left: 37px;
+  box-shadow: none;
+}
+.boosters {
+  margin-top: 46px;
+  padding-left: 55px;
+}
+.row-contact {
+  margin-top: 60px;
+  margin-bottom: 34px;
+}
+.account {
+  margin-top: 124px;
+  margin-bottom: 372px;
+}
+.amount-bulk {
+  display: inline;
+  margin-left: 33px;
+  padding-bottom: 20px;
+  font-family: Tahoma, Verdana, Segoe, sans-serif;
+  font-size: 15px;
+  text-align: left;
+  text-shadow: none;
+}
+.bulk-paragraph {
+  margin-top: 15px;
+  margin-bottom: 0px;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  color: #756666;
+  font-size: 17px;
+  text-shadow: none;
+}
+.amount {
+  margin-top: 1px;
+  margin-bottom: -28px;
+  margin-left: 3px;
+  padding-left: 0px;
+  text-align: center;
+  text-shadow: none;
+}
+.amount.fer {
+  margin-bottom: -1px;
+  text-align: left;
+  text-decoration: none;
+  text-shadow: none;
+}
+.amount.fer.dsfgn {
+  margin-left: -13px;
+  text-align: left;
+  text-shadow: none;
+}
+.booster {
+  margin-top: 8px;
+  margin-bottom: 1px;
+  margin-left: -44px;
+  text-align: left;
+}
+._115 {
+  display: block;
+  margin-top: 0px;
+  margin-right: auto;
+  margin-left: 50px;
+  font-size: 71px;
+  text-shadow: none;
+}
+.email-youtube {
+  display: block;
+  margin-top: -7px;
+  margin-right: 15px;
+  margin-left: 0px;
+  padding-right: 27px;
+  padding-left: 18px;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  font-size: 13px;
+}
+.form-youtube {
+  margin-top: 33px;
+  padding-right: 199px;
+  padding-left: 231px;
+}
+.form-youtube.youtubees {
+  margin-top: 0px;
+  margin-bottom: 50px;
+  padding-right: 0px;
+  padding-left: 0px;
+  text-align: center;
+}
+.picture-consultancy {
+  width: 476px;
+  height: auto;
+  margin-top: 100px;
+  text-shadow: none;
+}
+.consutlancy-text {
+  margin-top: 16px;
+  margin-bottom: 21px;
+  margin-left: 0px;
+  padding-right: 45px;
+  text-shadow: none;
+}
+.list-consultancy {
+  margin-top: 9px;
+  margin-left: 0px;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  color: #756666;
+  font-size: 17px;
+  text-shadow: none;
+}
+.list-consultancy:hover {
+  color: #333;
+  text-shadow: none;
+}
+.loet {
+  margin-top: 218px;
+  margin-left: -4px;
+}
+.service-consultancy {
+  margin-bottom: -135px;
+  padding-left: 0px;
+}
+.test-form-consultancy {
+  margin-top: 7px;
+  margin-left: -66px;
+}
+.two-lines-consultancy {
+  margin-top: 38px;
+  margin-bottom: 10px;
+  margin-left: 0px;
+  padding-right: 0px;
+  font-size: 24px;
+  line-height: 41px;
+  text-align: left;
+  text-shadow: none;
+}
+.drop-down {
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  font-size: 14px;
+  text-shadow: none;
+}
+.product-tour-subtitle {
+  margin-top: 70px;
+  margin-bottom: 16px;
+  margin-left: 1px;
+  box-shadow: none;
+  color: #304d84;
+  font-size: 17px;
+  line-height: 28px;
+  text-align: left;
+  list-style-type: disc;
+  text-shadow: none;
+}
+.hubnut {
+  margin-top: 20px;
+  margin-bottom: 80px;
+  padding-bottom: 0px;
+}
+.teampicturs {
+  margin: 23px 15px 35px -2px;
+  text-align: left;
+}
+.row-teamss {
+  margin-top: 49px;
+}
+.product-tour-starter-page {
+  margin-bottom: 1px;
+  background-color: rgba(135, 194, 192, 0.2);
+}
+.product-tour-presubtite {
+  margin-top: 26px;
+  font-size: 17px;
+  text-align: left;
+}
+.heading-product-tour {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  right: auto;
+  bottom: auto;
+  display: block;
+  margin-top: 140px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  padding-bottom: 0px;
+  float: none;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  font-size: 48px;
+  text-align: center;
+}
+.subtiltes-product-tour {
+  margin-top: 0px;
+  margin-bottom: 25px;
+  color: #403187;
+  line-height: 58px;
+  text-align: right;
+}
+.distribution {
+  margin-bottom: 0px;
+  padding-bottom: 50px;
+  background-color: rgba(121, 132, 152, 0.45);
+}
+.boosterssssd {
+  margin-top: 50px;
+  font-size: 17px;
+  text-align: left;
+}
+.boosters-title {
+  margin-top: 0px;
+  color: #403187;
+  line-height: 56px;
+  text-align: left;
+}
+.booster-section {
+  background-color: rgba(255, 240, 212, 0.45);
+}
+.booster-subtext {
+  margin-top: 25px;
+  margin-bottom: 50px;
+  padding-right: 0px;
+  box-shadow: none;
+  color: #304d84;
+  font-size: 17px;
+  line-height: 28px;
+  text-shadow: none;
+}
+.main-header-distribution {
+  font-size: 17px;
+  text-align: right;
+}
+.production-header {
+  margin-top: -9px;
+  color: #403187;
+  line-height: 58px;
+  text-align: left;
+}
+.booster-slide {
+  margin-top: -1px;
+  margin-bottom: 50px;
+  background-color: transparent;
+}
+.youtube-booster {
+  margin-right: 16px;
+  margin-left: 17px;
+  padding-right: 51px;
+  font-size: 17px;
+  line-height: 31px;
+  text-align: justify;
+  text-shadow: none;
+}
+.booster-youtube-heading {
+  margin-top: 43px;
+  margin-bottom: 19px;
+  margin-left: 16px;
+  box-shadow: none;
+  font-size: 28px;
+  text-shadow: none;
+}
+.booster-twitter {
+  margin-top: 2px;
+  margin-right: 15px;
+  margin-left: 20px;
+  padding-top: 12px;
+  padding-right: 57px;
+  text-shadow: none;
+}
+.twitter-booster {
+  margin-top: 37px;
+  margin-bottom: 7px;
+  margin-left: 19px;
+  box-shadow: none;
+  text-shadow: none;
+}
+.presubtitle-distribution {
+  position: relative;
+  right: 0px;
+  margin-top: 0px;
+  margin-bottom: 50px;
+  padding-top: 0px;
+  padding-right: 0px;
+  box-shadow: none;
+  color: #304d84;
+  font-size: 17px;
+  line-height: 28px;
+  text-align: left;
+  letter-spacing: 1px;
+  text-shadow: none;
+}
+.header-allfeatures {
+  margin-top: 20px;
+  margin-left: 20px;
+  font-family:'Exljbris museosansrounded 300', sans-serif;
+  color: black;
+  font-size: 20px;
+  line-height: 23px;
+  text-transform: none;
+}
+.row-all-features {
+  margin-top: 5px;
+  margin-bottom: 29px;
+  padding-top: 1px;
+}
+.allfeaturesdiv {
+  padding-bottom: 15px;
+  border-style: solid;
+  border-width: 4px;
+  border-color: rgba(135, 194, 192, 0.49);
+  background-color: rgba(255, 255, 255, 0.70);
+  box-shadow: rgba(67, 99, 98, 0.49) 1px 1px 3px 0px;
+}
+.feature-paragraph {
+  margin-right: 16px;
+  margin-bottom: 14px;
+  margin-left: 20px;
+  padding-right: 20px;
+  font-size: 16px;
+  text-shadow: none;
+}
+.vicancy-logo {
+  margin-top: 2px;
+}
+.logo-vicancy-s {
+  margin-left: 75px;
+}
+.main-page {
+  margin-top: 10px;
+  margin-bottom: 0px;
+  padding-right: 0px;
+  text-shadow: none;
+}
+.faq-pricing {
+  margin-bottom: 64px;
+}
+.paragraph-services {
+  margin-top: 26px;
+  margin-bottom: 28px;
+  margin-left: 0px;
+  padding-right: 33px;
+  padding-left: 20px;
+  text-shadow: none;
+}
+.workshops {
+  margin-top: 5px;
+}
+.workshops.divver {
+  margin-top: -5px;
+  border: 1px solid black;
+  box-shadow: black 1px 1px 3px 0px;
+}
+.oneononess {
+  border: 1px solid black;
+  box-shadow: black 1px 1px 3px 0px;
+}
+.carousel-icon {
+  color: #555;
+}
+.important-text {
+  padding-top: 0px;
+  text-shadow: none;
+}
+.link {
+  color: #93a7bc;
+  text-decoration: none;
+  text-shadow: none;
+}
+.link:hover {
+  text-decoration: underline;
+  text-shadow: none;
+}
+.videomanager {
+  position: relative;
+  right: 70px;
+  overflow-x: visible;
+  overflow-y: visible;
+  border-radius: 20px;
+  box-shadow: #555 14px 14px 10px 0px;
+}
+html.w-mod-js.w-mod-no-ios *[data-ix="popup"] {
+  opacity: 0;
+  -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  transform: scale(0.8);
+}
+html.w-mod-js.w-mod-no-ios *[data-ix="slideinleft"] {
+  opacity: 0;
+  -webkit-transform: translate(-100px, 0px);
+  -ms-transform: translate(-100px, 0px);
+  -o-transform: translate(-100px, 0px);
+  transform: translate(-100px, 0px);
+}
+html.w-mod-js.w-mod-no-ios *[data-ix="slideinright"] {
+  opacity: 0;
+  -webkit-transform: translate(100px, 0px);
+  -ms-transform: translate(100px, 0px);
+  -o-transform: translate(100px, 0px);
+  transform: translate(100px, 0px);
+}
+html.w-mod-js.w-mod-no-ios *[data-ix="slideinup"] {
+  opacity: 0;
+  -webkit-transform: translate(0px, 100px);
+  -ms-transform: translate(0px, 100px);
+  -o-transform: translate(0px, 100px);
+  transform: translate(0px, 100px);
+}
+html.w-mod-js *[data-ix="developer-text"] {
+  display: none;
+}
+html.w-mod-js *[data-ix="popupbelow"] {
+  display: none;
+}
+@media (max-width: 991px) {
+  h1 {
+    margin-top: -109px;
+    padding-left: 0px;
+  }
+  .button {
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+  }
+}
+@media (max-width: 767px) {
+  h1 {
+    margin-top: -103px;
+  }
+  h2 {
+    margin-top: 107px;
+  }
+  h3 {
+    font-size: 33px;
+    line-height: 31px;
+  }
+  .button {
+    margin-bottom: 33px;
+    padding: 29px 30px;
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+@media (max-width: 479px) {
+  h1 {
+    margin-top: -142px;
+    font-size: 21px;
+  }
+  h3 {
+    font-size: 27px;
+  }
+  .button {
+    -webkit-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+  }
+}
+
+@font-face {
+  font-family: 'Exljbris museosansrounded 300';
+  src: url('../images/exljbris%20-%20MuseoSansRounded-300.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Exljbris museosansrounded 300';
+  src: url('../images/exljbris%20-%20MuseoSansRounded-300.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Exljbris museosansrounded 300';
+  src: url('../images/exljbris%20-%20MuseoSansRounded-300.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}

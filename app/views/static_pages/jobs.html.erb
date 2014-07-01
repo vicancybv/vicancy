@@ -1,244 +1,317 @@
-<% content_for :head do %>
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title><%= "#{@page_title} - " unless @page_title.blank? %>Vicancy®</title>
+  <link rel="image_src" href="https://secure-b.vimeocdn.com/ps/540/210/5402108_300.jpg" />
+  <meta name="google-site-verification" content="KwNMVaymQ2zFueq8nLGSLVem_N2o2caSgVmJzLtw9bw" />
+  <meta name="keywords" content="Vicancy, video vacature, videovacature, social media recruitment, LinkedIn" />
+  <meta name="description" content="Vicancy® is voor recruitment bedrijven die met geanimeerde videovacatures actief willen inzetten op werving via social media kanalen.">
+  <meta name="author" content="Vicancy">
+  <meta name="google-site-verification: google9ef9b70d15c502ca.html">
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- CSS
+  ================================================== -->
+  <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+
   <title>Werken bij Vicancy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= stylesheet_link_tag  "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
-<% end %>
+  
+  <!-- Favicons
+  ================================================== -->
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
 
-<div class="preheader">
-  <div class="masthead">
-    <div class="w-container">
-      <h1>Join our Team</h1>
-      <img class="logo" src="/images/logo_vicancy_whiteinside.png" height="150" alt="logo_vicancy_whiteinside.png">
+  <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36087356-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script>
+
+  <!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+mixpanel.init("93bd7a62384204b11d23a083b5a86681");</script><!-- end Mixpanel -->
+
+  <!-- Social media thumbnail 
+  ============================================================-->
+  <link rel="image_src" href="/images/vicancyLogoForNow250x250.jpg" />
+        
+</head>
+<body>
+      
+        
+  <script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-38359879-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+  </script>
+    
+    <div class="preheader">
+    <div class="masthead">
+      <div class="w-container">
+        <h1>Join our Team</h1>
+        <img class="logo" src="/images/logo_vicancy_whiteinside.png" height="150" alt="logo_vicancy_whiteinside.png">
+      </div>
+    </div>
+    <div class="navigation">
+      <div class="w-container">
+        <a class="new-video" href="/"><h3 class="navbutton navbuttonfirst" target="_blank">Vicancy.com</h3></a>
+        <a ><h3 class="navbutton navbutton" data-toggle="modal" data-target="#ContactModal">Contact</h3></a>
+      </div>
     </div>
   </div>
-  <div class="navigation">
-    <div class="w-container">
-      <a class="new-video" href="/"><h3 class="navbutton navbuttonfirst" target="_blank">Vicancy.com</h3></a>
-      <a ><h3 class="navbutton navbutton" data-toggle="modal" data-target="#ContactModal">Contact</h3></a>
-    </div>
+  <div class="main">
+    <section class="vacancies">
+      <div class="w-container maincontainer">
+        <div class="w-row">
+          <div class="w-col w-col-8 maincolumn" id="video-list">
+            <h2>Huidige vacatures</h2>
+
+            <!-- vacature begin -->
+            <div class="video vicancy panel">
+              <div class="w-clearfix top" data-toggle="collapse" data-parent="#video-list" href="#vacature1_body">
+                <img class="vicancylogo" src="/images/logo_vicancy_transparent_notext.png" height="35" alt="logo_vicancy_transparent_notext.png">
+                <h4>Klanten Koning(in)</h4>
+                <h5>Per Direct!</h5>
+              </div>
+              <div class="panel-collapse actions collapse in" id="vacature1_body">
+                <div class="w-row actioncontainer">
+                  <div class="w-col w-col-5 previewrow">
+                    <iframe src="//fast.wistia.net/embed/iframe/mg3wpwxllv" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen style="width:500px; height:281px; margin-left:25px;"></iframe>     
+                  </div>
+                  <div class="w-col w-col-12 w-clearfix actionrow panelbody">
+                    <p><span class="intro">Doordat we op dit moment elke maand meer dan 50% groter zijn dan de maand ervoor (!), weten steeds meer klanten hun weg te vinden naar onze support kanalen. We zijn dan ook op zoek naar een gemotiveerde starter die ons helpt met het beantwoorden van vragen en het door-ontwikkelen van een professioneel support systeem.</span> 
+                    </br></br>
+                    <strong>Wat jij gaat doen:</strong>
+                      <ul>
+                        <li>Je verwerkt en communiceert de feedback van klanten</li>
+                        <li>Je beantwoordt vragen van klanten binnen 1 uur na binnenkomst</li>
+                        <li>Je zet een professioneel support systeem op dat een groei van 40-70% per maand kan afhandelen.</li>
+                      </ul>
+                    </p>
+                    <p style="margin-top:-60px;">
+                    <strong>Wie ben jij?</strong>
+                    </br></br>
+                    Net als Richard Branson in <a href="https://www.linkedin.com/today/post/article/20130923230007-204068115-how-i-hire-focus-on-personality" target="blank">zijn blog over “hiring</a>” schreef, geloven ook wij dat “personality” het allerbelangrijkste is in het opzetten van een succesvol team. Uiteraard doen jouw skills, competenties en vaardigheden ertoe. Met de juiste mindset kan je dit soort dingen echter allemaal leren; your personality stays however. Een paar dingen om rekening mee te houden: 
+                      <ul>
+                        <li>We zijn een technologie bedrijf en geen callcenter of sales bedrijf. Een natuurlijke affiniteit met internet / tech is dus zeker een pre.</li>
+                        <li>We hebben op korte termijn internationale ambities; goede Engelse, Franse of Duitse taal- en schrijfvaardigheden kunnen van pas komen. </li>
+                      </ul>
+                    </p>
+                    <p style="margin-top:-60px;">
+                    Bekijk voordat je contact opneemt de volgende twee boeken over “customer service” I) <a href="http://www.bol.com/nl/p/rework/1001004007518176/" target="_blank">Rework</a>, II) <a href="http://www.bol.com/nl/p/delivering-happiness/1001004011346221/?Referrer=ADVNLBEG002011100100401134622111" target="_blank">Delivering happiness</a>. Kopen is niet nodig maar een beter gevoel krijgen voor “customer service 2.0 “ is zeker handig ;)
+                    </p>
+                    <p style="margin-top:-60px;">
+                      <a class="button primary" href="/jobsform">Reageer nu</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- vacature eind -->
+
+            <!-- vacature begin -->
+            <div class="video vicancy panel">
+              <div class="w-clearfix top" data-toggle="collapse" data-parent="#video-list" href="#vacature4_body">
+                <img class="vicancylogo" src="/images/logo_vicancy_transparent_notext.png" height="35" alt="logo_vicancy_transparent_notext.png">
+                <h4>Intern Marketing & Communicatie</h4>
+                <h5>Per Direct!</h5>
+              </div>
+              <div class="panel-collapse actions collapse" id="vacature4_body">
+                <div class="w-row actioncontainer">
+                  <div class="w-col w-col-5 previewrow">
+                    <iframe src="//player.vimeo.com/video/87081863?title=0&amp;byline=0&amp;portrait=0&amp;color=241d8f" style="width:500px; height:281px; margin-left:25px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>     
+                  </div>
+                  <div class="w-col w-col-12 w-clearfix actionrow panelbody">
+                    <p><span class="intro">Studeer jij Marketing of Communicatie, ben je goed in schrijven en durf je de uitdaging aan om een jong merk in de recruitment industrie verder vorm te geven? Dan ben jij iemand die wij zoeken!</span> 
+                      <ul>
+                        <li><strong>Communicatie</strong> &ndash; Je beheert de website en onze sociale media kanalen. Je schrijft blogs over recruitment, ontwikkelt marketingmaterialen en je maakt persberichten. </li>
+                        <li><strong>Online marketing</strong> &ndash; Je bent constant actief op het web. Je experimenteert met nieuwe marketingkanalen. Zo ga je bezig met SEO, Pay-per-click advertising (Google AdWords) en doe je A/B-tests op de website. Kortom: je zoekt ongebaande paden om Vicancy nog sneller te laten groeien. </li>
+                        <li><strong>Operations</strong> &ndash; Naast je activiteiten voor marketing & communicatie help je ook met de productie van videovacatures. Hiervoor vat je een vacature kernachtig samen (uitstekend Engelse & Nederlandse schrijfvaardigheden) en stuur je een team van animatoren verspreid over de hele wereld aan. </li>
+                      </ul>
+                      <a class="button primary" href="/jobsform">Reageer nu</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- vacature eind -->
+
+            <!-- vacature begin -->
+            <div class="video vicancy panel">
+              <div class="w-clearfix top" data-toggle="collapse" data-parent="#video-list" href="#vacature2_body">
+                <img class="vicancylogo" src="/images/logo_vicancy_transparent_notext.png" height="35" alt="logo_vicancy_transparent_notext.png">
+                <h4>Intern Product Design</h4>
+                <h5>Per Direct!</h5>
+              </div>
+              <div class="panel-collapse actions collapse" id="vacature2_body">
+                <div class="w-row actioncontainer">
+                  <div class="w-col w-col-5 previewrow">
+                    <iframe src="//player.vimeo.com/video/87569575?title=0&amp;byline=0&amp;portrait=0&amp;color=241d8f" style="width:500px; height:281px; margin-left:25px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>   
+                  </div>
+                  <div class="w-col w-col-12 w-clearfix actionrow panelbody">
+                    <p><span class="intro">Vicancy groeit als kool en is op zoek naar een (product) designer. We werken veel met After Effects en zijn op zoek naar een designer die wel eens eerder met dat soort bijltjes gehakt heeft. Lijkt werken in een start-up jou wel wat? Neem dan direct contact op!</span>
+                    <br><br>
+                    <strong>Jouw Opdracht</strong><br>
+                      Tijdens je stage zul je onderzoeken hoe vacatures effectief naar stijl en bedrijfstype geclusterd kunnen worden. Je identificeert deze clusters (stap I), en ontwikkelt hier vervolgens animatie-templates voor (stap II). Vervolgens test je de templates in de markt (stap III) en evalueer je het resultaat (stap IV). Je bent van begin tot eind bij het ontwikkeltraject betrokken, en beheert hiervoor je eigen budget.
+                      <ul>
+                        <li><strong>Product Design</strong> &ndash; Je ontwikkelt nieuwe videotemplates in After Effects. De komende maanden bereiden we ons portfolio uit naar 5-7 templates in verschillende stijlen. Daar speel jij een centrale rol in!</li>
+                        <li><strong>After Effects voor gevorderden</strong> &ndash; Daarnaast zoek je de grenzen op van de mogelijkheden met AE. Je zoekt bijvoorbeeld uit hoe AE gescript kan worden. Zodat het volledig geautomatiseerd kan draaien, terwijl we voor elke klant een uniek product blijven opleveren. </li>
+                        <li><strong>Web Design</strong> &ndash; We ontwikkelen webapplicaties (Ruby on Rails) om videovacatures supersnel te verspreiden. Samen met Pieter (co-founder) ben je verantwoordelijk voor de UI / UX en het design. Programmeerkennis is niet noodzakelijk, maar wel erg handig. </li>
+                        <li><strong>Branding & marketing materiaal ontwikkelen</strong> &ndash; Jij bent verantwoordelijk voor een strakke uitstraling van ons merk. Dat zit in de website, maar ook in brochures, email design en andere onverwachte plekken. Je zorgt dat het design consistent en uniform wordt uitgedragen.</li>
+                      </ul>
+                      <a class="button primary" href="/jobsform">Reageer nu</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- vacature eind -->
+
+            <!-- vacature begin -->
+            <div class="video vicancy panel">
+              <div class="w-clearfix top" data-toggle="collapse" data-parent="#video-list" href="#vacature3_body">
+                <img class="vicancylogo" src="/images/logo_vicancy_transparent_notext.png" height="35" alt="logo_vicancy_transparent_notext.png">
+                <h4>Intern Web Development (Ruby on Rails)</h4>
+                <h5>Per Direct!</h5>
+              </div>
+              <div class="panel-collapse actions collapse" id="vacature3_body">
+                <div class="w-row actioncontainer">
+                  <div class="w-col w-col-5 previewrow">
+                    <!-- <iframe src="//player.vimeo.com/video/87081863?title=0&amp;byline=0&amp;portrait=0&amp;color=241d8f" style="width:500px; height:281px; margin-left:25px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>  -->   
+                  </div>
+                  <div class="w-col w-col-12 w-clearfix actionrow panelbody">
+                    <p><span class="intro">We zijn de hele dag in de weer met video, en schrijven software (vooral Ruby on Rails en JavaScript) om te zorgen dat onze videos optimaal presteren op het web. We groeien hard, en zijn op zoek naar een jonge Web Developer. Lijkt werken in een start-up jou wel wat? Lees dan snel verder!</span>
+                    <br><br>
+                    <strong>Jouw Opdracht</strong><br>
+                      Tijdens je stage zul je onderzoeken hoe onze processen van productie en distributie geoptimaliseerd kunnen worden. Je schrijft scripts voor After Effects zodat we onze productie kunnen draaien op Amazon EC2. Verder schrijf je een keten aan API-interacties naar verschillende services zoals YouTube, Twitter, Bitly en ons eigen platform. Hierdoor kunnen we videos snel distribueren en verspreiden.
+                      <ul>
+                        <li><strong>Ruby on Rails</strong> &ndash; Onze back-end structuren zijn geschreven in Ruby. Grotendeels is dat basis van Rails, maar soms ook Sinatra. Je hebt ervaring met Ruby, Rails en deployment via Heroku (en dus Git). Natuurlijk is het handig als je ook ervaring hebt met Haml, Sass en CoffeeScript.</li>
+                        <li><strong>Client-side Javascript</strong> &ndash; Je ontwikkelt en verbetert onze front-end. Naast ervaring met vanilla Javascript is het fijn als je kunt werken met backbone.js (en marionette.js) als MVC. Je schrijft zowel single-page applicaties voor ons eigen platform, als ook javascript widgets en plugins voor onze distributeurs. </li>
+                        <li><strong>UI / UX</strong> &ndash; Je vindt het leuk om (af en toe) mee te denken over de ervaring voor de gebruiker. Wij halen alles uit de kast om te zorgen de software die wij leveren voor onze gebruikers extreem simpel en overzichtelijk is. </li>
+                      </ul>
+                      <a class="button primary" href="/jobsform">Reageer nu</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- vacature eind -->
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="w-container maincontainer">
+        
+        <div class="w-row benefits-section">
+          <h2>Wij zijn&hellip;</h2> 
+          <div class="w-col w-col-5"> 
+            <img src="https://s3-eu-west-1.amazonaws.com/vicancy/P1050642.JPG" class="img-responsive hidden-xs" alt="software developer on couch">
+          </div>
+          <div class="w-col w-col-7">
+            <ul>
+              <li>Wij zijn twee jonge ondernemers (Loet Rammelsberg & Pieter Moorman) die ongeveer een jaar geleden zijn begonnen met het idee om de recruitment ‘industrie’ op een effectievere en creatievere manier te laten communiceren. Hiervoor hebben we een animatie template ontwikkelt waarmee werkgevers hun openstaande functies kunnen visualiseren. Zo begrijpen kandidaten beter waar ze op moeten solliciteren en worden vacatures sneller gevonden.</li> 
+              <li>We houden van creativiteit, zijn erg flexibel en vinden het leuk om nieuwe producten te maken en te vermarkten. Ook houden we van een uitdaging -- ‘op je bek gaan en weer op staan, snel fouten maken, en veel leren’ -- . We zoeken dan ook iemand die hier niet bang voor is.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="w-row benefits-section">
+          <h2>We verwachten van jou&hellip;</h2> 
+          <div class="w-col w-col-5"> 
+            <img src="https://s3-eu-west-1.amazonaws.com/vicancy/utrechtinc.jpeg" class="img-responsive hidden-xs" alt="software developer on couch">
+          </div>
+          <div class="w-col w-col-7">
+            <ul>
+              <li><strong>Leergierigheid</strong> &ndash; In een start-up is weinig ruimte voor specialisten. Je vindt het leuk om buiten je vakgebied te kijken, en nieuwe dingen te leren. Je houdt van een uitdaging. Welke uitdaging dat weten we soms pas een week van te voren;)</li>
+              <li><strong>Een mening</strong> &ndash; Over je eigen vakgebied, maar ook over andere dingen. Omdat we nog een klein bedrijf zijn is er nauwelijks hiërarchie. Je mening wordt niet alleen op prijs gesteld, maar zelfs verwacht als constructieve bijdrage.</li>
+              <li><strong>Enthousiasme</strong> &ndash; Wij werken hard, maar houden van een open en relaxte werksfeer. Een stevig kop koffie is goed, maar een stevig dosis enthousiasme is beter. </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="w-row benefits-section">
+          <h2>Wij bieden jou&hellip;</h2> 
+          <div class="w-col w-col-5"> 
+            <img src="https://s3-eu-west-1.amazonaws.com/vicancy/FIF_price.png" class="img-responsive hidden-xs" alt="software developer on couch">
+          </div>
+          <div class="w-col w-col-7">
+            <ul>
+              <li><strong>Een uitdaging</strong> &ndash; Werken voor een start-up is anders dan voor een ‘normaal’ bedrijf. Het is een avontuur, en daar moet je van houden. Start-ups bieden je een enorme hoeveelheid kansen om te groeien als designer, manager en ondernemer. Daarom zijn start-ups zo leuk ;-)</li>
+              <li><strong>Een vette omgeving (Utrecht Inc.)</strong> &ndash; We zitten op kantoor bij Utrecht Inc. Samen met ons ga je in drie maanden door het <a href="http://utrechtinc.nl/startup-support/programs/pressure-cooker/">Pressure Cooker Program</a> en zit je met zo’n 20 high potential start-ups bij elkaar. Jij kunt samen met ons de hele rollercoaster meemaken. </li>
+              <li><strong>Doorgroeimogelijkheden</strong> &ndash; Vicancy groeit met zo’n 30% per maand. Dat is behoorlijk snel, dus we zijn altijd op zoek naar nieuw talent. Als jij echt op je plek zit bij ons blijf je misschien ook wel na je stage hier hangen.</li>
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
   </div>
-</div>
-<div class="main">
-  <section class="vacancies">
-    <div class="w-container maincontainer">
-      <div class="w-row">
-        <div class="w-col w-col-8 maincolumn" id="video-list">
-          <h2>Huidige vacatures</h2>
 
-          <!-- vacature begin -->
-          <div class="video vicancy panel">
-            <div class="w-clearfix top" data-toggle="collapse" data-parent="#video-list" href="#vacature1_body">
-              <img class="vicancylogo" src="/images/logo_vicancy_transparent_notext.png" height="35" alt="logo_vicancy_transparent_notext.png">
-              <h4>Klanten Koning(in)</h4>
-              <h5>Per Direct!</h5>
-            </div>
-            <div class="panel-collapse actions collapse in" id="vacature1_body">
-              <div class="w-row actioncontainer">
-                <div class="w-col w-col-5 previewrow">
-                  <iframe src="//fast.wistia.net/embed/iframe/mg3wpwxllv" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen style="width:500px; height:281px; margin-left:25px;"></iframe>     
-                </div>
-                <div class="w-col w-col-12 w-clearfix actionrow panelbody">
-                  <p><span class="intro">Doordat we op dit moment elke maand meer dan 50% groter zijn dan de maand ervoor (!), weten steeds meer klanten hun weg te vinden naar onze support kanalen. We zijn dan ook op zoek naar een gemotiveerde starter die ons helpt met het beantwoorden van vragen en het door-ontwikkelen van een professioneel support systeem.</span> 
-                  </br></br>
-                  <strong>Wat jij gaat doen:</strong>
-                    <ul>
-                      <li>Je verwerkt en communiceert de feedback van klanten</li>
-                      <li>Je beantwoordt vragen van klanten binnen 1 uur na binnenkomst</li>
-                      <li>Je zet een professioneel support systeem op dat een groei van 40-70% per maand kan afhandelen.</li>
-                    </ul>
-                  </p>
-                  <p style="margin-top:-60px;">
-                  <strong>Wie ben jij?</strong>
-                  </br></br>
-                  Net als Richard Branson in <a href="https://www.linkedin.com/today/post/article/20130923230007-204068115-how-i-hire-focus-on-personality" target="blank">zijn blog over “hiring</a>” schreef, geloven ook wij dat “personality” het allerbelangrijkste is in het opzetten van een succesvol team. Uiteraard doen jouw skills, competenties en vaardigheden ertoe. Met de juiste mindset kan je dit soort dingen echter allemaal leren; your personality stays however. Een paar dingen om rekening mee te houden: 
-                    <ul>
-                      <li>We zijn een technologie bedrijf en geen callcenter of sales bedrijf. Een natuurlijke affiniteit met internet / tech is dus zeker een pre.</li>
-                      <li>We hebben op korte termijn internationale ambities; goede Engelse, Franse of Duitse taal- en schrijfvaardigheden kunnen van pas komen. </li>
-                    </ul>
-                  </p>
-                  <p style="margin-top:-60px;">
-                  Bekijk voordat je contact opneemt de volgende twee boeken over “customer service” I) <a href="http://www.bol.com/nl/p/rework/1001004007518176/" target="_blank">Rework</a>, II) <a href="http://www.bol.com/nl/p/delivering-happiness/1001004011346221/?Referrer=ADVNLBEG002011100100401134622111" target="_blank">Delivering happiness</a>. Kopen is niet nodig maar een beter gevoel krijgen voor “customer service 2.0 “ is zeker handig ;)
-                  </p>
-                  <p style="margin-top:-60px;">
-                    <a class="button primary" href="/jobsform">Reageer nu</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- vacature eind -->
+  <%= render "layouts/footer" %>
 
-          <!-- vacature begin -->
-          <div class="video vicancy panel">
-            <div class="w-clearfix top" data-toggle="collapse" data-parent="#video-list" href="#vacature4_body">
-              <img class="vicancylogo" src="/images/logo_vicancy_transparent_notext.png" height="35" alt="logo_vicancy_transparent_notext.png">
-              <h4>Intern Marketing & Communicatie</h4>
-              <h5>Per Direct!</h5>
-            </div>
-            <div class="panel-collapse actions collapse" id="vacature4_body">
-              <div class="w-row actioncontainer">
-                <div class="w-col w-col-5 previewrow">
-                  <iframe src="//player.vimeo.com/video/87081863?title=0&amp;byline=0&amp;portrait=0&amp;color=241d8f" style="width:500px; height:281px; margin-left:25px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>     
-                </div>
-                <div class="w-col w-col-12 w-clearfix actionrow panelbody">
-                  <p><span class="intro">Studeer jij Marketing of Communicatie, ben je goed in schrijven en durf je de uitdaging aan om een jong merk in de recruitment industrie verder vorm te geven? Dan ben jij iemand die wij zoeken!</span> 
-                    <ul>
-                      <li><strong>Communicatie</strong> &ndash; Je beheert de website en onze sociale media kanalen. Je schrijft blogs over recruitment, ontwikkelt marketingmaterialen en je maakt persberichten. </li>
-                      <li><strong>Online marketing</strong> &ndash; Je bent constant actief op het web. Je experimenteert met nieuwe marketingkanalen. Zo ga je bezig met SEO, Pay-per-click advertising (Google AdWords) en doe je A/B-tests op de website. Kortom: je zoekt ongebaande paden om Vicancy nog sneller te laten groeien. </li>
-                      <li><strong>Operations</strong> &ndash; Naast je activiteiten voor marketing & communicatie help je ook met de productie van videovacatures. Hiervoor vat je een vacature kernachtig samen (uitstekend Engelse & Nederlandse schrijfvaardigheden) en stuur je een team van animatoren verspreid over de hele wereld aan. </li>
-                    </ul>
-                    <a class="button primary" href="/jobsform">Reageer nu</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- vacature eind -->
+  <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+  <script type="text/javascript" src="js/webflow.js"></script>
 
-          <!-- vacature begin -->
-          <div class="video vicancy panel">
-            <div class="w-clearfix top" data-toggle="collapse" data-parent="#video-list" href="#vacature2_body">
-              <img class="vicancylogo" src="/images/logo_vicancy_transparent_notext.png" height="35" alt="logo_vicancy_transparent_notext.png">
-              <h4>Intern Product Design</h4>
-              <h5>Per Direct!</h5>
-            </div>
-            <div class="panel-collapse actions collapse" id="vacature2_body">
-              <div class="w-row actioncontainer">
-                <div class="w-col w-col-5 previewrow">
-                  <iframe src="//player.vimeo.com/video/87569575?title=0&amp;byline=0&amp;portrait=0&amp;color=241d8f" style="width:500px; height:281px; margin-left:25px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>   
-                </div>
-                <div class="w-col w-col-12 w-clearfix actionrow panelbody">
-                  <p><span class="intro">Vicancy groeit als kool en is op zoek naar een (product) designer. We werken veel met After Effects en zijn op zoek naar een designer die wel eens eerder met dat soort bijltjes gehakt heeft. Lijkt werken in een start-up jou wel wat? Neem dan direct contact op!</span>
-                  <br><br>
-                  <strong>Jouw Opdracht</strong><br>
-                    Tijdens je stage zul je onderzoeken hoe vacatures effectief naar stijl en bedrijfstype geclusterd kunnen worden. Je identificeert deze clusters (stap I), en ontwikkelt hier vervolgens animatie-templates voor (stap II). Vervolgens test je de templates in de markt (stap III) en evalueer je het resultaat (stap IV). Je bent van begin tot eind bij het ontwikkeltraject betrokken, en beheert hiervoor je eigen budget.
-                    <ul>
-                      <li><strong>Product Design</strong> &ndash; Je ontwikkelt nieuwe videotemplates in After Effects. De komende maanden bereiden we ons portfolio uit naar 5-7 templates in verschillende stijlen. Daar speel jij een centrale rol in!</li>
-                      <li><strong>After Effects voor gevorderden</strong> &ndash; Daarnaast zoek je de grenzen op van de mogelijkheden met AE. Je zoekt bijvoorbeeld uit hoe AE gescript kan worden. Zodat het volledig geautomatiseerd kan draaien, terwijl we voor elke klant een uniek product blijven opleveren. </li>
-                      <li><strong>Web Design</strong> &ndash; We ontwikkelen webapplicaties (Ruby on Rails) om videovacatures supersnel te verspreiden. Samen met Pieter (co-founder) ben je verantwoordelijk voor de UI / UX en het design. Programmeerkennis is niet noodzakelijk, maar wel erg handig. </li>
-                      <li><strong>Branding & marketing materiaal ontwikkelen</strong> &ndash; Jij bent verantwoordelijk voor een strakke uitstraling van ons merk. Dat zit in de website, maar ook in brochures, email design en andere onverwachte plekken. Je zorgt dat het design consistent en uniform wordt uitgedragen.</li>
-                    </ul>
-                    <a class="button primary" href="/jobsform">Reageer nu</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- vacature eind -->
-
-          <!-- vacature begin -->
-          <div class="video vicancy panel">
-            <div class="w-clearfix top" data-toggle="collapse" data-parent="#video-list" href="#vacature3_body">
-              <img class="vicancylogo" src="/images/logo_vicancy_transparent_notext.png" height="35" alt="logo_vicancy_transparent_notext.png">
-              <h4>Intern Web Development (Ruby on Rails)</h4>
-              <h5>Per Direct!</h5>
-            </div>
-            <div class="panel-collapse actions collapse" id="vacature3_body">
-              <div class="w-row actioncontainer">
-                <div class="w-col w-col-5 previewrow">
-                  <!-- <iframe src="//player.vimeo.com/video/87081863?title=0&amp;byline=0&amp;portrait=0&amp;color=241d8f" style="width:500px; height:281px; margin-left:25px;" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>  -->   
-                </div>
-                <div class="w-col w-col-12 w-clearfix actionrow panelbody">
-                  <p><span class="intro">We zijn de hele dag in de weer met video, en schrijven software (vooral Ruby on Rails en JavaScript) om te zorgen dat onze videos optimaal presteren op het web. We groeien hard, en zijn op zoek naar een jonge Web Developer. Lijkt werken in een start-up jou wel wat? Lees dan snel verder!</span>
-                  <br><br>
-                  <strong>Jouw Opdracht</strong><br>
-                    Tijdens je stage zul je onderzoeken hoe onze processen van productie en distributie geoptimaliseerd kunnen worden. Je schrijft scripts voor After Effects zodat we onze productie kunnen draaien op Amazon EC2. Verder schrijf je een keten aan API-interacties naar verschillende services zoals YouTube, Twitter, Bitly en ons eigen platform. Hierdoor kunnen we videos snel distribueren en verspreiden.
-                    <ul>
-                      <li><strong>Ruby on Rails</strong> &ndash; Onze back-end structuren zijn geschreven in Ruby. Grotendeels is dat basis van Rails, maar soms ook Sinatra. Je hebt ervaring met Ruby, Rails en deployment via Heroku (en dus Git). Natuurlijk is het handig als je ook ervaring hebt met Haml, Sass en CoffeeScript.</li>
-                      <li><strong>Client-side Javascript</strong> &ndash; Je ontwikkelt en verbetert onze front-end. Naast ervaring met vanilla Javascript is het fijn als je kunt werken met backbone.js (en marionette.js) als MVC. Je schrijft zowel single-page applicaties voor ons eigen platform, als ook javascript widgets en plugins voor onze distributeurs. </li>
-                      <li><strong>UI / UX</strong> &ndash; Je vindt het leuk om (af en toe) mee te denken over de ervaring voor de gebruiker. Wij halen alles uit de kast om te zorgen de software die wij leveren voor onze gebruikers extreem simpel en overzichtelijk is. </li>
-                    </ul>
-                    <a class="button primary" href="/jobsform">Reageer nu</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- vacature eind -->
-
-
+  <div class="modal fade" id="ContactModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Contact</h4>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="content">
-    <div class="w-container maincontainer">
-      
-      <div class="w-row benefits-section">
-        <h2>Wij zijn&hellip;</h2> 
-        <div class="w-col w-col-5"> 
-          <img src="https://s3-eu-west-1.amazonaws.com/vicancy/P1050642.JPG" class="img-responsive hidden-xs" alt="software developer on couch">
+        <div class="modal-body">
+          <img src="https://s3-eu-west-1.amazonaws.com/vicancy/IMG_9431.JPG" alt="foto Loet" style="width:auto; height: 150px; border-radius: 4px; margin-left:25px;">
+          <p>
+            Enthousiast geworden om ons team te komen versterken? 
+            <br>Of heb je nog een laatste prangende vraag?
+            <br>
+            <br>Neem dan snel contact met ons op!
+            <br>
+            <br>Mail: loet@vicancy.com
+            <br>Tel: 06 - 306 970 34</p><a class="button primary" href="mailto:loet@vicancy.com">Email Loet</a>
+          </p>
         </div>
-        <div class="w-col w-col-7">
-          <ul>
-            <li>Wij zijn twee jonge ondernemers (Loet Rammelsberg & Pieter Moorman) die ongeveer een jaar geleden zijn begonnen met het idee om de recruitment ‘industrie’ op een effectievere en creatievere manier te laten communiceren. Hiervoor hebben we een animatie template ontwikkelt waarmee werkgevers hun openstaande functies kunnen visualiseren. Zo begrijpen kandidaten beter waar ze op moeten solliciteren en worden vacatures sneller gevonden.</li> 
-            <li>We houden van creativiteit, zijn erg flexibel en vinden het leuk om nieuwe producten te maken en te vermarkten. Ook houden we van een uitdaging -- ‘op je bek gaan en weer op staan, snel fouten maken, en veel leren’ -- . We zoeken dan ook iemand die hier niet bang voor is.</li>
-          </ul>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
         </div>
-      </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
 
-      <div class="w-row benefits-section">
-        <h2>We verwachten van jou&hellip;</h2> 
-        <div class="w-col w-col-5"> 
-          <img src="https://s3-eu-west-1.amazonaws.com/vicancy/utrechtinc.jpeg" class="img-responsive hidden-xs" alt="software developer on couch">
-        </div>
-        <div class="w-col w-col-7">
-          <ul>
-            <li><strong>Leergierigheid</strong> &ndash; In een start-up is weinig ruimte voor specialisten. Je vindt het leuk om buiten je vakgebied te kijken, en nieuwe dingen te leren. Je houdt van een uitdaging. Welke uitdaging dat weten we soms pas een week van te voren;)</li>
-            <li><strong>Een mening</strong> &ndash; Over je eigen vakgebied, maar ook over andere dingen. Omdat we nog een klein bedrijf zijn is er nauwelijks hiërarchie. Je mening wordt niet alleen op prijs gesteld, maar zelfs verwacht als constructieve bijdrage.</li>
-            <li><strong>Enthousiasme</strong> &ndash; Wij werken hard, maar houden van een open en relaxte werksfeer. Een stevig kop koffie is goed, maar een stevig dosis enthousiasme is beter. </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="w-row benefits-section">
-        <h2>Wij bieden jou&hellip;</h2> 
-        <div class="w-col w-col-5"> 
-          <img src="https://s3-eu-west-1.amazonaws.com/vicancy/FIF_price.png" class="img-responsive hidden-xs" alt="software developer on couch">
-        </div>
-        <div class="w-col w-col-7">
-          <ul>
-            <li><strong>Een uitdaging</strong> &ndash; Werken voor een start-up is anders dan voor een ‘normaal’ bedrijf. Het is een avontuur, en daar moet je van houden. Start-ups bieden je een enorme hoeveelheid kansen om te groeien als designer, manager en ondernemer. Daarom zijn start-ups zo leuk ;-)</li>
-            <li><strong>Een vette omgeving (Utrecht Inc.)</strong> &ndash; We zitten op kantoor bij Utrecht Inc. Samen met ons ga je in drie maanden door het <a href="http://utrechtinc.nl/startup-support/programs/pressure-cooker/">Pressure Cooker Program</a> en zit je met zo’n 20 high potential start-ups bij elkaar. Jij kunt samen met ons de hele rollercoaster meemaken. </li>
-            <li><strong>Doorgroeimogelijkheden</strong> &ndash; Vicancy groeit met zo’n 30% per maand. Dat is behoorlijk snel, dus we zijn altijd op zoek naar nieuw talent. Als jij echt op je plek zit bij ons blijf je misschien ook wel na je stage hier hangen.</li>
-          </ul>
-        </div>
-      </div>
-      
-    </div>
-  </section>
-
-</div>
-
-<%= render "layouts/footer" %>
-
-<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
-<script type="text/javascript" src="js/webflow.js"></script>
-
-<div class="modal fade" id="ContactModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">Contact</h4>
-      </div>
-      <div class="modal-body">
-        <img src="https://s3-eu-west-1.amazonaws.com/vicancy/IMG_9431.JPG" alt="foto Loet" style="width:auto; height: 150px; border-radius: 4px; margin-left:25px;">
-        <p>
-          Enthousiast geworden om ons team te komen versterken? 
-          <br>Of heb je nog een laatste prangende vraag?
-          <br>
-          <br>Neem dan snel contact met ons op!
-          <br>
-          <br>Mail: loet@vicancy.com
-          <br>Tel: 06 - 306 970 34</p><a class="button primary" href="mailto:loet@vicancy.com">Email Loet</a>
-        </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+</body>
+</html>

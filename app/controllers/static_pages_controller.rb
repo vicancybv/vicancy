@@ -1,19 +1,6 @@
 class StaticPagesController < ApplicationController
 
-  caches_action [:index, :en]
-
-  layout "static"
-
-  def index
-    render layout: "static_index"
-  end
-
-  def en
-    render layout: "static_index"
-  end
-  def en_edited
-    render layout: "static_index"
-  end
+  layout false
 
 
   Vicancy::STATIC_PAGE_SLUGS.each do |slug|

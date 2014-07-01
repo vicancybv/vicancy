@@ -1,72 +1,50 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
 <head>
 
   <!-- Basic Page Needs
   ================================================== -->
   <meta charset="utf-8">
   <title>Vicancy&reg;</title>
-        <link rel="image_src" href="https://secure-b.vimeocdn.com/ps/540/210/5402108_300.jpg" />
-        <meta name="google-site-verification" content="KwNMVaymQ2zFueq8nLGSLVem_N2o2caSgVmJzLtw9bw" />
-        <meta name="keywords" content="Vicancy, video vacature, videovacature, social media recruitment, LinkedIn" />
-  <meta name="description" content="Vicancy® is voor recruitment bedrijven die met geanimeerde videovacatures actief willen inzetten op werving via social media kanalen.">
+  
+  <link rel="image_src" href="https://secure-b.vimeocdn.com/ps/540/210/5402108_300.jpg" />
+  <meta name="google-site-verification" content="KwNMVaymQ2zFueq8nLGSLVem_N2o2caSgVmJzLtw9bw" />
+  <meta name="keywords" content="Vicancy, video vacature, videovacature, social media recruitment, LinkedIn" />
+  <meta name="description" content="Vicancy creates custom video job ads based on animation.">
   <meta name="author" content="Vicancy">
-        <meta name="google-site-verification: google9ef9b70d15c502ca.html">
+  <meta name="google-site-verification: google9ef9b70d15c502ca.html">
 
   <!-- Mobile Specific Metas
   ================================================== -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- CSS
   ================================================== -->
-    <link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
+    
 
-    <%= stylesheet_link_tag "static_index", :media => "all" %>
+  <%= stylesheet_link_tag "static_index", :media => "all" %>
         
-    <style>
-    #headerplaceholder {
-      text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5); /* offset-x offset-y blur-radius color */
-    }
-    #headerplaceholder  .ui-text-shadow-copy {
-      color: #000; /* color, rgba and hsla not supported */
-      filter:
-        progid:DXImageTransform.Microsoft.Alpha(opacity=80) /* alpha * 100 */
-        progid:DXImageTransform.Microsoft.Blur(makeShadow=false,pixelRadius=5); /* blur-radius, in pixels without unit */
-      left: 0px; /* offset-x - blur-radius */
-      top: 0px; /* offset-y - blur-radius */
-    }
-  </style>
-
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
 
-  <!-- Favicons
-  ================================================== -->
-  <link rel="shortcut icon" href="/images/favicon.ico">
-  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-  <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
-  <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
-
-  <script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36087356-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ["PT Serif:400,400italic,700,700italic","Exo:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic","Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic"]
+      }
+    });
   </script>
-
-  <!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
-for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
-mixpanel.init("93bd7a62384204b11d23a083b5a86681");</script><!-- end Mixpanel -->
+  <%= javascript_include_tag "modernizr" %>
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-38359879-3'], ['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script');
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
 
   <!-- Social media thumbnail 
   ============================================================-->
@@ -75,7 +53,111 @@ mixpanel.init("93bd7a62384204b11d23a083b5a86681");</script><!-- end Mixpanel -->
 </head>
 <body>
 
+  <header class="header">
+    <div class="w-container">
+      <div class="w-row">
+        <div class="w-col w-col-2"></div>
+        <div class="w-col w-col-7"><a class="nav-bar-header" href="/product">Product</a><a class="nav-bar-header company" href="/team">Company</a><a class="nav-bar-header" href="http://blog.vicancy.com" target="_blank">Blog</a><a class="nav-bar-header" href="/support"
+          target="_blank">Support</a>
+        </div>
+        <div class="w-col w-col-3 login-account-colum"></div>
+      </div>
+    </div>
+  </header>
+  
   <%= yield %>
 
+  <footer class="section">
+    <div class="w-container">
+      <div class="w-row footer-colums">
+        <div class="w-col w-col-2">
+          <a class="w-inline-block" href="#">
+            <img class="logo-footer-vicancy" src="images/Vicancy_logo.png" width="100" alt="538d8505fd57481266248eb8_Vicancy_logo.png">
+          </a>
+        </div>
+        <div class="w-col w-col-2"><a class="footer-subchapters" href="#">Product&nbsp;</a>
+          <a class="footer-chapters" href="product.html">
+            <br>Features</a>
+          <a class="footer-chapters" href="pricing.html">
+            <br>Pricing</a>
+          <a class="footer-chapters" href="http://templates.vicancy.com/">
+            <br>Templates</a>
+          <a class="footer-chapters" href="/gebruikersvoorwaarden" target="_blank">
+            <br>Terms of service</a>
+        </div>
+        <div class="w-col w-col-2">
+          <h5 class="footer-subchapters">Company</h5>
+          <a class="footer-chapters" href="team.html">
+            <br>Team</a>
+          <a class="footer-chapters" href="/jobs">
+            <br>Jobs</a>
+          <a class="footer-chapters" href="https://angel.co/vicancy-2" target="_blank">
+            <br>Investors</a>
+          <a class="footer-chapters" href="https://s3-eu-west-1.amazonaws.com/vicancy/Press.zip" target="_blank">
+            <br>Press</a>
+        </div>
+        <div class="w-col w-col-2">
+          <h5 class="footer-subchapters">Support</h5>
+          <a class="footer-chapters" href="/support">
+            <br>FAQ</a>
+          <a class="footer-chapters" href="/support">
+            <br>Help</a>
+        </div>
+        <div class="w-col w-col-2 coloum-blog">
+          <h5 class="footer-subchapters">Blog&nbsp;</h5>
+          <a class="footer-chapters" href="http://blog.vicancy.com" target="_blank">
+            <br>Blog</a>
+        </div>
+        <div class="w-col w-col-2 contact">
+          <h5 class="footer-subchapters">Contact&nbsp;</h5>
+          <div class="w-widget w-widget-facebook">
+            <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fgetvicancy&amp;layout=button_count&amp;locale=en_US&amp;action=like&amp;show_faces=false&amp;share=false" scrolling="no" frameborder="0" allowtransparency="true"
+            style="border: none; overflow: hidden; width: 90px; height: 20px;"></iframe>
+          </div>
+          <div class="w-widget w-widget-twitter">
+            <iframe src="https://platform.twitter.com/widgets/follow_button.html#screen_name=vicancy&amp;show_count=true&amp;size=m&amp;show_screen_name=true&amp;dnt=true" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: 100%; height: 20px;"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS
+================================================== -->
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<%= javascript_include_tag "static_index" %>
+
+<!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+
+<!-- Sticky nav -->
+<script>
+  $(document).ready(function(){
+    $("#ipad").animate({
+    top: '-=990',
+    }, 1000, function() {
+    // Animation complete.
+    });
+    $("nav").sticky({topSpacing:0});
+    
+    
+  $('#textcommentfield').focus(function() {
+    var val = $('#textcommentfield').val();
+    if(val == "Laat hier uw bericht achter."){
+    $('#textcommentfield').val("");
+    }
+    });
+    
+    $('#textcommentfield').blur(function() {
+    var val = $('#textcommentfield').val();
+    if(val == ""){
+    $('#textcommentfield').val("Laat hier uw bericht achter.");
+    }
+    //alert('Handler for .blur() called.');
+    });
+    
+  });
+</script>
 </body>
 </html>

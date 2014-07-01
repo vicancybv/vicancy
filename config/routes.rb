@@ -8,15 +8,19 @@ Vicancy::Application.routes.draw do
   end
 
   Vicancy::STATIC_PAGE_SLUGS = %w(
-    privacypolicy
-    gebruikersvoorwaarden
-    formulier
-    support
+    bali
     bedrijfsanimaties
+    formulier
+    gebruikersvoorwaarden
     jobs
     jobsform
-    bali
-  ) unless defined?(Vicancy::STATIC_PAGE_SLUGS)
+    pricing
+    privacypolicy
+    product
+    support
+    team
+    videoconsultancy
+    ) unless defined?(Vicancy::STATIC_PAGE_SLUGS)
 
   resources :users, only: [:show]
   resources :videos, only: [:destroy] do
