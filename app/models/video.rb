@@ -85,15 +85,15 @@ class Video < ActiveRecord::Base
   end
 
   def update_from_card_params(card_params)
-    self.title = card_params[:title]
-    self.summary = card_params[:summary]
-    self.tags = card_params[:tags]
-    self.job_title = card_params[:job_title]
-    self.company = card_params[:company]
-    self.place = card_params[:place]
-    self.job_ad_url = card_params[:url]
-    self.language = card_params[:language].try(:downcase) == "en" ? "en" : "nl"
-    self.user = User.find_by_slug(card_params[:user])
+    self.title = card_params[:title].to_s.strip
+    self.summary = card_params[:summary].to_s.strip
+    self.tags = card_params[:tags].to_s.strip
+    self.job_title = card_params[:job_title].to_s.strip
+    self.company = card_params[:company].to_s.strip
+    self.place = card_params[:place].to_s.strip
+    self.job_ad_url = card_params[:url].to_s.strip
+    self.language = card_params[:language].try(:downcase).to_s.strip == "en" ? "en" : "nl"
+    self.user = User.find_by_slug(card_params[:user].to_s.strip)
   end
 
   def provider_title
