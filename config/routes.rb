@@ -1,5 +1,23 @@
 Vicancy::Application.routes.draw do
 
+  namespace :api, :defaults => {:format => :json} do
+    namespace :v1 do
+      namespace :client, module: 'client' do
+        post :auth
+        resources :videos, only: [:index]
+      end
+    end
+  end
+
+  namespace :api, :path => '', :constraints => {:subdomain => 'api'} do
+    namespace :v1 do
+      namespace :client, module: 'client' do
+        post :auth
+        resources :videos, only: [:index]
+      end
+    end
+  end
+
   resources :video_requests, only: [:create]
   resources :attachments, only: [:show] do
     member do
