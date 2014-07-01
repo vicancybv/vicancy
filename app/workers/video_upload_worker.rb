@@ -22,7 +22,7 @@ class VideoUploadWorker
     client = new_google_client
     response = client.video_upload(open(url), 
       title: video.provider_title,
-      description: video.provider_description, 
+      description: video.provider_description(:youtube), 
       keywords: video.tags_array,
       list: "denied")
     uploaded_video.update_attribute(:provider_id, response.unique_id)
@@ -37,7 +37,7 @@ class VideoUploadWorker
       uploaded_video.update_attribute(:provider_id, wistia_id)
       media = Wistia::Media.find(wistia_id)
       media.name = uploaded_video.video.provider_title
-      media.description = uploaded_video.video.provider_description
+      media.description = uploaded_video.video.provider_description(:wistia)
       media.save
     else
       uploaded_video.error!
@@ -54,7 +54,7 @@ class VideoUploadWorker
       uploaded_video.update_attribute(:provider_id, vimeo_id)
       video_api.add_tags(vimeo_id, video.tags)
       video_api.set_title(vimeo_id, video.provider_title)
-      video_api.set_description(vimeo_id, video.provider_description)
+      video_api.set_description(vimeo_id, video.provider_description(:vimeo))
     else
       uploaded_video.error!
     end

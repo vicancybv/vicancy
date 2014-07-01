@@ -5,8 +5,15 @@ nl:
     twitter: "%{company} is op zoek naar een %{job_title}. Interesse? Bekijk de videovacature: %{video_url} en klik: %{job_ad_url}"
     linkedin: "%{company} is op zoek naar een %{job_title}. Interesse? Bekijk de videovacature: %{video_url} en klik: %{job_ad_url}"
   providers:
-    description_with_place: "%{company} zoekt een %{job_title} in %{place}. Interesse? Klik op de link voor meer informatie: %{job_ad_url}"
-    description_without_place: "%{company} zoekt een %{job_title}. Interesse? Klik op de link voor meer informatie: %{job_ad_url}"
+    youtube:
+      description_with_place: "%{company} zoekt een %{job_title} in %{place}. Interesse? Klik op de link voor meer informatie: %{job_ad_url}"
+      description_without_place: "%{company} zoekt een %{job_title}. Interesse? Klik op de link voor meer informatie: %{job_ad_url}"
+    wistia:
+      description_with_place: "%{company} zoekt een %{job_title} in %{place}. Interesse? Klik op de link voor meer informatie: <a href='%{job_ad_url}'>%{job_ad_url}</a>"
+      description_without_place: "%{company} zoekt een %{job_title}. Interesse? Klik op de link voor meer informatie: <a href='%{job_ad_url}'>%{job_ad_url}</a>"
+    vimeo:
+      description_with_place: "%{company} zoekt een %{job_title} in %{place}. Interesse? Klik op de link voor meer informatie: %{job_ad_url}"
+      description_without_place: "%{company} zoekt een %{job_title}. Interesse? Klik op de link voor meer informatie: %{job_ad_url}"
   admin:
     optional: "onverplicht"
     eg: "bijv."

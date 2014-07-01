@@ -101,10 +101,10 @@ class Video < ActiveRecord::Base
     "#{job_title} - #{company}"
   end
 
-  def provider_description
+  def provider_description(provider = :youtube)
     return summary unless summary.blank?
     i18n_key = place.blank? ? 'description_without_place' : 'description_with_place'
-    I18n.t(:"providers.#{i18n_key}", locale: language, company: company, job_title: job_title, job_ad_url: job_ad_url, place: place)
+    I18n.t(:"providers.#{provider.to_s}.#{i18n_key}", locale: language, company: company, job_title: job_title, job_ad_url: job_ad_url, place: place)
   end
 
   def tags_array

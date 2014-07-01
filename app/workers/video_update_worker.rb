@@ -27,7 +27,7 @@ class VideoUpdateWorker
     video = uploaded_video.video
     response = client.video_update(uploaded_video.provider_id, 
       title: video.provider_title,
-      description: video.provider_description, 
+      description: video.provider_description(:youtube), 
       keywords: video.tags_array,
       list: "denied")
   end
@@ -36,7 +36,7 @@ class VideoUpdateWorker
     media = Wistia::Media.find(uploaded_video.provider_id)
     raise WistiaVideoNotFound unless media
     media.name = uploaded_video.video.provider_title
-    media.description = uploaded_video.video.provider_description
+    media.description = uploaded_video.video.provider_description(:wistia)
     response = media.save
   end
 
@@ -46,7 +46,7 @@ class VideoUpdateWorker
     video_api = Vimeo::Advanced::Video.new(ENV['VIMEO_CONSUMER_KEY'], ENV['VIMEO_CONSUMER_SECRET'], :token => ENV['VIMEO_USER_TOKEN'], :secret => ENV['VIMEO_USER_SECRET'])
     video_api.add_tags(vimeo_id, video.tags)
     video_api.set_title(vimeo_id, video.provider_title)
-    video_api.set_description(vimeo_id, video.provider_description)
+    video_api.set_description(vimeo_id, video.provider_description(:vimeo))
   end
 
 
