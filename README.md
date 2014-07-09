@@ -1,6 +1,8 @@
 Vicancy
 =======
 
+[ ![Codeship Status for pmoorman/vicancy](https://codeship.io/projects/6420b1d0-e98f-0131-eba0-368dc75eab9e/status)](https://codeship.io/projects/26202)
+
 Repository structure
 --------------------
 
@@ -24,3 +26,4 @@ Continuous Integration & Deployment
 
 * Code from **master** branch gets deployed into staging server
 * Code from **production** branch gets deployed into production server
+
