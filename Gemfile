@@ -9,6 +9,7 @@ gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
 gem 'font-awesome-rails'
 gem 'paperclip'
 gem 'aws-sdk', '~> 1.5.7'
+gem 'jbuilder'
 
 gem 'aasm'
 gem 'sidekiq'
@@ -20,13 +21,18 @@ gem 'wistia-api'
 gem 'vimeo'
 gem 'unicorn'
 gem 'sidekiq-scheduler', '~> 1'
+gem 'strong_parameters'
+
+group :development do
+  gem "binding_of_caller"
+  gem 'better_errors'
+end
 
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '~> 2.0'
-  gem "binding_of_caller"
-  gem 'better_errors'
   gem 'figaro'
+  gem 'factory_girl_rails'
 end
 
 group :production do

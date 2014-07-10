@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140606133035) do
+ActiveRecord::Schema.define(:version => 20140701165402) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -58,6 +58,23 @@ ActiveRecord::Schema.define(:version => 20140606133035) do
 
   add_index "attachments", ["video_request_id"], :name => "index_attachments_on_video_request_id"
 
+  create_table "clients", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "external_id"
+    t.string   "name"
+    t.string   "email"
+    t.string   "language"
+    t.string   "slug"
+    t.string   "token"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "clients", ["slug"], :name => "index_clients_on_slug", :unique => true
+  add_index "clients", ["token"], :name => "index_clients_on_token", :unique => true
+  add_index "clients", ["user_id", "external_id"], :name => "index_clients_on_user_id_and_external_id", :unique => true
+  add_index "clients", ["user_id"], :name => "index_clients_on_user_id"
+
   create_table "google_sessions", :force => true do |t|
     t.string   "access_token"
     t.datetime "expires_at"
@@ -83,7 +100,10 @@ ActiveRecord::Schema.define(:version => 20140606133035) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.string   "language"
+    t.string   "token"
   end
+
+  add_index "users", ["token"], :name => "index_users_on_token", :unique => true
 
   create_table "video_edits", :force => true do |t|
     t.text     "edits"

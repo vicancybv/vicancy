@@ -2,8 +2,12 @@ class User < ActiveRecord::Base
   has_many :videos, :dependent => :destroy
   has_many :video_requests, :dependent => :destroy
   accepts_nested_attributes_for :videos, :allow_destroy => true
-  attr_accessible :name, :slug, :language
+
+  attr_accessible :name, :slug, :language, :token
   after_validation :generate_slug, on: :create
+  after_validation :generate_token, on: :create
+
+  has_many :clients
 
   def generate_slug
   	return unless slug.blank?
@@ -13,5 +17,15 @@ class User < ActiveRecord::Base
       record = User.find_by_slug(random)
     end          
     self.slug = random
+  end
+
+  def generate_token
+    return unless token.blank?
+    record = true
+    while record
+      random = SecureRandom.urlsafe_base64(16)
+      record = User.find_by_token(random)
+    end
+    self.token = random
   end
 end
