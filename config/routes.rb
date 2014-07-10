@@ -18,6 +18,10 @@ Vicancy::Application.routes.draw do
     end
   end
 
+  get 'widget' => 'widget#show'
+  get 'widget/embed' => 'widget#embed'
+  get 'widget/test' => 'widget#test'
+
   resources :video_requests, only: [:create]
   resources :attachments, only: [:show] do
     member do
