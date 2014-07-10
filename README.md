@@ -25,6 +25,8 @@ Or create pull request
 Continuous Integration & Deployment
 -----------------------------------
 
-* Code from **master** branch gets deployed into staging server
+* Code from **master** branch gets deployed into
+  * Sandbox server: http://sandboxvicancy.herokuapp.com
+  * Staging server: http://stagingvicancy.herokuapp.com
 * Code from **production** branch gets deployed into production server
 
