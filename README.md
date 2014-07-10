@@ -20,6 +20,7 @@ Git Workflow
 ```
 git push origin master:production
 ```
+Or create pull request
 
 Continuous Integration & Deployment
 -----------------------------------
