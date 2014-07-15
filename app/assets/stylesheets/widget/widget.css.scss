@@ -1,96 +1,163 @@
-$width: 820px;
-$height: 520px;
-$header-height: 80px;
-$wg-gray: #E7E7E7;
-$wg-blue: #5EB6E2;
-$wg-back-gray: #F7F7F7;
+$width : 820px;
+$height : 520px;
+$header-height : 80px;
+$wg-gray : #E7E7E7;
+$wg-blue : #5EB6E2;
+$wg-back-gray : #F7F7F7;
 
 .wg-gray {
-  color: $wg-gray;
+  color : $wg-gray;
 }
+
 .wg-back-gray {
-  background-color: $wg-back-gray;
+  background-color : $wg-back-gray;
 }
 
 .wg-container {
-  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
-  width: $width;
-  height: $height;
+  font-family : 'Open Sans', Helvetica, Arial, sans-serif;
+  width       : $width;
+  height      : $height;
 }
+
 .wg-header {
-  height: $header-height;
+  height : $header-height;
   & div {
-    height: $header-height;
+    height : $header-height;
   }
   & div:nth-child(2) {
-    padding-left: 0px;
+    padding-left : 0px;
   }
 }
+
 .wg-body {
-  height: $height - $header-height;
-//  & div.row {
-//    height: $height - $header-height;
-//  }
+  height : $height - $header-height;
+  //  & div.row {
+  //    height: $height - $header-height;
+  //  }
 }
+
 .wg-logo {
-  background-color: $wg-gray;
+  background-color : $wg-gray;
 }
+
 .wg-nav {
-  color: darken($wg-gray, 20%);
+  color : darken($wg-gray, 20%);
   a {
-    color: darken($wg-gray, 20%);
+    color : darken($wg-gray, 20%);
     &:hover,
     &:focus {
-      text-decoration: none;
+      color : darken($wg-gray, 50%);
+      text-decoration : none;
     }
   }
 }
+
 .btn-vicancy {
-  color: white;
-  background-color: $wg-blue;
-  border: 0px;
-  border-radius: 0;
+  color            : white;
+  background-color : $wg-blue;
+  border           : 0px;
+  border-radius    : 0;
 
   &:hover,
   &:focus {
-    color: white;
-    background-color: darken($wg-blue, 10%);
-    text-decoration: none;
+    color            : white;
+    background-color : darken($wg-blue, 10%);
+    text-decoration  : none;
   }
 
 }
+
 .btn-full-height {
-  height: 100%;
-  font-size: 16px;
+  height    : 100%;
+  font-size : 16px;
 }
 
 .bordered {
-  border: 1px solid #D3D3D3;
+  border : 1px solid #D3D3D3;
 }
 
 .wg-search {
-  border: 0px;
-  -webkit-box-shadow: none;
-  box-shadow: none;
+  border             : 0px;
+  -webkit-box-shadow : none;
+  box-shadow         : none;
   &:focus {
-    border: 0px;
-    outline: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
+    border             : 0px;
+    outline            : 0;
+    -webkit-box-shadow : none;
+    box-shadow         : none;
   }
 }
 
 .wg-border-right {
-  border-right: 1px solid lightgrey;
+  border-right : 1px solid lightgrey;
 }
+
 .wg-border-bottom {
-  border-bottom: 1px solid lightgrey;
+  border-bottom : 1px solid lightgrey;
 }
 
 .media-body {
-  padding-top: 2px;
-  color: darken($wg-gray,20%);
+  padding-top : 2px;
+  color       : darken($wg-gray, 20%);
   .media-heading {
-    color: gray;
+    color : gray;
+  }
+}
+
+.media-row {
+  border-bottom : 1px solid darken($wg-gray, 10%);
+  padding-top    : 10px;
+  padding-bottom : 10px;
+  &:last-child {
+    border-bottom : none;
+  }
+  &:hover,
+  &:focus {
+    background-color: darken($wg-back-gray, 7%);
+  }
+}
+
+.media-row.selected {
+  background-color: $wg-blue;
+  .media-body {
+    .media-heading {
+      color: white;
+    }
+    color: white;
+  }
+  &:hover,
+  &:focus {
+    background-color: darken($wg-blue, 7%);
+  }
+}
+
+.frame_desc {
+  padding-top: 6px;
+  padding-right: 15px;
+  padding-left: 15px;
+  .desc {
+    font-size: 16px;
+  }
+}
+.icon-btn {
+  margin-top: 13px;
+  cursor: pointer;
+  i {
+    color: $wg-blue;
+    font-size: 35px;
+  }
+  div {
+    color: #808080;
+    margin-top: 3px;
+    font-size: 13px;
+  }
+  &:hover,
+  &:focus {
+    i {
+      color: darken($wg-blue, 15%);
+    }
+    div {
+      color: darken(#808080, 15%);
+    }
   }
 }

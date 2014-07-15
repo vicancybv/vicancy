@@ -2,6 +2,15 @@
   <div class="container-fluid">
     <div class="row wg-header wg-back-gray">
       <div class="col-xs-4 wg-logo">
+        <div class="pull-right" style="padding-top: 18px; padding-right: 10px">
+          <p style="font-size: 16px; margin-bottom: 2px">Videomanager</p>
+
+          <p style="color: #808080; font-size: 12px">Powered by
+            <a href="http://www.vicancy.com" target="_blank">Vicancy</a></p>
+        </div>
+        <div class="pull-right" style="padding-right: 15px; padding-top: 7px">
+          <img src="<%= image_path('widget/logo_vicancy.png') %>" class="img-responsive" width="90">
+        </div>
       </div>
       <div class="col-xs-8">
         <a href="#" class="btn btn-vicancy btn-full-height" style="padding-left: 25px; padding-right: 25px; padding-top: 30px"><i class="fa fa-plus"></i>
@@ -23,20 +32,19 @@
           </div>
         </div>
         <div class="row wg-border-right wg-back-gray">
-          <div class="col-xs-12" style="overflow: scroll; height: 408px; padding-top: 10px">
+          <div class="col-xs-12" style="overflow: scroll; height: 408px;">
             <% 9.times do |t| %>
-                <div class="row">
+                <div class="row media-row <%= t == 2 ? 'selected' : '' %>">
                   <div class="col-xs-12">
                     <div class="media">
-                      <a class="pull-left" href="#">
-                        <img class="media-object" src="http://i.vimeocdn.com/video/481480833_100x75.jpg" width="70" height='40' alt="">
-                      </a>
-                      <!--http://placehold.it/70x40.png-->
+                      <div class="pull-left">
+                        <img class="media-object" src="http://i.vimeocdn.com/video/481480833_100x75.jpg" class="img-responsive" width="70" alt="">
+                      </div>
 
                       <div class="media-body">
                         <h5 class="media-heading">Video <%= t+1 %></h5>
 
-                        <p><small>Austin, TX</small></p>
+                        <small>Austin, TX</small>
                       </div>
                     </div>
                   </div>
@@ -46,8 +54,40 @@
         </div>
       </div>
       <div class="col-xs-8" style="padding-left: 0px; padding-right: 0px">
-        <iframe src='//player.vimeo.com/video/100105019' width='100%' height='307'  frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe src='//player.vimeo.com/video/100105019' width='100%' height='307' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <div class="frame_desc">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="desc">Some long video description instead of Video 1</div>
+              <div>
+                <small class="text-muted">Austin, TX</small>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-2">
+              <div class="icon-btn text-center">
+                <i class="fa fa-edit"></i>
 
+                <div>Edit</div>
+              </div>
+            </div>
+            <div class="col-xs-2">
+              <div class="icon-btn text-center">
+                <i class="fa fa-trash-o"></i>
+
+                <div>Delete</div>
+              </div>
+            </div>
+            <div class="col-xs-2">
+              <div class="icon-btn text-center">
+                <i class="fa fa-share-square-o"></i>
+
+                <div>Share</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
