@@ -32,6 +32,10 @@ class Video < ActiveRecord::Base
     provider_id(:youtube)
   end
 
+  def wistia_id
+    provider_id(:wistia)
+  end
+
   def provider_id(provider)
     self.uploaded_videos.select{|u| u.provider == provider.to_s}.first.try(:provider_id)
   end
@@ -42,6 +46,7 @@ class Video < ActiveRecord::Base
   end
 
   def embed_url
+    return wistia_embed_url unless wistia_id.blank?
     return vimeo_embed_url unless vimeo_id.blank?
     return youtube_embed_url unless youtube_id.blank?
   end
@@ -64,6 +69,10 @@ class Video < ActiveRecord::Base
   def youtube_embed_url(fallback=false)
     return vimeo_embed_url if fallback && youtube_id.blank?
     "http://www.youtube.com/embed/#{youtube_id}"
+  end
+
+  def wistia_embed_url(fallback=false)
+    "http://fast.wistia.net/embed/iframe/#{wistia_id}?version=v1&videoHeight=360&videoWidth=640"
   end
 
   def name
