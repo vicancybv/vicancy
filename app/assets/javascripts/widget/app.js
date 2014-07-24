@@ -1,5 +1,5 @@
 App = Ember.Application.create({
-    apiToken: "_TX9BEKZXNDPqBnrKLqJwQ",
+    apiToken: "T2lnegQElzAW1nz9_aUqfg",
     clientToken: null,
     videos: null
 });
