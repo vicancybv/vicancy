@@ -1,0 +1,26 @@
+<div class="wg-container">
+  <div class="container-fluid">
+    <div class="row wg-header wg-back-gray">
+      <div class="col-xs-4 wg-logo">
+        <div class="pull-right" style="padding-top: 18px; padding-right: 10px">
+          <p style="font-size: 16px; margin-bottom: 2px">Videomanager</p>
+
+          <p style="color: #808080; font-size: 12px">Powered by
+            <a href="http://www.vicancy.com" target="_blank">Vicancy</a></p>
+        </div>
+        <div class="pull-right" style="padding-right: 15px; padding-top: 7px">
+          <img src="<%= image_path('widget/logo_vicancy.png') %>" class="img-responsive" width="90">
+        </div>
+      </div>
+      <div class="col-xs-8">
+        <a href="#" class="btn btn-vicancy btn-full-height" style="padding-left: 25px; padding-right: 25px; padding-top: 30px"><i class="fa fa-plus"></i>
+          Add New Video</a>
+
+        <div class="pull-right wg-nav" style="padding-top: 30px">
+          <a href="#">Settings</a> | <a href="#">Support</a> | <a href="#">Account</a>
+        </div>
+      </div>
+    </div>
+    {{ outlet }}
+  </div>
+</div>

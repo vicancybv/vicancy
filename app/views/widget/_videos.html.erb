@@ -1,0 +1,37 @@
+<div class="row wg-body">
+  <div class="col-xs-4">
+    <div class="row wg-border-right wg-border-bottom wg-back-gray">
+      <div class="col-xs-12" style="height: 31px">
+        <form class="form-inline" role="form">
+          <i class="fa fa-search" style="color: gray"></i>
+          <input type="search" class="form-control input-sm wg-search wg-back-gray" style="width: 80%; padding-left: 5px; padding-top: 5px; padding-bottom: 3px" placeholder="Search Videos...">
+        </form>
+      </div>
+    </div>
+    <div class="row wg-border-right wg-back-gray">
+      <div class="col-xs-12" id="video-list" style="overflow: scroll; height: 408px;">
+        {{#each}}
+        {{#link-to 'video' this}}
+        <div
+        {{bind-attr class=":row :media-row isSelected:selected"}}>
+        <div class="col-xs-12">
+          <div class="media">
+            <div class="pull-left">
+              <img class="media-object" {{bind-attr src=youtube_preview_url}} class="img-responsive" width="70" alt="">
+            </div>
+
+            <div class="media-body">
+              <h5 class="media-heading">{{job_title}}</h5>
+
+              <small>{{company}}</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{/link-to}}
+      {{/each}}
+    </div>
+  </div>
+</div>
+{{ outlet }}
+</div>

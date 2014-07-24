@@ -117,17 +117,19 @@ $wg-back-gray : #F7F7F7;
   }
 }
 
-.media-row.selected {
-  background-color: $wg-blue;
-  .media-body {
-    .media-heading {
-      color: white;
+a.active {
+  .media-row {
+    background-color : $wg-blue;
+    .media-body {
+      .media-heading {
+        color : white;
+      }
+      color : white;
     }
-    color: white;
-  }
-  &:hover,
-  &:focus {
-    background-color: darken($wg-blue, 7%);
+    &:hover,
+    &:focus {
+      background-color : darken($wg-blue, 7%);
+    }
   }
 }
 

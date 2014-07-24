@@ -9,15 +9,6 @@ Vicancy::Application.routes.draw do
     end
   end
 
-  namespace :api, :path => '', :constraints => {:subdomain => 'api'} do
-    namespace :v1 do
-      namespace :client, module: 'client' do
-        post :auth
-        resources :videos, only: [:index]
-      end
-    end
-  end
-
   get 'widget' => 'widget#show'
   get 'widget/embed' => 'widget#embed'
   get 'widget/test' => 'widget#test'

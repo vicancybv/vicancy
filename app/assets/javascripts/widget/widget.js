@@ -1,3 +1,3 @@
 $(function () {
-    $("#widget_main_container").show();
+    //$("#widget_main_container").show();
 });

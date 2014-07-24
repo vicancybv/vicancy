@@ -6,18 +6,19 @@ widget_width = 820
 (function () {
     var Vicancy = {
         open: function (client_id, client_name, client_email, reseller_token) {
-            //alert('vicancy start');
             window.vicancy.createDiv();
         },
         createDiv: function () {
-//            var d = create_html_obj(<%= IO.read(Rails.root.join('app','assets','javascripts','widget-api','_widget-api.html')).inspect %>);
+<%#
+   var d = create_html_obj(<= IO.read(Rails.root.join('app','assets','javascripts','widget-api','_widget-api.html')).inspect >);
+%>
             var overlay = document.createElement("div");
             overlay.id = "com-vicancy-widget-overlay";
             overlay.style.cssText = 'position: absolute; left: 0px; top: 0px; width:100%; height:100%; text-align:center; z-index: 1000; background-color: gray; background-color: rgba(0,0,0,0.3); z-index: 1000;'
-            overlay.onclick = function () {
+            overlay.onclick = (function () {
                 var overlay = document.getElementById('com-vicancy-widget-overlay');
                 document.body.removeChild(overlay);
-            }
+            });
             var box = document.createElement("div");
             box.width = <%=widget_width%>;
             box.height = <%=widget_height%>;
@@ -29,10 +30,6 @@ widget_width = 820
             var inner_box = document.createElement("div");
             inner_box.style.cssText = 'position: relative;'
             box.appendChild(inner_box);
-//            var spin = document.createElement("div");
-//            spin.style.cssText = "height: 50px; width: 50px; "+
-//                    "left: <%=(widget_width-50)/2%>px; top: <%=(widget_height-50)/2%>px; position: absolute;"+
-//            'background-image: url("data:image/svg+xml;base64,<%= Base64.strict_encode64(IO.read(Rails.root.join('app','assets','images','widget','spinning-loader.svg'))) %>"); background-size: 50px 50px;';
             var spin = document.createElement("img");
             spin.style.cssText = "height: 50px; width: 50px; "+
                     "left: <%=(widget_width-50)/2%>px; top: <%=(widget_height-50)/2%>px; position: absolute;";
