@@ -6,9 +6,9 @@ widget_width = 820
 (function () {
     var Vicancy = {
         open: function (client_id, client_name, client_email, reseller_token) {
-            window.vicancy.createDiv();
+            window.vicancy.createDiv(client_id, client_name, client_email, reseller_token);
         },
-        createDiv: function () {
+        createDiv: function (client_id, client_name, client_email, reseller_token) {
 <%#
    var d = create_html_obj(<= IO.read(Rails.root.join('app','assets','javascripts','widget-api','_widget-api.html')).inspect >);
 %>
@@ -36,7 +36,12 @@ widget_width = 820
             spin.src = "data:image/svg+xml;base64,<%= Base64.strict_encode64(IO.read(Rails.root.join('app','assets','images','widget','spinning-loader.svg'))) %>";
             inner_box.appendChild(spin);
             var frame = document.createElement("iframe");
-            frame.src = '/widget';
+            var src = 'http://vicancy.dev/widget#';
+            src = src + '?api_token='+encodeURIComponent(reseller_token);
+            src = src + '&client_id='+encodeURIComponent(client_id);
+            src = src + '&client_name='+encodeURIComponent(client_name);
+            src = src + '&client_email='+encodeURIComponent(client_email);
+            frame.src = src;
             frame.frameBorder = 0;
             frame.marginHeight = 0;
             frame.marginWidth = 0;

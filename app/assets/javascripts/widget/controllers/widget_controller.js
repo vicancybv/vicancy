@@ -1,4 +1,5 @@
 App.WidgetController = Ember.ArrayController.extend({
+    queryParams: ['a'],
     actions: {
         createVideo: function() {
             // Get the todo title set by the "New Todo" text field

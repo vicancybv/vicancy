@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: attachments
+#
+#  id                :integer          not null, primary key
+#  video_request_id  :integer          indexed
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  file_file_name    :string(255)
+#  file_content_type :string(255)
+#  file_file_size    :integer
+#  file_updated_at   :datetime
+#
+
 class Attachment < ActiveRecord::Base
   belongs_to :video_request
 

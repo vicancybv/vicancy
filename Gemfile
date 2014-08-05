@@ -26,6 +26,7 @@ gem 'strong_parameters'
 group :development do
   gem "binding_of_caller"
   gem 'better_errors'
+  gem 'annotate', '~> 2.6.5'
 end
 
 group :development, :test do

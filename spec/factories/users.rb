@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  slug       :string(255)
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  language   :string(255)
+#  token      :string(255)      indexed
+#
+
 FactoryGirl.define do
 
   factory :user do

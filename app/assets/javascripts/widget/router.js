@@ -7,13 +7,19 @@ App.Router.map(function () {
 });
 
 App.WidgetRoute = Ember.Route.extend({
-    model: function () {
+    queryParams: ['api_token', 'client_id', 'client_name', 'client_email'],
+    model: function (params) {
+        if (App.get('apiToken') == null) App.set('apiToken', params.queryParams.api_token);
+        if (App.get('clientId') == null) App.set('clientId', params.queryParams.client_id);
+        if (App.get('clientName') == null) App.set('clientName', params.queryParams.client_name);
+        if (App.get('clientEmail') == null) App.set('clientEmail', params.queryParams.client_email);
+
         if (App.get('clientToken') == null) {
             return Ember.$.post("/api/v1/client/auth", { "api_token": App.get('apiToken'),
                 "client": {
-                    "id": "1111",
-                    "name": "Client Name",
-                    "email": "client@example.com"
+                    "id": App.get('clientId'),
+                    "name": App.get('clientName'),
+                    "email": App.get('clientEmail')
                 } });
         }
     },

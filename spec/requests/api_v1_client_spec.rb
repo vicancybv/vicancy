@@ -111,7 +111,7 @@ describe '/api/v1/client' do
       let(:params) { ({ api_token: api_token }) }
 
       after(:each) do
-        expect(response.status).to eq 404
+        expect(response.status).to eq 500
         expect(json['status']).to eq 'error'
       end
 

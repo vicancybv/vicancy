@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: uploaded_videos
+#
+#  id          :integer          not null, primary key
+#  provider    :string(255)
+#  video_id    :integer          indexed
+#  aasm_state  :string(255)
+#  provider_id :string(255)
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
 class UploadedVideo < ActiveRecord::Base
   include AASM
 
