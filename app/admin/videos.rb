@@ -41,10 +41,10 @@ ActiveAdmin.register Video do
 
     attributes_table do
       row 'Client' do |video|
-        link_to video.client.name, admin_client_url(video.client)
+        video.client.present? ? link_to(video.client_name, admin_client_url(video.client)) : nil
       end
       row '(User)' do |video|
-        link_to "(#{video.user.name})", admin_user_url(video.user)
+        video.user.present? ? link_to("(#{video.user_name})", admin_user_url(video.user)) : nil
       end
       row :job_title
       row :company
@@ -77,6 +77,8 @@ ActiveAdmin.register Video do
 
   index do
     selectable_column
+    column :reseller
+    column :client
     column :user
     column :job_title
     column :company

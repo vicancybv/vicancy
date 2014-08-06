@@ -27,6 +27,10 @@ class Video < ActiveRecord::Base
   belongs_to  :user
   belongs_to  :client
 
+  delegate :name, :to => :user, :prefix => true, :allow_nil => true
+  delegate :name, :to => :client, :prefix => true, :allow_nil => true
+  delegate :reseller, :to => :client, :allow_nil => true
+
   has_many  :video_edits, dependent: :destroy
   attr_accessible :company, :job_ad_url, :job_title, :language, :summary, :title, :user_id, :client_id
   attr_accessible :youtube_id, :vimeo_id
