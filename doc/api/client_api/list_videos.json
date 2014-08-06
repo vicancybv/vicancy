@@ -1,0 +1,43 @@
+{
+  "resource": "Client API",
+  "http_method": "GET",
+  "route": "/api/v1/client/videos",
+  "description": "List videos",
+  "explanation": "List client videos",
+  "parameters": [
+    {
+      "required": true,
+      "name": "api_token",
+      "description": "Reseller's unique API Token"
+    },
+    {
+      "required": true,
+      "name": "client_token",
+      "description": "Client's Auth Token"
+    }
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/api/v1/client/videos?api_token=r5CvvP2hP9fIPRqUmcGzSw&client_token=_FueOIO5cR7XKtfgjcb6pA",
+      "request_body": null,
+      "request_headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+        "api_token": "r5CvvP2hP9fIPRqUmcGzSw",
+        "client_token": "_FueOIO5cR7XKtfgjcb6pA"
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\"status\":\"ok\",\"videos\":[{\"id\":34,\"job_title\":\"Super Job\",\"company\":\"Super Company\",\"youtube_id\":null,\"vimeo_id\":null},{\"id\":33,\"job_title\":\"Super Job\",\"company\":\"Super Company\",\"youtube_id\":null,\"vimeo_id\":null}]}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

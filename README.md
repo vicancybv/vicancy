@@ -30,3 +30,9 @@ Continuous Integration & Deployment
   * Staging server: http://stagingvicancy.herokuapp.com
 * Code from **production** branch gets deployed into production server
 
+Generate API Documentation
+--------------------------
+
+Run the following:
+
+    bundle exec rake docs:generate

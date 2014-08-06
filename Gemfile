@@ -23,14 +23,19 @@ gem 'unicorn'
 gem 'sidekiq-scheduler', '~> 1'
 gem 'strong_parameters'
 
+# API documentation
+gem 'rspec_api_documentation', '~> 3.1.0'
+gem 'apitome'
+
 group :development do
   gem "binding_of_caller"
   gem 'better_errors'
+  gem 'annotate', '~> 2.6.5'
 end
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'rspec-rails', '~> 2.0'
+  gem 'rspec-rails', '~> 2.14.0'
   gem 'figaro'
   gem 'factory_girl_rails'
 end
@@ -41,6 +46,8 @@ group :production do
 	gem 'rails_12factor'
 	gem 'dalli'
 	gem 'memcachier'
+  # serve gzipped assets
+  gem 'heroku-deflater'
 end
 
 # Gems used only for assets and not required

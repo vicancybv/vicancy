@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: google_sessions
+#
+#  id            :integer          not null, primary key
+#  access_token  :string(255)
+#  expires_at    :datetime
+#  refresh_token :string(255)
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
 class GoogleSession < ActiveRecord::Base
   attr_accessible :access_token, :expires_at, :refresh_token
 

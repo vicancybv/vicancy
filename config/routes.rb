@@ -36,6 +36,8 @@ Vicancy::Application.routes.draw do
     videoconsultancy
     ) unless defined?(Vicancy::STATIC_PAGE_SLUGS)
 
+  resources :resellers, only: [:show]
+  resources :clients, only: [:show]
   resources :users, only: [:show]
   resources :videos, only: [:destroy] do
     resources :video_edits, only: [:new, :create]

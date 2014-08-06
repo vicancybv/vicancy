@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+
+<a href="#" onclick="vicancy.open('<%= @client.external_id %>','<%= @client.name %>','<%= @client.email %>','<%= @client.reseller.token %>'); return false;">Videos</a>
+
+<%= javascript_include_tag 'widget-api' %>
+</body>
+</html>

@@ -4,10 +4,19 @@
 en:
   Live Vicancies: "Live Vacancies"
   Nieuwe Vicancy: "New vacancy"
+  activerecord:
+    attributes:
+      reseller:
+        token: API Token
+        slug: Address
+      client:
+        token: Auth Token
+        slug: Address
   admin:
     optional: "optional"
     eg: "e.g."
     User: "User"
+    Client: "Client"
     Video: "Video"
     Caption: "Caption"
     Job: "Job"

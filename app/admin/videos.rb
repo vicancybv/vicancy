@@ -13,6 +13,9 @@ ActiveAdmin.register Video do
     f.inputs I18n.t('admin.User') do
       f.input :user
     end
+    f.inputs I18n.t('admin.Client') do
+      f.input :client
+    end
     f.inputs I18n.t('admin.Caption') do
       f.input :language,  
               as: :select,      
@@ -37,8 +40,11 @@ ActiveAdmin.register Video do
   show do |video|
 
     attributes_table do
-      row "User" do |video|
-        link_to video.user.name, admin_user_url(video.user)
+      row 'Client' do |video|
+        video.client.present? ? link_to(video.client_name, admin_client_url(video.client)) : nil
+      end
+      row '(User)' do |video|
+        video.user.present? ? link_to("(#{video.user_name})", admin_user_url(video.user)) : nil
       end
       row :job_title
       row :company
@@ -71,6 +77,8 @@ ActiveAdmin.register Video do
 
   index do
     selectable_column
+    column :reseller
+    column :client
     column :user
     column :job_title
     column :company

@@ -1,7 +1,7 @@
 class API::BaseController < ApplicationController
   rescue_from StandardError, with: :rescue_error
-  rescue_from ActionController::ParameterMissing, with: :rescue_parameter_missing
-  rescue_from ActiveRecord::RecordNotFound, with: :rescue_record_not_found
+  #rescue_from ActionController::ParameterMissing, with: :rescue_parameter_missing
+  #rescue_from ActiveRecord::RecordNotFound, with: :rescue_record_not_found
 
   private
 
