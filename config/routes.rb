@@ -14,6 +14,7 @@ Vicancy::Application.routes.draw do
     gebruikersvoorwaarden
     jobs
     jobsform
+    nl
     pricing
     privacypolicy
     product

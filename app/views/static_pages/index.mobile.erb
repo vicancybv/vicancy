@@ -1,202 +1,364 @@
 <!DOCTYPE html>
-<html data-wf-site="52e14bfc0c52bd8b4700001f">
+<html data-wf-site="533b169a1d4ceb2363000078">
 <head>
   <meta charset="utf-8">
-  <title>Vicancy&reg;</title>
+  <title>Vicancy - Flexnieuws</title>
+  <meta name="description" content="Vicancy creates custom video job ads based on animation.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <%= stylesheet_link_tag "mobile", :media => "all" %>
+  <meta name="generator" content="Webflow">
+  <link rel="stylesheet" type="text/css" href="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/css/webflow.css">
+  <link rel="stylesheet" type="text/css" href="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/css/vicancy-nl.css">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
   <script>
     WebFont.load({
       google: {
-        families: ["PT Sans:400,700"]
+        families: ["PT Serif:400,400italic,700,700italic","Exo:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic","Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic"]
       }
     });
   </script>
-  <script>
-    if (/mobile/i.test(navigator.userAgent)) document.documentElement.className += ' w-mobile';
+  <script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/js/modernizr.js"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="images/Logo2.png">
+  <link rel="apple-touch-icon" href="images/Logo2.png">
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-38359879-3'], ['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script');
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
   </script>
-  <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  <script type="text/javascript">
+    adroll_adv_id = "HN3F3URAEFECZKW7NJCO27";
+    adroll_pix_id = "PIGFLS2KKFCITHI5ZCI24L";
+    (function () {
+    var oldonload = window.onload;
+    window.onload = function(){
+       __adroll_loaded=true;
+       var scr = document.createElement("script");
+       var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+       scr.setAttribute('async', 'true');
+       scr.type = "text/javascript";
+       scr.src = host + "/j/roundtrip.js";
+       ((document.getElementsByTagName('head') || [null])[0] ||
+        document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+       if(oldonload){oldonload()}};
+    }());
+  </script>
+  <script>
+// Include the UserVoice JavaScript SDK (only needed once on a page)
+UserVoice=window.UserVoice||[];(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/i7USZH1PSVOuaINVXcNQeQ.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})();
+
+//
+// UserVoice Javascript SDK developer documentation:
+// https://www.uservoice.com/o/javascript-sdk
+//
+
+// Set colors
+UserVoice.push(['set', {
+  accent_color: '#808283',
+  trigger_color: 'white',
+  trigger_background_color: 'rgba(46, 49, 51, 0.6)'
+}]);
+
+// Identify the user and pass traits
+// To enable, replace sample data with actual user traits and uncomment the line
+UserVoice.push(['identify', {
+  //email:      'john.doe@example.com', // User’s email address
+  //name:       'John Doe', // User’s real name
+  //created_at: 1364406966, // Unix timestamp for the date the user signed up
+  //id:         123, // Optional: Unique id of the user (if set, this should not change)
+  //type:       'Owner', // Optional: segment your users by type
+  //account: {
+  //  id:           123, // Optional: associate multiple users with a single account
+  //  name:         'Acme, Co.', // Account name
+  //  created_at:   1364406966, // Unix timestamp for the date the account was created
+  //  monthly_rate: 9.99, // Decimal; monthly rate of the account
+  //  ltv:          1495.00, // Decimal; lifetime value of the account
+  //  plan:         'Enhanced' // Plan name for the account
+  //}
+}]);
+
+// Add default trigger to the bottom-right corner of the window:
+UserVoice.push(['addTrigger', { mode: 'contact', trigger_position: 'bottom-right' }]);
+
+// Or, use your own custom trigger:
+//UserVoice.push(['addTrigger', '#id', { mode: 'contact' }]);
+
+// Autoprompt for Satisfaction and SmartVote (only displayed under certain conditions)
+UserVoice.push(['autoprompt', {}]);
+</script>
+  <script type="text/javascript">
+    setTimeout(function(){var a=document.createElement("script");
+    var b=document.getElementsByTagName("script")[0];
+    a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0019/2662.js?"+Math.floor(new Date().getTime()/3600000);
+    a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+    </script>
 </head>
 <body>
-  <div class="w-nav navbar" data-collapse="medium" data-animation="default" data-duration="400" data-contain="1">
+  <div class="nav-bar-second">
     <div class="w-container">
-      <a class="w-nav-brand" href="#">
-        <img src="https://s3-eu-west-1.amazonaws.com/vicancy/mobile/Vicancy_logo_orange.png" style="height:30px; margin-top:5px;" alt="vicancy logo">
-      </a>
-      <nav class="w-nav-menu" role="navigation">
-        <a class="w-nav-link navlink" href="#intro">Vicancy</a>
-        <a class="w-nav-link navlink" href="#waarom">Waarom?</a>
-        <a class="w-nav-link navlink" href="#hoewerkthet">Hoe werkt het?</a>
-        <a class="w-nav-link navlink" href="#pricing">Pricing</a>
-        <a class="w-nav-link highlight navlink" href="#formulier">Gratis Demo</a>
-        <a class="w-nav-link navlink" href="#about">Over Ons</a>
-      </nav>
-      <div class="w-nav-button menu-icon">
-        <div class="w-icon-nav-menu menu-icon"></div>
+      <div class="w-row">
+        <div class="w-col w-col-2">
+          <a class="w-inline-block link-home" href="#">
+            <img class="vicancy-logo" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/images/Vicancy_logo.png" alt="538d8505fd57481266248eb8_Vicancy_logo.png">
+          </a>
+        </div>
+        <div class="w-col w-col-7"><a class="sub-nav-bar" href="mailto:support@vicancy.com" target="_blank">Contact</a><a class="sub-nav-bar" href="#wf-form-request-a-demo">Nu Bestellen</a>
+        </div>
+        <div class="w-col w-col-3"></div>
       </div>
     </div>
   </div>
-  <div class="intro" id="intro">
-    <div class="w-container">
-      <div class="w-row">
-        <div class="w-col w-col-3"></div>
-        <div class="w-col w-col-6">
-          <h1>De video advertentie voor uw vacature</h1>
+  <div class="w-container header-page main-page">
+    <div class="heading main-page">
+      <h1 class="header-main-page"><strong class="important-text">Uw Vacature In Beeld</strong></h1>
+      <div class="subheader-main-page yessss"></div>
+    </div><a class="button" href="#wf-form-request-a-demo">Probeer Vicancy Nu</a>
+  </div>
+  <div class="why">
+    <div class="w-container why-dd">
+      <div class="w-row box">
+        <div class="w-col w-col-3 w-clearfix">
+          <img class="w-hidden-small w-hidden-tiny checklistimage" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/images/flexnieuws_viral.png" alt="53e09607c71f9e847d84d9f0_flexnieuws_viral.png" data-ix="slideinleft">
         </div>
-        <div class="w-col w-col-3"></div>
-      </div>
-      <div class="w-embed w-iframe vimeoplayer">
-        <iframe src="https://player.vimeo.com/video/84043622?title=0&amp;byline=0&amp;portrait=0&amp;color=ed151d" width="500" height="281" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" style="width:100%; height:100%;"></iframe>
+        <div class="w-col w-col-8 rightcolumn" data-ix="slideinright">
+          <h3 class="h3-dutch leftalign">Laat uw vacature opvallen</h3>
+          <p class="p-dutch leftalign">Mensen denken in beelden. Door gebruik te maken van bewegende beelden valt uw vacature meer op, wordt uw boodschap sneller duidelijk en blijft deze langer hangen. Bijvoorbeeld in de zoekresultaten van Google.</p>
+        </div>
+        <div class="w-col w-col-1"></div>
       </div>
     </div>
   </div>
-  <div class="mainsection" id="waarom">
-    <div class="w-container">
-      <div class="w-row">
-        <div class="w-col w-col-3"></div>
-        <div class="w-col w-col-6">
-          <h2><span>Waarom Vicancy?</span></h2>
+  <div class="why">
+    <div class="w-container why-dd">
+      <div class="w-row box">
+        <div class="w-col w-col-3">
+          <img class="w-hidden-small w-hidden-tiny checklistimage" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/images/flexnieuws_targeting.png" width="100" alt="53e095f42c60de6924047cf5_flexnieuws_targeting.png" data-ix="slideinleft">
         </div>
-        <div class="w-col w-col-3"></div>
+        <div class="w-col w-col-8 rightcolumn" data-ix="slideinright">
+          <h3 class="h3-dutch leftalign">Bereik de juiste doelgroep</h3>
+          <p class="leftalign">Laat uw vacature gericht zichtbaar maken via online wervingskanalen. Denk hierbij aan vacaturebanken en social media. Zo krijgt u alleen de aandacht van de juiste kandidaten.</p>
+        </div>
+        <div class="w-col w-col-1"></div>
       </div>
-      <div class="w-row">
-        <div class="w-col w-col-6 w-clearfix">
-          <img class="check" src="/images/checklist.png" alt="checklist-icon.png">
-          <p class="benefits"><strong>Social Media Recruitment</strong>
-            <br>Videovacatures verhogen de zichtbaarheid en bereik van vacatures op online wervingskanalen als LinkedIn en Twitter.</p>
-          <img class="check" src="/images/checklist.png"
-          alt="checklist-icon.png">
-          <p class="benefits"><strong>Video Animaties</strong>
-            <br>Videovacatures op basis van animatie zijn sneller op te leveren (24 uur) en veel voordeliger dan wanneer er een camera en geluidsman aan te pas moet komen.</p>
-        </div>
-        <div class="w-col w-col-6 w-clearfix">
-          <img class="check" src="/images/checklist.png" alt="checklist-icon.png">
-          <p class="benefits"><strong>Employer Branding</strong>
-            <br>Videovacatures blijven beter hangen dan vacatureteksten, en geven potentiele kandidaten alvast een kijkje in de keuken van hun toekomstige werkgever.</p>
-        </div>
-      </div>
-      <div class="w-slider slider" data-animation="slide" data-duration="500" data-infinite="1" data-delay="2000" data-autoplay="1">
-        <div class="w-slider-mask slider">
-          <div class="w-slide slider">
-            <img class="sliderimage" src="https://s3-eu-west-1.amazonaws.com/vicancy/mobile/sliderone.png" alt="Onze partners">
+    </div>
+    <div class="why">
+      <div class="w-container why-dd">
+        <div class="w-row box">
+          <div class="w-col w-col-3">
+            <img class="w-hidden-small w-hidden-tiny checklistimage" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/images/flexnieuws_conversion.png" width="100" alt="53e095e3c71f9e847d84d9ec_flexnieuws_conversion.png" data-ix="slideinleft">
           </div>
-          <div class="w-slide">
-            <img class="sliderimage" src="https://s3-eu-west-1.amazonaws.com/vicancy/mobile/slidertwo.png" alt="Onze partners">
+          <div class="w-col w-col-8 rightcolumn" data-ix="slideinright">
+            <h3 class="h3-dutch leftalign">Zorg voor meer conversies</h3>
+            <p class="p-dutch leftalign">Op bewegende advertenties wordt 3x zoveel geklikt als tekst, waarna de gemiddelde duur van een website bezoek stijgt van 55 seconden naar 2,5 minuten. Dit geeft u ook meer &nbsp;mogelijkheden om uw bedrijf te profileren.</p>
           </div>
-          <div class="w-slide">
-            <img class="sliderimage" src="https://s3-eu-west-1.amazonaws.com/vicancy/mobile/sliderthree.png" alt="Onze partners">
+          <div class="w-col w-col-1"></div>
+        </div>
+      </div>
+      <div class="w-container why-dd">
+        <div class="w-row box">
+          <div class="w-col w-col-3">
+            <img class="w-hidden-small w-hidden-tiny checklistimage" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/images/flexnieuws_timing.png" width="100" alt="53e095d7cffdc16b24d46cc9_flexnieuws_timing.png" data-ix="slideinleft">
+          </div>
+          <div class="w-col w-col-8" data-ix="slideinright">
+            <h3 class="h3-dutch leftalign">Bespaar tijd &amp; kosten</h3>
+            <p class="leftalign">Uw vacature laten omzetten van tekst naar beeld is eenvoudiger dan u denkt. Het kan binnen 24 uur en er hoeft geen dure camera- of geluidsman aan te pas te komen.</p>
+          </div>
+          <div class="w-col w-col-1"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="blue-section">
+    <div class="w-container">
+      <h3 class="h3-dutch">Wat is een Vicancy?</h3>
+      <div class="w-row">
+        <div class="w-col w-col-2"></div>
+        <div class="w-col w-col-8">
+          <p class="p-dutch blue-background">Een Vicancy is een vacature filmpje dat binnen 24 uur wordt opgeleverd en direct online vindbaar is. Binnen 40 seconden wordt duidelijk van welk bedrijf het is, wat de functie inhoudt en welk profiel de ideale kandidaat heeft.
+            <br>
+            <br>Bekijk hieronder een voorbeeld:</p>
+          <div class="w-embed w-video vicancyexample" style="padding-top: 56.27659574468085%;" data-ix="popup">
+            <iframe class="embedly-embed" src="https://cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fplayer.vimeo.com%2Fvideo%2F92720426&amp;url=http%3A%2F%2Fvimeo.com%2F92720426&amp;image=http%3A%2F%2Fi.vimeocdn.com%2Fvideo%2F472544628_1280.jpg&amp;key=c4e54deccf4d4ec997a64902e9a30300&amp;type=text%2Fhtml&amp;schema=vimeo"
+            scrolling="no" frameborder="0" allowfullscreen=""></iframe>
           </div>
         </div>
-        <div class="w-slider-arrow-left"></div>
-        <div class="w-slider-arrow-right"></div>
+        <div class="w-col w-col-2"></div>
       </div>
-      <a class="w-inline-block center" href="#hoewerkthet">
-        <img class="center" src="/images/down.png" alt="Volgende">
-      </a>
+    </div>
+    <p class="allblack" data-ix="slideinup">Deze bedrijven gebruiken Vicancy:</p>
+  </div>
+  <div>
+    <div class="w-row logo-row">
+      <div class="w-col w-col-2">
+        <img class="logo-companies sogeti" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/images/sogeti.gif" width="158" height="38.609" alt="538f87e7f698111a1d846136_sogeti.gif">
+      </div>
+      <div class="w-col w-col-2">
+        <img class="logo-companies sandd" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/images/f7413cac6ebbf1463c0d4627a0ae9c47.jpg" width="157" alt="538f885d7f1316ec7c1f14c9_f7413cac6ebbf1463c0d4627a0ae9c47.jpg">
+      </div>
+      <div class="w-col w-col-2">
+        <img class="logo-companies its" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/images/its_Learning.png" alt="538f88b556427bef7cd7188f_its_Learning.png">
+      </div>
+      <div class="w-col w-col-2">
+        <img class="logo-companies trifinance" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/images/TriFinance.jpg" alt="538f894cf698111a1d846172_TriFinance.jpg">
+      </div>
+      <div class="w-col w-col-2">
+        <img class="logo-companies" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/images/ziggo-2.jpg" height="86.641" alt="538f8a6056427bef7cd718ab_ziggo-2.jpg">
+      </div>
+      <div class="w-col w-col-2">
+        <img class="logo-companies msd" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/images/Logo-2.jpg" width="145" height="49" alt="538f8a38f698111a1d846186_Logo-2.jpg">
+      </div>
+    </div>
+    <div class="w-row logo-row">
+      <div class="w-col w-col-2">
+        <img class="logo-companies sogeti" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/images/image001.png" height="46.609" alt="538f8bf17f1316ec7c1f151b_image001.png">
+      </div>
+      <div class="w-col w-col-2">
+        <img class="logo-companies _24-people" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/images/logo_24_people_def_rode_blokjes1.gif" width="240" height="54" alt="538f8bfb3f423b191db6846d_logo_24_people_def_rode_blokjes1.gif">
+      </div>
+      <div class="w-col w-col-2">
+        <img class="logo-companies yc" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/images/Young_Capital.png" width="79" height="74" alt="538f8c0256427bef7cd718df_Young_Capital.png">
+      </div>
+      <div class="w-col w-col-2">
+        <img class="logo-companies trifinance" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/images/vonq-logo-voor-directstudents-website.jpg" width="111" alt="538f897d56427bef7cd7189b_vonq-logo-voor-directstudents-website.jpg">
+      </div>
+      <div class="w-col w-col-2">
+        <img class="logo-companies hp" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/images/20100226162100!HP_New_Logo_2D.svg" height="72.641" alt="538f8cc3f698111a1d8461f5_20100226162100!HP_New_Logo_2D.svg">
+      </div>
+      <div class="w-col w-col-2">
+        <img class="logo-companies zorgwerk" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/images/logo%20(1).png" height="56" alt="538f937156427bef7cd71992_logo%20(1).png">
+      </div>
+    </div>
+    <div class="w-row logo-row">
+      <div class="w-col w-col-2">
+        <img class="logo-companies sogeti" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/images/BeQuan.jpg" height="46.609" alt="538f86367f1316ec7c1f1456_BeQuan.jpg">
+      </div>
+      <div class="w-col w-col-2">
+        <img class="logo-companies _24-people" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/images/Job-Brokers_FINAL_logo-300x47.png" width="150" height="54" alt="538f8dbef698111a1d846205_Job-Brokers_FINAL_logo-300x47.png">
+      </div>
+      <div class="w-col w-col-2">
+        <img class="logo-companies bcfjobs" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/images/logo.gif" width="205" alt="538f8e08f698111a1d84620e_logo.gif">
+      </div>
+      <div class="w-col w-col-2">
+        <img class="logo-companies xerox" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/images/Xerox_2008_Logo.png" width="250" alt="538f8e4356427bef7cd71927_Xerox_2008_Logo.png">
+      </div>
+      <div class="w-col w-col-2">
+        <img class="logo-companies sca" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/images/SCA_logo.jpg" width="81" height="106.641" alt="538f8f0956427bef7cd7193e_SCA_logo.jpg">
+      </div>
+      <div class="w-col w-col-2">
+        <img class="logo-companies zorgwerk" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/images/70fbc554c8c47303b82e5643bcd20acc.jpg" height="56" alt="538f8f31f698111a1d84623f_70fbc554c8c47303b82e5643bcd20acc.jpg">
+      </div>
     </div>
   </div>
-  <div class="mainsection grey" id="hoewerkthet">
+  <div class="form"></div>
+  <div>
     <div class="w-container">
       <div class="w-row">
-        <div class="w-col w-col-3"></div>
-        <div class="w-col w-col-6 sixcolumns">
-          <h2><span>Hoe werkt het?</span></h2>
-          <p class="center">Het aanmaken van een videovacature gaat snel en gemakkelijk.&nbsp;
-            <br>Een&nbsp;klant stuurt ons de link van de vacature.&nbsp;Vervolgens animeren&nbsp;wij de videovacature en leveren deze maximaal 24 uur later in bijpassende huisstijl op via onze videomanager.</p>
+        <div class="w-col w-col-2"></div>
+        <div class="w-col w-col-8">
+          <h3 class="h3-dutch">Hoe werkt het?</h3>
+          <ol class="list">
+            <li class="li">U&nbsp;stuurt ons een link naar de vacaturetekst</li>
+            <li class="li">Wij maken van uw vacature een Vicancy, voorzien van bijpassende foto’s en muziek. U kunt kiezen uit <a class="link" href="http://templates.vicancy.com/" target="_blank">diverse Templates</a>.</li>
+            <li class="li">Binnen 24 uur ontvangt u van ons een link naar uw kersverse Vicancy.</li>
+            <li class="li">Wij helpen u de vacature te verspreiden via social media (LinkedIn, Twitter, Facebook) en zorgen voor goede vindbaarheid via zoekmachines (Google, YouTube).</li>
+          </ol>
+          <p class="ongig" data-ix="popup"><em>“Using a visual in a job ad is like bringing a machinegun to a knife fight”</em>
+          </p>
+          <p><a href="http://blog.ongig.com/job-ad/using-images-in-job-ads-craigslist" class="link">Rob Kelly</a>&nbsp;&nbsp;–&nbsp;&nbsp;cofounder Ongig</p>
         </div>
-        <div class="w-col w-col-3"></div>
+        <div class="w-col w-col-2"></div>
       </div>
-      <img class="deliveryimage" src="images/schema.png" alt="52e245121071e4c24d000a0b_schema.png">
-      <div class="w-row">
-        <div class="w-col w-col-3"></div>
-        <div class="w-col w-col-6">
-          <p class="center">
-            <br><strong>Voordelen</strong>
-            <br>Onze videovacatures zijn direct af te spelen binnen LinkedIn, Facebook en Twitter en daarnaast gemakkelijk te embedden in vacaturesites via bestaande CMS systemen.</p>
-        </div>
-        <div class="w-col w-col-3"></div>
-      </div>
-      <a class="w-inline-block center" href="#pricing">
-        <img class="center" src="/images/down.png" alt="Volgende">
-      </a>
     </div>
   </div>
-  <div class="mainsection white" id="pricing">
+  <div>
     <div class="w-container">
-      <div class="w-row">
-        <div class="w-col w-col-3"></div>
-        <div class="w-col w-col-6">
-          <h2><span>Pricing</span></h2>
-        </div>
-        <div class="w-col w-col-3"></div>
-      </div>
-      <div class="w-row">
-        <div class="w-col w-col-6">
-          <p><strong>Pricing</strong>
-            <br>Wij houden niet van complexe verdienmodellen en kleine lettertjes onderaan de pagina. Bij ons daarom een vaste prijs per vacature (€99,-), oplevering binnen 1 werkdag en de best mogelijke service voor iedereen.</p>
-        </div>
-        <div class="w-col w-col-6">
-          <p><strong>Reseller worden?<br></strong>Wilt u reseller van ons product worden? Informeer dan <a href="mailto:support@vicancy.com" target="_blank">hier</a> naar de mogelijkheden en vraag vandaag nog een gratis demo aan.</p>
-        </div>
-      </div>
-      <a class="w-inline-block center" href="#formulier">
-        <img class="center" src="/images/down.png" alt="Volgende">
-      </a>
-    </div>
-  </div>
-  <div class="mainsection dark" id="formulier">
-    <div class="w-container">
-      <div class="w-row">
-        <div class="w-col w-col-3"></div>
-        <div class="w-col w-col-6">
-          <h2 class="whitetext"><span>Gratis Demo</span></h2>
-          <p class="center whitetext">Vraag hier vrijblijvend een demo aan</p>
+      <div class="w-row calltoaction">
+        <div class="w-col w-col-2"></div>
+        <div class="w-col w-col-8">
+          <h3 class="h3-dutch">Probeer Vicancy nu met 33%&nbsp;Korting</h3>
           <div class="w-form">
-            <form method="post" action="/contact">
-              <label for="name">Vacature</label>
-              <input class="w-input" type="text" placeholder="Link naar uw vacature" name="name" id="namefield"></input>
-              <label for="email">Email</label>
-              <input class="w-input" type="email" placeholder="Email" name="email" id="email" required="required"></input>
-              <label>Bericht</label>
-              <textarea class="w-input" placeholder="Wilt u nog een bericht meesturen?" name="comment" class="text" id="textcommentfield"name="bericht" data-name="bericht"></textarea>
-              <input class="w-button button" type="submit" id="submit" value="Verzenden" data-wait="Bericht wordt verzonden..." wait="Bericht wordt verzonden..."></input>
+            <form class="formulier" id="wf-form-request-a-demo" name="wf-form-request-a-demo" data-name="Request a demo" data-ix="popup">
+              <label class="sublabel-form main-page"><strong>Vraag <strong xmlns="http://www.w3.org/1999/xhtml">voor</strong> 1 september&nbsp;uw Vicancy aan en profiteer van 33% korting!&nbsp;Normaal €150, nu €100 voor 30 dagen</strong>
+              </label>
+              <label class="form-tekst" for="email-2">Email Adres</label>
+              <input class="w-input form-edit" id="email-2" type="email" placeholder="Vul hier uw emailadres in" name="email-2" data-name="Email 2" required="required">
+              <label class="form-tekst" for="job-ad-2">Uw vacature</label>
+              <input class="w-input form-edit" id="job-ad-2" type="text" placeholder="Copy-paste de link naar uw vacature" name="job-ad-2" required="required" data-name="Job Ad 2">
+              <label class="form-tekst" for="comments-2">Comments</label>
+              <textarea class="w-input form-edit" id="comments-2" placeholder="(optioneel) voeg comments toe." name="comments-2" data-name="Comments 2"></textarea>
+              <input class="w-button button-tekst button homepage" type="submit" value="Bestel Nu" data-wait="Please wait...">
             </form>
             <div class="w-form-done">
-              <p>Bedankt. We hebben uw vacature ontvangen. Binnen 24 uur komen we bij u terug met het resultaat.</p>
+              <p>Thank you! Your submission has been received!</p>
             </div>
             <div class="w-form-fail">
-              <p>Oeps! Er is iets fout gegaan...</p>
+              <p>Oops! Something went wrong while submitting the form :(</p>
             </div>
           </div>
         </div>
-        <div class="w-col w-col-3"></div>
+        <div class="w-col w-col-2"></div>
       </div>
     </div>
   </div>
-  <div class="mainsection dark aboutus" id="about">
+  <footer class="footer">
     <div class="w-container">
-      <div class="w-row">
-        <div class="w-col w-col-3"></div>
-        <div class="w-col w-col-6">
-          <h2 class="whitetext"><span>Over ons</span></h2>
-          <div class="portraits">
-            <img class="portrait" src="https://s3-eu-west-1.amazonaws.com/vicancy/pieter_profile_squared.jpg" width="200" alt="profiel pieter">
-            <img class="portrait" src="https://s3-eu-west-1.amazonaws.com/vicancy/loet_profile_squared.jpg" width="200" alt="profiel loet">
-          </div>
-          <p class="center whitetext">Vicancy is een innovatief en snelgroeiend bedrijf in de recruitment sector. Aan het roer staan de ondernemers Loet Rammelsberg en Pieter Moorman. Samen met kundige programmeurs en designers staan ze klaar om uw vacature een stevige boost te geven.</p>
-          <p
-          class="center whitetext">Vragen? Mail <a href="mailto:support@vicancy.com" target="_blank">support@vicancy.com</a> of bel naar +31630697034</p>
-            <p class="footer center">
-              <a href="mailto:support@vicancy.com" target="_blank">Contact</a> &middot; 
-              <a href="http://nl.linkedin.com/company/vicancy">LinkedIn</a> &middot; 
-              <a href="http://blog.vicancy.com">Blog</a> &middot; 
-              <a href="/jobs/?mobile=0">Jobs</a></p>
+      <div class="w-row footer-colums">
+        <div class="w-col w-col-2">
+          <a class="w-inline-block" href="#">
+            <img class="logo-footer-vicancy" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/images/Vicancy_logo.png" width="100" alt="538d8505fd57481266248eb8_Vicancy_logo.png">
+          </a>
         </div>
-        <div class="w-col w-col-3"></div>
+        <div class="w-col w-col-2"><a class="footer-subchapters" href="#">Product&nbsp;</a>
+          <a class="footer-chapters" href="product.html">
+            <br>Features</a>
+          <a class="footer-chapters" href="pricing.html">
+            <br>Pricing</a>
+          <a class="footer-chapters" href="http://www.vicancy.com/gebruikersvoorwaarden" target="_blank">
+            <br>Terms of service</a>
+        </div>
+        <div class="w-col w-col-2">
+          <h5 class="footer-subchapters">Company</h5>
+          <a class="footer-chapters" href="team.html">
+            <br>Team</a>
+          <a class="footer-chapters" href="http://www.vicancy.com/jobs">
+            <br>Jobs</a>
+          <a class="footer-chapters" href="https://angel.co/vicancy-2" target="_blank">
+            <br>Investors</a>
+          <a class="footer-chapters" href="https://s3-eu-west-1.amazonaws.com/vicancy/Press.zip" target="_blank">
+            <br>Press</a>
+        </div>
+        <div class="w-col w-col-2">
+          <h5 class="footer-subchapters">Support</h5>
+          <a class="footer-chapters" href="http://www.vicancy.com/support">
+            <br>FAQ</a>
+          <a class="footer-chapters" href="http://www.vicancy.com/support">
+            <br>Help</a>
+        </div>
+        <div class="w-col w-col-2 coloum-blog">
+          <h5 class="footer-subchapters">Blog&nbsp;</h5>
+          <a class="footer-chapters" href="http://blog.vicancy.com" target="_blank">
+            <br>Blog</a>
+        </div>
+        <div class="w-col w-col-2 contact">
+          <h5 class="footer-subchapters">Contact&nbsp;</h5>
+          <a class="footer-chapters" href="mailto:support@vicancy.com" target="_blank">
+            <br>Email</a>
+          <div class="w-widget w-widget-facebook">
+            <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fgetvicancy&amp;layout=button_count&amp;locale=en_US&amp;action=like&amp;show_faces=false&amp;share=false" scrolling="no" frameborder="0" allowtransparency="true"
+            style="border: none; overflow: hidden; width: 90px; height: 20px;"></iframe>
+          </div>
+          <div class="w-widget w-widget-twitter">
+            <iframe src="https://platform.twitter.com/widgets/follow_button.html#screen_name=vicancy&amp;show_count=true&amp;size=m&amp;show_screen_name=true&amp;dnt=true" scrolling="no" frameborder="0" allowtransparency="true" style="border: none; overflow: hidden; width: 100%; height: 20px;"></iframe>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <%= javascript_include_tag "mobile_index" %>
+  </footer>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://s3-eu-west-1.amazonaws.com/vicancy/marketing-website/js/webflow-nl.js"></script>
+  <!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
 </body>
 </html>
