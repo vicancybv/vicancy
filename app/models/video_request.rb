@@ -9,10 +9,12 @@
 #  comment    :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  client_id  :integer          indexed
 #
 
 class VideoRequest < ActiveRecord::Base
   belongs_to :user
+  belongs_to :client
   has_many :attachments
   attr_accessible :comment, :link, :user_id, :user_ip, :attachments_attributes
 

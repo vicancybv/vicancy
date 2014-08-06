@@ -29,7 +29,30 @@ namespace :struct do
       else
         raise "Uncategorized user id: #{user.id}"
       end
-
     end
   end
+
+  task print: :environment do
+    resellers = []
+    clients = []
+    test = []
+    User.order(:id).each do |user|
+      if RESELLERS.include? user.id
+        resellers << user.name
+      elsif CLIENTS.include? user.id
+        clients << user.name
+      elsif TESTACC.include? user.id
+        test << user.name
+      else
+        raise "Uncategorized user id: #{user.id}"
+      end
+    end
+    puts "Resellers"
+    p resellers.uniq.sort
+    puts "Clients"
+    p clients.uniq.sort
+    puts "Test"
+    p test.uniq.sort
+  end
+
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140805181623) do
+ActiveRecord::Schema.define(:version => 20140805220251) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -68,11 +68,13 @@ ActiveRecord::Schema.define(:version => 20140805181623) do
     t.string   "token"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "reseller_id"
   end
 
+  add_index "clients", ["reseller_id", "external_id"], :name => "index_clients_on_reseller_id_and_external_id", :unique => true
+  add_index "clients", ["reseller_id"], :name => "index_clients_on_reseller_id"
   add_index "clients", ["slug"], :name => "index_clients_on_slug", :unique => true
   add_index "clients", ["token"], :name => "index_clients_on_token", :unique => true
-  add_index "clients", ["user_id", "external_id"], :name => "index_clients_on_user_id_and_external_id", :unique => true
   add_index "clients", ["user_id"], :name => "index_clients_on_user_id"
 
   create_table "google_sessions", :force => true do |t|
@@ -91,6 +93,9 @@ ActiveRecord::Schema.define(:version => 20140805181623) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "resellers", ["slug"], :name => "index_resellers_on_slug", :unique => true
+  add_index "resellers", ["token"], :name => "index_resellers_on_token", :unique => true
 
   create_table "uploaded_videos", :force => true do |t|
     t.string   "provider"
@@ -131,7 +136,10 @@ ActiveRecord::Schema.define(:version => 20140805181623) do
     t.text     "comment"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "client_id"
   end
+
+  add_index "video_requests", ["client_id"], :name => "index_video_requests_on_client_id"
 
   create_table "videos", :force => true do |t|
     t.string   "youtube_id"
@@ -148,7 +156,10 @@ ActiveRecord::Schema.define(:version => 20140805181623) do
     t.string   "place"
     t.string   "tags"
     t.string   "aasm_state"
+    t.integer  "client_id"
   end
+
+  add_index "videos", ["client_id"], :name => "index_videos_on_client_id"
 
   create_table "vimeo_imports", :force => true do |t|
     t.string   "vimeo_id"

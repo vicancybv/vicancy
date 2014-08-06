@@ -9,9 +9,9 @@ widget_width = 820
             window.vicancy.createDiv(client_id, client_name, client_email, reseller_token);
         },
         createDiv: function (client_id, client_name, client_email, reseller_token) {
-<%#
-   var d = create_html_obj(<= IO.read(Rails.root.join('app','assets','javascripts','widget-api','_widget-api.html')).inspect >);
-%>
+            <%#
+               var d = create_html_obj(<= IO.read(Rails.root.join('app','assets','javascripts','widget-api','_widget-api.html')).inspect >);
+            %>
             var overlay = document.createElement("div");
             overlay.id = "com-vicancy-widget-overlay";
             overlay.style.cssText = 'position: absolute; left: 0px; top: 0px; width:100%; height:100%; text-align:center; z-index: 1000; background-color: gray; background-color: rgba(0,0,0,0.3); z-index: 1000;'
@@ -23,24 +23,24 @@ widget_width = 820
             box.width = <%=widget_width%>;
             box.height = <%=widget_height%>;
             box.style.cssText = 'background-color: white; border: 1px solid gray; position: fixed; left: 50%; top: 50%; margin-left: -<%=widget_width/2%>px; margin-top: -<%=widget_height/2%>px; ' +
-                '-webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.75); -moz-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.75); box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.75);'+
-            'width: <%=widget_width%>px; height: <%=widget_height%>px; '+
+                    '-webkit-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.75); -moz-box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.75); box-shadow: 0px 0px 20px 0px rgba(50, 50, 50, 0.75);' +
+                    'width: <%=widget_width%>px; height: <%=widget_height%>px; '+
                     '/* position: relative; */';
             overlay.appendChild(box);
             var inner_box = document.createElement("div");
             inner_box.style.cssText = 'position: relative;'
             box.appendChild(inner_box);
             var spin = document.createElement("img");
-            spin.style.cssText = "height: 50px; width: 50px; "+
+            spin.style.cssText = "height: 50px; width: 50px; " +
                     "left: <%=(widget_width-50)/2%>px; top: <%=(widget_height-50)/2%>px; position: absolute;";
             spin.src = "data:image/svg+xml;base64,<%= Base64.strict_encode64(IO.read(Rails.root.join('app','assets','images','widget','spinning-loader.svg'))) %>";
             inner_box.appendChild(spin);
             var frame = document.createElement("iframe");
             var src = 'http://vicancy.dev/widget#';
-            src = src + '?api_token='+encodeURIComponent(reseller_token);
-            src = src + '&client_id='+encodeURIComponent(client_id);
-            src = src + '&client_name='+encodeURIComponent(client_name);
-            src = src + '&client_email='+encodeURIComponent(client_email);
+            src = src + '?api_token=' + encodeURIComponent(reseller_token);
+            src = src + '&client_id=' + encodeURIComponent(client_id);
+            src = src + '&client_name=' + encodeURIComponent(client_name);
+            src = src + '&client_email=' + encodeURIComponent(client_email);
             frame.src = src;
             frame.frameBorder = 0;
             frame.marginHeight = 0;

@@ -3,8 +3,8 @@
 # Table name: clients
 #
 #  id          :integer          not null, primary key
-#  user_id     :integer          indexed, indexed => [external_id]
-#  external_id :string(255)      indexed => [user_id]
+#  user_id     :integer          indexed
+#  external_id :string(255)      indexed => [reseller_id]
 #  name        :string(255)
 #  email       :string(255)
 #  language    :string(255)
@@ -12,6 +12,7 @@
 #  token       :string(255)      indexed
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  reseller_id :integer          indexed, indexed => [external_id]
 #
 
 FactoryGirl.define do

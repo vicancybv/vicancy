@@ -1,0 +1,19 @@
+{
+    "resources": [
+        {
+            "name": "Client API",
+            "examples": [
+                {
+                    "description": "Authenticate client",
+                    "link": "client_api/authenticate_client.json",
+                    "groups": "all"
+                },
+                {
+                    "description": "List videos",
+                    "link": "client_api/list_videos.json",
+                    "groups": "all"
+                }
+            ]
+        }
+    ]
+}

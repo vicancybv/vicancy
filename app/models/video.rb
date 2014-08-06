@@ -17,6 +17,7 @@
 #  place      :string(255)
 #  tags       :string(255)
 #  aasm_state :string(255)
+#  client_id  :integer          indexed
 #
 
 class Video < ActiveRecord::Base
@@ -24,8 +25,12 @@ class Video < ActiveRecord::Base
   extend TrelloBoard
 
   belongs_to  :user
+  belongs_to  :client
+
   has_many  :video_edits, dependent: :destroy
-  attr_accessible :company, :job_ad_url, :job_title, :language, :summary, :title, :user_id
+  attr_accessible :company, :job_ad_url, :job_title, :language, :summary, :title, :user_id, :client_id
+  attr_accessible :youtube_id, :vimeo_id
+
   attr_accessor :edits
   validates :language, presence: true
   default_scope { order("created_at DESC") }

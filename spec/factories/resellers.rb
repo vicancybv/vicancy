@@ -4,9 +4,9 @@
 #
 #  id         :integer          not null, primary key
 #  name       :string(255)
-#  slug       :string(255)
+#  slug       :string(255)      indexed
 #  language   :string(255)
-#  token      :string(255)
+#  token      :string(255)      indexed
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
@@ -15,9 +15,15 @@
 
 FactoryGirl.define do
   factory :reseller do
-    name "MyString"
-    slug "MyString"
-    language "MyString"
-    token "MyString"
+    name 'Vicancy'
+    language 'es'
+    slug 'vicancy'
+    token 'some_random_token'
+  end
+
+  factory :reseller2, class: 'Reseller' do
+    name 'Monster Jobs'
+    slug 'monster_jobs'
+    token 'monster_jobs_token'
   end
 end

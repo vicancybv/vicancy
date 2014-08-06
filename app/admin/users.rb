@@ -58,7 +58,6 @@ ActiveAdmin.register User do
           video_request.attachments.count
         end
       end
-
     end
 
   end

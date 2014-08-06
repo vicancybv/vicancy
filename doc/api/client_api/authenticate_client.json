@@ -1,0 +1,60 @@
+{
+  "resource": "Client API",
+  "http_method": "POST",
+  "route": "/api/v1/client/auth",
+  "description": "Authenticate client",
+  "explanation": "Authenticates client using reseller's API Token.\nCreates client if not present.\nUpdates if name/email/language changed.\nReturns client token.",
+  "parameters": [
+    {
+      "required": true,
+      "name": "api_token",
+      "description": "Reseller's unique API Token"
+    },
+    {
+      "required": true,
+      "scope": "client",
+      "name": "id",
+      "description": "Client's unique identifier in Reseller' system (can be number or text)"
+    },
+    {
+      "required": true,
+      "scope": "client",
+      "name": "name",
+      "description": "Client name"
+    },
+    {
+      "required": false,
+      "scope": "client",
+      "name": "email",
+      "description": "Client email"
+    },
+    {
+      "required": false,
+      "scope": "client",
+      "name": "language",
+      "description": "In which language to show widget (e.g. en, es, nl)"
+    }
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/client/auth",
+      "request_body": "{\"api_token\":\"r5CvvP2hP9fIPRqUmcGzSw\",\"client\":{\"id\":\"3132\",\"name\":\"Deloitte\",\"email\":\"deloitte@example.com\",\"language\":\"en\"}}",
+      "request_headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\"status\":\"ok\",\"client_token\":\"_FueOIO5cR7XKtfgjcb6pA\"}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

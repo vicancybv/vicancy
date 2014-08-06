@@ -4,9 +4,9 @@ describe '/api/v1/client' do
 
   context '/api/v1/client/auth' do
     let(:json) { JSON.parse(response.body) }
-    let(:user) { create(:user) }
-    let(:client) { create(:client, user: user) }
-    let(:api_token) { user.token }
+    let(:reseller) { create(:reseller) }
+    let(:client) { create(:client, reseller: reseller) }
+    let(:api_token) { reseller.token }
 
     context 'client exists' do
       let(:params) do
@@ -31,9 +31,9 @@ describe '/api/v1/client' do
     end
 
     context 'client exists, different info' do
-      let(:user) { create(:user) }
-      let(:client) { create(:client, user: user) }
-      let(:api_token) { user.token }
+      let(:reseller) { create(:reseller) }
+      let(:client) { create(:client, reseller: reseller) }
+      let(:api_token) { reseller.token }
       let(:params) do
         ({ api_token: api_token,
            client: {
@@ -80,8 +80,8 @@ describe '/api/v1/client' do
     end
 
     context 'client from different reseller' do
-      let(:user2) { create(:user2) }
-      let(:client2) { user2.clients.create({ name: 'New one', email: 'some', external_id: 'someid' }) }
+      let(:reseller2) { create(:reseller2) }
+      let(:client2) { reseller2.clients.create({ name: 'New one', email: 'some', external_id: 'someid' }) }
       let(:params) do
         ({ api_token: api_token,
            client: {
@@ -99,7 +99,7 @@ describe '/api/v1/client' do
       end
 
       it 'should create new client' do
-        client2 # create it so it doesn't affect ResellerClient.count
+        client2 # create it so it doesn't affect Client.count
         expect {
           post_json '/api/v1/client/auth', params
         }.to change { Client.count }.by(1)
@@ -137,7 +137,7 @@ describe '/api/v1/client' do
         expect(json['status']).to eq 'ok'
       end
 
-      it 'should create new user' do
+      it 'should create new client' do
         expect {
           post_json '/api/v1/client/auth', params
         }.to change { Client.count }.by(1)
@@ -157,7 +157,7 @@ describe '/api/v1/client' do
       it 'should save client with correct params' do
         post_json '/api/v1/client/auth', params
         client = Client.find_by_token(json['client_token'])
-        expect(client.user_id).to eq user.id
+        expect(client.reseller_id).to eq reseller.id
         expect(client.name).to eq 'Deloitte'
         expect(client.email).to eq 'deloitte@example.com'
         expect(client.language).to eq 'en'

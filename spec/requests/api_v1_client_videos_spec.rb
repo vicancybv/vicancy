@@ -1,23 +1,23 @@
 require 'spec_helper'
 
 describe '/api/v1/client/videos' do
-  let(:user) { create(:user) }
-  let(:client) { create(:client, user: user) }
+  let(:reseller) { create(:reseller) }
+  let(:client) { create(:client, reseller: reseller) }
   let(:json) { JSON.parse(response.body) }
 
   context 'GET /api/v1/client/videos' do
 
     before(:each) do
       client # create all
-      user.videos.create!({
+      client.videos.create!({
                               job_ad_url: 'http://example',
                               job_title: 'Manager',
                               company: 'Deloitte',
                               language: 'en'
                           })
-      user.videos.first.uploaded_videos.create!({provider: 'youtube', provider_id: '1111111'})
-      user.videos.first.uploaded_videos.create!({provider: 'vimeo', provider_id: '22222222'})
-      get '/api/v1/client/videos', { api_token: user.token, client_token: client.token }
+      client.videos.first.uploaded_videos.create!({provider: 'youtube', provider_id: '1111111'})
+      client.videos.first.uploaded_videos.create!({provider: 'vimeo', provider_id: '22222222'})
+      get '/api/v1/client/videos', { api_token: reseller.token, client_token: client.token }
     end
 
 

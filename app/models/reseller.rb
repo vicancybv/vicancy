@@ -4,15 +4,15 @@
 #
 #  id         :integer          not null, primary key
 #  name       :string(255)
-#  slug       :string(255)
+#  slug       :string(255)      indexed
 #  language   :string(255)
-#  token      :string(255)
+#  token      :string(255)      indexed
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
 class Reseller < ActiveRecord::Base
-#  has_many :clients
+  has_many :clients
 
   attr_accessible :language, :name, :slug, :token
 

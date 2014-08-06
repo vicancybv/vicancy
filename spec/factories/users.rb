@@ -15,6 +15,7 @@ FactoryGirl.define do
 
   factory :user do
     name 'Vicancy'
+    language 'es'
     slug 'vicancy'
     token 'some_random_token'
   end
