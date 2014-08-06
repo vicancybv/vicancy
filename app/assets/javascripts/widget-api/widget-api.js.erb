@@ -1,10 +1,11 @@
 <%
 widget_height = 520
 widget_width = 820
-require Rails.root.join('app','models','settings')
+
+require Rails.root.join('app','models','settings') # needed for Heroku since it doesn't load environment on assets:precompile
 %>
 
-(function () {
+//(function () {
     var Vicancy = {
         open: function (client_id, client_name, client_email, reseller_token) {
             window.vicancy.createDiv(client_id, client_name, client_email, reseller_token);
@@ -55,6 +56,6 @@ require Rails.root.join('app','models','settings')
         }
     };
     if (!window.vicancy) window.vicancy = Vicancy;
-})();
+//})();
 
 

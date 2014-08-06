@@ -46,6 +46,8 @@ group :production do
 	gem 'rails_12factor'
 	gem 'dalli'
 	gem 'memcachier'
+  # serve gzipped assets
+  gem 'heroku-deflater'
 end
 
 # Gems used only for assets and not required
