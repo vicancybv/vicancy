@@ -34,12 +34,16 @@ App.WidgetRoute = Ember.Route.extend({
 App.VideosRoute = Ember.Route.extend({
     model: function () {
         var app = this;
-        return Ember.$.getJSON("/api/v1/client/videos", { "api_token": App.get('apiToken'), client_token: App.get('clientToken')}).then(function (data) {
-            for (var i = 0; i < data.videos.length; i++) {
-                app.store.push('video', data.videos[i]);
-            }
-            return app.store.all('video');
-        });
+        if (App.get('videos') == null) {
+            var videos = Ember.$.getJSON("/api/v1/client/videos", { "api_token": App.get('apiToken'), client_token: App.get('clientToken')}).then(function (data) {
+                for (var i = 0; i < data.videos.length; i++) {
+                    app.store.push('video', data.videos[i]);
+                }
+                return app.store.all('video');
+            });
+            App.set('videos',videos);
+        }
+        return App.get('videos');
     },
     afterModel: function (videos, transition) {
         if (videos.get('length') > 0) {
