@@ -4,6 +4,7 @@ App.Video = DS.Model.extend({
     youtube_id: DS.attr('string'),
     vimeo_id: DS.attr('string'),
     wistia_id: DS.attr('string'),
+    thumb_small: DS.attr('string'),
     vimeo_url: function() {
         return '//player.vimeo.com/video/'+this.get('vimeo_id');
     }.property('vimeo_id'),

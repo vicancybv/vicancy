@@ -70,6 +70,15 @@ class Video < ActiveRecord::Base
     self.uploaded_videos.select{|u| u.provider == provider.to_s}.first.try(:provider_id)
   end
 
+  def thumb(provider, size = :small)
+    provider = self.uploaded_videos.select{|u| u.provider == provider.to_s}.first
+    provider.try(:"thumb_#{size}")
+  end
+
+  def thumb_small
+    thumb(:vimeo, :small) || thumb(:youtube, :small)
+  end
+
   def video_url
     return vimeo_url unless vimeo_id.blank?
     return youtube_url unless youtube_id.blank?
