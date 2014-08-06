@@ -1,7 +1,9 @@
 <div class="col-xs-8" style="padding-left: 0px; padding-right: 0px">
-  <iframe {{bind-attr src=vimeo_url}} width='100%' height='307' frameborder='0' webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <iframe
+  {{bind-attr src=vimeo_url}} width='100%' height='307' frameborder='0' webkitallowfullscreen mozallowfullscreen
+  allowfullscreen></iframe>
   <!--<div class="frame">-->
-    <!--<img {{bind-attr src=youtube_preview_url}} width='100%' height='307'>-->
+  <!--<img {{bind-attr src=youtube_preview_url}} width='100%' height='307'>-->
   <!--</div>-->
   <div class="frame_desc">
     <div class="row">
@@ -28,7 +30,7 @@
         </div>
       </div>
       <div class="col-xs-2">
-        <div class="icon-btn text-center">
+        <div class="icon-btn text-center" {{action 'share'}}>
           <i class="fa fa-share-square-o"></i>
 
           <div>Share</div>
@@ -36,4 +38,7 @@
       </div>
     </div>
   </div>
+</div>
+<div class="col-xs-8" id="sidr">
+  Share
 </div>

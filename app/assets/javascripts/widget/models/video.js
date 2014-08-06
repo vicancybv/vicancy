@@ -10,11 +10,7 @@ App.Video = DS.Model.extend({
     }.property('vimeo_id'),
     wistia_url: function() {
         return '//fast.wistia.net/embed/iframe/'+this.get('wistia_id')+'?version=v1&videoHeight=360&videoWidth=640';
-    }.property('wistia_id'),
-    youtube_preview_url: function() {
-        return '//img.youtube.com/vi/'+this.get('youtube_id')+'/maxresdefault.jpg';
-    }.property('youtube_id')
-
+    }.property('wistia_id')
 });
 
 //App.Video.FIXTURES = [

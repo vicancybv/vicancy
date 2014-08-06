@@ -1,6 +1,6 @@
-//= require widget/jquery
+//= require widget/jquery.min
 // require widget/bootstrap-sprockets
-//= require widget/handlebars-v1.3.0
+//= require widget/handlebars.min-v1.3.0
 //= require widget/ember.min
 //= require widget/ember-data.min
 //= require_directory .
