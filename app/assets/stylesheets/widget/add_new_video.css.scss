@@ -1,0 +1,40 @@
+
+.add_new_video {
+
+  form {
+    margin-top: 30px;
+    .transparent-input {
+      color: white;
+      background-color : transparent !important;
+    }
+    .button-group {
+      margin-top: 30px;
+      .btn {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.btn-transparent {
+  background-color : transparent !important;
+  color: white;
+  border: 1px solid white;
+  &:hover, &:focus {
+    color: rgba(#FFFFFF, 0.9);
+    background-color : rgba(#000000, 0.6) !important;
+    border: 1px solid rgba(#FFFFFF, 0.9);
+  }
+}
+
+
+.btn-transparent-success {
+  background-color : rgba(#398439, 0.1) !important;
+  color: white;
+  border: 1px solid #398439;
+  &:hover, &:focus {
+    color: white;
+    background-color : rgba(#398439, 1.0) !important;
+    border: 1px solid #398439;
+  }
+}

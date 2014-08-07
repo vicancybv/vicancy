@@ -1,10 +1,13 @@
 Vicancy::Application.routes.draw do
 
-  namespace :api, :defaults => {:format => :json} do
+  namespace :api, :defaults => { :format => :json } do
     namespace :v1 do
       namespace :client, module: 'client' do
         post :auth
         resources :videos, only: [:index]
+        namespace :videos do
+          post 'request', action: :video_request
+        end
       end
     end
   end
@@ -59,7 +62,6 @@ Vicancy::Application.routes.draw do
   end
   match 'en' => "static_pages#en"
   match 'en-edited' => "static_pages#en_edited"
-
 
 
   # The priority is based upon order of creation:

@@ -1,0 +1,13 @@
+.widget-share-container {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.widget-share-btn {
+  cursor: pointer;
+  font-size: 60px;
+  color: darken(#FFFFFF, 20%);
+  &:hover {
+    color: white;
+  }
+}

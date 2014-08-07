@@ -1,0 +1,22 @@
+<div class="overlay animated fast fadeIn">
+  <div class="modal_container add_new_video">
+    <div class="head text-center">{{ i18n add_new_video }}</div>
+    <form role="form">
+      <div class="form-group">
+        <input type="url" id="add_new_video_link" class="form-control transparent-input" placeholder="Link to job" required>
+      </div>
+      <div class="form-group">
+        <textarea id="add_new_video_comments" class="form-control transparent-input" rows=4 placeholder="Comments (optional)"></textarea>
+      </div>
+      <div class="button-group text-center">
+        <a class="btn btn-lg btn-transparent" {{action "closeModal"}}>Cancel</a>
+        <a class="btn btn-lg btn-success" {{ action 'submit' }}>Send</a>
+      </div>
+    </form>
+
+  </div>
+  <div class="overlay_close text-center" {{action "closeModal"}}>
+  <span class="icon-cross"></span>
+</div>
+</div>
+

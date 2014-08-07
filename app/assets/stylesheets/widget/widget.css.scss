@@ -13,6 +13,11 @@ $wg-back-gray : #F7F7F7;
   background-color : $wg-back-gray;
 }
 
+form {
+  font-family : 'Open Sans', Helvetica, Arial, sans-serif;
+//  font-weight: 300;
+}
+
 .wg-container {
   font-family : 'Open Sans', Helvetica, Arial, sans-serif;
   width       : $width;
@@ -162,4 +167,59 @@ a.active {
       color: darken(#808080, 15%);
     }
   }
+}
+
+#widget_main_container {
+  overflow: hidden;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal_container {
+  font-family : 'Open Sans', Helvetica, Arial, sans-serif;
+  color: white;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -300px;
+  margin-top: -150px;
+  width: 600px;
+  height: 300px;
+
+  .head {
+    font-size   : 30px;
+    font-weight : 300;
+  }
+
+}
+
+.overlay_close {
+  display: none;
+  color: darken(#FFFFFF, 30%);
+  cursor: pointer;
+  font-size: 30px;
+//  background-color: gray;
+  padding: 10px;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  width: 70px;
+  height: 70px;
+  &:hover {
+    color: darken(#FFFFFF, 10%);
+  }
+}
+
+.animated.fast {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }

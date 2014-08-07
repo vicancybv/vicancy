@@ -1,0 +1,27 @@
+<div class="overlay animated fast fadeIn">
+  <div class="modal_container share_video">
+    <div class="head text-center">{{ i18n video.share }}</div>
+    <div class="row widget-share-container">
+      <div class="col-xs-2 col-xs-offset-3 text-center"
+      {{ action 'twitter' }}>
+      <i class="fa fa-twitter widget-share-btn"></i>
+    </div>
+    <div class="col-xs-2 text-center"
+    {{ action 'facebook' }}>
+    <i class="fa fa-facebook widget-share-btn"></i>
+  </div>
+  <div class="col-xs-2 text-center"
+  {{ action 'linkedin' }}>
+  <i class="fa fa-linkedin widget-share-btn"></i>
+</div>
+</div>
+<div class="text-center">
+  <a class="btn btn-transparent btn-lg" {{action "closeModal"}}>Close</a>
+</div>
+
+</div>
+<div class="overlay_close text-center" {{action "closeModal"}}>
+<span class="icon-cross"></span>
+</div>
+</div>
+

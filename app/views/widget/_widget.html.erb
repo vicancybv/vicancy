@@ -5,7 +5,7 @@
         <div class="pull-right" style="padding-top: 18px; padding-right: 10px">
           <p style="font-size: 16px; margin-bottom: 2px">Videomanager</p>
 
-          <p style="color: #808080; font-size: 12px">Powered by
+          <p style="color: #808080; font-size: 12px">{{i18n powered_by}}
             <a href="http://www.vicancy.com" target="_blank">Vicancy</a></p>
         </div>
         <div class="pull-right" style="padding-right: 15px; padding-top: 7px">
@@ -13,11 +13,11 @@
         </div>
       </div>
       <div class="col-xs-8">
-        <a href="#" class="btn btn-vicancy btn-full-height" style="padding-left: 25px; padding-right: 25px; padding-top: 30px"><i class="fa fa-plus"></i>
-          Add New Video</a>
+        <a {{ action 'openModal' 'add_new_video' }} class="btn btn-vicancy btn-full-height" style="padding-left: 25px; padding-right: 25px; padding-top: 30px"><i class="fa fa-plus"></i>
+          {{i18n add_new_video}}</a>
 
         <div class="pull-right wg-nav" style="padding-top: 30px">
-          <a href="#">Support</a>
+          <a href="#">{{i18n support}}</a>
         </div>
       </div>
     </div>

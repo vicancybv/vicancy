@@ -1,11 +1,5 @@
-<script type="text/x-handlebars" data-template-name="widget">
-<%= render 'widget' %>
-</script>
-
-<script type="text/x-handlebars" data-template-name="video">
-  <%= render 'video' %>
-</script>
-
-<script type="text/x-handlebars" data-template-name="videos">
-  <%= render 'videos' %>
-</script>
+<% ['widget', 'video', 'videos', 'add_new_video', 'share'].each do |templ| %>
+    <script type="text/x-handlebars" data-template-name="<%= templ %>">
+      <%= render templ %>
+    </script>
+<% end %>
