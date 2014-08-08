@@ -4,7 +4,11 @@ Vicancy::Application.routes.draw do
     namespace :v1 do
       namespace :client, module: 'client' do
         post :auth
-        resources :videos, only: [:index]
+        resources :videos, only: [:index] do
+          member do
+            post 'edit'
+          end
+        end
         namespace :videos do
           post 'request', action: :video_request
         end

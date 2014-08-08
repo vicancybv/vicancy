@@ -16,10 +16,10 @@
     </div>
     <div class="row">
       <div class="col-xs-2">
-        <div class="icon-btn text-center">
+        <div class="icon-btn text-center" {{action 'openModal' 'edit' model }}>
           <i class="fa fa-edit"></i>
 
-          <div>{{ i18n video.edit }}</div>
+          <div>{{ i18n video.edit.button }}</div>
         </div>
       </div>
       <div class="col-xs-2">

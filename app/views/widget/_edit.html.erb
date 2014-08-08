@@ -1,12 +1,9 @@
 <div class="overlay animated fast fadeIn">
   <div class="modal_container add_new_video">
-    <div class="head text-center">{{ i18n add_new_video.title }}</div>
+    <div class="head text-center">{{ i18n video.edit.title }}</div>
     <form role="form">
       <div class="form-group">
-        <input type="url" id="add_new_video_link" class="form-control transparent-input" placeholder="{{ i18n add_new_video.link_to_job }}" required>
-      </div>
-      <div class="form-group">
-        <textarea id="add_new_video_comments" class="form-control transparent-input" rows=4 placeholder="{{ i18n add_new_video.comments }}"></textarea>
+        <textarea id="edit_video_comments" class="form-control transparent-input" rows=8 placeholder="{{ i18n video.edit.comments }}"></textarea>
       </div>
       <div class="button-group text-center">
         <a class="btn btn-lg btn-transparent" {{action "closeModal"}}>{{ i18n cancel }}</a>

@@ -16,7 +16,10 @@ class VideoRequest < ActiveRecord::Base
   belongs_to :user
   belongs_to :client
   has_many :attachments
-  attr_accessible :comment, :link, :user_id, :user_ip, :attachments_attributes
+  attr_accessible :comment, :link, :user_id, :client_id, :user_ip, :attachments_attributes
+
+  delegate :name, :to => :user, :prefix => true, :allow_nil => true
+  delegate :name, :to => :client, :prefix => true, :allow_nil => true
 
   accepts_nested_attributes_for :attachments
 end
