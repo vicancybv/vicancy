@@ -11,7 +11,7 @@ gem 'paperclip'
 gem 'aws-sdk', '~> 1.5.7'
 
 gem 'aasm'
-gem 'sidekiq'
+gem 'sidekiq', '3.2.1'
 gem 'ruby-trello'
 gem 'oauth2'
 gem 'youtube_it', :github => 'tobymarsden/youtube_it'
