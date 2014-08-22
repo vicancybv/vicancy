@@ -1,3 +1,5 @@
+require_relative Rails.root.join('app','models','settings')
+
 Vicancy::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
