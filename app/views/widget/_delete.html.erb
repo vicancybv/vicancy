@@ -1,0 +1,24 @@
+<div class="overlay animated fast fadeIn">
+  <div class="modal_container">
+    <div class="delete_modal" style="margin-top: 70px">
+        <div class="head text-center">{{ i18n video.delete.title }}</div>
+        <form role="form" style="margin-top: 50px">
+          <div class="button-group text-center">
+            <a class="btn btn-lg btn-transparent" {{action "closeModal"}}>{{ i18n cancel }}</a>
+            <a class="btn btn-lg btn-danger" {{ action 'submit' }}>{{ i18n delete }}</a>
+          </div>
+        </form>
+    </div>
+  </div>
+</div>
+</div>
+<div class="text-center">
+  <a class="btn btn-transparent btn-lg" {{action "closeModal"}}>{{ i18n close }}</a>
+</div>
+
+</div>
+<div class="overlay_close text-center" {{action "closeModal"}}>
+<span class="icon-cross"></span>
+</div>
+</div>
+

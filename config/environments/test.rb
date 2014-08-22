@@ -7,6 +7,9 @@ Vicancy::Application.configure do
   # and recreated between test runs. Don't rely on the data there!
   config.cache_classes = true
 
+  config.action_mailer.default_url_options = Settings.default_url_options
+  config.action_mailer.delivery_method = :test
+
   # Configure static asset server for tests with Cache-Control for performance
   config.serve_static_assets = true
   config.static_cache_control = "public, max-age=3600"

@@ -23,10 +23,10 @@
         </div>
       </div>
       <div class="col-xs-2">
-        <div class="icon-btn text-center">
+        <div class="icon-btn text-center" {{action 'openModal' 'delete' model }}>
           <i class="fa fa-trash-o"></i>
 
-          <div>{{ i18n video.delete }}</div>
+          <div>{{ i18n video.delete.button }}</div>
         </div>
       </div>
       <div class="col-xs-2">

@@ -17,12 +17,16 @@ I18n.translations = {
                 title: 'Edit',
                 comments: 'Your comments on what to change...'
             },
-            delete: 'Delete',
+            delete: {
+                title: 'Delete Video',
+                button: 'Delete'
+            },
             share: 'Share'
         },
         cancel: "Cancel",
         close: "Close",
         send: "Send",
+        delete: "Delete",
         cookieCount: {
             one: 'You have {{count}} cookie.',
             other: 'You have {{count}} cookies. Yum!'
@@ -47,12 +51,16 @@ I18n.translations = {
                 title: 'Bewerken',
                 comments: 'Uw opmerkingen over wat te veranderen ...'
             },
-            delete: 'Verwijderen',
+            delete: {
+                title: 'Video Verwijderen',
+                button: 'Verwijderen'
+            },
             share: 'Delen'
         },
         cancel: "Annuleren",
         close: "Sluiten",
         send: "Verzenden",
+        delete: "Verwijderen",
         cookieCount: {
             one: 'Vous avez {{count}} biscuit.',
             other: 'Vous avez {{count}} biscuits. Le Yum!'

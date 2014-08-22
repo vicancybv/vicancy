@@ -31,4 +31,20 @@ class Settings
     end
   end
 
+  def self.mail_host
+    if Settings.staging?
+      'stagingvicancy.herokuapp.com'
+    elsif Settings.sandbox?
+      'sandboxvicancy.herokuapp.com'
+    elsif Settings.production?
+      'vicancy.com'
+    else
+      'vicancy.dev'
+    end
+  end
+
+  def self.default_url_options
+    ({ host: Settings::mail_host })
+  end
+
 end

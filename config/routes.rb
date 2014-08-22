@@ -7,6 +7,7 @@ Vicancy::Application.routes.draw do
         resources :videos, only: [:index] do
           member do
             post 'edit'
+            post 'delete'
           end
         end
         namespace :videos do

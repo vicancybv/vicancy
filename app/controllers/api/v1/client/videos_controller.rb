@@ -1,6 +1,6 @@
 class API::V1::Client::VideosController < API::BaseController
   before_filter :set_client
-  before_filter :set_video, only: [:edit]
+  before_filter :set_video, only: [:edit, :delete]
 
   def index
     @videos = @client.videos.order('updated_at DESC').to_a
@@ -14,6 +14,10 @@ class API::V1::Client::VideosController < API::BaseController
     AdminMailer.edit_video_email(@video_edit, request.ip).deliver
   end
 
+  def delete
+    AdminMailer.delete_video_email(@video, request.ip).deliver
+  end
+
   def video_request
     @video_request = VideoRequest.new(params.require(:request).permit(:link, :comment))
     @video_request.client_id = @client.id
@@ -25,7 +29,8 @@ class API::V1::Client::VideosController < API::BaseController
   private
 
   def set_video
-    @video = Video.find(params.require(:id))
+    @video = Video.where(id: params.require(:id), client_id: @client.id).first
+    raise ActiveRecord::RecordNotFound unless @video
   end
 
   def set_client
