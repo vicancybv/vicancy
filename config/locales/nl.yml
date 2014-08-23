@@ -16,21 +16,21 @@ nl:
       description_without_place: "%{company} zoekt een %{job_title}. Interesse? Klik op de link voor meer informatie: %{job_ad_url}"
   layouts:
     resellers:
-      clients: Cliënten
+      clients: Klant
       install: Installeer
   resellers:
     client_table:
-      client: Cliënt
+      client: Klanten
       widget: Widget
       sessions: Sessies
       last_active: Laatst Actief
-      videos_live: Video Leef
+      videos_live: Actieve videos
       internal_id: Interne ID
       open_widget: Open Widget
-      find_by_client: Zoek door Cliënt
+      find_by_client: Zoek klant
       find_by_internal_id: Zoek op Interne ID
   admin:
-    optional: "onverplicht"
+    optional: "optioneel"
     eg: "bijv."
     User: "Gebruiker"
     Video: "Video"
