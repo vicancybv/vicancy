@@ -4,13 +4,13 @@
       <div class="col-xs-12" style="height: 31px">
         <form class="form-inline" role="form">
           <i class="fa fa-search" style="color: gray"></i>
-          <input type="search" class="form-control input-sm wg-search wg-back-gray" style="width: 80%; padding-left: 5px; padding-top: 5px; padding-bottom: 3px" placeholder="{{i18n search.search_videos}}">
+          {{ input value=searchTerm type="search" class="form-control input-sm wg-search wg-back-gray"  placeholder=(i18n search.search_videos)}}
         </form>
       </div>
     </div>
     <div class="row wg-border-right wg-back-gray">
       <div class="col-xs-12" id="video-list" style="overflow: auto; height: 408px">
-        {{#each}}
+        {{#each results}}
         {{#link-to 'video' this}}
         <div
         {{bind-attr class=":row :media-row isSelected:selected"}}>
@@ -30,6 +30,11 @@
       </div>
       {{/link-to}}
       {{/each}}
+      {{#if noSearchResults }}
+      <div class="text-center wg-no-results">
+        <small>{{ i18n search.no_results }}</small>
+      </div>
+      {{/if}}
     </div>
   </div>
 </div>

@@ -86,6 +86,9 @@ App.VideosRoute = Ember.Route.extend({
         if (videos.get('length') > 0) {
             this.transitionTo('video', videos.get('firstObject'));
         }
+    },
+    setupController: function(controller, videos) {
+        controller.set('videos', videos);
     }
 });
 

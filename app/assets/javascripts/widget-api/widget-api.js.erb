@@ -38,7 +38,7 @@ require Rails.root.join('app','models','settings') # needed for Heroku since it 
             spin.src = "data:image/svg+xml;base64,<%= Base64.strict_encode64(IO.read(Rails.root.join('app','assets','images','widget','spinning-loader.svg'))) %>";
             inner_box.appendChild(spin);
             var frame = document.createElement("iframe");
-            var src = '<%= Settings.widget_vicancy_server %>/widget#';
+            var src = '<%= Settings.widget_vicancy_server %>/widget#/';
             src = src + '?api_token=' + encodeURIComponent(reseller_token);
             src = src + '&client_id=' + encodeURIComponent(client_id);
             src = src + '&client_name=' + encodeURIComponent(client_name);

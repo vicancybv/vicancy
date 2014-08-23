@@ -36,3 +36,11 @@ Generate API Documentation
 Run the following:
 
     bundle exec rake docs:generate
+    
+
+Update video thumbnails on heroku
+---------------------------------
+
+Run the following to update thumbs on staging server:
+
+    heroku run rake thumbs:get --app stagingvicancy

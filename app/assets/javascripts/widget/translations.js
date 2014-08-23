@@ -9,7 +9,8 @@ I18n.translations = {
         support: 'Support',
         powered_by: 'Powered by',
         search: {
-            search_videos: 'Search Videos...'
+            search_videos: 'Search Videos...',
+            no_results: 'No results found'
         },
         video: {
             edit: {
@@ -43,7 +44,8 @@ I18n.translations = {
         powered_by: 'Powered by',
         support: 'Ondersteuning',
         search: {
-            search_videos: 'Zoek Video\'s ...'
+            search_videos: 'Zoek Video\'s ...',
+            no_results: 'Geen resultaten gevonden'
         },
         video: {
             edit: {
