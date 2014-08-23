@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140806162446) do
+ActiveRecord::Schema.define(:version => 20140823173352) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -66,9 +66,14 @@ ActiveRecord::Schema.define(:version => 20140806162446) do
     t.string   "language"
     t.string   "slug"
     t.string   "token"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
     t.integer  "reseller_id"
+    t.integer  "sign_in_count",      :default => 0
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
   end
 
   add_index "clients", ["reseller_id", "external_id"], :name => "index_clients_on_reseller_id_and_external_id", :unique => true

@@ -4,6 +4,20 @@ ActiveAdmin.register Client do
     link_to('New Video for this Client', new_admin_video_url('video[client_id]' => params[:id]))
   end
 
+  index do
+    selectable_column
+    column :id
+    column :name
+    column :language
+    column 'Address' do |client|
+      link_to client.slug, client_url(client.slug)
+    end
+    column :sign_in_count
+    column :created_at
+    column :updated_at
+    actions
+  end
+
   form do |f|
     f.inputs 'Reseller' do
       f.input :reseller
@@ -31,6 +45,11 @@ ActiveAdmin.register Client do
       row :name
       row :token
       row :language
+      row :sign_in_count
+      row :current_sign_in_at
+      row :last_sign_in_at
+      row :current_sign_in_ip
+      row :last_sign_in_ip
       row :url do |user|
         link_to client_url(client.slug), client_url(client.slug)
       end

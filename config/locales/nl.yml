@@ -14,6 +14,21 @@ nl:
     vimeo:
       description_with_place: "%{company} zoekt een %{job_title} in %{place}. Interesse? Klik op de link voor meer informatie: %{job_ad_url}"
       description_without_place: "%{company} zoekt een %{job_title}. Interesse? Klik op de link voor meer informatie: %{job_ad_url}"
+  layouts:
+    resellers:
+      clients: Cliënten
+      install: Installeer
+  resellers:
+    client_table:
+      client: Cliënt
+      widget: Widget
+      sessions: Sessies
+      last_active: Laatst Actief
+      videos_live: Video Leef
+      internal_id: Interne ID
+      open_widget: Open Widget
+      find_by_client: Zoek door Cliënt
+      find_by_internal_id: Zoek op Interne ID
   admin:
     optional: "onverplicht"
     eg: "bijv."
@@ -22,6 +37,7 @@ nl:
     Caption: "Onderschrift"
     Job: "Job"
   date:
+    ago: "%{time} geleden"
     abbr_day_names:
     - zon
     - maa

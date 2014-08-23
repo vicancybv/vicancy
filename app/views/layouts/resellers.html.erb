@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vicancy®</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+  <!--<link rel="stylesheet" href="//cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">-->
+  <link rel="stylesheet" href="//cdn.datatables.net/plug-ins/725b2a2115b/integration/bootstrap/3/dataTables.bootstrap.css">
+  <%= csrf_meta_tags %>
+  <link rel="shortcut icon" href="/images/favicon.ico">
+
+  <!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");
+    for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
+mixpanel.init("93bd7a62384204b11d23a083b5a86681");</script><!-- end Mixpanel -->
+</head>
+<body>
+
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" style="padding: 0px 15px" href="<%= reseller_path(@reseller.slug) %>"><img src="<%= image_path('logo_vicancy_whiteinside.png') %>" class="img-responsive" width="70"></a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <!--<li class="disabled"><a href="<%= reseller_path(@reseller.slug) %>">Dashboard</a></li>-->
+        <li class="<%= nav_class_for 'clients' %>"><a href="<%= clients_reseller_path(@reseller.slug) %>"><i class="fa fa-users"></i>&nbsp;&nbsp;<%= t '.clients' %></a></li>
+        <!--<li class="disabled"><a href="<%= clients_reseller_path(@reseller.slug) %>">Marketing</a></li>-->
+        <li class="<%= nav_class_for 'install' %>"><a href="<%= install_reseller_path(@reseller.slug) %>"><i class="fa fa-code"></i>&nbsp;&nbsp;<%= t '.install' %></a></li>
+      </ul>
+
+      <!--<ul class="nav navbar-nav navbar-right">-->
+        <!--<li class="disabled"><a href="#">Support</a></li>-->
+        <!--<li class="disabled"><a href="#">Docs</a></li>-->
+        <!--<li class="disabled dropdown">-->
+          <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <span class="caret"></span></a>-->
+          <!--<ul class="dropdown-menu" role="menu">-->
+            <!--<li><a href="#">Action</a></li>-->
+            <!--<li><a href="#">Another action</a></li>-->
+            <!--<li><a href="#">Something else here</a></li>-->
+            <!--<li class="divider"></li>-->
+            <!--<li><a href="#">Separated link</a></li>-->
+          <!--</ul>-->
+        <!--</li>-->
+      <!--</ul>-->
+    </div>
+
+  </div>
+</nav>
+
+<%= yield %>
+
+<%= javascript_include_tag "widget-api" %>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/plug-ins/725b2a2115b/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#clients_table').DataTable({
+            "processing":true,
+            "aoColumnDefs" : [{
+                'bSortable' : false,
+                'aTargets' : [ 1 ]
+            }],
+            language: <%= render 'layouts/resellers/'+I18n.locale.to_s %>
+        });
+        $('#clients_table').show();
+
+        var table = $('#clients_table').DataTable();
+
+        $('#clients_table thead input').each(function () {
+            $(this).on('keyup change', function () {
+                var col = $(this).data('col');
+                table
+                        .column(col)
+                        .search(this.value)
+                        .draw();
+            });
+        });    });
+</script>
+
+<%#= render 'layouts/resellers/intercom' %>
+</body>
+</html>

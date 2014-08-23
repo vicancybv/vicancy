@@ -1,6 +1,0 @@
-<% @reseller.clients.each do |client| %>
-<p>
-  <a href="<%= client_path(client.slug) %>"><%= client.name %></a>
-  (<%= client.videos.count %> videos)
-</p>
-<% end %>

@@ -1,0 +1,56 @@
+<style>
+    #clients_table_filter {
+        display : none;
+    }
+    #clients_table input {
+        width     : 100%;
+        font-size : 11px;
+    }
+</style>
+<table class="table table-bordere1d table-hover table-striped" id="clients_table" style="display: none">
+  <thead>
+  <tr>
+    <td><input class="form-control" type="text" placeholder="<%= t '.find_by_client' %>" data-col="0"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><input class="form-control" type="text" placeholder="<%= t '.find_by_internal_id' %>" data-col="5"></td>
+  </tr>
+  <tr>
+    <th><%= t '.client' %></th>
+    <th><%= t '.widget' %></th>
+    <th><%= t '.sessions' %></th>
+    <th><%= t '.last_active' %></th>
+    <th><%= t '.videos_live' %></th>
+    <th><%= t '.internal_id' %></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @reseller.clients.each do |client| %>
+      <tr>
+        <td><%= client.name %></td>
+        <td class="text-center">
+          <a class="btn btn-default btn-xs" href="#" onclick='vicancy.open("<%= j client.external_id %>", "<%= j client.name %>", "<%= j client.email %>", "<%= j client.language %>", "<%= j client.reseller.token %>"); return false;'><%= t '.open_widget' %></a>
+        </td>
+        <td class="text-right"><%= client.sign_in_count %></td>
+        <td><%= last_sign_in_at client %></td>
+        <td class="text-right"><%= client.videos.count %></td>
+        <td><%= client.external_id %></td>
+      </tr>
+  <% end %>
+  </tbody>
+  <tfoot>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  </tfoot>
+</table>
+
+
+

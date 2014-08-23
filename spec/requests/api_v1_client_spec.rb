@@ -150,13 +150,13 @@ describe '/api/v1/client' do
 
       it 'should be able to find client by token' do
         post_json '/api/v1/client/auth', params
-        client = Client.find_by_token(json['client_token'])
+        client = Client.find_by_token!(json['client_token'])
         expect(client).not_to be_blank
       end
 
       it 'should save client with correct params' do
         post_json '/api/v1/client/auth', params
-        client = Client.find_by_token(json['client_token'])
+        client = Client.find_by_token!(json['client_token'])
         expect(client.reseller_id).to eq reseller.id
         expect(client.name).to eq 'Deloitte'
         expect(client.email).to eq 'deloitte@example.com'

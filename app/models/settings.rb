@@ -1,4 +1,12 @@
 class Settings
+
+  # time in minutes
+  # if you open the widget within N minutes after first open
+  # this sign in doesn't count as new one
+  def self.widget_session_length_to_count_as_single_sign_in
+    10
+  end
+
   def self.staging?
     ENV['RAILS_ENV_STAGING'].present? ? true : false
   end

@@ -12,6 +12,21 @@ en:
       client:
         token: Auth Token
         slug: Address
+  layouts:
+    resellers:
+      clients: Clients
+      install: Install
+  resellers:
+    client_table:
+      client: Client
+      widget: Widget
+      sessions: Sessions
+      last_active: Last Active
+      videos_live: Videos Live
+      internal_id: Internal ID
+      open_widget: Open Widget
+      find_by_client: Find By Client
+      find_by_internal_id: Find By Internal ID
   admin:
     optional: "optional"
     eg: "e.g."
@@ -41,5 +56,6 @@ en:
       description_with_place: "%{company} is looking for a %{job_title} in %{place}. Click on the link for more information: %{job_ad_url}"
       description_without_place: "%{company} is looking for a %{job_title}. Click on the link for more information: %{job_ad_url}"
   date:
+    ago: "%{time} ago"
     formats:
       video: ! "%e %b '%y"
