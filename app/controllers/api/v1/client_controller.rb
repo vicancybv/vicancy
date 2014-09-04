@@ -32,10 +32,4 @@ class API::V1::ClientController < API::BaseController
     end
   end
 
-  private
-
-  def set_reseller
-    @reseller = Reseller.find_by_token!(params.require(:api_token))
-  end
-
 end

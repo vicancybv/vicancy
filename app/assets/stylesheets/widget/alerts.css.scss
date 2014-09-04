@@ -1,0 +1,16 @@
+.alert-messages {
+  position: absolute;
+  left: 55%;
+  width: 45%;
+  z-index: 999;
+  padding-top: 10px;
+  padding-right: 10px;
+  .alert {
+    cursor: pointer;
+  }
+}
+
+.animated.fast {
+  -webkit-animation-duration: 0.7s;
+  animation-duration: 0.7s;
+}

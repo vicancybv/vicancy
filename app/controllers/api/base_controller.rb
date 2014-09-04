@@ -1,17 +1,26 @@
+class AuthenticationError < StandardError; end
+
 class API::BaseController < ApplicationController
   rescue_from StandardError, with: :rescue_error
-  #rescue_from ActionController::ParameterMissing, with: :rescue_parameter_missing
-  #rescue_from ActiveRecord::RecordNotFound, with: :rescue_record_not_found
+  rescue_from AuthenticationError, with: :rescue_auth_error
+
+
+  def set_reseller
+    @reseller = Reseller.find_by_token!(params.require(:api_token))
+  rescue ActiveRecord::RecordNotFound
+    raise AuthenticationError.new('Unknown reseller')
+  end
+
+  def set_client
+    @client = @reseller.clients.find_by_token!(params.require(:client_token))
+  rescue ActiveRecord::RecordNotFound
+    raise AuthenticationError.new('Unknown client')
+  end
 
   private
 
-  def rescue_record_not_found(e)
-    #e.message.replace('Unknown token') if e.message.include? 'Couldn\'t find User'
-    rescue_error(e, 404)
-  end
-
-  def rescue_parameter_missing(e)
-    rescue_error(e, 422)
+  def rescue_auth_error(e)
+    rescue_error(e, 401)
   end
 
   def rescue_error(e, status = 500)

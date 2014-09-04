@@ -1,3 +1,14 @@
+<div class="alert-messages">
+
+  <div class="alert alert-dismissable alert-success fast" id="alert-success" style="display: none">
+    <strong>{{i18n 'alert.success'}}</strong> <span class="alert-text"></span>
+  </div>
+
+  <div class="alert alert-danger fast" id="alert-danger" style="display: none">
+    <strong>{{i18n 'alert.error'}}</strong> <span class="alert-text"></span>
+  </div>
+</div>
+
 <div class="wg-container">
   <div class="container-fluid">
     <div class="row wg-header wg-back-gray">
@@ -13,8 +24,9 @@
         </div>
       </div>
       <div class="col-xs-8">
-        <a {{ action 'openModal' 'add_new_video' }} class="btn btn-vicancy btn-full-height" style="padding-left: 25px; padding-right: 25px; padding-top: 30px"><i class="fa fa-plus"></i>
-          {{i18n add_new_video.button }}</a>
+        <a {{ action 'openModal' 'add_new_video' }} class="btn btn-vicancy btn-full-height" style="padding-left: 25px;
+        padding-right: 25px; padding-top: 30px"><i class="fa fa-plus"></i>
+        {{i18n add_new_video.button }}</a>
 
         <div class="pull-right wg-nav" style="padding-top: 30px">
           <a href="#">{{i18n support}}</a>

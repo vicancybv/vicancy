@@ -4,6 +4,7 @@ App.Router.map(function () {
             this.resource('video', { path: ':video_id' });
         });
     });
+    this.resource('landing', { path: '/landing' });
 });
 
 App.WidgetRoute = Ember.Route.extend({
@@ -32,7 +33,27 @@ App.WidgetRoute = Ember.Route.extend({
         this.transitionTo('videos');
     },
     actions: {
-        openModal: function(modalName, model) {
+        flashAlert: function (type, message) {
+            var obj = $("#alert-"+type);
+            obj.css('display', 'none').removeClass('animated').removeClass('fadeOutDown');
+            $("#alert-"+type+" span.alert-text").text(message);
+            obj.addClass('fadeInDown').addClass('animated').css('display', 'block');
+            obj.click(function(){
+                obj.removeClass('animated').removeClass('fadeInDown').addClass('fadeOutDown').addClass('animated');
+            });
+            var timeout = 3000;
+            if (type == 'danger') timeout = 6000;
+            window.setTimeout(function () {
+                obj.removeClass('animated').removeClass('fadeInDown').addClass('fadeOutDown').addClass('animated');
+            }, timeout);
+        },
+        flashOk: function (message) {
+            this.send('flashAlert', 'success', message);
+        },
+        flashError: function (message) {
+            this.send('flashAlert', 'danger', message);
+        },
+        openModal: function (modalName, model) {
             this.controllerFor(modalName).set('model', model);
             this.render(modalName, {
                 into: 'application',
@@ -40,7 +61,7 @@ App.WidgetRoute = Ember.Route.extend({
                 view: 'modal'
             });
         },
-        closeModal: function() {
+        closeModal: function () {
             return this.disconnectOutlet({
                 outlet: 'modal',
                 parentView: 'application'
@@ -78,16 +99,18 @@ App.VideosRoute = Ember.Route.extend({
                 }
                 return app.store.all('video');
             });
-            App.set('videos',videos);
+            App.set('videos', videos);
         }
         return App.get('videos');
     },
     afterModel: function (videos, transition) {
         if (videos.get('length') > 0) {
             this.transitionTo('video', videos.get('firstObject'));
+        } else {
+            this.transitionTo('landing');
         }
     },
-    setupController: function(controller, videos) {
+    setupController: function (controller, videos) {
         controller.set('videos', videos);
     }
 });

@@ -24,6 +24,11 @@ form {
   height      : $height;
 }
 
+.wg-container-bottomless {
+  font-family : 'Open Sans', Helvetica, Arial, sans-serif;
+  width       : $width;
+}
+
 .wg-header {
   height : $header-height;
   & div {
@@ -191,6 +196,7 @@ a.active {
   background-color: rgba(0, 0, 0, 0.9);
 }
 
+
 .modal_container {
   font-family : 'Open Sans', Helvetica, Arial, sans-serif;
   color: white;
@@ -207,6 +213,35 @@ a.active {
     font-weight : 300;
   }
 
+}
+
+.error_overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #E74C3C;
+
+  .modal_container {
+    font-weight : 300;
+    font-size   : 18px;
+  }
+
+  .head {
+    font-weight : 400;
+  }
+  .body {
+    margin-top: 40px;
+  }
+
+  .error_text {
+    font-size: 22px;
+  }
+
+  a {
+    color: darken(#FFFFFF, 20%);
+  }
 }
 
 .overlay_close {

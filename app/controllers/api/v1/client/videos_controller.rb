@@ -1,4 +1,5 @@
 class API::V1::Client::VideosController < API::BaseController
+  before_filter :set_reseller
   before_filter :set_client
   before_filter :set_video, only: [:edit, :delete]
 
@@ -7,7 +8,7 @@ class API::V1::Client::VideosController < API::BaseController
   end
 
   def edit
-    @video_edit = @video.video_edits.create({
+    @video_edit = @video.video_edits.create!({
                                                 edits: params.require(:edit).require(:comments),
                                                 user_ip: request.remote_ip
                                             })
@@ -31,11 +32,6 @@ class API::V1::Client::VideosController < API::BaseController
   def set_video
     @video = Video.where(id: params.require(:id), client_id: @client.id).first
     raise ActiveRecord::RecordNotFound unless @video
-  end
-
-  def set_client
-    @reseller = Reseller.find_by_token!(params.require(:api_token))
-    @client = @reseller.clients.find_by_token!(params.require(:client_token))
   end
 
 end
