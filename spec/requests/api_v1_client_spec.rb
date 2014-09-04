@@ -111,13 +111,13 @@ describe '/api/v1/client' do
       let(:params) { ({ api_token: api_token }) }
 
       after(:each) do
-        expect(response.status).to eq 500
+        expect(response.status).to eq 401
         expect(json['status']).to eq 'error'
       end
 
       it 'should return error text' do
         post_json '/api/v1/client/auth', params
-        expect(json['error_text']).to include 'Couldn\'t find'
+        expect(json['error_text']).to include 'Unknown reseller'
       end
     end
 
