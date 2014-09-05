@@ -21,12 +21,12 @@ nl:
   resellers:
     client_table:
       client: Klanten
-      widget: Widget
+      widget: Vicancies
       sessions: Sessies
       last_active: Laatst Actief
       videos_live: Actieve videos
       internal_id: Interne ID
-      open_widget: Open Widget
+      open_widget: Toon Vicancies
       find_by_client: Zoek klant
       find_by_internal_id: Zoek op Interne ID
   admin:

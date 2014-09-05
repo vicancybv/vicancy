@@ -19,12 +19,12 @@ en:
   resellers:
     client_table:
       client: Client
-      widget: Widget
+      widget: Vicancies
       sessions: Sessions
       last_active: Last Active
       videos_live: Videos Live
       internal_id: Internal ID
-      open_widget: Open Widget
+      open_widget: Show Vicancies
       find_by_client: Find By Client
       find_by_internal_id: Find By Internal ID
   admin:

@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title><%= @client.name %> | Vicancy®</title>
+  <link rel="shortcut icon" href="/images/favicon.ico">
   <meta charset="utf-8">
+  <%= render 'layouts/mixpanel' %>
+  <style>
+    body {
+        background-image: url('<%= image_path 'gray_jean_pattern.png' %>');
+        background-repeat: repeat;
+    }
+  </style>
 </head>
 <body>
 
-<a href="#" onclick="vicancy.open('<%= @client.external_id %>','<%= @client.name %>','<%= @client.email %>', '<%= @client.language || 'en' %>','<%= @client.reseller.token %>'); return false;">Videos</a>
-
 <%= javascript_include_tag 'widget-api' %>
+
+<script type="text/javascript">
+    vicancy.open({
+        "clientId": "<%= j @client.external_id %>",
+        "clientName": "<%= j @client.name %>",
+        "clientEmail": "<%= j @client.email %>",
+        "clientLanguage": "<%= j @client.get_language %>",
+        "resellerToken": "<%= j @client.reseller.token %>",
+        "neverClose": true
+    });
+</script>
 </body>
 </html>

@@ -7,20 +7,22 @@ require Rails.root.join('app','models','settings') # needed for Heroku since it 
 
 //(function () {
     var Vicancy = {
-        open: function (client_id, client_name, client_email, language, reseller_token) {
-            window.vicancy.createDiv(client_id, client_name, client_email, language, reseller_token);
+        open: function (p) {
+            window.vicancy.createDiv(p);
         },
-        createDiv: function (client_id, client_name, client_email, language, reseller_token) {
+        createDiv: function (p) {
             <%#
                var d = create_html_obj(<= IO.read(Rails.root.join('app','assets','javascripts','widget-api','_widget-api.html')).inspect >);
             %>
             var overlay = document.createElement("div");
             overlay.id = "com-vicancy-widget-overlay";
             overlay.style.cssText = 'position: absolute; left: 0px; top: 0px; width:100%; height:100%; text-align:center; background-color: gray; background-color: rgba(0,0,0,0.3); z-index: 1000;'
-            overlay.onclick = (function () {
-                var overlay = document.getElementById('com-vicancy-widget-overlay');
-                document.body.removeChild(overlay);
-            });
+            if ((p.neverClose == true) == false) {
+                overlay.onclick = (function () {
+                    var overlay = document.getElementById('com-vicancy-widget-overlay');
+                    document.body.removeChild(overlay);
+                });
+            }
             var box = document.createElement("div");
             box.width = <%=widget_width%>;
             box.height = <%=widget_height%>;
@@ -39,11 +41,11 @@ require Rails.root.join('app','models','settings') # needed for Heroku since it 
             inner_box.appendChild(spin);
             var frame = document.createElement("iframe");
             var src = '<%= Settings.widget_vicancy_server %>/widget#/';
-            src = src + '?api_token=' + encodeURIComponent(reseller_token);
-            src = src + '&client_id=' + encodeURIComponent(client_id);
-            src = src + '&client_name=' + encodeURIComponent(client_name);
-            src = src + '&client_email=' + encodeURIComponent(client_email);
-            if (language != null) { src = src + '&language=' + encodeURIComponent(language); }
+            src = src + '?api_token=' + encodeURIComponent(p.resellerToken);
+            src = src + '&client_id=' + encodeURIComponent(p.clientId);
+            src = src + '&client_name=' + encodeURIComponent(p.clientName);
+            if (p.clientEmail != null) { src = src + '&client_email=' + encodeURIComponent(p.clientEmail); }
+            if (p.clientLanguage != null) { src = src + '&language=' + encodeURIComponent(p.clientLanguage); }
             frame.src = src;
             frame.frameBorder = 0;
             frame.marginHeight = 0;

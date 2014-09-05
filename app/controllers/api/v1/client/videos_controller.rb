@@ -4,7 +4,7 @@ class API::V1::Client::VideosController < API::BaseController
   before_filter :set_video, only: [:edit, :delete]
 
   def index
-    @videos = @client.videos.order('updated_at DESC').to_a
+    @videos = @client.videos.order('created_at DESC').to_a
   end
 
   def edit

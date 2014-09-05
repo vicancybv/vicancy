@@ -49,13 +49,23 @@ class Client < ActiveRecord::Base
     end
   end
 
+  def get_language
+    if language.present?
+      language
+    elsif reseller.language.present?
+      reseller.language
+    else
+      'en'
+    end
+  end
+
   private
 
   def generate_slug
     return unless slug.blank?
     record = true
     while record
-      random = Array.new(8){%w(a b c d e f g h j k m n p q r s t u v w x y z 2 3 4 5 6 7 8 9).sample}.join
+      random = Array.new(8) { %w(a b c d e f g h j k m n p q r s t u v w x y z 2 3 4 5 6 7 8 9).sample }.join
       record = Client.find_by_slug(random)
     end
     self.slug = random
