@@ -5,9 +5,35 @@ App.Router.map(function () {
         });
     });
     this.resource('landing', { path: '/landing' });
+    this.resource('request_processing', { path: '/request_processing' });
 });
 
-App.WidgetRoute = Ember.Route.extend({
+App.Flashy = Ember.Mixin.create({
+    actions: {
+        flashAlert: function (type, message) {
+            var obj = $("#alert-" + type);
+            obj.css('display', 'none').removeClass('animated').removeClass('fadeOutDown');
+            $("#alert-" + type + " span.alert-text").text(message);
+            obj.addClass('fadeInDown').addClass('animated').css('display', 'block');
+            obj.click(function () {
+                obj.removeClass('animated').removeClass('fadeInDown').addClass('fadeOutDown').addClass('animated');
+            });
+            var timeout = 3000;
+            if (type == 'danger') timeout = 6000;
+            window.setTimeout(function () {
+                obj.removeClass('animated').removeClass('fadeInDown').addClass('fadeOutDown').addClass('animated');
+            }, timeout);
+        },
+        flashOk: function (message) {
+            this.send('flashAlert', 'success', message);
+        },
+        flashError: function (message) {
+            this.send('flashAlert', 'danger', message);
+        }
+    }
+});
+
+App.WidgetRoute = Ember.Route.extend(App.Flashy, {
     queryParams: ['api_token', 'client_id', 'client_name', 'client_email', 'language'],
     model: function (params) {
         if (App.get('apiToken') == null) App.set('apiToken', params.queryParams.api_token);
@@ -33,26 +59,6 @@ App.WidgetRoute = Ember.Route.extend({
         this.transitionTo('videos');
     },
     actions: {
-        flashAlert: function (type, message) {
-            var obj = $("#alert-"+type);
-            obj.css('display', 'none').removeClass('animated').removeClass('fadeOutDown');
-            $("#alert-"+type+" span.alert-text").text(message);
-            obj.addClass('fadeInDown').addClass('animated').css('display', 'block');
-            obj.click(function(){
-                obj.removeClass('animated').removeClass('fadeInDown').addClass('fadeOutDown').addClass('animated');
-            });
-            var timeout = 3000;
-            if (type == 'danger') timeout = 6000;
-            window.setTimeout(function () {
-                obj.removeClass('animated').removeClass('fadeInDown').addClass('fadeOutDown').addClass('animated');
-            }, timeout);
-        },
-        flashOk: function (message) {
-            this.send('flashAlert', 'success', message);
-        },
-        flashError: function (message) {
-            this.send('flashAlert', 'danger', message);
-        },
         openModal: function (modalName, model) {
             this.controllerFor(modalName).set('model', model);
             this.render(modalName, {
@@ -69,7 +75,7 @@ App.WidgetRoute = Ember.Route.extend({
         }
     }
 });
-//
+
 //App.ApplicationRoute = Ember.Route.extend({
 //    actions: {
 //        openModal: function(modalName, model) {
@@ -97,6 +103,7 @@ App.VideosRoute = Ember.Route.extend({
                 for (var i = 0; i < data.videos.length; i++) {
                     app.store.push('video', data.videos[i]);
                 }
+                App.set('requests', data.requests);
                 return app.store.all('video');
             });
             App.set('videos', videos);
@@ -107,7 +114,11 @@ App.VideosRoute = Ember.Route.extend({
         if (videos.get('length') > 0) {
             this.transitionTo('video', videos.get('firstObject'));
         } else {
-            this.transitionTo('landing');
+            if (App.get('requests')) {
+                this.transitionTo('request_processing');
+            } else {
+                this.transitionTo('landing');
+            }
         }
     },
     setupController: function (controller, videos) {
@@ -121,7 +132,7 @@ App.VideoAdapter = DS.RESTAdapter.extend({
 
 
 App.VideoRoute = Ember.Route.extend({
-//    model: function (params) {
-//        //return this.store.all('video', params.video_id);
-//    }
+});
+
+App.LandingRoute = Ember.Route.extend(App.Flashy, {
 });

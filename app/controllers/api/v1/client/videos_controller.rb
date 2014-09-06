@@ -5,6 +5,7 @@ class API::V1::Client::VideosController < API::BaseController
 
   def index
     @videos = @client.videos.order('created_at DESC').to_a
+    @requests = @client.video_requests.exists?
   end
 
   def edit

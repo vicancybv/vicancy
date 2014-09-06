@@ -1,36 +1,178 @@
+<%= render 'alerts' %>
+
 <div class="wg-container-bottomless">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="well">
-          No videos!
+  <div class="container-fluid nopadding">
+    <section class="s1">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="text-center" style="position:absolute; top: -12px; left: 0px; z-index: 0;">
+            <img src="<%= image_path('widget/landing/hero.svg') %>" onerror="this.src=<%= image_path('widget/landing/hero.png') %>" width="820" height="522">
+          </div>
+          <div style="position: relative">
+            <div class="text-center">
+              <a href="http://www.vicancy.com" target="_blank">
+                <img src="<%= image_path('widget/landing/logo_vicancy_text.png') %>" class="s1_logo">
+              </a>
+            </div>
+            <div class="text-center">
+              <p class="s1_logo_subtext">Leader in visual job marketing solutions</p>
+            </div>
+            <div class="text-center s1_head">
+              <strong>CONVERT MORE</strong> SUITABLE CANDIDATES<br>
+              WITH YOUR <strong>VICANCY VISUAL JOB ADS</strong>
+            </div>
+            <div class="text-center s1_button">
+              <a {{ action 'scrollTryNow' }}  class="btn btn-land btn-lg" style="width: 200px">Try Now</a>
+            </div>
+            <div class="text-center s1_scroll">
+              <div class="scroll_text">Scroll to learn more</div>
+              <div class="scroll_icon"><i class="fa fa-angle-down fa-lg"></i></div>
+            </div>
+          </div>
         </div>
-        <p>Hi! This is landing page</p>
-        <p>I'll sell you some videos</p>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="well">
-          Some marketing text
+    </section>
+    <section>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="text-center">
+            <h2>Take a look at some examples</h2>
+          </div>
         </div>
-        <div>Hi! This is landing page</div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="well">
-          Some marketing text
+      <div class="row s2_example">
+        <div class="col-xs-3">
+          <div class="text-center">
+            <h4>HP</h4>
+          </div>
+          <div class="text-center">
+            <p>"Using a visual job ad is like bringing a machinegun to a knife fight"</p>
+          </div>
         </div>
-        <div>Hi! This is landing page</div>
+        <div class="col-xs-9">
+          <div class="text-center">
+            <iframe src="//fast.wistia.net/embed/iframe/j4wqpu2pqi" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="585" height="329"></iframe>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="well">
-          Some marketing text
+      <div class="row s2_bottom">
+        <div class="col-xs-6">
+          <div class="text-left">
+            <a href="http://templates.vicancy.com/" target="_blank">See more examples</a>
+          </div>
         </div>
-        <div>Hi! This is landing page</div>
+        <div class="col-xs-6">
+          <div class="text-right">
+            <a {{ action 'scrollTryNow' }} class="btn btn-land btn-lg" style="width: 200px">Try Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="s3">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="text-center">
+            <h2>Try using custom visual job ads!</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row s3_points">
+        <div class="col-xs-6">
+          <div class="media">
+            <div class="pull-left">
+              <img class="media-object s3_img" src="<%= image_path('widget/landing/point_viral.png') %>">
+            </div>
+            <div class="media-body">
+              <div class="s3_subhead">Let your job posting stand out</div>
+              <p class="s3_text">Better social media sharing and rank <strong>53 times higher</strong> in Google.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="media">
+            <div class="pull-left">
+              <img class="media-object s3_img" src="<%= image_path('widget/landing/point_targeting.png') %>">
+            </div>
+            <div class="media-body">
+              <div class="s3_subhead">Target the right audience</div>
+              <p class="s3_text">Visuals convert <strong>300% more</strong> suitable candidates than text.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row s3_points">
+        <div class="col-xs-6">
+          <div class="media">
+            <div class="pull-left">
+              <img class="media-object s3_img" src="<%= image_path('widget/landing/point_conversion.png') %>">
+            </div>
+            <div class="media-body">
+              <div class="s3_subhead">Improve your company branding</div>
+              <p class="s3_text">Add value to your job post and <strong>double</strong> the visitor time of your
+                website.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="media">
+            <div class="pull-left">
+              <img class="media-object s3_img" src="<%= image_path('widget/landing/point_timing.png') %>">
+            </div>
+            <div class="media-body">
+              <div class="s3_subhead">Same time and effort</div>
+              <p class="s3_text">We deliver your custom visual job ad within 24 hours for €150,-.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <a name="try_now" id="try_now"></a>
+    <section class="s4">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="text-center">
+            <h2>Use Vicancy and spend 10% of your budget on conversion,<br>not just more traffic</h2>
+          </div>
+        </div>
+      </div>
+      <form role="form" id="submit_try_now_form" class="s4_form">
+        <div class="row">
+          <div class="col-xs-4">
+            <div class="form-group">
+              <label for="submit_try_now_email">Your Email Address</label>
+              <input type="email" class="form-control veryfast" id="submit_try_now_email" placeholder="company@example.com">
+            </div>
+          </div>
+          <div class="col-xs-8">
+            <div class="form-group">
+              <label for="submit_try_now_url">URL to job posting</label>
+              <input type="url" class="form-control veryfast" id="submit_try_now_url" placeholder="http://..">
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 10px">
+          <div class="col-xs-12">
+            <div class="form-group">
+              <label for="submit_try_now_comments">Comments
+                <small>(optional)</small>
+              </label>
+              <textarea class="form-control" id="submit_try_now_comments" rows="7"></textarea>
+            </div>
+            <div class="text-center s4_button">
+              <a {{ action 'submit' }} id="submit_try_now" class="btn btn-land btn-lg" style="width: 200px"><span id="submit_try_now_spinner" style="display: none;"><i class="fa fa-refresh fa-spin"></i>&nbsp;&nbsp;</span>Try Now</a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+    <div class="row s5 hidden">
+      <div class="col-xs-8">
+
+      </div>
+      <div class="col-xs-4">
+        <div class="text-right">
+          © Vicancy company
+        </div>
       </div>
     </div>
   </div>

@@ -1,4 +1,5 @@
 json.status 'ok'
+json.requests @requests
 json.videos @videos do |video|
   json.id video.id
   json.job_title video.job_title

@@ -1,0 +1,189 @@
+@import 'widget/bootstrap/mixins/buttons';
+
+.wg-container-bottomless {
+  font-family : 'Open Sans', Helvetica, Arial, sans-serif;
+  color       : #333333;
+  width       : 820px;
+}
+
+.container-fluid.nopadding {
+  padding-left  : 0px !important;
+  padding-right : 0px !important;
+}
+
+section {
+  padding-top    : 10px;
+  padding-bottom : 10px;
+  padding-left   : 15px;
+  padding-right  : 15px;
+  height         : 520px;
+  width          : 100%;
+  a {
+    color : #88C2BF;
+    &:hover, &:focus {
+      color : darken(#88C2BF, 20%);
+    }
+  }
+}
+
+section.s1 {
+  background-image  : image-url('widget/gray_jean_pattern.png');
+  background-repeat : repeat;
+}
+
+.s1_logo {
+  opacity : 0.25;
+  width   : 100px;
+  height  : auto;
+}
+
+.s1_logo_subtext {
+  color       : #88C2BF;
+  font-size   : 15px;
+  font-weight : 300;
+  font-style  : italic;
+}
+
+.s1_head {
+  margin-top  : 20px;
+  font-size   : 35px;
+  font-weight : 300;
+}
+
+.s1_button {
+  margin-top : 190px;
+}
+
+.s1_scroll {
+  margin-top : 25px;
+  color      : lighten(#000000, 30%);
+}
+
+.scroll_text {
+}
+
+.scroll_icon {
+  margin-top : -5px;
+}
+
+.s2_example {
+  margin-top : 15px;
+}
+
+.s2_bottom {
+  margin-top : 20px;
+}
+
+section.s3 {
+  padding-right : 40px;
+  padding-left  : 40px;
+}
+
+.s3_points {
+  margin-top : 50px;
+}
+
+.s3_subhead {
+  font-size : 18px;
+  color     : #333333;
+}
+
+.s3_text {
+  margin-top  : 10px;
+  font-size   : 15px;
+  font-weight : 300;
+  color       : #333333;
+  strong {
+    font-weight : 500;
+    color: black;
+  }
+}
+
+.s3_img {
+  width        : 60px;
+  height       : auto;
+  margin-right : 10px;
+}
+
+.s4 {
+  background-color: #F2F2F2;
+  padding-right: 30px;
+  padding-left: 30px;
+  h2 {
+    font-size: 25px;
+    line-height: 25*1.4px;
+  }
+}
+
+.s4_form {
+  margin-top: 40px;
+  label {
+    font-weight: 500;
+    small {
+      color: lighten(#333333, 30%);
+    }
+  }
+}
+
+.s4_button {
+  margin-top: 30px;
+}
+
+.s5 {
+  padding-right: 15px;
+  padding-left: 15px;
+  font-size: 12px;
+  font-weight: 300;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: lighten(#000000, 50%);
+}
+
+.btn-land {
+  @include button-variant(#FFFFFF, #88C2BF, #88C2BF);
+}
+
+.veryfast {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+}
+
+@-webkit-keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  20%, 60% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+
+  40%, 80% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  20%, 60% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+
+  40%, 80% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+}
+
+.shake {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+}

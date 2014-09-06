@@ -24,8 +24,8 @@ module ResellersHelper
   end
 
   def vicancy_open(client)
-    "vicancy.open({ \"clientId\": \"#{j client.external_id }\", \"clientName\": \"#{j client.name }\", "+
-        "\"clientEmail\": \"#{j client.email }\", \"clientLanguage\": \"#{j client.get_language }\", "+
-        "\"resellerToken\": \"#{j client.reseller.token }\"}); return false;"
+    "vicancy.open({ clientId: \"#{j client.external_id }\", clientName: \"#{j client.name }\", "+
+        "clientEmail: \"#{j client.email }\", clientLanguage: \"#{j client.get_language }\", "+
+        "apiToken: \"#{j client.reseller.token }\"}); return false;"
   end
 end
