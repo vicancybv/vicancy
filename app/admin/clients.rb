@@ -12,6 +12,8 @@ ActiveAdmin.register Client do
     column 'Address' do |client|
       link_to client.slug, client_url(client.slug)
     end
+    column :email
+    column :external_id
     column :sign_in_count
     column :created_at
     column :updated_at
@@ -24,6 +26,8 @@ ActiveAdmin.register Client do
     end
     f.inputs 'Client' do
       f.input :name, label: "Client name"
+      f.input :email
+      f.input :external_id, label: "External Client ID"
       f.input :slug, hint: "e.g. aw6g39vk. Created automatically if left blank."
       f.input :token, hint: "Created automatically if left blank."
       f.input :language,
@@ -43,6 +47,8 @@ ActiveAdmin.register Client do
       end
       row :id
       row :name
+      row :email
+      row :external_id
       row :token
       row :language
       row :sign_in_count
