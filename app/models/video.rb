@@ -142,6 +142,7 @@ class Video < ActiveRecord::Base
     self.job_ad_url = card_params[:url].to_s.strip
     self.language = card_params[:language].try(:downcase).to_s.strip == "en" ? "en" : "nl"
     self.user = User.find_by_slug(card_params[:user].to_s.strip)
+    self.client = Client.find_by_slug(card_params[:client].to_s.strip)
   end
 
   def provider_title
