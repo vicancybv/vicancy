@@ -34,7 +34,7 @@ class Client < ActiveRecord::Base
   after_validation :generate_token, on: :create
 
   def intercom_id
-    self.slug
+    "client-#{self.slug}"
   end
 
   def intercom_created_at

@@ -20,7 +20,7 @@ class Reseller < ActiveRecord::Base
   after_validation :generate_token, on: :create
 
   def intercom_id
-    self.slug
+    "reseller-#{self.slug}"
   end
 
   def generate_slug

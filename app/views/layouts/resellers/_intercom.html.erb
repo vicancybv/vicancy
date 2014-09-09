@@ -1,4 +1,4 @@
-<% if Rails.env.production? && !Settings.staging? %>
+<% if Rails.env.production? %>
     <!-- Allow intercom for production only, not even staging (just in case) -->
 <script id="IntercomSettingsScriptTag">
     window.intercomSettings = {
