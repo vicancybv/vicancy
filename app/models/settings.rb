@@ -33,7 +33,7 @@ class Settings
     elsif Settings.sandbox?
       'http://sandboxvicancy.herokuapp.com'
     elsif Settings.production?
-      'http://vicancy.com'
+      'http://www.vicancy.com'
     else
       ''
     end
