@@ -9,7 +9,7 @@
   script provided by us in our email into your page just before the closing <code>&lt;/body&gt;</code> tag.</p>
 
 <p>It should look something like this:</p>
-<pre>&lt;script async src=&quot;http://www.vicancy.com/assets/widget-api.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</pre>
+<%= raw CodeRay.scan(render(partial: 'resellers/samples/step1_script.txt').to_str, :html).div %>
 
 <h3>Step 2 &mdash; Setup the Trigger</h3>
 
@@ -19,9 +19,9 @@
 <p>See how the trigger is put into the element in the example below:</p>
 
 <p><strong>Before:</strong></p>
-<pre>&lt;a href=&#39;#&#39;&gt;Open Widget&lt;a&gt;</pre>
+<%= raw CodeRay.scan(render(partial: 'resellers/samples/step2_before.txt').to_str, :html).div %>
 <p><strong>After:</strong></p>
-<pre>&lt;a href=&#39;#&#39; onclick=&#39;vicancy.open({});return false;&#39;&gt;Open Widget&lt;/a&gt;</pre>
+<%= raw CodeRay.scan(render(partial: 'resellers/samples/step2_after.txt').to_str, :html).div %>
 
 <h3>Step 3 &mdash; Set User Params</h3>
 
@@ -29,8 +29,7 @@
   client. This involves some basic server-side code to swap in some variables in the 'trigger code' from step
   2.</p>
 
-<p>All variables need to be in order, be comma-seperated, and be in parenthesis. Below is a list of all variables,
-  as well as an example:</p>
+<p>Below is a list of all variables, as well as an example:</p>
 <br>
 
 <div class="row">
@@ -46,7 +45,7 @@
       <tbody>
       <tr>
         <td><strong>clientId</strong></td>
-        <td>The unique identifier that a client has in your database. This could be a number, or a slug.</td>
+        <td>The unique identifier that a client has in your database. This could be a number, or a slug. This identifier should not change.</td>
         <td>Required</td>
       </tr>
       <tr>
@@ -56,7 +55,7 @@
       </tr>
       <tr>
         <td><strong>clientEmail</strong></td>
-        <td>The email that we use to reach the client. Allows us to notify the client that the video is ready, answer support requests, etc.
+        <td>The email that is used to reach the client. Used to notify the client that the video is ready, answer support requests, etc.
         </td>
         <td>Required</td>
       </tr>
@@ -80,7 +79,7 @@
   </div>
 </div>
 <p><strong>Your customized working example:</strong></p>
-<pre>&lt;a href=&#39;#&#39; onclick=&#39;vicancy.open({ clientId: &quot;eomdyscyw&quot;, clientName: &quot;Rabobank&quot;, clientEmail: &quot;rabobank@example.com&quot;, clientLanguage: &quot;nl&quot;, apiToken: &quot;<%= j @reseller.token %>&quot; }); return false;&#39;&gt;Open Widget&lt;/a&gt;</pre>
+<%= raw CodeRay.scan(render(partial: 'resellers/samples/customized.txt.erb').to_str, :html).div %>
 <p><strong><br>Code Templates</strong></p>
 <ul class="nav nav-tabs" role="tablist">
   <li class="active"><a href="#rails" role="tab" data-toggle="tab">Ruby on Rails</a></li>
@@ -92,7 +91,7 @@
 
     <p>The following example works for default setup with Devise authentication framework.</p>
     </p>
-    <pre>&lt;a href=&#39;#&#39; onclick=&#39;vicancy.open({ clientId: &quot;&lt;%= current_user.id %&gt;&quot;, clientName: &quot;&lt;%= j current_user.name %&gt;&quot;, clientEmail: &quot;&lt;%= j current_user.email %&gt;&quot;, clientLanguage: &quot;nl&quot;, apiToken: &quot;<%= @reseller.token %>&quot; }); return false;&#39;&gt;Open Widget&lt;/a&gt;</pre>
+    <%= raw CodeRay.scan(render(partial: 'resellers/samples/rails.txt.erb').to_str, :html).div %>
   </div>
   <div class="tab-pane" id="js">
     <p>Use this example if you have client's attributes available to JavaScript on your page.</p>
@@ -100,7 +99,7 @@
     <p>This example uses the following javascript variables: <code>client_id</code>, <code>client_name</code>,
       <code>client_email</code>.
     </p>
-    <pre>&lt;a href=&#39;#&#39; onclick=&#39;vicancy.open({ clientId: client_id, clientName: client_name, clientEmail: client_email, clientLanguage: &quot;nl&quot;, apiToken: &quot;<%= @reseller.token %>&quot; }); return false;&#39;&gt;Open Widget&lt;/a&gt;</pre>
+    <%= raw CodeRay.scan(render(partial: 'resellers/samples/javascript.txt.erb').to_str, :html).div %>
   </div>
 </div>
 <p>That’s it! Vicancy is now ready to use for all your clients.</p>

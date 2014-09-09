@@ -22,6 +22,7 @@ gem 'vimeo'
 gem 'unicorn'
 gem 'sidekiq-scheduler', '~> 1'
 gem 'strong_parameters'
+gem 'coderay'
 
 # API documentation
 gem 'rspec_api_documentation', '~> 3.1.0'
