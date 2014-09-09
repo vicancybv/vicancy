@@ -52,10 +52,11 @@ App.WidgetRoute = Ember.Route.extend(App.Flashy, {
         }
     },
     afterModel: function (model, transition) {
-        if (App.get('clientToken') == null) {
-            App.set('clientToken', model.client_token);
-        }
+        if (App.get('clientToken') == null) App.set('clientToken', model.client_token);
+        if (App.get('clientIntercomId') == null) App.set('clientIntercomId', model.intercom_id);
+        if (App.get('clientIntercomCreatedAt') == null) App.set('clientIntercomCreatedAt', model.intercom_created_at);
         I18n.locale = App.get('language');
+        transition.send('initIntercom');
         this.transitionTo('videos');
     },
     actions: {
@@ -72,7 +73,19 @@ App.WidgetRoute = Ember.Route.extend(App.Flashy, {
                 outlet: 'modal',
                 parentView: 'application'
             });
+        },
+        initIntercom: function () {
+            window.Intercom('boot', {
+                app_id: 'y20z33mu',
+                email: App.get('clientEmail'),
+                user_id: App.get('clientIntercomId'),
+                created_at: App.get('clientIntercomCreatedAt'),
+                widget: {
+                    activator: '#intercom-activator'
+                }
+            });
         }
+
     }
 });
 

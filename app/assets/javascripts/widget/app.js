@@ -4,6 +4,8 @@ App = Ember.Application.create({
     clientName: null,
     clientEmail: null,
     clientToken: null,
+    clientIntercomId: null,
+    clientIntercomCreatedAt: null,
     language: null,
     videos: null
 });

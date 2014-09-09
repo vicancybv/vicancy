@@ -33,6 +33,14 @@ class Client < ActiveRecord::Base
   after_validation :generate_slug, on: :create
   after_validation :generate_token, on: :create
 
+  def intercom_id
+    self.slug
+  end
+
+  def intercom_created_at
+    self.created_at.to_i
+  end
+
   def same_session?(new_sign_in_at, new_sign_in_ip)
     if current_sign_in_at.blank?
       return false
@@ -66,7 +74,7 @@ class Client < ActiveRecord::Base
     record = true
     while record
       random = Array.new(8) { %w(a b c d e f g h j k m n p q r s t u v w x y z 2 3 4 5 6 7 8 9).sample }.join
-      record = Client.find_by_slug(random)
+      record = Client.find_by_slug(random) || Reseller.find_by_slug(random)
     end
     self.slug = random
   end
