@@ -1,1 +1,1 @@
-<a href='#' onclick='vicancy.open({...});return false;'>Open Widget</a>
+<a href='#' onclick='vicancy.open({...});return false;'>My Vicancies</a>
