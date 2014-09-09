@@ -38,7 +38,7 @@ class Reseller < ActiveRecord::Base
     record = true
     while record
       random = SecureRandom.urlsafe_base64(16)
-      record = User.find_by_token(random)
+      record = Reseller.find_by_token(random)
     end
     self.token = random
   end
