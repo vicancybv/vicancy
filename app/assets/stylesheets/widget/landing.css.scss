@@ -66,12 +66,32 @@ section.s1 {
   margin-top : -5px;
 }
 
+section.s2 {
+  padding-left: 25px;
+  padding-right: 25px;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+}
+
 .s2_example {
   margin-top : 15px;
 }
 
 .s2_bottom {
-  margin-top : 20px;
+  margin-top : 30px;
+}
+.testimonial_logo {
+  margin-bottom: 20px;
+  img {
+    margin: auto;
+  }
+}
+.testimonial_text {
+  font-style: italic;
+  margin-bottom: 20px;
+  line-height: 1.8em;
 }
 
 section.s3 {
@@ -141,6 +161,18 @@ section.s3 {
 
 .btn-land {
   @include button-variant(#FFFFFF, #88C2BF, #88C2BF);
+}
+
+.btn-default-land {
+  @include button-variant(#88C2BF, #FFF, #88C2BF);
+  border-width: 2px;
+  &:hover,
+  &:focus,
+  &:active {
+    color: white;
+    background-color: darken(#88C2BF, 10%);
+    border-color: darken(#88C2BF, 12%);
+  }
 }
 
 .veryfast {

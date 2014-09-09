@@ -32,7 +32,7 @@
         </div>
       </div>
     </section>
-    <section>
+    <section class="s2">
       <div class="row">
         <div class="col-xs-12">
           <div class="text-center">
@@ -42,30 +42,42 @@
       </div>
       <div class="row s2_example">
         <div class="col-xs-3">
-          <div class="text-center">
-            <h4>HP</h4>
+          <div class="text-center testimonial_logo">
+            <img src="<%= image_path('widget/landing/ongig-blue-logo.png')%>" class="img-responsive" width="100">
           </div>
-          <div class="text-center">
+          <div class="text-left testimonial_text">
             <p>"Using a visual job ad is like bringing a machinegun to a knife fight"</p>
+          </div>
+          <div class="text-left">
+            <p><strong>Rob Kelly</strong><br><span class="text-muted">Co-founder, Ongig</span></p>
           </div>
         </div>
         <div class="col-xs-9">
-          <div class="text-center">
-            <iframe src="//fast.wistia.net/embed/iframe/j4wqpu2pqi" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="585" height="329"></iframe>
+          <div class="text-center embed-responsive embed-responsive-16by9">
+            <iframe src="//player.vimeo.com/video/88338939?title=0&amp;byline=0&amp;portrait=0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+            <!--<iframe src="//player.vimeo.com/video/88338939?title=0&amp;byline=0&amp;portrait=0" width="585" height="329" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>-->
+            <!--<iframe src="//fast.wistia.net/embed/iframe/7195871" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="585" height="329"></iframe>-->
           </div>
         </div>
       </div>
       <div class="row s2_bottom">
-        <div class="col-xs-6">
-          <div class="text-left">
-            <a href="http://templates.vicancy.com/" target="_blank">See more examples</a>
-          </div>
-        </div>
-        <div class="col-xs-6">
-          <div class="text-right">
+        <div class="col-xs-12">
+          <div class="text-center">
+            <a class="btn btn-lg btn-default-land" href="http://templates.vicancy.com/" target="_blank">See more examples</a>
+            <span>&nbsp;&nbsp;</span>
             <a {{ action 'scrollTryNow' }} class="btn btn-land btn-lg" style="width: 200px">Try Now</a>
           </div>
         </div>
+        <!--<div class="col-xs-6">-->
+          <!--<div class="text-left">-->
+            <!--<a href="http://templates.vicancy.com/" target="_blank">See more examples</a>-->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<div class="col-xs-6">-->
+          <!--<div class="text-right">-->
+            <!--<a {{ action 'scrollTryNow' }} class="btn btn-land btn-lg" style="width: 200px">Try Now</a>-->
+          <!--</div>-->
+        <!--</div>-->
       </div>
     </section>
     <section class="s3">
