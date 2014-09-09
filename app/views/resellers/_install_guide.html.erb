@@ -81,7 +81,7 @@
   </div>
 </div>
 <p><strong>Your customized working example:</strong></p>
-<pre>&lt;a href=&#39;#&#39; onclick=&#39;vicancy.open({ clienId: &quot;eomdyscyw&quot;, clientName: &quot;Rabobank&quot;, clientEmail: &quot;rabobank@example.com&quot;, clientLanguage: &quot;nl&quot;, apiToken: &quot;<%= j @reseller.token %>&quot; }); return false;&#39;&gt;Open Widget&lt;/a&gt;</pre>
+<pre>&lt;a href=&#39;#&#39; onclick=&#39;vicancy.open({ clientId: &quot;eomdyscyw&quot;, clientName: &quot;Rabobank&quot;, clientEmail: &quot;rabobank@example.com&quot;, clientLanguage: &quot;nl&quot;, apiToken: &quot;<%= j @reseller.token %>&quot; }); return false;&#39;&gt;Open Widget&lt;/a&gt;</pre>
 <p><strong><br>Code Templates</strong></p>
 <ul class="nav nav-tabs" role="tablist">
   <li class="active"><a href="#rails" role="tab" data-toggle="tab">Ruby on Rails</a></li>
@@ -93,7 +93,7 @@
 
     <p>The following example works for default setup with Devise authentication framework.</p>
     </p>
-    <pre>&lt;a href=&#39;#&#39; onclick=&#39;vicancy.open({ clienId: &quot;&lt;%= current_user.id %&gt;&quot;, clientName: &quot;&lt;%= j current_user.name %&gt;&quot;, clientEmail: &quot;&lt;%= j current_user.email %&gt;&quot;, clientLanguage: &quot;nl&quot;, apiToken: &quot;<%= @reseller.token %>&quot; }); return false;&#39;&gt;Open Widget&lt;/a&gt;</pre>
+    <pre>&lt;a href=&#39;#&#39; onclick=&#39;vicancy.open({ clientId: &quot;&lt;%= current_user.id %&gt;&quot;, clientName: &quot;&lt;%= j current_user.name %&gt;&quot;, clientEmail: &quot;&lt;%= j current_user.email %&gt;&quot;, clientLanguage: &quot;nl&quot;, apiToken: &quot;<%= @reseller.token %>&quot; }); return false;&#39;&gt;Open Widget&lt;/a&gt;</pre>
   </div>
   <div class="tab-pane" id="js">
     <p>Use this example if you have client's attributes available to JavaScript on your page.</p>
@@ -101,7 +101,7 @@
     <p>This example uses the following javascript variables: <code>client_id</code>, <code>client_name</code>,
       <code>client_email</code>.
     </p>
-    <pre>&lt;a href=&#39;#&#39; onclick=&#39;vicancy.open({ clienId: client_id, clientName: client_name, clientEmail: client_email, clientLanguage: &quot;nl&quot;, apiToken: &quot;<%= @reseller.token %>&quot; }); return false;&#39;&gt;Open Widget&lt;/a&gt;</pre>
+    <pre>&lt;a href=&#39;#&#39; onclick=&#39;vicancy.open({ clientId: client_id, clientName: client_name, clientEmail: client_email, clientLanguage: &quot;nl&quot;, apiToken: &quot;<%= @reseller.token %>&quot; }); return false;&#39;&gt;Open Widget&lt;/a&gt;</pre>
   </div>
 </div>
 <p>That’s it! Vicancy is now ready to use for all your clients.</p>
