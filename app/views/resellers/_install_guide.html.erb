@@ -1,0 +1,184 @@
+<h2>Quickstart Guide</h2>
+
+<p>Installing the vicancy widget is quick and commitment-free. Installation shouldn’t take longer then 3 minutes
+  if you follow the steps below.</p>
+
+<h3>Step 1 &mdash; Include the Library</h3>
+
+<p>In order to integrate vicancy in your page, the first thing to do is to include the library. Copy and paste the
+  script provided by us in our email into your page just before the closing <code>&lt;/body&gt;</code> tag.</p>
+
+<p>It should look something like this:</p>
+<pre>&lt;script async src=&quot;http://vicancy.com/assets/widget-api.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;</pre>
+
+<h3>Step 2 &mdash; Setup the Trigger</h3>
+
+<p>Next we need to set up a ‘trigger’ to know when to open the widget. Any html element can do this on click — a
+  button, a text link, or even an image.</p>
+
+<p>See how the trigger is put into the element in the example below:</p>
+
+<p><strong>Before:</strong></p>
+<pre>&lt;a href=&#39;#&#39;&gt;Open Widget&lt;a&gt;</pre>
+<p><strong>After:</strong></p>
+<pre>&lt;a href=&#39;#&#39; onclick=&#39;vicancy.open({});return false;&#39;&gt;Open Widget&lt;/a&gt;</pre>
+
+<h3>Step 3 &mdash; Set User Params</h3>
+
+<p>Finally we need to be able to tell each of your clients apart, so we can show the right widget to the right
+  client. This involves some basic server-side code to swap in some variables in the 'trigger code' from step
+  2.</p>
+
+<p>All variables need to be in order, be comma-seperated, and be in parenthesis. Below is a list of all variables,
+  as well as an example:</p>
+<br>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <table class="table table-bordered table-striped">
+      <thead>
+      <tr>
+        <th>Parameter</th>
+        <th>Description</th>
+        <th>Required?</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><strong>clientId</strong></td>
+        <td>The unique identifier that a client has in your database. This could be a number, or a slug.</td>
+        <td>Required</td>
+      </tr>
+      <tr>
+        <td><strong>clientName</strong></td>
+        <td>How we should call the client.</td>
+        <td>Required</td>
+      </tr>
+      <tr>
+        <td><strong>clientEmail</strong></td>
+        <td>The email that we can use to reach the client. This is optional, but allows us to communicate directly
+          to clients (tell them a video is ready, etc.), which saves you some time.
+        </td>
+        <td>Required</td>
+      </tr>
+      <tr>
+        <td>clientLanguage</td>
+        <td>The language that we should use to address the client. If all clients use the same language, you might
+          consider hard-coding it in. Supported languages are Dutch (nl) and English (en). All other languages
+          default to English.
+        </td>
+        <td>Optional</td>
+      </tr>
+      <tr>
+        <td><strong>apiToken</strong></td>
+        <td><p>Your unique API token. This is the same for all your users.</p>
+
+          <p><strong>Your API token is <code><%= @reseller.token %></code></strong></p></td>
+        <td>Required</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<p><strong>Your custom working example:</strong></p>
+<pre>&lt;a href=&#39;#&#39; onclick=&#39;vicancy.open({ clienId: &quot;eomdyscyw&quot;, clientName: &quot;Rabobank&quot;, clientEmail: &quot;rabobank@example.com&quot;, clientLanguage: &quot;nl&quot;, apiToken: &quot;<%= j @reseller.token %>&quot; }); return false;&#39;&gt;Open Widget&lt;/a&gt;</pre>
+<p><strong><br>Code Templates</strong></p>
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#rails" role="tab" data-toggle="tab">Ruby on Rails</a></li>
+  <li><a href="#js" role="tab" data-toggle="tab">JavaScript</a></li>
+</ul>
+<div class="tab-content" style="padding-top: 10px">
+  <div class="tab-pane active" id="rails">
+    <p>Use this example if you use Ruby on Rails on the server side.</p>
+
+    <p>The following example works for default setup with Devise authentication framework.</p>
+    </p>
+    <pre>&lt;a href=&#39;#&#39; onclick=&#39;vicancy.open({ clienId: &quot;&lt;%= current_user.id %&gt;&quot;, clientName: &quot;&lt;%= j current_user.name %&gt;&quot;, clientEmail: &quot;&lt;%= j current_user.email %&gt;&quot;, clientLanguage: &quot;nl&quot;, apiToken: &quot;<%= @reseller.token %>&quot; }); return false;&#39;&gt;Open Widget&lt;/a&gt;</pre>
+  </div>
+  <div class="tab-pane" id="js">
+    <p>Use this example if you have client's attributes available to JavaScript on your page.</p>
+
+    <p>This example uses the following javascript variables: <code>client_id</code>, <code>client_name</code>,
+      <code>client_email</code>.
+    </p>
+    <pre>&lt;a href=&#39;#&#39; onclick=&#39;vicancy.open({ clienId: client_id, clientName: client_name, clientEmail: client_email, clientLanguage: &quot;nl&quot;, apiToken: &quot;<%= @reseller.token %>&quot; }); return false;&#39;&gt;Open Widget&lt;/a&gt;</pre>
+  </div>
+</div>
+<p>That’s it! Vicancy is now ready to use for all your clients.</p>
+
+<h3>Migrating old users</h3>
+
+<p>Where you already using Vicancy before the widget got available? You might want to migrate all users over from
+  their old (depreciated) videomanagers to their new homes. Here’s how this works:</p>
+<ol>
+  <li>We’ll send you a spreadsheet with all your clients that we have active in our system.</li>
+  <li>Please look up the <code>client_id</code> for these clients in your database, and put them in the
+    spreadsheet.
+  </li>
+  <li>We’ll update our database to mirror the spreadsheet. All clients will now be able to access their videos via
+    the widget as well.
+  </li>
+</ol>
+
+<h3>Reseller Dashboard</h3>
+
+<p>The reseller dashboard is a place where you can easily tell what's going on between Vicancy and your clients.
+  This is what you'll get:</p>
+<ul>
+  <li>Get a <strong>birds eye view</strong> of all activity of your clients on their widgets</li>
+  <li>You’ll be able to tell which clients are most interested in Vicancy, thus <strong>increasing sales</strong>
+    effectiveness
+  </li>
+  <li>You can <strong>enter any widget</strong> on a client's behalf right away</li>
+</ul>
+<h4>How to log in to the reseller dashboard</h4>
+
+<p>We’ll provide you with a unique link where you can access the reseller page. This will allow anyone within (or
+  outside!) your organization to access the page, provided they have the url.</p>
+
+<p>TIP: Bookmark your page for easy access
+  <br>
+  TIP: You reseller url simultaneously acts as a password. Treat your reseller url accordingly.</p>
+
+<h2>FAQ</h2>
+<h4>Why don’t clients have to log in?</h4>
+
+<p>Because you programmatically provide us with their <code>client_id</code> we can already authenticate who is
+  who. Therefore clients have to login only into their account with your app, and that's it.</p>
+
+<h4>What happens when new clients are created?</h4>
+
+<p>When you create a new client on your platform/website, this will automatically create a new
+  <code>client_id</code>. Vicancy
+  will pick this up, and assign a new widget to this new client.
+</p>
+
+<p>
+  Bottom line: <strong>You don't have to take any action.</strong></p>
+
+<h4>Can I help a client, when he’s stuck somewhere?</h4>
+
+<p>Yes, of course. Just go to your reseller page, search for the relevant user and click
+  "Show Vicancies" button to view their widget. Now you can easily see what's going on, and help them out.
+</p>
+<p>Of course you can also contact our support, in case that's easier:
+  <a href="mailto:support@vicancy.com">support@vicancy.com</a></p>
+
+<h4>What does a client see when he doesn’t have any videos yet?</h4>
+
+<p>In case a client doesn't have any videos yet we'll give them some more info about Vicancy, and why it might be
+  a great product for them.</p>
+
+<p>Users can instantly order their first video, and get started right away.</p>
+<h4>Will the widget influence page load times?</h4>
+
+<p>No, it won't influence page load, and user won't notice any difference.</p>
+
+<p>The javascript is loaded in a non-blocking asynchronous way. This basically means that vicancy is last in line
+  to be loaded: first all other stuff on the page is rendered, and only then will our widget be loaded.</p>
+<h4>How can I reach support?</h4>
+<p>You can reach support whenever you have more questions. The fastest ways to reach us:</p>
+<ul>
+  <li>Mail us: <a href="mailto:support@vicancy.com">support@vicancy.com</a></li>
+  <li>Call us: 030-2270420</li>
+</ul>
