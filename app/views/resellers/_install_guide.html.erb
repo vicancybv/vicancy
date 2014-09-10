@@ -6,15 +6,14 @@
 <h3>Step 1 &mdash; Include the Library</h3>
 
 <p>In order to integrate vicancy in your page, the first thing to do is to include the library. Copy and paste the
-  script provided by us in our email into your page just before the closing <code>&lt;/body&gt;</code> tag.</p>
+  script below just before the closing <code>&lt;/body&gt;</code> tag:</p>
 
-<p>It should look something like this:</p>
 <%= raw CodeRay.scan(render(partial: 'resellers/samples/step1_script.txt').to_str, :html).div %>
 
 <h3>Step 2 &mdash; Setup the Trigger</h3>
 
 <p>Next we need to set up a ‘trigger’ to know when to open the widget. Any html element can do this on click — a
-  button, a text link, or even an image.</p>
+  button, a text link, or an image.</p>
 
 <p>See how the trigger is put into the element in the example below:</p>
 
@@ -102,7 +101,7 @@
     <%= raw CodeRay.scan(render(partial: 'resellers/samples/javascript.txt.erb').to_str, :html).div %>
   </div>
 </div>
-<p>That’s it! Vicancy is now ready to use for all your clients.</p>
+<p>That’s it! Now all your clients can use the Vicancy widget.</p>
 
 <h3>Migrating old users</h3>
 
