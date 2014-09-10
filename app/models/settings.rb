@@ -29,11 +29,11 @@ class Settings
 
   def self.widget_vicancy_server
     if Settings.staging?
-      'http://stagingvicancy.herokuapp.com'
+      '//stagingvicancy.herokuapp.com'
     elsif Settings.sandbox?
-      'http://sandboxvicancy.herokuapp.com'
+      '//sandboxvicancy.herokuapp.com'
     elsif Settings.production?
-      'http://www.vicancy.com'
+      '//vicancy.herokuapp.com'
     else
       ''
     end
