@@ -25,10 +25,10 @@ nl:
       sessions: Sessies
       last_active: Laatst Actief
       videos_live: Actieve videos
-      internal_id: Interne ID
+      client_id: Klanten ID
       open_widget: Toon Vicancies
       find_by_client: Zoek klant
-      find_by_internal_id: Zoek op Interne ID
+      find_by_internal_id: Zoek op Klanten ID
   admin:
     optional: "optioneel"
     eg: "bijv."

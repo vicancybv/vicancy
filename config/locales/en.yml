@@ -23,10 +23,10 @@ en:
       sessions: Sessions
       last_active: Last Active
       videos_live: Videos Live
-      internal_id: Internal ID
+      client_id: Client ID
       open_widget: Show Vicancies
       find_by_client: Find By Client
-      find_by_internal_id: Find By Internal ID
+      find_by_internal_id: Find By Client ID
   admin:
     optional: "optional"
     eg: "e.g."

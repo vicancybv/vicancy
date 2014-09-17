@@ -49,14 +49,14 @@ I18n.translations = {
         add_new_video: {
             button: 'Nieuwe Video',
             title: 'Nieuwe Video',
-            link_to_job: 'Koppelen aan taak',
+            link_to_job: 'Plak hier de link naar uw vacature',
             comments: 'Opmerkingen (optioneel)',
             flash_ok: 'Nieuwe video-aanvraag is verzonden.'
         },
         powered_by: 'Powered by',
         support: 'Ondersteuning',
         search: {
-            search_videos: 'Zoek Video\'s ...',
+            search_videos: 'Zoek Videos ...',
             no_results: 'Geen resultaten gevonden'
         },
         video: {

@@ -44,7 +44,9 @@
       <tbody>
       <tr>
         <td><strong>clientId</strong></td>
-        <td>The unique identifier that a client has in your database. This could be a number, or a slug. This identifier should not change.</td>
+        <td>The unique identifier that a client has in your database. This could be a number, or a slug. This identifier
+          should not change.
+        </td>
         <td>Required</td>
       </tr>
       <tr>
@@ -54,7 +56,8 @@
       </tr>
       <tr>
         <td><strong>clientEmail</strong></td>
-        <td>The email that is used to reach the client. Used to notify the client that the video is ready, answer support requests, etc.
+        <td>The email that is used to reach the client. Used to notify the client that the video is ready, answer
+          support requests, etc.
         </td>
         <td>Required</td>
       </tr>
@@ -81,24 +84,24 @@
 <%= raw CodeRay.scan(render(partial: 'resellers/samples/customized.txt.erb').to_str, :html).div %>
 <p><strong><br>Code Templates</strong></p>
 <ul class="nav nav-tabs" role="tablist">
-  <li class="active"><a href="#rails" role="tab" data-toggle="tab">Ruby on Rails</a></li>
-  <li><a href="#js" role="tab" data-toggle="tab">JavaScript</a></li>
+  <li class="active"><a href="#js" role="tab" data-toggle="tab">JavaScript</a></li>
+  <li><a href="#rails" role="tab" data-toggle="tab">Ruby on Rails</a></li>
 </ul>
 <div class="tab-content" style="padding-top: 10px">
-  <div class="tab-pane active" id="rails">
-    <p>Use this example if you use Ruby on Rails server-side.</p>
-
-    <p>The following example works for default setup with Devise authentication framework.</p>
-    </p>
-    <%= raw CodeRay.scan(render(partial: 'resellers/samples/rails.txt.erb').to_str, :html).div %>
-  </div>
-  <div class="tab-pane" id="js">
+  <div class="tab-pane active" id="js">
     <p>Use this example if you have client's attributes available to JavaScript on your page.</p>
 
     <p>This example uses the following javascript variables: <code>client_id</code>, <code>client_name</code>,
       <code>client_email</code>.
     </p>
     <%= raw CodeRay.scan(render(partial: 'resellers/samples/javascript.txt.erb').to_str, :html).div %>
+  </div>
+  <div class="tab-pane" id="rails">
+    <p>Use this example if you use Ruby on Rails server-side.</p>
+
+    <p>The following example works for default setup with Devise authentication framework.</p>
+    </p>
+    <%= raw CodeRay.scan(render(partial: 'resellers/samples/rails.txt.erb').to_str, :html).div %>
   </div>
 </div>
 <p>That’s it! Now all your clients can use the Vicancy widget.</p>
@@ -137,45 +140,49 @@
   <br>
   TIP: You reseller url simultaneously acts as a password. Treat your reseller url accordingly.</p>
 
-<h2>FAQ</h2>
-<h4>Why don’t clients have to log in?</h4>
+<div class="faq">
+  <h2>FAQ</h2>
+  <h4>Why don’t clients have to log in?</h4>
 
-<p>Because you programmatically provide us with their <code>client_id</code> we can already authenticate who is
-  who. Therefore clients have to login only into their account with your app, and that's it.</p>
+  <p>Because you programmatically provide us with their <code>client_id</code> we can already authenticate who is
+    who. Therefore clients have to login only into their account with your app, and that's it.</p>
 
-<h4>What happens when new clients are created?</h4>
+  <h4>What happens when new clients are created?</h4>
 
-<p>When you create a new client on your platform/website, this will automatically create a new
-  <code>client_id</code>. Vicancy
-  will pick this up, and assign a new widget to this new client.
-</p>
+  <p>When you create a new client on your platform/website, this will automatically create a new
+    <code>client_id</code>. Vicancy
+    will pick this up, and assign a new widget to this new client.
+  </p>
 
-<p>
-  Bottom line: <strong>You don't have to take any action.</strong></p>
+  <p>
+    Bottom line: <strong>You don't have to take any action.</strong></p>
 
-<h4>Can I help a client, when he’s stuck somewhere?</h4>
+  <h4>Can I help a client, when he’s stuck somewhere?</h4>
 
-<p>Yes, of course. Just go to your reseller page, search for the relevant user and click
-  "Show Vicancies" button to view their widget. Now you can easily see what's going on, and help them out.
-</p>
-<p>Of course you can also contact our support, in case that's easier:
-  <a href="mailto:support@vicancy.com">support@vicancy.com</a></p>
+  <p>Yes, of course. Just go to your reseller page, search for the relevant user and click
+    "Show Vicancies" button to view their widget. Now you can easily see what's going on, and help them out.
+  </p>
 
-<h4>What does a client see when he doesn’t have any videos yet?</h4>
+  <p>Of course you can also contact our support, in case that's easier:
+    <a href="mailto:support@vicancy.com">support@vicancy.com</a></p>
 
-<p>In case a client doesn't have any videos yet we'll give them some more info about Vicancy, and why it might be
-  a great product for them.</p>
+  <h4>What does a client see when he doesn’t have any videos yet?</h4>
 
-<p>Users can instantly order their first video, and get started right away.</p>
-<h4>Will the widget influence page load times?</h4>
+  <p>In case a client doesn't have any videos yet we'll give them some more info about Vicancy, and why it might be
+    a great product for them.</p>
 
-<p>No, it won't influence page load, and user won't notice any difference.</p>
+  <p>Users can instantly order their first video, and get started right away.</p>
+  <h4>Will the widget influence page load times?</h4>
 
-<p>The javascript is loaded in a non-blocking asynchronous way. This basically means that vicancy is last in line
-  to be loaded: first all other stuff on the page is rendered, and only then will our widget be loaded.</p>
-<h4>How can I reach support?</h4>
-<p>You can reach support whenever you have more questions. The fastest ways to reach us:</p>
-<ul>
-  <li>Mail us: <a href="mailto:support@vicancy.com">support@vicancy.com</a></li>
-  <li>Call us: 030-2270420</li>
-</ul>
+  <p>No, it won't influence page load, and user won't notice any difference.</p>
+
+  <p>The javascript is loaded in a non-blocking asynchronous way. This basically means that vicancy is last in line
+    to be loaded: first all other stuff on the page is rendered, and only then will our widget be loaded.</p>
+  <h4>How can I reach support?</h4>
+
+  <p>You can reach support whenever you have more questions. The fastest ways to reach us:</p>
+  <ul>
+    <li>Mail us: <a href="mailto:support@vicancy.com">support@vicancy.com</a></li>
+    <li>Call us: 030-2270420</li>
+  </ul>
+</div>

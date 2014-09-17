@@ -67,6 +67,7 @@ Vicancy::Application.configure do
   config.assets.precompile += %w( webflow-new.js )
   config.assets.precompile += %w( webflow-static.js )
   config.assets.precompile += %w( widget.js widget.css widget-api.js )
+  config.assets.precompile += %w( resellers.css resellers.js )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
