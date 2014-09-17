@@ -7,6 +7,7 @@ class VideoUploadWorker
     uploaded_video = UploadedVideo.find(uploaded_video_id)
     begin
       send("#{uploaded_video.provider}_upload", uploaded_video, video_url)
+      uploaded_video.get_thumbnails
     rescue Exception => e
       card = processing_card_for_video_id(uploaded_video.video.id)
       if card
