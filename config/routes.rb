@@ -1,4 +1,10 @@
+require 'sidekiq/web'
+
 Vicancy::Application.routes.draw do
+
+  authenticate :admin_user do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 
   namespace :api, :defaults => { :format => :json } do
     namespace :v1 do

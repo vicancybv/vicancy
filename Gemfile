@@ -24,6 +24,9 @@ gem 'sidekiq-scheduler', '~> 1'
 gem 'strong_parameters'
 gem 'coderay'
 
+# support sidekiq monitoring
+gem 'sinatra', '>= 1.3.0', :require => nil
+
 # API documentation
 gem 'rspec_api_documentation', '~> 3.1.0'
 gem 'apitome'
