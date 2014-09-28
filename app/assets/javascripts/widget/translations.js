@@ -97,8 +97,8 @@ I18n.translations = {
             videojob: '1 video job ad — 30 dagen online — €150'
         },
         processing: {
-            your_request: 'Your request is being processed',
-            will_contact: 'We will contact you in 24 hours'
+            your_request: 'Gelukt! Je videovacature wordt nu gemaakt',
+            will_contact: 'We komen binnen 24 uur bij je terug'
         },
         alert: {
             success: 'Succes!',
