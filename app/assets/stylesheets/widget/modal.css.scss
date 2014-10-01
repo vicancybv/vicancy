@@ -1,12 +1,13 @@
 
 .modal_container {
 
+  .transparent-input {
+    color: white;
+    background-color : transparent !important;
+  }
+
   form {
     margin-top: 30px;
-    .transparent-input {
-      color: white;
-      background-color : transparent !important;
-    }
     .button-group {
       margin-top: 30px;
       .btn {

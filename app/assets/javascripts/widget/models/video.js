@@ -8,6 +8,9 @@ App.Video = DS.Model.extend({
     twitter_share: DS.attr('string'),
     facebook_share: DS.attr('string'),
     linkedin_share: DS.attr('string'),
+    linkedin_share: DS.attr('string'),
+    embed_code: DS.attr('string'),
+    video_url: DS.attr('string'),
     vimeo_url: function() {
         return '//player.vimeo.com/video/'+this.get('vimeo_id');
     }.property('vimeo_id'),

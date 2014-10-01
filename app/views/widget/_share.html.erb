@@ -1,8 +1,8 @@
 <div class="overlay animated fast fadeIn">
-  <div class="modal_container share_video">
+  <div class="modal_container share_video" id="share1">
     <div class="head text-center">{{ i18n video.share }}</div>
     <div class="row widget-share-container">
-      <div class="col-xs-2 col-xs-offset-3 text-center"
+      <div class="col-xs-2 col-xs-offset-2 text-center"
       {{ action 'twitter' }}>
       <i class="fa fa-twitter widget-share-btn"></i>
     </div>
@@ -14,12 +14,42 @@
   {{ action 'linkedin' }}>
   <i class="fa fa-linkedin widget-share-btn"></i>
 </div>
+<div class="col-xs-2 text-center"
+{{ action 'embedded' }}>
+<i class="fa fa-code widget-share-btn"></i>
 </div>
+</div>
+
 <div class="text-center">
   <a class="btn btn-transparent btn-lg" {{action "closeModal"}}>{{ i18n close }}</a>
 </div>
 
 </div>
+
+<!-- ### -->
+
+<div class="modal_container animated fadeInRight fast share_video" id="share2" style="display: none">
+  <div class="row widget-embed-container">
+    <div class="head text-center">Embed Code</div>
+    <div class="form-group">
+      {{textarea class="form-control transparent-input" id="embed_code" rows=4 value=embed_code }}
+    </div>
+    <div class="head text-center">Link</div>
+    <div class="form-group">
+      {{input class="form-control transparent-input" value=video_url}}
+    </div>
+
+
+  </div>
+
+<div class="text-center">
+  <a class="btn btn-transparent btn-lg" {{action "closeModal"}}>{{ i18n close }}</a>
+</div>
+
+</div>
+
+<!-- -->
+
 <div class="overlay_close text-center" {{action "closeModal"}}>
 <span class="icon-cross"></span>
 </div>
