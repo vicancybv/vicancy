@@ -11,4 +11,6 @@ json.videos @videos do |video|
   json.twitter_share twitter_share_link(video)
   json.facebook_share facebook_share_link(video)
   json.linkedin_share linkedin_share_link(video)
+  json.embed_code embed_code(video)
+  json.video_url video.video_url
 end

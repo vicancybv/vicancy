@@ -17,6 +17,13 @@ App.ShareController = Ember.ObjectController.extend({
             height = 320;
             window.open(this.get('linkedin_share'), '', "height=" + height + ", width=" + width + ", toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no, top=200, left=200");
             this.send('closeModal');
+        },
+        embedded: function (url) {
+            $('#share1').addClass('animated');
+            $('#share1').addClass('fast');
+            $('#share1').addClass('fadeOutLeft');
+            $('#share2').show();
+            $('textarea#embed_code').select();
         }
     }
 });

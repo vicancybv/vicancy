@@ -19,5 +19,9 @@ Ember.Handlebars.registerHelper('i18n', function(property, options) {
         params[key] = Em.Handlebars.get(self, params[key], options);
     });
 
-    return I18n.t(property, params);
+    if (property.match(/_html$/)) {
+        return new Ember.Handlebars.SafeString(I18n.t(property, params));
+    } else {
+        return I18n.t(property, params);
+    }
 });
