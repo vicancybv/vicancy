@@ -1,4 +1,12 @@
 App.LandingController = Ember.ObjectController.extend({
+    embedVideoUrl: function() {
+        if (App.get('apiToken') == 'zRLjjQisAl3Fhs-uPl1qog') {
+            // Special video for Vacatureplein reseller
+            return '//player.vimeo.com/video/99027347?title=0&byline=0&portrait=0';
+        } else {
+            return '//player.vimeo.com/video/88338939?title=0&byline=0&portrait=0';
+        }
+    }.property(),
     actions: {
         scrollTryNow: function() {
             $('html,body').animate({scrollTop: $('#try_now').offset().top});
