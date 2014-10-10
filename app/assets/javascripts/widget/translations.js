@@ -77,7 +77,7 @@ I18n.translations = {
             try_now: 'Probeer Nu',
             scroll: 'Scroll voor meer info',
             see_it: 'Een beeld zegt meer dan 1000 woorden',
-            quote: '"Als het gaat om potentiële bereik, video is weergaloos."',
+            quote: '"Als het gaat om potentieel bereik, is video weegaloos."',
             author: 'Chris Trimble',
             title: 'The Guardian',
             see_more: 'Meer voorbeelden',
