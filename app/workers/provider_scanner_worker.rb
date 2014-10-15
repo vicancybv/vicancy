@@ -2,10 +2,12 @@ class ProviderScannerWorker
   include Sidekiq::Worker
   include TrelloBoard
 
+  sidekiq_options :retry => false
+
   def perform
     UploadedVideo.where(aasm_state: 'processing').each do |uploaded_video|
       state = send("#{uploaded_video.provider}_video_status", uploaded_video.provider_id)
-      uploaded_video.update_attribute(:aasm_state, state.to_s) if uploaded_video.aasm_state != state.to_s 
+      uploaded_video.update_attribute(:aasm_state, state.to_s) if uploaded_video.aasm_state != state.to_s
     end
     Video.where(aasm_state: 'processing').each do |video|
       video.error! if video.uploaded_videos.any?{|uv| uv.aasm_state == 'error'}
@@ -20,10 +22,10 @@ class ProviderScannerWorker
   # Return :error, :processing or :uploaded
   def youtube_video_status(id)
     client = YouTubeIt::OAuth2Client.new(
-      client_access_token: GoogleSession.current_access_token, 
-      client_id: ENV['GOOGLE_CLIENT_ID'], 
-      client_secret: ENV['GOOGLE_CLIENT_SECRET'], 
-      dev_key: ENV['GOOGLE_DEV_KEY']
+      client_access_token: GoogleSession.current_access_token,
+      client_id: Settings.google_client_id,
+      client_secret: Settings.google_client_secret,
+      dev_key: Settings.google_dev_key
     )
     video = client.video_by(id) rescue nil
     return :error if video.nil?
@@ -46,7 +48,7 @@ class ProviderScannerWorker
   end
 
   def vimeo_video_status(id)
-    video_api = Vimeo::Advanced::Video.new(ENV['VIMEO_CONSUMER_KEY'], ENV['VIMEO_CONSUMER_SECRET'], :token => ENV['VIMEO_USER_TOKEN'], :secret => ENV['VIMEO_USER_SECRET'])
+    video_api = Vimeo::Advanced::Video.new(Settings.vimeo_consumer_key, Settings.vimeo_consumer_secret, :token => Settings.vimeo_user_token, :secret => Settings.vimeo_user_secret)
     info = video_api.get_info(id)
     case info["stat"]
       when "ok" then :uploaded

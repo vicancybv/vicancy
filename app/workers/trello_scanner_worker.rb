@@ -2,6 +2,8 @@ class TrelloScannerWorker
   include Sidekiq::Worker
   include TrelloBoard
 
+  sidekiq_options :retry => false
+
   def perform
     ready_to_upload.each do |card|
       TrelloCardImportWorker.perform_async(card.id)

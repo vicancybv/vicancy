@@ -31,6 +31,12 @@ gem 'sinatra', '>= 1.3.0', :require => nil
 gem 'rspec_api_documentation', '~> 3.1.0'
 gem 'apitome'
 
+# exception handling
+gem 'rollbar', '~> 1.1.0'
+
+# environment variables for development
+gem 'dotenv-rails', :groups => [:development, :test]
+
 group :development do
   gem "binding_of_caller"
   gem 'better_errors'

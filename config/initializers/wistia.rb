@@ -1,2 +1,4 @@
 require 'wistia'
-Wistia.password = ENV['WISTIA_API_PASSWORD']
+require_relative Rails.root.join('app','models','settings')
+
+Wistia.password = Settings.wistia_api_password

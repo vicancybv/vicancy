@@ -3,17 +3,21 @@ class VideoUploadWorker
   include TrelloBoard
   include GoogleClient
 
+  sidekiq_options :retry => false
+
   def perform(uploaded_video_id, video_url)
     uploaded_video = UploadedVideo.find(uploaded_video_id)
     begin
       send("#{uploaded_video.provider}_upload", uploaded_video, video_url)
       uploaded_video.get_thumbnails
     rescue Exception => e
+      msg = "Error during #{uploaded_video.provider} upload (#{e.class.to_s}). #{e.message}"
       card = processing_card_for_video_id(uploaded_video.video.id)
       if card
-        update_card_description(card, error: e)
+        update_card_description(card, error: msg)
         move_to_list!(card, "error")
       end
+      raise
     end
   end
 
@@ -30,7 +34,7 @@ class VideoUploadWorker
   end
 
   def wistia_upload(uploaded_video, url)
-    thread = WistiaUploader.upload_media(ENV['WISTIA_API_PASSWORD'], ENV['WISTIA_PROJECT_ID'], open(url))
+    thread = WistiaUploader.upload_media(Settings.wistia_api_password, Settings.wistia_project_id, open(url))
     # Wait for thread to complete
     thread.join
     response = JSON.parse(thread[:body])
@@ -42,13 +46,14 @@ class VideoUploadWorker
       media.save
     else
       uploaded_video.error!
+      raise "Response: #{thread[:body]}"
     end
   end
 
   def vimeo_upload(uploaded_video, url)
     video = uploaded_video.video
-    upload_api = Vimeo::Advanced::Upload.new(ENV['VIMEO_CONSUMER_KEY'], ENV['VIMEO_CONSUMER_SECRET'], :token => ENV['VIMEO_USER_TOKEN'], :secret => ENV['VIMEO_USER_SECRET'])
-    video_api = Vimeo::Advanced::Video.new(ENV['VIMEO_CONSUMER_KEY'], ENV['VIMEO_CONSUMER_SECRET'], :token => ENV['VIMEO_USER_TOKEN'], :secret => ENV['VIMEO_USER_SECRET'])
+    upload_api = Vimeo::Advanced::Upload.new(Settings.vimeo_consumer_key, Settings.vimeo_consumer_secret, :token => Settings.vimeo_user_token, :secret => Settings.vimeo_user_secret)
+    video_api = Vimeo::Advanced::Video.new(Settings.vimeo_consumer_key, Settings.vimeo_consumer_secret, :token => Settings.vimeo_user_token, :secret => Settings.vimeo_user_secret)
     response = upload_api.upload(open(url))
     vimeo_id = response["ticket"]["video_id"] rescue nil
     if vimeo_id
@@ -58,6 +63,7 @@ class VideoUploadWorker
       video_api.set_description(vimeo_id, video.provider_description(:vimeo))
     else
       uploaded_video.error!
+      raise "Response: #{response.to_json}"
     end
   end
 
