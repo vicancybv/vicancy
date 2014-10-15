@@ -5,6 +5,14 @@ class ApplicationController < ActionController::Base
     I18n.locale = :en
   end
 
+  # fix error Missing template ... with {:locale=>[:en, :nl], :formats=>[:mobile],
+  # https://rollbar.com/Vicancy/VideoPipeline/items/2/?item_page=0
+  # solution http://stackoverflow.com/questions/10526214/actionviewmissingtemplate-missing-template-trying-to-render-nonexistent-mob
+  def formats=(values)
+    values << :html if values == [:mobile]
+    super(values)
+  end
+
   # Allow mobile views
   before_filter :prepare_for_mobile
 
