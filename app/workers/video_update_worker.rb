@@ -3,6 +3,8 @@ class VideoUpdateWorker
   include TrelloBoard
   include GoogleClient
 
+  sidekiq_options :retry => false
+
   def perform(card_id)
     begin
       card = Trello::Card.find(card_id)
@@ -17,8 +19,10 @@ class VideoUpdateWorker
       end
       move_to_list!(card, "processed")
     rescue Exception => e
-      update_card_description(card, error: e)
+      msg = "Error during video update (#{e.class.to_s}). #{e.message}"
+      update_card_description(card, error: msg)
       move_to_list!(card, "error")
+      raise
     end
   end
 
@@ -43,7 +47,7 @@ class VideoUpdateWorker
   def vimeo_update(uploaded_video)
     video = uploaded_video.video
     vimeo_id = uploaded_video.provider_id
-    video_api = Vimeo::Advanced::Video.new(ENV['VIMEO_CONSUMER_KEY'], ENV['VIMEO_CONSUMER_SECRET'], :token => ENV['VIMEO_USER_TOKEN'], :secret => ENV['VIMEO_USER_SECRET'])
+    video_api = Vimeo::Advanced::Video.new(Settings.vimeo_consumer_key, Settings.vimeo_consumer_secret, :token => Settings.vimeo_user_token, :secret => Settings.vimeo_user_secret)
     video_api.add_tags(vimeo_id, video.tags)
     video_api.set_title(vimeo_id, video.provider_title)
     video_api.set_description(vimeo_id, video.provider_description(:vimeo))

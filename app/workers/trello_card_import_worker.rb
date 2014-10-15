@@ -2,6 +2,8 @@ class TrelloCardImportWorker
   include Sidekiq::Worker
   include TrelloBoard
 
+  sidekiq_options :retry => false
+
   UPLOAD_PROVIDERS = [:youtube, :wistia, :vimeo]
 
   def perform(card_id)
@@ -26,8 +28,10 @@ class TrelloCardImportWorker
         end
       end
     rescue Exception => e
-      update_card_description(card, error: e)
+      msg = "Error during card processing (#{e.class.to_s}). #{e.message}"
+      update_card_description(card, error: msg)
       move_to_list!(card, "error")
+      raise
     end
   end
 

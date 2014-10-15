@@ -1,7 +1,7 @@
 module TrelloBoard
 
   def list_by_name(name)
-    board = Trello::Board.find(ENV['TRELLO_BOARD_ID'])
+    board = Trello::Board.find(Settings.trello_board_id)
     board.lists.select{|list| list.name.downcase == name.downcase}.first
   end
 

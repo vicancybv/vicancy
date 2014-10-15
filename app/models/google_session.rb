@@ -30,7 +30,7 @@ class GoogleSession < ActiveRecord::Base
     credentials = send_oauth2_request({
       'code' => code,
       'grant_type' => 'authorization_code',
-      'redirect_uri' => ENV['GOOGLE_OAUTH2_CALLBACK_URL']
+      'redirect_uri' => Settings.google_oauth2_callback_url
     })
 
     set_access_token_and_expiry(credentials)
@@ -63,8 +63,8 @@ class GoogleSession < ActiveRecord::Base
     end
 
     result = conn.post '/o/oauth2/token', {
-      'client_id' => ENV['GOOGLE_CLIENT_ID'],
-      'client_secret' => ENV['GOOGLE_CLIENT_SECRET']
+      'client_id' => Settings.google_client_id,
+      'client_secret' => Settings.google_client_secret
     }.merge(params)
 
     JSON.parse(result.body)
