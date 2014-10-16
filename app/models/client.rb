@@ -30,6 +30,8 @@ class Client < ActiveRecord::Base
   belongs_to :user
   belongs_to :reseller
 
+  delegate :name, :to => :reseller, :prefix => true, :allow_nil => true
+
   after_validation :generate_slug, on: :create
   after_validation :generate_token, on: :create
   after_validation :generate_external_id, on: :create
