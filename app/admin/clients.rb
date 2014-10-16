@@ -27,7 +27,7 @@ ActiveAdmin.register Client do
     f.inputs 'Client' do
       f.input :name, label: "Client name"
       f.input :email
-      f.input :external_id, label: "External Client ID"
+      f.input :external_id, label: "External Client ID", hint: "Created automatically if left blank."
       f.input :slug, hint: "e.g. aw6g39vk. Created automatically if left blank."
       f.input :token, hint: "Created automatically if left blank."
       f.input :language,

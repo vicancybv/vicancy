@@ -32,6 +32,7 @@ class Client < ActiveRecord::Base
 
   after_validation :generate_slug, on: :create
   after_validation :generate_token, on: :create
+  after_validation :generate_external_id, on: :create
 
   def intercom_id
     "client-#{self.slug}"
@@ -77,6 +78,17 @@ class Client < ActiveRecord::Base
       record = Client.find_by_slug(random) || Reseller.find_by_slug(random)
     end
     self.slug = random
+  end
+
+  def generate_external_id
+    return unless external_id.blank?
+    record = true
+    while record
+      random = Array.new(8) { %w(a b c d e f g h j k m n p q r s t u v w x y z 2 3 4 5 6 7 8 9).sample }.join
+      random = '?autogen? ' + random
+      record = Client.where(reseller_id: self.reseller_id, external_id: random).first
+    end
+    self.external_id = random
   end
 
   def generate_token
