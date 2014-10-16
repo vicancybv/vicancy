@@ -43,7 +43,7 @@ ActiveAdmin.register Client do
   show do |reseller|
     attributes_table do
       row 'Reseller' do |client|
-        link_to client.reseller.name, admin_reseller_url(client.reseller)
+        link_to client.reseller_name, admin_reseller_url(client.reseller)
       end
       row :id
       row :name
