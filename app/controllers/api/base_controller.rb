@@ -24,6 +24,8 @@ class API::BaseController < ApplicationController
   end
 
   def rescue_error(e, status = 500)
+    Rollbar.report_exception(e, rollbar_request_data, rollbar_person_data)
+    
     logger.error e.inspect
     logger.error e.backtrace.join("\n")
 

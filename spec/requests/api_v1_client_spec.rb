@@ -121,6 +121,60 @@ describe '/api/v1/client' do
       end
     end
 
+    context 'wrong params' do
+
+      it 'should not proceed with empty external id' do
+        params = { api_token: api_token,
+           client: {
+               id: '',
+               name: 'Deloitte',
+               email: 'deloitte@example.com',
+               language: 'en'
+           } }
+        post_json '/api/v1/client/auth', params
+        expect(json['status']).to eq 'error'
+        expect(response.status).to eq 500
+      end
+
+      it 'should not proceed without external id' do
+        params = { api_token: api_token,
+                   client: {
+                       name: 'Deloitte',
+                       email: 'deloitte@example.com',
+                       language: 'en'
+                   } }
+        post_json '/api/v1/client/auth', params
+        expect(json['status']).to eq 'error'
+        expect(response.status).to eq 500
+      end
+
+      it 'should not proceed with empty name' do
+        params = { api_token: api_token,
+                   client: {
+                       id: 'id',
+                       name: '',
+                       email: 'deloitte@example.com',
+                       language: 'en'
+                   } }
+        post_json '/api/v1/client/auth', params
+        expect(json['status']).to eq 'error'
+        expect(response.status).to eq 500
+      end
+
+      it 'should not proceed without name' do
+        params = { api_token: api_token,
+                   client: {
+                       id: 'new',
+                       email: 'deloitte@example.com',
+                       language: 'en'
+                   } }
+        post_json '/api/v1/client/auth', params
+        expect(json['status']).to eq 'error'
+        expect(response.status).to eq 500
+      end
+
+    end
+
     context 'client not exists' do
       let(:params) do
         ({ api_token: api_token,
