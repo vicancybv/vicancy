@@ -1,6 +1,7 @@
 class TrelloScannerWorker
   include Sidekiq::Worker
   include TrelloBoard
+  include Retryable
 
   sidekiq_options :retry => false
 
@@ -14,14 +15,18 @@ class TrelloScannerWorker
   end
 
   def ready_to_upload
-    # We only want cards with an MP4 attachment
-    list_by_name("Ready for upload").cards.select do |card| 
-      !extract_video_attachment_url(card).blank?
+    try_n_times(3, 'TrelloScannerWorker.ready_to_upload') do
+      # We only want cards with an MP4 attachment
+      list_by_name("Ready for upload").cards.select do |card|
+        !extract_video_attachment_url(card).blank?
+      end
     end
   end
 
   def ready_to_update
-    list_by_name("Ready to update").cards
+    try_n_times(3, 'TrelloScannerWorker.ready_to_update') do
+      list_by_name("Ready to update").cards
+    end
   end
 
 end
