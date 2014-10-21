@@ -1,0 +1,43 @@
+### Editors comments
+
+### General
+Client:
+Url: http://bit.ly/1w9Xohh
+Editor: Frank
+Music: Live my Life
+Template: Vicancy 16.0 - Medical
+### Intro
+Company: Sensire
+Job Title: Verzorgende IG
+Sub-title: Flexwerker in de Wijkzorg
+Function type: Flexcontract 0-16 uur
+### Company
+Title field: Sensire
+Field I: Gezondheid, zorg en welzijn
+Field II: Samen en persoonlijk
+Field III: Klein, zelfstandig en betrokken wijkteam (thuiszorg)
+### Location
+Place: Omgeving Varsseveld
+Country: Nederland
+### Vacancy
+Title Field: DE VACATURE
+Field I: Je werkt met ouderen, (chronisch) zieken of gehandicapte mensen
+Field II: Je biedt ADL assistentie en doet verpleeg-technische handelingen
+Field III: Je werkt zelfstandig en op je eigen manier
+### Profile
+Title field: PROFIEL
+Title 1: Opleiding
+Field 1: Diploma Verzorgende IG (niveau 3), Ziekenverzorging of MDGO-VP
+Title 2: Karakter
+Field 2: Je bent geduldig en nauwkeurig, voelt je verantwoordelijk en werkt hard
+Title 3: Competenties
+Field 3: Je kunt goed samenwerken en stimuleert en motiveert zowel klanten als collega’s
+Title 4: Taalvaardigheid
+Field 4: Je kunt je zowel mondeling als schriftelijk goed uitdrukken
+### Outro
+Button text: Reageer nu
+Tags: vacature, video, verzorgende, verzorging, thuiszorg, wijkzorg, betrokkenheid, Ziekenverzorging, assistentie, ondersteuning
+
+
+
+

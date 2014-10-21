@@ -1,0 +1,43 @@
+### Editors comments
+
+### General
+Client:
+Url: http://bit.ly/1waFz2X
+Editor: Esther
+Music: Live my Life
+Template: Vicancy 11.0 - Paralax
+### Intro
+Company: Ahold
+Job Title: International Graduate Trainee
+Sub-title: Innovator with a passion for retail
+Function type: Full-time
+### Company
+Title field: Ahold
+Field I: International retailing group based in the Netherlands
+Field II: Operating supermarkets and selling great foods is core business
+Field III: 313.000 stores and 222.000 employees
+### Location
+Place: Zaandam (with international options)
+Country: Nederland
+### Vacancy
+Title Field: The traineeship
+Field I: 1st year: gaining expert working experience in your area of choice
+Field II: 2nd year: gaining managerial experience as an Assistent Store Manager
+Field III: You will be trained and coached to gain skills for future leadership roles
+### Profile
+Title field: PROFILE
+Title 1: Education
+Field 1: University master's degree (completed latest February 2015)
+Title 2: Experience
+Field 2: Relevant working experience (< 2yrs) and proven leadership skills
+Title 3: Mentality
+Field 3: Entrepreneurial, "spot on" motivation and a well balanced IQ and EQ
+Title 4: Availability
+Field 4: Selection rounds Nov- mid Feb, fulltime available from March 23rd
+### Outro
+Button text: More info
+Tags: vacature, video, Zaandam, Ahold, traineeship, supermarket, management, international, retail
+
+
+
+
