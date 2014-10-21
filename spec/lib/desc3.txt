@@ -1,0 +1,45 @@
+### Editors comments
+#1.1 Er is ook nog een logo in Zwart-Wit. Als dat beter past, zie beeldbank
+
+Vacature tekst geeft niet heel veel ruimte tot creatief taalgebruik
+### General
+Client:
+Url: http://bit.ly/1nkvzDj
+Editor: Frank
+Music: Building a dream
+Template: Vicancy 25.0 - Flip the screen
+### Intro
+Company: OTYS International
+Job Title: Programmeur
+Sub-title: Avontuur in Praag
+Function type: Full-time
+### Company
+Title field: OTYS International
+Field I: Dé specialist en partner in recruitment technologie en oplossingen
+Field II: Van revolutionaire software tot en met state-of-the-art (wervings) websites
+Field III: Our Team Your Succes
+### Location
+Place: Praag
+Country: Tsjechië
+### Vacancy
+Title Field: Wat ga je doen als Programmeur?
+Field I: Bijdragen aan innovatie met het ontwikkelen en bouwen van nieuwe producten
+Field II: Schrijven van software & meedenken over nieuwe producten
+Field III: Wonen en werken in één van de mooiste steden van Europa
+### Profile
+Title field: Wat heb je in huis?
+Title 1: Opleiding
+Field 1: HBO werk- en denkniveau verkregen door relevante opleiding of ervaring
+Title 2: Ervaring
+Field 2:  HTML5, Python, Perl, XML en CSS3
+Title 3: Kennis
+Field 3: JavaScript / JSON / JQuery en van PHP / MySQL
+Title 4: Extra's
+Field 4: Je krijgt ruimte om zelfstandig te werken en om te gaan met veel verantwoordelijkheid
+### Outro
+Button text: Reageer nu
+Tags: vacature, video
+
+
+
+
