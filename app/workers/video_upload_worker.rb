@@ -61,6 +61,10 @@ class VideoUploadWorker
       video_api.add_tags(vimeo_id, video.tags)
       video_api.set_title(vimeo_id, video.provider_title)
       video_api.set_description(vimeo_id, video.provider_description(:vimeo))
+      if Settings.vimeo_album_id
+        album_api = Vimeo::Advanced::Album.new(Settings.vimeo_consumer_key, Settings.vimeo_consumer_secret, :token => Settings.vimeo_user_token, :secret => Settings.vimeo_user_secret)
+        album_api.add_video(Settings.vimeo_album_id, vimeo_id)
+      end
     else
       uploaded_video.error!
       raise "Response: #{response.to_json}"

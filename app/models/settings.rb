@@ -41,6 +41,9 @@ unless defined? Settings
       ENV['VIMEO_USER_SECRET']
     end
 
+    def self.vimeo_album_id
+      ENV['VIMEO_ALBUM_ID']
+    end
 
     def self.google_client_id
       ENV['GOOGLE_CLIENT_ID']
