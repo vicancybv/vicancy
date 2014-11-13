@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   # https://rollbar.com/Vicancy/VideoPipeline/items/2/?item_page=0
   # solution http://stackoverflow.com/questions/10526214/actionviewmissingtemplate-missing-template-trying-to-render-nonexistent-mob
   def formats=(values)
-    values << :html if values == [:mobile]
+    values = values + [:html, :json] if values == [:mobile]
     super(values)
   end
 

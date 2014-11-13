@@ -1,6 +1,8 @@
 class AuthenticationError < StandardError; end
 
-class API::BaseController < ApplicationController
+class API::BaseController < ActionController::Base
+  protect_from_forgery
+
   rescue_from StandardError, with: :rescue_error
   rescue_from AuthenticationError, with: :rescue_auth_error
 
