@@ -3,6 +3,15 @@ class API::V1::ClientController < API::BaseController
 
   def auth
     client_params = params.require(:client)
+    # to-be method design
+    # attrs = {
+    #     external_id: client_params.require(:id),
+    #     name: client_params.require(:name),
+    #     email: client_params[:email],
+    #     language: client_params[:language]
+    # }
+    # @client = Client.fetch(@reseller, attrs)
+    # @client.do_sign_in
     begin
       @client = @reseller.clients.find_by_external_id(client_params.require(:id))
       unless @client.blank?
