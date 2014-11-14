@@ -8,6 +8,6 @@ class SimpleOrdersController < ApplicationController
                             email: data['email'],
                             url: data['url']
                         })
-    redirect_to 'http://vicancy.wpengine.com/thank-you/'
+    redirect_to 'http://www.vicancy.com/thank-you/'
   end
 end
