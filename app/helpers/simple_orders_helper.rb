@@ -1,0 +1,2 @@
+module SimpleOrdersHelper
+end

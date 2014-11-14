@@ -57,6 +57,8 @@ Vicancy::Application.routes.draw do
       get 'install'
     end
   end
+  resources :simple_orders, only: [:create]
+
   resources :clients, only: [:show]
   resources :users, only: [:show]
   resources :videos, only: [:destroy] do

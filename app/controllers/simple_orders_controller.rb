@@ -1,0 +1,13 @@
+class SimpleOrdersController < ApplicationController
+  def create
+    data = params.require('sf_register_user')
+    SimpleOrder.create!({
+                            params: data.to_hash.to_yaml,
+                            referer: request.referer,
+                            name: data['name'],
+                            email: data['email'],
+                            url: data['url']
+                        })
+    redirect_to 'http://vicancy.wpengine.com/thank-you/'
+  end
+end
