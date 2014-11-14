@@ -2,6 +2,7 @@ ActiveAdmin.register SimpleOrder do
   index do
     selectable_column
     column :id
+    column :product
     column :name
     column :email
     column :url

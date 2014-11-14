@@ -10,6 +10,7 @@
 #  email      :string(255)
 #  name       :string(255)
 #  url        :string(255)
+#  product    :string(255)
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl
