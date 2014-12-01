@@ -20,6 +20,13 @@ Vicancy::Application.routes.draw do
           post 'request', action: :video_request
         end
       end
+
+      namespace :reseller, module: 'reseller' do
+        namespace :videos do
+          post 'list'
+        end
+      end
+
     end
   end
 

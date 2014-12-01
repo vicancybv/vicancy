@@ -9,6 +9,7 @@
 #  token      :string(255)      indexed
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  secret     :string(255)
 #
 
 # Read about factories at https://github.com/thoughtbot/factory_girl

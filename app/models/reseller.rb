@@ -9,15 +9,17 @@
 #  token      :string(255)      indexed
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  secret     :string(255)
 #
 
 class Reseller < ActiveRecord::Base
   has_many :clients
 
-  attr_accessible :language, :name, :slug, :token
+  attr_accessible :language, :name, :slug, :token, :secret
 
   after_validation :generate_slug, on: :create
   after_validation :generate_token, on: :create
+  after_validation :generate_secret, on: :create
 
   def intercom_id
     "reseller-#{self.slug}"
@@ -34,12 +36,17 @@ class Reseller < ActiveRecord::Base
   end
 
   def generate_token
-    return unless token.blank?
+    return if token.present?
     record = true
     while record
       random = SecureRandom.urlsafe_base64(16)
       record = Reseller.find_by_token(random)
     end
     self.token = random
+  end
+
+  def generate_secret
+    return if secret.present?
+    self.secret = SecureRandom.urlsafe_base64(32)
   end
 end
