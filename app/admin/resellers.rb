@@ -9,6 +9,7 @@ ActiveAdmin.register Reseller do
       f.input :name, label: "Reseller name"
       f.input :slug, hint: "e.g. aw6g39vk. Created automatically if left blank."
       f.input :token, hint: "Created automatically if left blank."
+      f.input :secret, hint: "Created automatically if left blank."
       f.input :language,
               as: :select,      
               collection: { 
@@ -24,6 +25,7 @@ ActiveAdmin.register Reseller do
       row :id
       row :name
       row :token
+      row :secret
       row :language
       row :url do |user|
         link_to reseller_url(reseller.slug), reseller_url(reseller.slug)

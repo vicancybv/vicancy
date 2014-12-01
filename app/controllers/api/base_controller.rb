@@ -13,6 +13,18 @@ class API::BaseController < ActionController::Base
     raise AuthenticationError.new('Unknown reseller')
   end
 
+  def set_reseller_secure
+    reseller = Reseller.find_by_token!(params.require(:api_token))
+    sleep 0.3 # to prevent time-attacks and brute force attacks
+    if reseller.secret == params.require(:api_secret)
+      @reseller = reseller
+    else
+      raise AuthenticationError.new('Unknown reseller')
+    end
+  rescue ActiveRecord::RecordNotFound
+    raise AuthenticationError.new('Unknown reseller')
+  end
+
   def set_client
     @client = @reseller.clients.find_by_token!(params.require(:client_token))
   rescue ActiveRecord::RecordNotFound
