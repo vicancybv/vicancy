@@ -6,7 +6,8 @@ class SimpleOrdersController < ApplicationController
                             referer: request.referer,
                             name: data['name'],
                             email: data['email'],
-                            url: data['url']
+                            url: data['url'],
+                            product: data['product']
                         })
     redirect_to 'http://www.vicancy.com/thank-you/'
   end
