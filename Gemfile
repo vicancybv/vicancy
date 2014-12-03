@@ -24,6 +24,8 @@ gem 'sidekiq-scheduler', '~> 1'
 gem 'strong_parameters'
 gem 'coderay'
 
+gem 'bitly'
+
 # support sidekiq monitoring
 gem 'sinatra', '>= 1.3.0', :require => nil
 

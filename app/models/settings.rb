@@ -1,6 +1,10 @@
 unless defined? Settings
   class Settings
 
+    def self.bitly_access_token
+      ENV['BITLY_ACCESS_TOKEN']
+    end
+
     def self.trello_developer_public_key
       ENV['TRELLO_DEVELOPER_PUBLIC_KEY']
     end
