@@ -29,6 +29,8 @@ ActiveAdmin.register Video do
     f.inputs I18n.t(:'admin.Job') do
       f.input :job_title
       f.input :company
+      f.input :job_url
+      f.input :short_job_url
       f.input :job_ad_url
     end
     f.actions
@@ -47,6 +49,9 @@ ActiveAdmin.register Video do
         video.user.present? ? link_to("(#{video.user_name})", admin_user_url(video.user)) : nil
       end
       row :job_title
+      row :job_ad_url
+      row :job_url
+      row :short_job_url
       row :company
       row :aasm_state
     end

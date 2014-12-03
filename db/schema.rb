@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141201090138) do
+ActiveRecord::Schema.define(:version => 20141203092422) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -170,13 +170,15 @@ ActiveRecord::Schema.define(:version => 20141201090138) do
     t.string   "language"
     t.string   "title"
     t.text     "summary"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
     t.integer  "user_id"
     t.string   "place"
     t.string   "tags"
     t.string   "aasm_state"
     t.integer  "client_id"
+    t.text     "job_url"
+    t.text     "short_job_url"
   end
 
   add_index "videos", ["client_id"], :name => "index_videos_on_client_id"
