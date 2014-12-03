@@ -5,7 +5,7 @@ json.videos @videos do |video|
     json.id video.client.external_id
     json.name video.client.name
   end
-  #json.job_title video.job_title
+  json.job_url video.job_url
   #json.company video.company
   json.thumbnail video.thumb_small
   json.embed_code embed_code(video)
