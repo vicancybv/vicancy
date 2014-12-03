@@ -9,6 +9,7 @@ class ConvertJobAdUrlToJobUrl < ActiveRecord::Migration
   def update_url(url, video)
     puts "#{url}"
     return if url.blank?
+    url.strip!
     url = 'http://'+url if url.start_with? 'bit.ly/'
     uri = URI(url)
     if uri.host == 'bit.ly'
