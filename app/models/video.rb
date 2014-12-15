@@ -154,11 +154,14 @@ class Video < ActiveRecord::Base
 
   def update_job_url(url)
     return if url.blank?
+    return if self.short_job_url.present?
+    return if self.job_url.present?
+    url = url.strip
     url = 'http://'+url if url.start_with? 'bit.ly/'
     uri = URI(url)
     if uri.host == 'bit.ly'
       self.short_job_url = url
-      self.job_url = Bitly.client.expand(url)
+      self.job_url = Bitly.client.expand(url).long_url
     else
       self.job_url = url
     end
