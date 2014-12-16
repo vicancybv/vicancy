@@ -28,13 +28,13 @@ end
 
 class CardDesc
   def initialize(text)
+    @lines ||= []
+    @fields ||= {}
     @text = text
     text.split("\n").each { |line| add_line(line) }
   end
 
   def add_line(text_line)
-    @lines ||= []
-    @fields ||= {}
     line = CardDescLine.new(text_line)
     @lines << line
     @fields[line.name] = line if line.name.present?
