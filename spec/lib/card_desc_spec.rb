@@ -32,6 +32,12 @@ describe CardDesc do
       expect(desc.to_str).to eq "Client:\nUrl: http://bit.ly/1w9Xohh\nId: 112233\n<html>"
     end
 
+    it 'should write field to empty desc' do
+      desc = CardDesc.new('')
+      desc[:id] = "112233"
+      expect(desc.to_str).to eq "Id: 112233"
+    end
+
   end
 
   context 'read values' do
