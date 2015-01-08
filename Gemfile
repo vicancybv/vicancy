@@ -25,6 +25,8 @@ gem 'strong_parameters'
 gem 'coderay'
 
 gem 'bitly'
+gem 'retryable'
+
 
 # support sidekiq monitoring
 gem 'sinatra', '>= 1.3.0', :require => nil

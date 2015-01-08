@@ -2,24 +2,25 @@
 #
 # Table name: videos
 #
-#  id            :integer          not null, primary key
-#  youtube_id    :string(255)
-#  vimeo_id      :string(255)
-#  job_ad_url    :string(255)
-#  job_title     :string(255)
-#  company       :string(255)
-#  language      :string(255)
-#  title         :string(255)
-#  summary       :text
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
-#  user_id       :integer
-#  place         :string(255)
-#  tags          :string(255)
-#  aasm_state    :string(255)
-#  client_id     :integer          indexed
-#  job_url       :text
-#  short_job_url :text
+#  id              :integer          not null, primary key
+#  youtube_id      :string(255)
+#  vimeo_id        :string(255)
+#  job_ad_url      :string(255)
+#  job_title       :string(255)
+#  company         :string(255)
+#  language        :string(255)
+#  title           :string(255)
+#  summary         :text
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  user_id         :integer
+#  place           :string(255)
+#  tags            :string(255)
+#  aasm_state      :string(255)
+#  client_id       :integer          indexed
+#  job_url         :text
+#  short_job_url   :text
+#  external_job_id :string(255)
 #
 
 require 'uri'
@@ -40,6 +41,7 @@ class Video < ActiveRecord::Base
   attr_accessible :company, :job_ad_url, :job_title, :language, :summary, :title, :user_id, :client_id
   attr_accessible :youtube_id, :vimeo_id
   attr_accessible :job_url, :short_job_url
+  attr_accessible :external_job_id
 
   attr_accessor :edits
   validates :language, presence: true
@@ -150,6 +152,7 @@ class Video < ActiveRecord::Base
     self.language = card_params[:language].try(:downcase).to_s.strip == "en" ? "en" : "nl"
     self.user = User.find_by_slug(card_params[:user].to_s.strip)
     self.client = Client.find_by_slug(card_params[:client].to_s.strip)
+    self.external_job_id = card_params[:job_id].to_s.strip
   end
 
   def update_job_url(url)

@@ -12,6 +12,11 @@
           "description": "List videos",
           "link": "client_api/list_videos.json",
           "groups": "all"
+        },
+        {
+          "description": "New video request",
+          "link": "client_api/new_video_request.json",
+          "groups": "all"
         }
       ]
     }

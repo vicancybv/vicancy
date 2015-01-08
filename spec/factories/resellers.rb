@@ -18,13 +18,15 @@ FactoryGirl.define do
   factory :reseller do
     name 'Vicancy'
     language 'es'
-    slug 'vicancy'
-    token 'some_random_token'
+    # slug 'vicancy'
+    # token 'some_random_token'
+    # secret 'some_random_secret'
   end
 
   factory :reseller2, class: 'Reseller' do
     name 'Monster Jobs'
-    slug 'monster_jobs'
-    token 'monster_jobs_token'
+    # slug 'monster_jobs'
+    # token 'monster_jobs_token'
+    # secret 'some_random_secret'
   end
 end

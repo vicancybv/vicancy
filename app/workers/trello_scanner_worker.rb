@@ -1,7 +1,7 @@
 class TrelloScannerWorker
   include Sidekiq::Worker
   include TrelloBoard
-  include Retryable
+  include VicancyRetryable
 
   sidekiq_options :retry => false
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141203092422) do
+ActiveRecord::Schema.define(:version => 20150108102121) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -154,9 +154,10 @@ ActiveRecord::Schema.define(:version => 20141203092422) do
     t.string   "user_ip"
     t.string   "link"
     t.text     "comment"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.integer  "client_id"
+    t.string   "external_job_id"
   end
 
   add_index "video_requests", ["client_id"], :name => "index_video_requests_on_client_id"
@@ -170,8 +171,8 @@ ActiveRecord::Schema.define(:version => 20141203092422) do
     t.string   "language"
     t.string   "title"
     t.text     "summary"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.integer  "user_id"
     t.string   "place"
     t.string   "tags"
@@ -179,6 +180,7 @@ ActiveRecord::Schema.define(:version => 20141203092422) do
     t.integer  "client_id"
     t.text     "job_url"
     t.text     "short_job_url"
+    t.string   "external_job_id"
   end
 
   add_index "videos", ["client_id"], :name => "index_videos_on_client_id"

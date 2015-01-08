@@ -1,6 +1,7 @@
-A request to make a new video has been received from user '<%= @video_request.user.try(:name) %>' (IP <%= @video_request.user_ip %>).
+A request to make a new video has been received from user '<%= @video_request.client_name %>' (IP <%= @video_request.user_ip %>).
 
 LINK: <%= @video_request.link %>
+<% if @video_request.external_job_id.present? %>JOB ID: <%= @video_request.external_job_id %><% end %>
 
 COMMENTS
 --------

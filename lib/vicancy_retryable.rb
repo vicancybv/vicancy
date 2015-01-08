@@ -1,4 +1,4 @@
-module Retryable
+module VicancyRetryable
   def try_n_times(times, name=nil)
     try = 0
     begin

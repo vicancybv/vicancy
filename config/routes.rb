@@ -17,7 +17,8 @@ Vicancy::Application.routes.draw do
           end
         end
         namespace :videos do
-          post 'request', action: :video_request
+          post 'add', action: :add
+          post 'request', action: :add # for old widget support
         end
       end
 

@@ -70,6 +70,38 @@ class Client < ActiveRecord::Base
     end
   end
 
+  def self.fetch(reseller, attrs)
+    raise 'Need to provide name' if attrs[:name].blank?
+    raise 'Need to provide external_id' if attrs[:external_id].blank?
+    client = reseller.clients.find_by_external_id(attrs[:external_id])
+    if client.present?
+      client.name = attrs[:name]
+      client.email = attrs[:email]
+      client.language = attrs[:language]
+      client.save!
+    else
+      Retryable.retryable(tries: 3, on: ActiveRecord::RecordNotUnique) do
+        client = Client.create!(
+            name: attrs[:name],
+            email: attrs[:email],
+            language: attrs[:language],
+            external_id: attrs[:external_id],
+            reseller_id: reseller.id
+        )
+      end
+    end
+    client
+  end
+
+  def mark_sign_in(remote_ip)
+    return if same_session?(DateTime.now, remote_ip)
+    sign_in_count = sign_in_count.blank? ? 1 : sign_in_count.to_i + 1
+    last_sign_in_at = current_sign_in_at
+    current_sign_in_at = DateTime.now
+    last_sign_in_ip = current_sign_in_ip
+    current_sign_in_ip = remote_ip
+  end
+
   private
 
   def generate_slug
