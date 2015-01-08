@@ -168,14 +168,22 @@ unless defined? Settings
         }
       elsif Settings.staging?
         {
-            :address => 'smtp.gmail.com',
-            :port => '587',
-            :authentication => :plain,
-            :user_name => 'stagingvicancy@gmail.com',
-            :password => 'Qurriculum2013',
-            :domain => 'gmail.com',
-            :enable_starttls_auto => true
+            :user_name => '28221e088c032e698',
+            :password => '3e29f84b80492a',
+            :address => 'mailtrap.io',
+            :domain => 'mailtrap.io',
+            :port => '2525',
+            :authentication => :cram_md5
         }
+        # {
+        #     :address => 'smtp.gmail.com',
+        #     :port => '587',
+        #     :authentication => :plain,
+        #     :user_name => 'stagingvicancy@gmail.com',
+        #     :password => 'Qurriculum2013',
+        #     :domain => 'gmail.com',
+        #     :enable_starttls_auto => true
+        # }
       else
         Hash.new
       end
