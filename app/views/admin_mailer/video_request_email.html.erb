@@ -37,7 +37,7 @@
                     Link: <a href="<%= @video_request.link %>"><%= @video_request.link %></a>
                   </p>
                   <% if @video_request.external_job_id.present? %>
-                        <p><strong>Job ID:</strong> <%= @video_request.external_job_id %></p>
+                        <p>Job ID: <%= @video_request.external_job_id %></p>
                   <% end %>
                   <pre style="font-family: Arial, Helvetica, sans-serif;"><%= @video_request.comment %></pre>
                   <% unless @video_request.attachments.blank? %>

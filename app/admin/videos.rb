@@ -27,6 +27,7 @@ ActiveAdmin.register Video do
       f.input :summary, hint: I18n.t(:'admin.optional')
     end
     f.inputs I18n.t(:'admin.Job') do
+      f.input :external_job_id
       f.input :job_title
       f.input :company
       f.input :job_url
@@ -48,6 +49,7 @@ ActiveAdmin.register Video do
       row '(User)' do |video|
         video.user.present? ? link_to("(#{video.user_name})", admin_user_url(video.user)) : nil
       end
+      row :external_job_id
       row :job_title
       row :job_ad_url
       row :job_url
@@ -87,6 +89,7 @@ ActiveAdmin.register Video do
     column :user
     column :job_title
     column :company
+    column :external_job_id
     column :aasm_state
     column :created_at
     actions    

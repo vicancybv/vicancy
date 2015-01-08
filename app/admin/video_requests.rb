@@ -9,10 +9,9 @@ ActiveAdmin.register VideoRequest do
     end
     f.inputs I18n.t('admin.Video request') do
       f.input :link, label: "Link"
+      f.input :external_job_id
       f.input :comment, label: "Comments"
     end
-
-    
 
     f.actions
   end
@@ -24,6 +23,7 @@ ActiveAdmin.register VideoRequest do
       end
       row :id
       row :link
+      row :external_job_id
       row :comment
     end
 
