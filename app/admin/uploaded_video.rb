@@ -44,6 +44,7 @@ ActiveAdmin.register UploadedVideo do
 
   index do
     selectable_column
+    column :id
     column '' do |uploaded_video|
       img src: uploaded_video.thumbnail_url({size: '50x50', crop: :fit})
     end
