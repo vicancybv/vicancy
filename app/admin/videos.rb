@@ -90,6 +90,9 @@ ActiveAdmin.register Video do
         column "ID" do |uploaded_video| 
           link_to uploaded_video.id, admin_uploaded_video_url(uploaded_video)
         end
+        column '' do |uploaded_video|
+          img src: uploaded_video.thumbnail_url({size: '50x50', crop: :fit})
+        end
         column :provider
         column "Provider ID", :provider_id
         column "Status", :aasm_state
@@ -100,6 +103,7 @@ ActiveAdmin.register Video do
 
   index do
     selectable_column
+    column :id
     column '' do |video|
       img src: video.thumbnail_url({size: '50x50', crop: :fit})
     end

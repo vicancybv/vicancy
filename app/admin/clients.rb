@@ -66,6 +66,9 @@ ActiveAdmin.register Client do
         column "ID" do |video|
           link_to video.id, edit_admin_video_url(video)
         end
+        column '' do |video|
+          img src: video.thumbnail_url({size: '50x50', crop: :fit})
+        end
         column :company
         column :job_title
         column :created_at

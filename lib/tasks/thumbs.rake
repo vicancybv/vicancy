@@ -18,13 +18,8 @@ namespace :thumbs do
     Video.all.each do |video|
       [video.youtube, video.vimeo, video.wistia].each do |uploaded_video|
         if uploaded_video.present? && uploaded_video.thumbnail.blank?
-          puts "#{uploaded_video.provider}: #{uploaded_video.provider_id}"
-          begin
-            uploaded_video.build_thumbnail
-            puts 'Done.'
-          rescue => e
-            puts "Failed: #{e.message} (#{e.class.to_s})"
-          end
+          puts "Added uploaded_video.id=#{uploaded_video.id} (#{uploaded_video.provider}) to queue"
+          UploadedVideoThumbnailWorker.perform_async(uploaded_video.id, true)
         end
       end
     end
