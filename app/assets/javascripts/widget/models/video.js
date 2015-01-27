@@ -1,5 +1,6 @@
 App.Video = DS.Model.extend({
     company: DS.attr('string'),
+    job_id: DS.attr('string'),
     job_title: DS.attr('string'),
     youtube_id: DS.attr('string'),
     vimeo_id: DS.attr('string'),

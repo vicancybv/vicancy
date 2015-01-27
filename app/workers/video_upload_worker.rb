@@ -9,7 +9,7 @@ class VideoUploadWorker
     uploaded_video = UploadedVideo.find(uploaded_video_id)
     begin
       send("#{uploaded_video.provider}_upload", uploaded_video, video_url)
-      uploaded_video.get_thumbnails
+      UploadedVideoThumbnailWorker.perform_async(uploaded_video_id)
     rescue Exception => e
       msg = "Error during #{uploaded_video.provider} upload (#{e.class.to_s}). #{e.message}"
       card = processing_card_for_video_id(uploaded_video.video.id)
@@ -25,11 +25,11 @@ class VideoUploadWorker
     video = uploaded_video.video
     # TODO: raise if no current access_token
     client = new_google_client
-    response = client.video_upload(open(url), 
-      title: video.provider_title,
-      description: video.provider_description(:youtube), 
-      keywords: video.tags_array,
-      list: "denied")
+    response = client.video_upload(open(url),
+                                   title: video.provider_title,
+                                   description: video.provider_description(:youtube),
+                                   keywords: video.tags_array,
+                                   list: "denied")
     uploaded_video.update_attribute(:provider_id, response.unique_id)
   end
 

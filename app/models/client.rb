@@ -95,11 +95,16 @@ class Client < ActiveRecord::Base
 
   def mark_sign_in(remote_ip)
     return if same_session?(DateTime.now, remote_ip)
-    sign_in_count = sign_in_count.blank? ? 1 : sign_in_count.to_i + 1
-    last_sign_in_at = current_sign_in_at
-    current_sign_in_at = DateTime.now
-    last_sign_in_ip = current_sign_in_ip
-    current_sign_in_ip = remote_ip
+    self.sign_in_count = sign_in_count.blank? ? 1 : sign_in_count.to_i + 1
+    self.last_sign_in_at = current_sign_in_at
+    self.current_sign_in_at = DateTime.now
+    self.last_sign_in_ip = current_sign_in_ip
+    self.current_sign_in_ip = remote_ip
+    self.save
+  end
+
+  def has_video_for_job(external_job_id)
+    !self.videos.where(external_job_id: external_job_id).empty?
   end
 
   private

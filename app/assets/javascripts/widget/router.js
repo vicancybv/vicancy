@@ -34,13 +34,14 @@ App.Flashy = Ember.Mixin.create({
 });
 
 App.WidgetRoute = Ember.Route.extend(App.Flashy, {
-    queryParams: ['api_token', 'client_id', 'client_name', 'client_email', 'language'],
+    queryParams: ['api_token', 'client_id', 'client_name', 'client_email', 'language', 'job_id'],
     model: function (params) {
         if (App.get('apiToken') == null) App.set('apiToken', params.queryParams.api_token);
         if (App.get('clientId') == null) App.set('clientId', params.queryParams.client_id);
         if (App.get('clientName') == null) App.set('clientName', params.queryParams.client_name);
         if (App.get('clientEmail') == null) App.set('clientEmail', params.queryParams.client_email);
         if (App.get('language') == null) App.set('language', params.queryParams.language);
+        if (App.get('jobId') == null) App.set('jobId', params.queryParams.job_id);
 
         if (App.get('clientToken') == null) {
             return Ember.$.post("/api/v1/client/auth", { "api_token": App.get('apiToken'),
@@ -125,7 +126,15 @@ App.VideosRoute = Ember.Route.extend({
     },
     afterModel: function (videos, transition) {
         if (videos.get('length') > 0) {
-            this.transitionTo('video', videos.get('firstObject'));
+            var video = null;
+            if (App.get('jobId') == null) {
+                video = videos.get('firstObject');
+            } else {
+                video = videos.filter(function(item){ return (item.get('job_id') == App.get('jobId'))}).get('firstObject');
+                if (!(video)) { video = videos.get('firstObject'); }
+                console.log(video);
+            }
+            this.transitionTo('video', video);
         } else {
             if (App.get('requests')) {
                 this.transitionTo('request_processing');

@@ -39,6 +39,16 @@
                   <% if @video_request.external_job_id.present? %>
                         <p>Job ID: <%= @video_request.external_job_id %></p>
                   <% end %>
+                  <% if @video_request.client_logo.present? %>
+                      <p>Client Logo: <%= @video_request.client_logo %></p>
+                  <% end %>
+                  <% if @video_request.job_title.present? %>
+                      <p>Job Title: <%= @video_request.job_title %></p>
+                  <% end %>
+                  <% if @video_request.job_body.present? %>
+                      <p>Job Body:</p>
+                      <pre style="font-family: Arial, Helvetica, sans-serif;"><%= @video_request.job_body %></pre>
+                  <% end %>
                   <pre style="font-family: Arial, Helvetica, sans-serif;"><%= @video_request.comment %></pre>
                   <% unless @video_request.attachments.blank? %>
                       <br/><br/><strong>Files</strong>

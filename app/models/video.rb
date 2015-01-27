@@ -30,23 +30,25 @@ class Video < ActiveRecord::Base
   include AASM
   extend TrelloBoard
 
-  belongs_to  :user
-  belongs_to  :client
+  belongs_to :user
+  belongs_to :client
 
   delegate :name, :to => :user, :prefix => true, :allow_nil => true
   delegate :name, :to => :client, :prefix => true, :allow_nil => true
   delegate :reseller, :to => :client, :allow_nil => true
 
-  has_many  :video_edits, dependent: :destroy
+  has_many :video_edits, dependent: :destroy
   attr_accessible :company, :job_ad_url, :job_title, :language, :summary, :title, :user_id, :client_id
   attr_accessible :youtube_id, :vimeo_id
   attr_accessible :job_url, :short_job_url
-  attr_accessible :external_job_id
+  attr_accessible :external_job_id, :aasm_state
 
   attr_accessor :edits
   validates :language, presence: true
   default_scope { order("created_at DESC") }
   has_many :uploaded_videos
+
+  has_attachment :thumbnail
 
   aasm do
     state :processing, initial: true
@@ -75,16 +77,74 @@ class Video < ActiveRecord::Base
   end
 
   def provider_id(provider)
-    self.uploaded_videos.select{|u| u.provider == provider.to_s}.first.try(:provider_id)
+    self.uploaded_videos.select { |u| u.provider == provider.to_s }.first.try(:provider_id)
   end
 
-  def thumb(provider, size = :small)
-    provider = self.uploaded_videos.select{|u| u.provider == provider.to_s}.first
-    provider.try(:"thumb_#{size}")
-  end
+  # def thumb(provider, size = :small)
+  #   provider = self.uploaded_videos.select { |u| u.provider == provider.to_s }.first
+  #   provider.try(:"thumb_#{size}")
+  # end
+  #
+  # def thumb_small
+  #   thumb(:vimeo, :small) || thumb(:youtube, :small)
+  # end
 
   def thumb_small
-    thumb(:vimeo, :small) || thumb(:youtube, :small)
+    if self.thumbnail.present?
+      self.thumbnail_url(size: '150x150', crop: :fit)
+    else
+      nil
+    end
+  end
+
+  def wistia
+    self.uploaded_videos.select { |u| u.provider == 'wistia' }.first
+  end
+
+  def vimeo
+    self.uploaded_videos.select { |u| u.provider == 'vimeo' }.first
+  end
+
+  def youtube
+    self.uploaded_videos.select { |u| u.provider == 'youtube' }.first
+  end
+
+  def thumbnail_cloudinary_id
+    prefix = Settings.production? ? '' : "#{Settings.env}/"
+    "#{prefix}videos/#{self.id}/thumbnail"
+  end
+
+  def thumbnail_url(options = {})
+    if self.thumbnail.present?
+      Cloudinary::Utils.cloudinary_url(self.thumbnail.path, options)
+    else
+      nil
+    end
+  end
+
+  def regenerate_main_thumbnail_from_uploaded_video(uploaded_video)
+    self.send(:thumbnail=, nil)
+    self.send(:thumbnail_url=, uploaded_video.thumbnail_url, :public_id => self.thumbnail_cloudinary_id)
+  end
+
+  def regenerate_main_thumbnail
+    # thumbnail priority: wistia, vimeo, youtube
+    [self.wistia, self.vimeo, self.youtube].each do |uploaded_video|
+      if uploaded_video.present? && uploaded_video.thumbnail.present?
+        regenerate_main_thumbnail_from_uploaded_video(uploaded_video)
+        break
+      end
+    end
+  end
+
+  def rebuild_all_thumbnails
+    self.uploaded_videos.each do |uploaded_video|
+      begin
+        Retryable.retryable { uploaded_video.build_thumbnail }
+      rescue => e
+        Rollbar.report_message("Getting #{uploaded_video.provider} thumbnail failed: #{e.message} (#{e.class.to_s})", 'info')
+      end
+    end
   end
 
   def video_url
@@ -182,7 +242,7 @@ class Video < ActiveRecord::Base
   end
 
   def tags_array
-    tags.split(",").map{|t| t.strip}
+    tags.split(",").map { |t| t.strip }
   end
 
 end

@@ -78,6 +78,12 @@ unless defined? Settings
       end
     end
 
+    #### Cloudinary
+    #
+    # def self.cloudinary_url
+    #
+    # end
+
     #### Environment
 
     def self.env

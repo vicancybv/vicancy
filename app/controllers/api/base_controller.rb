@@ -39,16 +39,20 @@ class API::BaseController < ActionController::Base
 
   def rescue_error(e, status = 500)
     Rollbar.report_exception(e, rollbar_request_data, rollbar_person_data)
-    
+
     logger.error e.inspect
     logger.error e.backtrace.join("\n")
 
+    @error = e
     response = {
         status: 'error',
         error_text: "#{e.message}"
     }
 
-    render json: response, status: status
+    respond_to do |format|
+      format.html { render 'api/v1/error', layout: 'api_error', status: status }
+      format.json { render json: response, status: status  }
+    end
   end
 
 end

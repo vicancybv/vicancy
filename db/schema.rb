@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150108102121) do
+ActiveRecord::Schema.define(:version => 20150127091035) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -45,6 +45,22 @@ ActiveRecord::Schema.define(:version => 20150108102121) do
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
+
+  create_table "attachinary_files", :force => true do |t|
+    t.integer  "attachinariable_id"
+    t.string   "attachinariable_type"
+    t.string   "scope"
+    t.string   "public_id"
+    t.string   "version"
+    t.integer  "width"
+    t.integer  "height"
+    t.string   "format"
+    t.string   "resource_type"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  add_index "attachinary_files", ["attachinariable_type", "attachinariable_id", "scope"], :name => "by_scoped_parent"
 
   create_table "attachments", :force => true do |t|
     t.integer  "video_request_id"
@@ -119,11 +135,12 @@ ActiveRecord::Schema.define(:version => 20150108102121) do
     t.integer  "video_id"
     t.string   "aasm_state"
     t.string   "provider_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "thumb_small"
     t.string   "thumb_medium"
     t.string   "thumb_large"
+    t.string   "thumbnail_source"
   end
 
   add_index "uploaded_videos", ["video_id"], :name => "index_uploaded_videos_on_video_id"
@@ -158,6 +175,9 @@ ActiveRecord::Schema.define(:version => 20150108102121) do
     t.datetime "updated_at",      :null => false
     t.integer  "client_id"
     t.string   "external_job_id"
+    t.string   "client_logo"
+    t.string   "job_title"
+    t.text     "job_body"
   end
 
   add_index "video_requests", ["client_id"], :name => "index_video_requests_on_client_id"

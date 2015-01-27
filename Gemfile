@@ -27,6 +27,8 @@ gem 'coderay'
 gem 'bitly'
 gem 'retryable'
 
+gem 'cloudinary'
+gem 'attachinary'
 
 # support sidekiq monitoring
 gem 'sinatra', '>= 1.3.0', :require => nil

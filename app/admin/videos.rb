@@ -1,7 +1,10 @@
 ActiveAdmin.register Video do
 
   action_item only: [:show, :edit] do |video|
-    link_to('New Uploaded Video for this Video', new_admin_uploaded_video_url('uploaded_video[video_id]' => params[:id]))
+    link_to('New Uploaded Video', new_admin_uploaded_video_url('uploaded_video[video_id]' => params[:id]))
+  end
+  action_item only: [:show, :edit] do |video|
+    link_to('Rebuild All Thumbnails', rebuild_thumbnails_admin_video_url)
   end
 
   form do |f|
@@ -35,9 +38,22 @@ ActiveAdmin.register Video do
       f.input :job_ad_url
     end
     f.actions
+  end
 
-
-
+  sidebar "Thumbnail", only: :show do
+    if resource.thumbnail.blank?
+      span 'No thumbnail. Rebuild it by clicking on button above.'
+    else
+      span do
+        img src: resource.thumbnail_url({ size: '200x200', crop: :fit })
+      end
+      br
+      span "Size: #{resource.thumbnail.width}x#{resource.thumbnail.height}"
+      br
+      span "Format: #{resource.thumbnail.format}"
+      br
+      link_to 'Thumbnail url', resource.thumbnail_url
+    end
   end
 
   show do |video|
@@ -84,6 +100,9 @@ ActiveAdmin.register Video do
 
   index do
     selectable_column
+    column '' do |video|
+      img src: video.thumbnail_url({size: '50x50', crop: :fit})
+    end
     column :reseller
     column :client
     column :user
@@ -95,4 +114,8 @@ ActiveAdmin.register Video do
     actions    
   end
 
+  member_action :rebuild_thumbnails, method: :get do
+    resource.rebuild_all_thumbnails
+    redirect_to resource_path, notice: "Thumbnails rebuilt!"
+  end
 end
