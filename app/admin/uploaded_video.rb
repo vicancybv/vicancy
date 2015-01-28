@@ -26,7 +26,7 @@ ActiveAdmin.register UploadedVideo do
     link_to('Rebuild Thumbnail', rebuild_thumbnail_admin_uploaded_video_url)
   end
 
-  sidebar "Thumbnail", only: :show do
+  sidebar "Thumbnail", only: [:show, :edit] do
     if uploaded_video.thumbnail.blank?
       span 'No thumbnail. Rebuild it by clicking on button above.'
     else

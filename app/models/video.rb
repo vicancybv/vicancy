@@ -25,6 +25,7 @@
 
 require 'uri'
 require 'bitly'
+require 'erb'
 
 class Video < ActiveRecord::Base
   include AASM
@@ -49,6 +50,7 @@ class Video < ActiveRecord::Base
   has_many :uploaded_videos
 
   has_attachment :thumbnail
+  has_attachment :public_thumbnail
 
   aasm do
     state :processing, initial: true
@@ -114,6 +116,18 @@ class Video < ActiveRecord::Base
     "#{prefix}videos/#{self.id}/thumbnail"
   end
 
+
+  def public_thumbnail_cloudinary_id
+    prefix = Settings.production? ? '' : "#{Settings.env}/"
+    return nil if self.external_job_id.blank?
+    client = self.client
+    return nil if client.blank?
+    return nil if (client.external_id.starts_with? '?autogen?') || (client.external_id.starts_with? '?unknown?')
+    reseller = client.reseller
+    return nil if reseller.blank?
+    "#{prefix}public/#{reseller.public_slug}/client/#{client.external_id}/job/#{self.external_job_id}/thumbnail"
+  end
+
   def thumbnail_url(options = {})
     if self.thumbnail.present?
       Cloudinary::Utils.cloudinary_url(self.thumbnail.path, options)
@@ -122,9 +136,21 @@ class Video < ActiveRecord::Base
     end
   end
 
+  def public_thumbnail_url(options = {})
+    if self.public_thumbnail.present?
+      Cloudinary::Utils.cloudinary_url(self.public_thumbnail.path, options)
+    else
+      nil
+    end
+  end
+
   def regenerate_main_thumbnail_from_uploaded_video(uploaded_video)
     self.send(:thumbnail=, nil)
     self.send(:thumbnail_url=, uploaded_video.thumbnail_url, :public_id => self.thumbnail_cloudinary_id)
+    if public_thumbnail_cloudinary_id
+      self.send(:public_thumbnail=, nil)
+      self.send(:public_thumbnail_url=, uploaded_video.thumbnail_url, :public_id => self.public_thumbnail_cloudinary_id)
+    end
   end
 
   def regenerate_main_thumbnail

@@ -40,7 +40,7 @@ ActiveAdmin.register Video do
     f.actions
   end
 
-  sidebar "Thumbnail", only: :show do
+  sidebar "Thumbnail", only: [:show, :edit] do
     if resource.thumbnail.blank?
       span 'No thumbnail. Rebuild it by clicking on button above.'
     else
@@ -51,8 +51,8 @@ ActiveAdmin.register Video do
       span "Size: #{resource.thumbnail.width}x#{resource.thumbnail.height}"
       br
       span "Format: #{resource.thumbnail.format}"
-      br
-      link_to 'Thumbnail url', resource.thumbnail_url
+      #br
+      #link_to 'Thumbnail url', resource.thumbnail_url
     end
   end
 
@@ -72,6 +72,12 @@ ActiveAdmin.register Video do
       row :short_job_url
       row :company
       row :aasm_state
+      row 'Thumbnail' do |video|
+        video.thumbnail.present? ? link_to(video.thumbnail_url, video.thumbnail_url) : nil
+      end
+      row 'Public thumbnail' do |video|
+        video.public_thumbnail.present? ? link_to(video.public_thumbnail_url, video.public_thumbnail_url) : nil
+      end
     end
 
 
