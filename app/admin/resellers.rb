@@ -8,6 +8,7 @@ ActiveAdmin.register Reseller do
     f.inputs 'Reseller' do
       f.input :name, label: "Reseller name"
       f.input :slug, hint: "e.g. aw6g39vk. Created automatically if left blank."
+      f.input :public_slug, hint: "Created automatically if left blank."
       f.input :token, hint: "Created automatically if left blank."
       f.input :secret, hint: "Created automatically if left blank."
       f.input :language,
@@ -24,6 +25,7 @@ ActiveAdmin.register Reseller do
     attributes_table do
       row :id
       row :name
+      row :public_slug
       row :token
       row :secret
       row :language

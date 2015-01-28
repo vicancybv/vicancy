@@ -70,6 +70,43 @@ class Client < ActiveRecord::Base
     end
   end
 
+  def self.fetch(reseller, attrs)
+    raise 'Need to provide name' if attrs[:name].blank?
+    raise 'Need to provide external_id' if attrs[:external_id].blank?
+    client = reseller.clients.find_by_external_id(attrs[:external_id])
+    if client.present?
+      client.name = attrs[:name]
+      client.email = attrs[:email]
+      client.language = attrs[:language]
+      client.save!
+    else
+      Retryable.retryable(tries: 3, on: ActiveRecord::RecordNotUnique) do
+        client = Client.create!(
+            name: attrs[:name],
+            email: attrs[:email],
+            language: attrs[:language],
+            external_id: attrs[:external_id],
+            reseller_id: reseller.id
+        )
+      end
+    end
+    client
+  end
+
+  def mark_sign_in(remote_ip)
+    return if same_session?(DateTime.now, remote_ip)
+    self.sign_in_count = sign_in_count.blank? ? 1 : sign_in_count.to_i + 1
+    self.last_sign_in_at = current_sign_in_at
+    self.current_sign_in_at = DateTime.now
+    self.last_sign_in_ip = current_sign_in_ip
+    self.current_sign_in_ip = remote_ip
+    self.save
+  end
+
+  def has_video_for_job(external_job_id)
+    !self.videos.where(external_job_id: external_job_id).empty?
+  end
+
   private
 
   def generate_slug

@@ -1,0 +1,35 @@
+<form method="post">
+  <% @p.each do |key, value| %>
+      <%= hidden_field_tag(key, value) %>
+  <% end %>
+  <input type="hidden" name="create" value="false">
+  <div class="text-center s1_head" style="margin-top: 70px;">
+    Please confirm your order
+  </div>
+  <div class="text-center" style="font-size: 18px; margin-top: 20px">
+    Order vicancy for the following job:
+    <br>
+    <% if @p[:job_title].present? %>
+        <span style="font-size: 25px"><%= @p[:job_title] %></span>
+    <% else %>
+      <a href="<%= @p[:job_url] %>"><%= @p[:job_url] %></a>
+    <% end %>
+    </div>
+  </div>
+  <div class="hidden text-center s1_head" style="font-size: 25px;">
+    We will contact you in 24 hours
+  </div>
+  <div class="text-center" style="margin-top:30px">
+    <button type="submit" class="btn btn-primary btn-lg">Order Vicancy</button>
+  </div>
+</form>
+
+<% content_for :bottom_js do %>
+    <script type="text/javascript" charset="utf-8">
+        $('form').submit(function () {
+            $('button[type=submit]').addClass('disabled');
+            $('button[type=submit]').attr('disabled', true);
+            $('button[type=submit]').text('Please wait...')
+        });
+    </script>
+<% end %>

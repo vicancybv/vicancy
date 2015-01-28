@@ -20,8 +20,12 @@ class API::V1::Client::VideosController < API::BaseController
     AdminMailer.delete_video_email(@video, request.ip).deliver
   end
 
-  def video_request
-    @video_request = VideoRequest.new(params.require(:request).permit(:link, :comment))
+  def add
+    @video_request = VideoRequest.new({
+                                          link: add_params.require(:link),
+                                          comment: add_params[:comment],
+                                          external_job_id: add_params[:job_id]
+                                      })
     @video_request.client_id = @client.id
     @video_request.user_ip = request.remote_ip
     @video_request.save!
@@ -35,4 +39,7 @@ class API::V1::Client::VideosController < API::BaseController
     raise ActiveRecord::RecordNotFound unless @video
   end
 
+  def add_params
+    params.require(:request).permit(:link, :comment, :job_id)
+  end
 end

@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-describe Retryable do
+describe VicancyRetryable do
   let(:helper) { Object.new }
   let(:runner) { Object.new }
   before(:each) do
     Rollbar.stub(:report_message)
-    helper.extend Retryable
+    helper.extend VicancyRetryable
     def runner.run(should_raise=nil)
       if should_raise
         raise 'Exception'

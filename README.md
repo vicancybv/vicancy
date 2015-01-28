@@ -43,4 +43,4 @@ Update video thumbnails on heroku
 
 Run the following to update thumbs on staging server:
 
-    heroku run rake thumbs:get --app stagingvicancy
+    heroku run rake thumbs:repair --app stagingvicancy

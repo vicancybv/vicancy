@@ -4,6 +4,10 @@ class WidgetController < ApplicationController
   def show
   end
 
+  def test_request_vicancy
+    render layout: false
+  end
+
   def embed
     render layout: false
   end

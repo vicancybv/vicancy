@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= stylesheet_link_tag 'reseller-api' %>
+  <%= csrf_meta_tags %>
+  <!--[if lt IE 9]><script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script><script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+
+</head>
+<body class="gray-background" style="background-color: white">
+
+
+<div class="container-fluid ra-landing-container">
+  <section class="s1">
+    <div class="row">
+      <div class="col-xs-12">
+        <div>
+          <div class="text-center">
+            <a href="http://www.vicancy.com" target="_blank">
+              <img src="<%= image_path('widget/landing/logo_vicancy_text.png') %>" class="s1_logo">
+            </a>
+          </div>
+          <div class="text-center">
+            <p class="s1_logo_subtext">Leader in visual job marketing solutions</p>
+          </div>
+
+          <%= yield %>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<%= javascript_include_tag 'reseller-api' %>
+
+<%= yield :bottom_js %>
+
+<script type="text/javascript">
+</script>
+</body>
+</html>

@@ -63,7 +63,7 @@ describe '/api/v1/client' do
       end
 
       it 'should not update slug field' do
-        params = { api_token: api_token, client: { id: client.external_id, slug: 'new slug' } }
+        params[:client][:slug] = 'new slug'
         expect {
           post_json '/api/v1/client/auth', params
           client.reload
@@ -71,7 +71,7 @@ describe '/api/v1/client' do
       end
 
       it 'should not update token field' do
-        params = { api_token: api_token, client: { id: client.external_id, token: 'new token' } }
+        params[:client][:token] = 'new token'
         expect {
           post_json '/api/v1/client/auth', params
           client.reload

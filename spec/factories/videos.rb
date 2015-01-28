@@ -2,24 +2,25 @@
 #
 # Table name: videos
 #
-#  id            :integer          not null, primary key
-#  youtube_id    :string(255)
-#  vimeo_id      :string(255)
-#  job_ad_url    :string(255)
-#  job_title     :string(255)
-#  company       :string(255)
-#  language      :string(255)
-#  title         :string(255)
-#  summary       :text
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
-#  user_id       :integer
-#  place         :string(255)
-#  tags          :string(255)
-#  aasm_state    :string(255)
-#  client_id     :integer          indexed
-#  job_url       :text
-#  short_job_url :text
+#  id              :integer          not null, primary key
+#  youtube_id      :string(255)
+#  vimeo_id        :string(255)
+#  job_ad_url      :string(255)
+#  job_title       :string(255)
+#  company         :string(255)
+#  language        :string(255)
+#  title           :string(255)
+#  summary         :text
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  user_id         :integer
+#  place           :string(255)
+#  tags            :string(255)
+#  aasm_state      :string(255)
+#  client_id       :integer          indexed
+#  job_url         :text
+#  short_job_url   :text
+#  external_job_id :string(255)
 #
 
 #  id         :integer          not null, primary key

@@ -28,8 +28,38 @@ resource 'Client API' do
 
       do_request
 
+      status.should == 200
+    end
+  end
+
+  post '/api/v1/client/videos/request' do
+    parameter :api_token, 'Reseller\'s unique API Token', :required => true
+    parameter :client_token, 'Client\'s Auth Token' , :required => true
+    parameter :link, 'Link to job post to create video from', :required => true
+    parameter :comment, 'Client\'s comment on video creation'
+    parameter :job_id, 'Job ID in external system (optional)'
+
+    let(:reseller) { create(:reseller, token: 'r5CvvP2hP9fIPRqUmcGzSw') }
+    let(:c) { reseller.clients.create!(attributes_for(:client, external_id: '3132', name: 'Deloitte', email: 'deloitte@example.com', language: 'en', token: '_FueOIO5cR7XKtfgjcb6pA')) }
+    let(:raw_post) {
+      ({
+          api_token: reseller.token,
+          client_token: c.token,
+          request: {
+              link: 'http://jobs.mrwork.nl/RB6',
+              job_id: '123456'
+          }
+      }).to_json
+    }
+
+    example 'New video request' do
+      explanation 'Request for new video'
+
+      do_request
+
       puts json
       status.should == 200
     end
   end
+
 end

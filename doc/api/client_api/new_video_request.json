@@ -1,0 +1,54 @@
+{
+  "resource": "Client API",
+  "http_method": "POST",
+  "route": "/api/v1/client/videos/request",
+  "description": "New video request",
+  "explanation": "Request for new video",
+  "parameters": [
+    {
+      "required": true,
+      "name": "api_token",
+      "description": "Reseller's unique API Token"
+    },
+    {
+      "required": true,
+      "name": "client_token",
+      "description": "Client's Auth Token"
+    },
+    {
+      "required": true,
+      "name": "link",
+      "description": "Link to job post to create video from"
+    },
+    {
+      "name": "comment",
+      "description": "Client's comment on video creation"
+    },
+    {
+      "name": "job_id",
+      "description": "Job ID in external system (optional)"
+    }
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/api/v1/client/videos/request",
+      "request_body": "{\"api_token\":\"r5CvvP2hP9fIPRqUmcGzSw\",\"client_token\":\"_FueOIO5cR7XKtfgjcb6pA\",\"request\":{\"link\":\"http://jobs.mrwork.nl/RB6\",\"job_id\":\"123456\"}}",
+      "request_headers": {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\"status\":\"ok\"}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

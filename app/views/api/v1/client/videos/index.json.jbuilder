@@ -2,6 +2,7 @@ json.status 'ok'
 json.requests @requests
 json.videos @videos do |video|
   json.id video.id
+  json.job_id video.external_job_id
   json.job_title video.job_title
   json.company video.company
   json.youtube_id video.youtube_id

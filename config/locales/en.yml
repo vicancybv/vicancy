@@ -13,6 +13,10 @@ en:
       client:
         token: Auth Token
         slug: Address
+      video_request:
+        external_job_id: Job ID
+      video:
+        external_job_id: Job ID
   layouts:
     resellers:
       clients: Clients

@@ -9,26 +9,77 @@ require Rails.root.join('app','models','settings') # needed for Heroku since it 
 
 var Vicancy = {
     open: function (p) {
-        window.vicancy.createDiv(p);
-    },
-    createDiv: function (p) {
-<%#
-        var apiToken = window.vicancy.trim(p.apiToken);
-        var clientId = window.vicancy.trim(p.clientId);
-        var clientName = window.vicancy.trim(p.clientName);
-        var clientEmail = window.vicancy.trim(p.clientEmail);
-        var clientLanguage = window.vicancy.trim(p.clientLanguage);
-%>
         var apiToken = p.apiToken;
         var clientId = p.clientId;
         var clientName = p.clientName;
         var clientEmail = p.clientEmail;
         var clientLanguage = p.clientLanguage;
+        var neverClose = (p.neverClose == true);
 
+        var src = '<%= Settings.widget_vicancy_server %>/widget#/';
+        src = src + '?api_token=' + encodeURIComponent(apiToken);
+        src = src + '&client_id=' + encodeURIComponent(clientId);
+        src = src + '&client_name=' + encodeURIComponent(clientName);
+        if (clientEmail) src = src + '&client_email=' + encodeURIComponent(clientEmail);
+        if (clientLanguage) src = src + '&language=' + encodeURIComponent(clientLanguage);
+
+        window.vicancy.createDiv(src, neverClose);
+    },
+    addFieldToForm: function(form, name, value) {
+        if ((value == undefined) || (value == '')) { return false; }
+        var i = document.createElement("input");
+        i.type = 'text';
+        i.name = name;
+        i.value = value;
+        form.appendChild(i);
+    },
+    order_video: function (p) {
+        var apiToken = p.apiToken;
+        var clientId = p.clientId;
+        var clientName = p.clientName;
+        var clientEmail = p.clientEmail;
+        var clientLanguage = p.clientLanguage;
+        var clientLogo = p.clientLogo;
+        var jobId = p.jobId;
+        var jobUrl = p.jobUrl;
+        var jobTitle = p.jobTitle;
+        var jobBody = p.jobBody;
+        var neverClose = (p.neverClose == true);
+
+        var src = '<%= Settings.widget_vicancy_server %>/api/v1/reseller/new_video_request';
+
+        var form = document.createElement("form");
+        form.method = 'post';
+        form.target = 'com-vicancy-widget-overlay-frame';
+        form.action = src;
+        form.style.cssText = 'display: none';
+
+        window.vicancy.addFieldToForm(form, 'api_token', apiToken);
+        window.vicancy.addFieldToForm(form, 'client_id', clientId);
+        window.vicancy.addFieldToForm(form, 'client_name', clientName);
+        window.vicancy.addFieldToForm(form, 'client_email', clientEmail);
+        window.vicancy.addFieldToForm(form, 'language', clientLanguage);
+        window.vicancy.addFieldToForm(form, 'client_logo', clientLogo);
+        window.vicancy.addFieldToForm(form, 'job_id', jobId);
+        window.vicancy.addFieldToForm(form, 'job_url', jobUrl);
+        window.vicancy.addFieldToForm(form, 'job_title', jobTitle);
+        window.vicancy.addFieldToForm(form, 'job_body', jobBody);
+
+        var s = document.createElement("input");
+        s.type = 'submit';
+        s.value = "Submit";
+        form.appendChild(s);
+
+        window.vicancy.createDiv('', neverClose);
+        document.body.appendChild(form);
+        form.submit();
+
+    },
+    createDiv: function (src, neverClose) {
         var overlay = document.createElement("div");
         overlay.id = "com-vicancy-widget-overlay";
         overlay.style.cssText = 'position: fixed; left: 0px; top: 0px; width:100%; height:100%; text-align:center; background-color: gray; background-color: rgba(0,0,0,0.3); z-index: 1000;'
-        if ((p.neverClose == true) == false) {
+        if (neverClose == false) {
             overlay.onclick = (function () {
                 var overlay = document.getElementById('com-vicancy-widget-overlay');
                 document.body.removeChild(overlay);
@@ -51,13 +102,8 @@ var Vicancy = {
         spin.src = "data:image/svg+xml;base64,<%= Base64.strict_encode64(IO.read(Rails.root.join('app','assets','images','widget','spinning-loader.svg'))) %>";
         inner_box.appendChild(spin);
         var frame = document.createElement("iframe");
-        var src = '<%= Settings.widget_vicancy_server %>/widget#/';
-        src = src + '?api_token=' + encodeURIComponent(apiToken);
-        src = src + '&client_id=' + encodeURIComponent(clientId);
-        src = src + '&client_name=' + encodeURIComponent(clientName);
-        if (clientEmail) src = src + '&client_email=' + encodeURIComponent(clientEmail);
-        if (clientLanguage) src = src + '&language=' + encodeURIComponent(clientLanguage);
         frame.src = src;
+        frame.name = 'com-vicancy-widget-overlay-frame'
         frame.frameBorder = 0;
         frame.marginHeight = 0;
         frame.marginWidth = 0;

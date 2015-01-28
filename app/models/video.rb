@@ -2,49 +2,55 @@
 #
 # Table name: videos
 #
-#  id            :integer          not null, primary key
-#  youtube_id    :string(255)
-#  vimeo_id      :string(255)
-#  job_ad_url    :string(255)
-#  job_title     :string(255)
-#  company       :string(255)
-#  language      :string(255)
-#  title         :string(255)
-#  summary       :text
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
-#  user_id       :integer
-#  place         :string(255)
-#  tags          :string(255)
-#  aasm_state    :string(255)
-#  client_id     :integer          indexed
-#  job_url       :text
-#  short_job_url :text
+#  id              :integer          not null, primary key
+#  youtube_id      :string(255)
+#  vimeo_id        :string(255)
+#  job_ad_url      :string(255)
+#  job_title       :string(255)
+#  company         :string(255)
+#  language        :string(255)
+#  title           :string(255)
+#  summary         :text
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#  user_id         :integer
+#  place           :string(255)
+#  tags            :string(255)
+#  aasm_state      :string(255)
+#  client_id       :integer          indexed
+#  job_url         :text
+#  short_job_url   :text
+#  external_job_id :string(255)
 #
 
 require 'uri'
 require 'bitly'
+require 'erb'
 
 class Video < ActiveRecord::Base
   include AASM
   extend TrelloBoard
 
-  belongs_to  :user
-  belongs_to  :client
+  belongs_to :user
+  belongs_to :client
 
   delegate :name, :to => :user, :prefix => true, :allow_nil => true
   delegate :name, :to => :client, :prefix => true, :allow_nil => true
   delegate :reseller, :to => :client, :allow_nil => true
 
-  has_many  :video_edits, dependent: :destroy
+  has_many :video_edits, dependent: :destroy
   attr_accessible :company, :job_ad_url, :job_title, :language, :summary, :title, :user_id, :client_id
   attr_accessible :youtube_id, :vimeo_id
   attr_accessible :job_url, :short_job_url
+  attr_accessible :external_job_id, :aasm_state
 
   attr_accessor :edits
   validates :language, presence: true
   default_scope { order("created_at DESC") }
   has_many :uploaded_videos
+
+  has_attachment :thumbnail
+  has_attachment :public_thumbnail
 
   aasm do
     state :processing, initial: true
@@ -73,16 +79,98 @@ class Video < ActiveRecord::Base
   end
 
   def provider_id(provider)
-    self.uploaded_videos.select{|u| u.provider == provider.to_s}.first.try(:provider_id)
+    self.uploaded_videos.select { |u| u.provider == provider.to_s }.first.try(:provider_id)
   end
 
-  def thumb(provider, size = :small)
-    provider = self.uploaded_videos.select{|u| u.provider == provider.to_s}.first
-    provider.try(:"thumb_#{size}")
-  end
+  # def thumb(provider, size = :small)
+  #   provider = self.uploaded_videos.select { |u| u.provider == provider.to_s }.first
+  #   provider.try(:"thumb_#{size}")
+  # end
+  #
+  # def thumb_small
+  #   thumb(:vimeo, :small) || thumb(:youtube, :small)
+  # end
 
   def thumb_small
-    thumb(:vimeo, :small) || thumb(:youtube, :small)
+    if self.thumbnail.present?
+      self.thumbnail_url(size: '150x150', crop: :fit)
+    else
+      nil
+    end
+  end
+
+  def wistia
+    self.uploaded_videos.select { |u| u.provider == 'wistia' }.first
+  end
+
+  def vimeo
+    self.uploaded_videos.select { |u| u.provider == 'vimeo' }.first
+  end
+
+  def youtube
+    self.uploaded_videos.select { |u| u.provider == 'youtube' }.first
+  end
+
+  def thumbnail_cloudinary_id
+    prefix = Settings.production? ? '' : "#{Settings.env}/"
+    "#{prefix}videos/#{self.id}/thumbnail"
+  end
+
+
+  def public_thumbnail_cloudinary_id
+    prefix = Settings.production? ? '' : "#{Settings.env}/"
+    return nil if self.external_job_id.blank?
+    client = self.client
+    return nil if client.blank?
+    return nil if (client.external_id.starts_with? '?autogen?') || (client.external_id.starts_with? '?unknown?')
+    reseller = client.reseller
+    return nil if reseller.blank?
+    "#{prefix}public/#{reseller.public_slug}/client/#{client.external_id}/job/#{self.external_job_id}/thumbnail"
+  end
+
+  def thumbnail_url(options = {})
+    if self.thumbnail.present?
+      Cloudinary::Utils.cloudinary_url(self.thumbnail.path, options)
+    else
+      nil
+    end
+  end
+
+  def public_thumbnail_url(options = {})
+    if self.public_thumbnail.present?
+      Cloudinary::Utils.cloudinary_url(self.public_thumbnail.path, options)
+    else
+      nil
+    end
+  end
+
+  def regenerate_main_thumbnail_from_uploaded_video(uploaded_video)
+    self.send(:thumbnail=, nil)
+    self.send(:thumbnail_url=, uploaded_video.thumbnail_url, :public_id => self.thumbnail_cloudinary_id)
+    if public_thumbnail_cloudinary_id
+      self.send(:public_thumbnail=, nil)
+      self.send(:public_thumbnail_url=, uploaded_video.thumbnail_url, :public_id => self.public_thumbnail_cloudinary_id)
+    end
+  end
+
+  def regenerate_main_thumbnail
+    # thumbnail priority: wistia, vimeo, youtube
+    [self.wistia, self.vimeo, self.youtube].each do |uploaded_video|
+      if uploaded_video.present? && uploaded_video.thumbnail.present?
+        regenerate_main_thumbnail_from_uploaded_video(uploaded_video)
+        break
+      end
+    end
+  end
+
+  def rebuild_all_thumbnails
+    self.uploaded_videos.each do |uploaded_video|
+      begin
+        Retryable.retryable { uploaded_video.build_thumbnail }
+      rescue => e
+        Rollbar.report_message("Getting #{uploaded_video.provider} thumbnail failed: #{e.message} (#{e.class.to_s})", 'info')
+      end
+    end
   end
 
   def video_url
@@ -150,6 +238,7 @@ class Video < ActiveRecord::Base
     self.language = card_params[:language].try(:downcase).to_s.strip == "en" ? "en" : "nl"
     self.user = User.find_by_slug(card_params[:user].to_s.strip)
     self.client = Client.find_by_slug(card_params[:client].to_s.strip)
+    self.external_job_id = card_params[:job_id].to_s.strip
   end
 
   def update_job_url(url)
@@ -179,7 +268,7 @@ class Video < ActiveRecord::Base
   end
 
   def tags_array
-    tags.split(",").map{|t| t.strip}
+    tags.split(",").map { |t| t.strip }
   end
 
 end

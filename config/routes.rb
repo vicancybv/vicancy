@@ -17,11 +17,13 @@ Vicancy::Application.routes.draw do
           end
         end
         namespace :videos do
-          post 'request', action: :video_request
+          post 'add', action: :add
+          post 'request', action: :add # for old widget support
         end
       end
 
       namespace :reseller, module: 'reseller' do
+        post :new_video_request, :defaults => { :format => :html }
         namespace :videos do
           post 'list'
         end
@@ -31,6 +33,7 @@ Vicancy::Application.routes.draw do
   end
 
   get 'widget' => 'widget#show'
+  get 'widget/test_request_vicancy' => 'widget#test_request_vicancy'
   get 'widget/embed' => 'widget#embed'
   get 'widget/test' => 'widget#test'
 

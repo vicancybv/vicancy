@@ -9,6 +9,21 @@ class SimpleOrdersController < ApplicationController
                             url: data['url'],
                             product: data['product']
                         })
-    redirect_to 'http://www.vicancy.com/thank-you/'
+    url = generate_thank_you_url request.referer
+    redirect_to url
+  end
+
+  def generate_thank_you_url(referer)
+    if referer.blank?
+      'http://www.vicancy.com/thank-you/'
+    else
+      uri = URI(referer)
+      if uri.path.starts_with? '/nl-'
+        uri.path = '/nl-thank-you/'
+      else
+        uri.path = '/thank-you/'
+      end
+      uri.to_s
+    end
   end
 end

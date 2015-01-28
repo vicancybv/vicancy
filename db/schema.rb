@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141203092422) do
+ActiveRecord::Schema.define(:version => 20150128104312) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -45,6 +45,22 @@ ActiveRecord::Schema.define(:version => 20141203092422) do
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
+
+  create_table "attachinary_files", :force => true do |t|
+    t.integer  "attachinariable_id"
+    t.string   "attachinariable_type"
+    t.string   "scope"
+    t.string   "public_id"
+    t.string   "version"
+    t.integer  "width"
+    t.integer  "height"
+    t.string   "format"
+    t.string   "resource_type"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  add_index "attachinary_files", ["attachinariable_type", "attachinariable_id", "scope"], :name => "by_scoped_parent"
 
   create_table "attachments", :force => true do |t|
     t.integer  "video_request_id"
@@ -95,11 +111,13 @@ ActiveRecord::Schema.define(:version => 20141203092422) do
     t.string   "slug"
     t.string   "language"
     t.string   "token"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
     t.string   "secret"
+    t.string   "public_slug"
   end
 
+  add_index "resellers", ["public_slug"], :name => "index_resellers_on_public_slug", :unique => true
   add_index "resellers", ["slug"], :name => "index_resellers_on_slug", :unique => true
   add_index "resellers", ["token"], :name => "index_resellers_on_token", :unique => true
 
@@ -119,11 +137,12 @@ ActiveRecord::Schema.define(:version => 20141203092422) do
     t.integer  "video_id"
     t.string   "aasm_state"
     t.string   "provider_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "thumb_small"
     t.string   "thumb_medium"
     t.string   "thumb_large"
+    t.string   "thumbnail_source"
   end
 
   add_index "uploaded_videos", ["video_id"], :name => "index_uploaded_videos_on_video_id"
@@ -154,9 +173,13 @@ ActiveRecord::Schema.define(:version => 20141203092422) do
     t.string   "user_ip"
     t.string   "link"
     t.text     "comment"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.integer  "client_id"
+    t.string   "external_job_id"
+    t.string   "client_logo"
+    t.string   "job_title"
+    t.text     "job_body"
   end
 
   add_index "video_requests", ["client_id"], :name => "index_video_requests_on_client_id"
@@ -170,8 +193,8 @@ ActiveRecord::Schema.define(:version => 20141203092422) do
     t.string   "language"
     t.string   "title"
     t.text     "summary"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
     t.integer  "user_id"
     t.string   "place"
     t.string   "tags"
@@ -179,6 +202,7 @@ ActiveRecord::Schema.define(:version => 20141203092422) do
     t.integer  "client_id"
     t.text     "job_url"
     t.text     "short_job_url"
+    t.string   "external_job_id"
   end
 
   add_index "videos", ["client_id"], :name => "index_videos_on_client_id"
