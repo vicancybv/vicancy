@@ -1,0 +1,70 @@
+// create closure for this widget/gadget
+(function () {
+
+    // inside this closure we can create vars and functions
+    // that are private and don't polute the global namespace
+
+    // capture the existing jQuery version, if there is one
+    var oldJQ = window.jQuery;
+
+    // embed packed jquery library needed for this widget
+    <%= IO.read(Rails.root.join('vendor','assets','javascripts','embed-api','jquery-1.11.2.min.js')) %>
+
+
+    // create another closure to which we pass "our" version of jQuery
+    (function ($) {
+
+        //////////////////////////////////////////////////////
+        // BEGIN - widget specific code
+
+
+//        $(document).ready(function () {
+//            $('#widgVer').html('The widget uses jQuery ver: ' + $.fn.jquery);
+//        });
+
+        try {
+
+            function initScript() {
+                $('[data-vicancy-mode="embed_video"]').each(function () {
+                    var embed = $(this);
+                    var api_token = embed.data('vicancy-api-token');
+                    var client_id = embed.data('vicancy-client-id');
+                    var job_id = embed.data('vicancy-job-id');
+                    embedVideo(embed, api_token, client_id, job_id);
+                });
+            };
+
+            function embedVideo(element, api_token, client_id, job_id) {
+                if (!(api_token)) throw "data-vicancy-api-token attribute is missing or empty!";
+                if (!(client_id)) throw "data-vicancy-client-id attribute is missing or empty!";
+                if (!(job_id)) throw "data-vicancy-job-id attribute is missing or empty!";
+                var url = '<%= Settings.embed_vicancy_server %>/api/v1/client/videos/embed_code';
+                url = url + '?api_token=' + encodeURIComponent(api_token);
+                url = url + '&client_id=' + encodeURIComponent(client_id);
+                url = url + '&job_id=' + encodeURIComponent(job_id);
+                $.getJSON(url, function (data, status, xhr) {
+                    if (data['status'] != 'ok') return;
+                    console.log(data);
+                    console.log(data['video']['embed_code']);
+                    var embed_code = data['video']['embed_code'];
+                    element.append(embed_code);
+                    //element.html();
+                });
+            };
+
+            initScript();
+        } catch (e) {
+            console.error(e);
+        }
+
+        // END - widget specific code
+        //////////////////////////////////////////////////////
+
+        // respect the environment; give back the $ and reset the
+        // global jQuery object
+        jQuery.noConflict();
+        if (oldJQ) window.jQuery = oldJQ;
+
+    })(jQuery); // <-- pass in the jQuery that we embedded above
+
+})();

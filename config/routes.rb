@@ -17,6 +17,7 @@ Vicancy::Application.routes.draw do
           end
         end
         namespace :videos do
+          get 'embed_code'
           post 'add', action: :add
           post 'request', action: :add # for old widget support
         end

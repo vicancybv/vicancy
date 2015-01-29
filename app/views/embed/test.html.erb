@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+
+<div id="widget"></div>
+
+<div id="pageVer"></div>
+<div id="widgVer"></div>
+
+<% if @video.present? %>
+<div data-vicancy-mode="embed_video" data-vicancy-api-token="eXqCYwVapaLVVJBYkoe_-=" data-vicancy-client-id="somenum" data-vicancy-job-id="3"></div>
+<% else %>
+<div>Sorry, no video for test!</div>
+<% end %>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.2.2.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#pageVer').html('This page uses jQuery ver: ' + $.fn.jquery).click(function() {
+            alert($.fn.jquery);
+        });
+    });
+</script>
+
+<%= javascript_include_tag 'embed-api' %>
+</body>
+</html>

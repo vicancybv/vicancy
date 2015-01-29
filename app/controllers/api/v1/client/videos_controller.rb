@@ -1,7 +1,13 @@
 class API::V1::Client::VideosController < API::BaseController
   before_filter :set_reseller
-  before_filter :set_client
+  before_filter :set_client, except: [:embed_code]
   before_filter :set_video, only: [:edit, :delete]
+  before_filter :set_client_by_id, only: [:embed_code]
+  before_filter :set_video_by_job_id, only: [:embed_code]
+
+  def embed_code
+
+  end
 
   def index
     @videos = @client.videos.order('created_at DESC').to_a
@@ -36,6 +42,11 @@ class API::V1::Client::VideosController < API::BaseController
 
   def set_video
     @video = Video.where(id: params.require(:id), client_id: @client.id).first
+    raise ActiveRecord::RecordNotFound unless @video
+  end
+
+  def set_video_by_job_id
+    @video = Video.where(external_job_id: params.require(:job_id), client_id: @client.id).first
     raise ActiveRecord::RecordNotFound unless @video
   end
 
