@@ -11,7 +11,7 @@
 <div id="widgVer"></div>
 
 <% if @video.present? %>
-<div data-vicancy-mode="embed_video" data-vicancy-api-token="eXqCYwVapaLVVJBYkoe_-=" data-vicancy-client-id="somenum" data-vicancy-job-id="3"></div>
+<div data-vicancy-mode="embed_video" data-vicancy-api-token="<%= @video.client.reseller.token %>" data-vicancy-client-id="<%= @video.client.external_id %>" data-vicancy-job-id="<%= @video.external_job_id %>"></div>
 <% else %>
 <div>Sorry, no video for test!</div>
 <% end %>
