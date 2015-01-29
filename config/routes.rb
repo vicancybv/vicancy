@@ -33,6 +33,8 @@ Vicancy::Application.routes.draw do
     end
   end
 
+  get 'embed/test' => 'embed#test'
+
   get 'widget' => 'widget#show'
   get 'widget/test_request_vicancy' => 'widget#test_request_vicancy'
   get 'widget/embed' => 'widget#embed'
