@@ -31,6 +31,12 @@ class API::BaseController < ActionController::Base
     raise AuthenticationError.new('Unknown client')
   end
 
+  def set_client_by_id
+    @client = @reseller.clients.find_by_external_id!(params.require(:client_id))
+  rescue ActiveRecord::RecordNotFound
+    raise AuthenticationError.new('Unknown client')
+  end
+
   private
 
   def rescue_auth_error(e)

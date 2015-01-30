@@ -9,7 +9,7 @@ class VideoUploadWorker
     uploaded_video = UploadedVideo.find(uploaded_video_id)
     begin
       send("#{uploaded_video.provider}_upload", uploaded_video, video_url)
-      UploadedVideoThumbnailWorker.perform_async(uploaded_video_id)
+      UploadedVideoThumbnailWorker.perform_in(3, uploaded_video_id) # run with 3 second delay to let video hosting process video
     rescue Exception => e
       msg = "Error during #{uploaded_video.provider} upload (#{e.class.to_s}). #{e.message}"
       card = processing_card_for_video_id(uploaded_video.video.id)

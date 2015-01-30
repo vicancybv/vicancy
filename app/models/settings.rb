@@ -123,6 +123,9 @@ unless defined? Settings
     end
 
     #### Widget settings
+    def self.embed_vicancy_server
+      self.widget_vicancy_server
+    end
 
     def self.widget_vicancy_server
       if Settings.staging?

@@ -10,10 +10,15 @@ class API::V1::ClientController < API::BaseController
 
   def set_client
     client_params = params.require(:client)
+    id = client_params.require(:id)
+    email = client_params[:email]
+    name = client_params[:name]
+    name = email if name.blank?
+    raise ActionController::ParameterMissing.new('param is missing or the value is empty: name') if name.blank?
     attrs = {
-        external_id: client_params.require(:id),
-        name: client_params.require(:name),
-        email: client_params[:email],
+        external_id: id,
+        name: name,
+        email: email,
         language: client_params[:language]
     }
     @client = Client.fetch(@reseller, attrs)
