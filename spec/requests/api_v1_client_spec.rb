@@ -148,30 +148,47 @@ describe '/api/v1/client' do
         expect(response.status).to eq 500
       end
 
-      it 'should not proceed with empty name' do
-        params = { api_token: api_token,
-                   client: {
-                       id: 'id',
-                       name: '',
-                       email: 'deloitte@example.com',
-                       language: 'en'
-                   } }
-        post_json '/api/v1/client/auth', params
-        expect(json['status']).to eq 'error'
-        expect(response.status).to eq 500
+      context 'no name' do
+        it 'should not proceed with empty name and empty email' do
+          params = { api_token: api_token,
+                     client: {
+                         id: 'id',
+                         name: '',
+                         email: '',
+                         language: 'en'
+                     } }
+          post_json '/api/v1/client/auth', params
+          expect(json['status']).to eq 'error'
+          expect(response.status).to eq 500
+          expect(json['error_text']).to include 'param is missing or the value is empty: name'
+        end
+
+        it 'should not proceed without name and empty email' do
+          params = { api_token: api_token,
+                     client: {
+                         id: 'new',
+                         email: '',
+                         language: 'en'
+                     } }
+          post_json '/api/v1/client/auth', params
+          expect(json['status']).to eq 'error'
+          expect(response.status).to eq 500
+          expect(json['error_text']).to include 'param is missing or the value is empty: name'
+        end
+
+        it 'should proceed without name and with email' do
+          params = { api_token: api_token,
+                     client: {
+                         id: 'new',
+                         email: 'deloitte@example.com',
+                         language: 'en'
+                     } }
+          post_json '/api/v1/client/auth', params
+          expect(json['status']).to eq 'ok'
+          expect(response.status).to eq 200
+        end
       end
 
-      it 'should not proceed without name' do
-        params = { api_token: api_token,
-                   client: {
-                       id: 'new',
-                       email: 'deloitte@example.com',
-                       language: 'en'
-                   } }
-        post_json '/api/v1/client/auth', params
-        expect(json['status']).to eq 'error'
-        expect(response.status).to eq 500
-      end
 
     end
 
