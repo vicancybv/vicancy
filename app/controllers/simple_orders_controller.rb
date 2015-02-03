@@ -18,7 +18,9 @@ class SimpleOrdersController < ApplicationController
       'http://www.vicancy.com/thank-you/'
     else
       uri = URI(referer)
-      if uri.path.starts_with? '/nl-'
+      if uri.path == '/'
+        uri.path = '/nl-thank-you/'
+      elsif uri.path.starts_with? '/nl-'
         uri.path = '/nl-thank-you/'
       else
         uri.path = '/thank-you/'
