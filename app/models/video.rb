@@ -192,7 +192,7 @@ class Video < ActiveRecord::Base
 
   def vimeo_embed_url(fallback=false)
     return youtube_embed_url if fallback && vimeo_id.blank?
-    "http://player.vimeo.com/video/#{vimeo_id}"
+    "https://player.vimeo.com/video/#{vimeo_id}"
   end
 
   def youtube_url(fallback=false)

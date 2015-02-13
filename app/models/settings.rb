@@ -122,11 +122,22 @@ unless defined? Settings
       Rails.env.test?
     end
 
-    #### Widget settings
+    #### Embed settings
     def self.embed_vicancy_server
-      self.widget_vicancy_server
+      if Settings.staging?
+        '//stagingvicancy.herokuapp.com'
+      elsif Settings.sandbox?
+        '//sandboxvicancy.herokuapp.com'
+      elsif Settings.production?
+        '//vicancy.herokuapp.com'
+      elsif Settings.development?
+        '//vicancy.dev'
+      else
+        ''
+      end
     end
 
+    #### Widget settings
     def self.widget_vicancy_server
       if Settings.staging?
         '//stagingvicancy.herokuapp.com'

@@ -30,6 +30,9 @@ gem 'retryable'
 gem 'cloudinary'
 gem 'attachinary'
 
+# CORS support
+gem 'rack-cors', :require => 'rack/cors'
+
 # support sidekiq monitoring
 gem 'sinatra', '>= 1.3.0', :require => nil
 
