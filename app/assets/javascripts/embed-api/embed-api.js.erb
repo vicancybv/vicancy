@@ -44,11 +44,8 @@
                 url = url + '&job_id=' + encodeURIComponent(job_id);
                 $.getJSON(url, function (data, status, xhr) {
                     if (data['status'] != 'ok') return;
-                    console.log(data);
-                    console.log(data['video']['embed_code']);
                     var embed_code = data['video']['embed_code'];
                     element.append(embed_code);
-                    //element.html();
                 });
             };
 
