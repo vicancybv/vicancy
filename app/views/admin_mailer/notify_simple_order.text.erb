@@ -1,0 +1,11 @@
+New lead (IP <%= @user_ip %>) has contacted Vicancy from <%= @simple_order.referer %>
+
+CONTACT INFO
+------------
+Name: <%= @simple_order.name %>
+Email: <%= @simple_order.email %>
+Other info:
+<%= @simple_order.params %>
+
+
+You can open this contact info later using this link: <%= admin_simple_order_url(@simple_order.id) %>
