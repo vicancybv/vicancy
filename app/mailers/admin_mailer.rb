@@ -28,6 +28,12 @@ class AdminMailer < ActionMailer::Base
     mail(to: RECIPIENT, subject: '[Vicancy] New video request', from: "Vicancy <info@vicancy.com>")
   end
 
+  def notify_simple_order(simple_order, user_ip)
+    @simple_order = simple_order
+    @user_ip = user_ip
+    mail(to: RECIPIENT, subject: '[Vicancy] Lead from the website', from: "Vicancy <info@vicancy.com>")
+  end
+
 end
 
 

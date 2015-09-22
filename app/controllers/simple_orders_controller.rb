@@ -1,7 +1,7 @@
 class SimpleOrdersController < ApplicationController
   def create
     data = params.require('sf_register_user')
-    SimpleOrder.create!({
+    simple_order = SimpleOrder.create!({
                             params: data.to_hash.to_yaml,
                             referer: request.referer,
                             name: data['name'],
@@ -9,6 +9,7 @@ class SimpleOrdersController < ApplicationController
                             url: data['url'],
                             product: data['product']
                         })
+    AdminMailer.notify_simple_order(simple_order, request.ip)
     url = generate_thank_you_url request.referer
     redirect_to url
   end
