@@ -9,7 +9,7 @@ class SimpleOrdersController < ApplicationController
                             url: data['url'],
                             product: data['product']
                         })
-    AdminMailer.notify_simple_order(simple_order, request.ip)
+    AdminMailer.delay.notify_simple_order(simple_order, request.ip)
     url = generate_thank_you_url request.referer
     redirect_to url
   end
