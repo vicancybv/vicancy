@@ -22,7 +22,7 @@ class ProviderScannerWorker
         add_coment_to_video_card(uploaded_video.video.id, msg)
       end
     rescue => e
-      Rollbar.report_exception(e, rollbar_request_data)
+      Rollbar.report_exception(e)
       state = :error
       uploaded_video.update_attribute(:aasm_state, state.to_s)
       msg = "Error during #{uploaded_video.provider} video (uploaded video id: #{uploaded_video.id}) status check (#{e.class.to_s}). #{e.message}"
