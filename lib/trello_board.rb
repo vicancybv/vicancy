@@ -44,6 +44,15 @@ module TrelloBoard
     processing_cards.select { |card| parse_card_description(card)[:id] == id.to_s }.first
   end
 
+  def add_coment_to_video_card(video_id, comment)
+    Retryable.retryable(tries: 3) do
+      card = processing_card_for_video_id(video_id)
+      card.add_comment(comment) if card.present?
+    end
+  rescue => e
+    Rollbar.report_message("add_coment_to_video_card failed: #{e.message} (#{e.class.to_s}). Comment: #{comment}", 'info')
+  end
+
   def move_card_for_video_to_list(video_id, list_name)
     card = processing_card_for_video_id(video_id)
     move_to_list!(card, list_name) unless card.nil?
