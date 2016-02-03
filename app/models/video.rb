@@ -180,7 +180,7 @@ class Video < ActiveRecord::Base
 
   def embed_url
     # temprarily disable wistia embed_url - looks like it's wrong
-    #return wistia_embed_url unless wistia_id.blank?
+    return wistia_embed_url unless wistia_id.blank?
     return vimeo_embed_url unless vimeo_id.blank?
     return youtube_embed_url unless youtube_id.blank?
   end
